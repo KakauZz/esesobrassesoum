@@ -3,8 +3,8 @@
 Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (Brasília)**, conta os votos do último episódio, cria o próximo e agenda o post para o mesmo dia.
 
 ## Onde fica cada coisa
-- **Projeto (privado):** repositório `esesobrassesoum` (cópia de `D:\BBS\Animacao`, com os scripts, as fontes, `chaves_api.txt` e este arquivo).
-- **Vídeos (público):** repositório `esesobrassesoum-videos`. Cada episódio vira um *release* `epNN`, e o link do `.mp4` é o que o Metricool usa para postar.
+- **Repositório:** `KakauZz/esesobrassesoum` (público). As chaves do Gemini ficam só na secret `GEMINI_KEYS` do GitHub Actions, nunca em arquivo.
+- **Vídeos:** `videos/epNN_final.mp4` dentro do repositório. Link público para o Metricool: `https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/videos/epNN_final.mp4`
 - **Personagem e estilo:** `epNN/animado/animacao.html` acumula todas as cenas da série. Cada episódio ganha sua própria faixa de tempo: EP1 0–60, EP2 400–433, EP3 500–644, **EP4 700–799, EP5 800–899** e assim por diante.
 
 ## Passo a passo
@@ -26,13 +26,18 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
 5. **Montar:**
    ```
    python novo_ep.py html N
-   python gerar_voz.py epNN/animado        # voz Zubenelgenubi; se uma chave falhar, troca sozinho pela próxima
+   git add -A && git commit -m "epNN: roteiro" && git push
+   # voz: o Gemini é bloqueado na sessão, então a voz é gerada pelo GitHub Actions (workflow gerar-voz):
+   gh api -X POST repos/KakauZz/esesobrassesoum/actions/workflows/voz.yml/dispatches -f ref=main -f 'inputs[pasta]=epNN/animado'
+   # espere o run terminar (gh api repos/KakauZz/esesobrassesoum/actions/runs --jq '.workflow_runs[0]|.status,.conclusion'),
+   # depois: git pull  → epNN/animado/saida/voz_full.wav. Se o run falhar, veja o log em
+   # gh api repos/KakauZz/esesobrassesoum/actions/runs/<id>/jobs e corrija/tente de novo (no máx. 2 vezes).
    cd epNN/animado && python plano.py && python musica3.py && python editor.py tudo epNN_final.mp4
    ```
    Fontes: `fonts/` (Oswald, Anton, Caveat). Precisa de Python, Pillow, numpy, scipy, playwright (chromium) e ffmpeg.
 6. **Conferir antes de postar:** tire 6 quadros (`ffmpeg -ss T -frames:v 1`) espalhados pelo vídeo e olhe cada um. Nada pode estar quebrado, em branco, com texto vazando ou com o personagem deformado. A duração tem que ficar entre 45 e 90 s. A voz tem que bater com a legenda (compare `plano.json` → `falas` com a duração da voz).
    Se algo falhar e não der para corrigir em 2 tentativas: **não poste**. Avise o usuário com o motivo.
-7. **Publicar o arquivo:** suba o vídeo no repositório público de vídeos (`gh release create epNN epNN_final.mp4 --repo <dono>/esesobrassesoum-videos`). Depois faça commit e push do projeto (sem `saida/` e `cache/`) no repositório privado.
+7. **Publicar o arquivo:** copie para `videos/epNN_final.mp4`, faça `git add -f videos/epNN_final.mp4`, commit e push (antes, `git pull --rebase`). Confira com `curl -I` que o link raw responde 200.
 8. **Agendar no Metricool** (brandId `7941222`, fuso `America/Sao_Paulo`). Antes, confira os horários do dia com `getBestTimeToPostByNetwork`; o padrão é este:
    - **Instagram 10h:** `instagramData {type:"REEL", isAiGenerated:true}`
    - **TikTok 10h:** `tiktokData {isAigc:true, privacyOption:"PUBLIC_TO_EVERYONE"}`
