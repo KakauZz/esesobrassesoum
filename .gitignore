@@ -1,0 +1,7 @@
+chaves_api.txt
+**/cache/
+**/saida/*.mp4
+**/saida/*.wav
+!**/saida/voz_full.wav
+**/saida/*.ass
+__pycache__/

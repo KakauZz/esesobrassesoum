@@ -1,0 +1,9 @@
+[
+ {"tipo":"texto","fundo":"amanhecer","dur":4,"tam":96,"texto":"Você acorda.\nNinguém mais existe.","fala":"Você acorda. E percebe que ninguém mais existe."},
+ {"tipo":"texto","fundo":"rua","dur":6,"texto":"As ruas estão vazias.\nCarros parados.\nSemáforos funcionando pra ninguém.","fala":"As ruas estão vazias. Carros parados no meio da avenida. Os semáforos continuam funcionando, pra ninguém."},
+ {"tipo":"texto","fundo":"mercado","dur":6,"texto":"O mercado está aberto.\nNinguém no caixa.\nTudo é seu.","fala":"O mercado está aberto. Ninguém no caixa. Tudo ali é seu agora."},
+ {"tipo":"texto","fundo":"noite","dur":6,"texto":"Os dias passam.\nVocê se acostuma\ncom o silêncio.","fala":"Os dias passam. E você começa a se acostumar com o silêncio."},
+ {"tipo":"texto","fundo":"calcada","dur":4,"texto":"Até que, na calçada,\nvocê encontra uma carta.","fala":"Até que, um dia, na calçada, você encontra uma carta."},
+ {"tipo":"carta","fundo":"carta","dur":9,"texto":"\"Se você está lendo isso, então você não está sozinho.\n\nEu estou na velha praça, perto do relógio.\n\nVenha antes do anoitecer.\n\n— Alguém\"","fala":"Se você está lendo isso, então você não está sozinho. Eu estou na velha praça, perto do relógio. Venha antes do anoitecer. Alguém."},
+ {"tipo":"escolha","fundo":"carta","dur":7,"titulo":"O que você faz?","opcoes":["A  Ir atrás dessa pessoa","B  Ficar em paz, sozinho"],"rodape":"Comenta A ou B!\nA mais votada vira o Ep. 2","fala":"O que você faz? Comenta A pra ir atrás dessa pessoa, ou B pra ficar em paz. A mais votada vira o episódio dois."}
+]
