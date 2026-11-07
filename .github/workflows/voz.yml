@@ -15,11 +15,9 @@ jobs:
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Gerar voz (Gemini, Zubenelgenubi)
         env:
-          K1: ${{ secrets.GEMINI_API_KEY_1 }}
-          K2: ${{ secrets.GEMINI_API_KEY_2 }}
-          K3: ${{ secrets.GEMINI_API_KEY_3 }}
+          KEYS: ${{ secrets.GEMINI_KEYS }}
         run: |
-          printf "GEMINI_API_KEY_1=%s\nGEMINI_API_KEY_2=%s\nGEMINI_API_KEY_3=%s\n" "$K1" "$K2" "$K3" > chaves_api.txt
+          i=1; for k in $KEYS; do echo "GEMINI_API_KEY_$i=$k" >> chaves_api.txt; i=$((i+1)); done
           python3 gerar_voz.py "${{ inputs.pasta }}"
           rm chaves_api.txt
       - name: Salvar a voz no repositório
