@@ -5,3 +5,4 @@ chaves_api.txt
 !**/saida/voz_full.wav
 **/saida/*.ass
 __pycache__/
+!videos/*.mp4
