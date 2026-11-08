@@ -73,9 +73,9 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
    Se algo falhar e não der para corrigir em 2 tentativas: **não poste**. Avise o usuário com o motivo.
 7. **Publicar o arquivo:** copie para `videos/epNN_final.mp4`, faça `git add -f videos/epNN_final.mp4`, commit e push (antes, `git pull --rebase`). Confira com `curl -I` que o link raw responde 200.
 8. **Agendar no Metricool** (brandId `7941222`, fuso `America/Sao_Paulo`). Antes, confira os horários do dia com `getBestTimeToPostByNetwork`; o padrão é este:
-   - **Instagram 10h:** `instagramData {type:"REEL", isAiGenerated:true}`
-   - **TikTok 10h:** `tiktokData {title:"E se sobrasse só UM? EP. N — <TÍTULO>", isAigc:true, privacyOption:"PUBLIC_TO_EVERYONE"}` (o título é obrigatório)
-   - **YouTube 16h:** `youtubeData {type:"short", title:"…", madeForKids:false, category:"FILM_ANIMATION", privacy:"public"}`
+   - **Instagram 10h:** `instagramData {type:"REEL", isAiGenerated:false}`
+   - **TikTok 10h:** `tiktokData {title:"E se sobrasse só UM? EP. N — <TÍTULO>", isAigc:false, privacyOption:"PUBLIC_TO_EVERYONE"}` (o título é obrigatório)
+   - **YouTube 16h:** `youtubeData {type:"short", isAiGeneratedContent:false, title:"…", madeForKids:false, category:"FILM_ANIMATION", privacy:"public"}`
    - Em `media`, use o link do release. Se o horário já tiver passado, poste 30 min depois de agora.
    - Legenda no padrão da série:
      ```
@@ -92,3 +92,17 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
 - EP. 4: o **celular** desconhecido que mandou "entrar no vagão". Quem mandou? (a criança, que quer ajuda, mas está com medo)
 - EP. 4: as **pegadas pequenas** e a catraca girando (a criança)
 - EP. 4: o mapa "VOCÊ ESTÁ AQUI · dia 48" e a foto de Matheus correndo (o fotógrafo)
+
+## Postagem (decisão do usuário)
+- **Não marcar como conteúdo de IA:** `isAiGenerated:false` (Instagram), `isAigc:false` (TikTok), `isAiGeneratedContent:false` (YouTube).
+- Ritmo da voz: o usuário achou o EP. 4-A rápido demais. Mantenha 1.05x, mas a direção pede pausas entre as falas (já está no ESTILO do gerar_voz.py). Se a voz sair com mais de 3,2 falas por 10 s, gere de novo pedindo um ritmo mais calmo.
+
+## Crescimento: rodar TODO DIA, antes de criar o episódio
+1. **Números:** pelo Windsor.ai (instagram: media_views, media_reach, media_comments_count, media_shares, media_saved; tiktok_organic: views, comments e shares por vídeo) e pelo Metricool (getAnalyticsDataByMetrics), compare os últimos episódios: qual teve mais views, retenção, comentários e compartilhamentos, e em que horário saiu.
+2. **Horários:** cruze `getBestTimeToPostByNetwork` com o desempenho real de cada post. Se um horário render claramente mais (ex.: +30% de views em 2 posts), mude o horário padrão daquela rede e anote abaixo.
+3. **Comentários públicos:** leia os comentários (que não são só "A"/"B") do último episódio. Procure pedidos ("quero ver X", "parte 2"), dúvidas sobre a história, o que o público gostou ou não gostou e reclamações (voz, legenda, ritmo). Use o que fizer sentido no roteiro do dia, sempre respeitando as regras de conteúdo e a bíblia da história.
+4. **Gancho:** a primeira frase depois do recap tem que prender em 2 s. Se as views caírem, teste um gancho mais forte (pergunta ou revelação já no começo).
+5. **Anote aqui** em "Aprendizados" (data, o que mudou e por quê) e faça commit. Nunca mude as regras do usuário: só horários, ganchos, ritmo e tipo de mistério.
+
+## Aprendizados
+- 08/11: horários iniciais Instagram 10h, TikTok 10h e YouTube 16h (dados do Metricool). EP. 4-A ficou com a voz rápida demais; o EP. 4-B (2min14) ficou melhor no ritmo.
