@@ -114,6 +114,7 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 5. **Anote aqui** em "Aprendizados" (data, o que mudou e por quê) e faça commit. Nunca mude as regras do usuário: só horários, ganchos, ritmo e tipo de mistério.
 
 ## Aprendizados
+- 08/11: números de partida no TikTok: 39 seguidores, EP. 1 com 3,5 mil views (média de 28 s assistidos de 94 s, só 4% viram até o fim), EP. 2 com 143 views (73 s de 76 s, 19% até o fim). Instagram: 60 seguidores, EP. 2 com 1,7 mil views. Meta: reter mais no começo.
 - 08/11: horários iniciais Instagram 10h, TikTok 10h e YouTube 16h (dados do Metricool). EP. 4-A ficou com a voz rápida demais; o EP. 4-B (2min14) ficou melhor no ritmo.
 
 ## Limpeza (para o repositório não estourar)
@@ -128,7 +129,19 @@ O Metricool grátis tem **20 posts publicados por mês**, contados por rede, e o
 
 ## Divisão das redes (decisão do usuário, a partir de 09/11/2026)
 - **Metricool = só TikTok.** Os 20 posts grátis do mês ficam para o TikTok. Antes de agendar, leia `metricool_contagem.json`. Se o mês já tiver 20, NÃO use o Metricool. Depois de agendar, some +1 e faça commit.
-  - Para render mais, poste o TikTok de **segunda a sexta**, que são os dias de maior alcance pelos dados do Metricool. Fim de semana só se ainda sobrar cota no fim do mês.
-  - Nos dias sem TikTok, mande o vídeo para o usuário (SendUserFile) com a legenda pronta, dizendo que, se ele quiser, pode postar à mão.
+  - Distribua a cota para ter TikTok no maior número de dias possível: prefira **segunda a sexta** (maior alcance) e use os dias que sobrarem.
+  - **Nos dias sem cota (1 vídeo por dia é obrigatório):** mande o vídeo para o usuário (SendUserFile) com a legenda e o título prontos e peça para ele postar no TikTok à mão, no melhor horário.
 - **Instagram = Windsor.ai** (`create_video_post`), todo dia, no melhor horário, por meio de uma tarefa agendada única (ver "Plano B de postagem"). Não usa cota do Metricool.
 - **YouTube = sem postagem automática por enquanto**, até o usuário configurar a API do YouTube. Todo dia, mande o vídeo e um título pronto para ele postar à mão, se quiser.
+
+## Tudo para crescer (o objetivo agora: 10 mil seguidores e 100 mil views em 30 dias no TikTok)
+- **1 episódio por dia, sem falhar.** A constância é o que mais faz crescer.
+- **Gancho nos primeiros 2 segundos:** o recap é rápido e a primeira imagem já é um mistério. A legenda do post começa com uma pergunta ou uma revelação.
+- **Recap sempre** no começo, para quem chega pelo episódio do dia entender e maratonar os anteriores.
+- **Legenda:** frase-gancho + "EP. N" + "Comenta A ou B 👇" + "Assista do EP. 1 no perfil 👆" + hashtags (#esesobrassesoum #animação #historia #suspense #misterio #serie #fy #viral, mais 1 ou 2 do assunto do episódio).
+- **Primeiro comentário** (Metricool `firstCommentText` no TikTok e Windsor `create_comment` no Instagram, logo depois de publicar): uma pergunta que puxa conversa, por exemplo "Quem vocês acham que tirou a foto? 👀", sem spoiler.
+- **Responder comentários** pelo Windsor (`reply_to_comment`), só no Instagram, até **10 por dia**: respostas curtas, simpáticas e em português, como o narrador da série ("Boa teoria 👀 fica de olho no próximo EP!"). Nunca dê spoiler, nunca discuta, nunca prometa nada e ignore ofensas. Priorize quem deu uma teoria ou fez uma pergunta.
+- **Story de aviso no Instagram** (Windsor `create_story`, de graça): logo depois de publicar o episódio, poste uma imagem 9:16 com um quadro marcante do episódio e o texto "EP. N saiu! Você decide 👇". O story é imagem, então exporte um quadro em JPEG, coloque no repositório e use o link raw.
+- **Capa:** use como capa o quadro mais intrigante do episódio (`thumb_offset` no Instagram, `videoCoverMilliseconds` no TikTok pelo Metricool).
+- **Votação equilibrada:** as duas opções A/B precisam ser tentadoras. Quanto mais dividido o voto, mais comentários.
+- **Medir e ajustar:** todo dia, compare a retenção (`video_average_time_watched`, `video_full_watched_rate` no tiktok_organic) e as views por episódio. Se a retenção cair no começo, deixe o gancho mais forte; se cair no meio, deixe o ritmo mais apertado. Anote em "Aprendizados".
