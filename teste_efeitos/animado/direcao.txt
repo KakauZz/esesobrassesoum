@@ -1,0 +1,8 @@
+1. narrador normal, animado
+2. narrador, curioso
+3. [radio] voz de outra pessoa falando no rádio, baixo, misterioso, com pausas
+4. narrador, tenso
+5. [telefone] voz de outra pessoa numa ligação, calma e misteriosa
+6. narrador, suspense
+7. [carta] lendo uma carta, misterioso, devagar
+8. narrador, animado

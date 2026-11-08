@@ -2,7 +2,7 @@
 #   Voz: Sadachbia · modelo gemini-2.5-flash-preview-tts · 1.05x · leve realce de agudos · eco só em leitura de carta
 #   Tempos de cada fala: transcritos com gemini-3.5-flash (saida/ts_raw.json, em segundos do áudio ANTES do 1.05x)
 # Uso:  python gerar_voz.py epNN/animado
-# Lê:   epNN/animado/plano.py (FALAS) e, se existir, epNN/animado/direcao.txt (1 linha por fala; "[carta]" = eco)
+# Lê:   epNN/animado/plano.py (FALAS) e, se existir, epNN/animado/direcao.txt (1 linha por fala; tags [carta]/[radio]/[telefone] → efeitos_voz.py)
 # Chaves: env GEMINI_KEYS (várias, separadas por espaço/linha) — cada chave tem ~10 gerações/dia; troca sozinho se acabar.
 import os, sys, re, ast, json, base64, wave, subprocess, urllib.request, urllib.error, time
 import numpy as np
@@ -100,18 +100,7 @@ def main(pasta):
     else:
         print("aviso: sem tempos confiáveis; o plano.py usa só as pausas reais do áudio")
 
-    # 3) eco só nas falas marcadas [carta] (no áudio original)
-    x = np.frombuffer(pcm, dtype=np.int16).astype(np.float32)
-    if ts and D:
-        for i, linha in enumerate(D[:len(F)]):
-            if "[carta]" in linha.lower():
-                a, b = int(ts[i][0] * 24000), min(len(x), int((ts[i][1] + .4) * 24000))
-                seg = x[a:b].copy(); y = seg.copy()
-                for dl, g in ((0.11, .35), (0.23, .2), (0.37, .1)):
-                    n = int(dl * 24000); y[n:] += g * seg[:-n]
-                x[a:b] = y
-        x = np.clip(x, -32768, 32767)
-        with wave.open(raw, "wb") as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes(x.astype(np.int16).tobytes())
+    # 3) efeitos ([carta], [radio], [telefone]) são aplicados depois, pelo efeitos_voz.py
 
     # 4) 1.05x + leve realce de agudos
     dst = os.path.join(out, "voz_full.wav")

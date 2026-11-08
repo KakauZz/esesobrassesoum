@@ -1,0 +1,1 @@
+FALAS=['Teste de efeitos de voz. Primeiro, o narrador normal.', 'Agora, uma voz no rádio:', 'Matheus... se você tá me ouvindo... segue a luz.', 'E agora, uma ligação no celular:', 'Alô? Matheus? Não desliga. Eu sei onde você tá.', 'E por último, uma carta:', 'Se você está lendo isso, você não está sozinho.', 'Fim do teste.']

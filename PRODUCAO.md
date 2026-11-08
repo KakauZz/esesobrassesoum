@@ -49,7 +49,7 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
      Não encha linguiça (cartela parada, repetição): o tempo extra tem que ser história.
    - No fim, a escolha nova com **A em verde e B** (o mesmo visual do EP. 3), depois o cartão "E SE SOBRASSE SÓ UM?", "EP. N+1 · EM BREVE" e "Segue pra não perder 👆".
    - `plano.py`: `FALAS` com 34 a 40 frases curtas. A primeira é "Vocês escolheram: X. ..." e as duas últimas são a pergunta A/B e "Comenta A ou B! A mais votada vira o episódio N+1.". `SHOTS` tem uma lista por fala, como no EP. 3, com o HUD "DIA 48 · HH:MM" avançando no tempo da história.
-   - `direcao.txt`: uma linha por fala com a emoção da voz. Marque `[carta]` na linha de qualquer fala que seja leitura de carta ou bilhete (ganha eco).
+   - `direcao.txt`: uma linha por fala com a emoção da voz. Marque na linha da fala: `[carta]` para leitura de carta, bilhete ou mensagem (eco), `[radio]` para voz saindo de rádio ou walkie-talkie (chiado e clique) e `[telefone]` para voz de ligação (som de telefone). **Toda fala que sai de um rádio, telefone ou carta TEM que ter a tag.** No 1º EP. 4 faltou o efeito no rádio; isso não pode se repetir.
    - **Continuidade:** Matheus, 24 anos, sozinho em São Paulo desde o "dia 1". Mantenha os fatos já mostrados: a carta da praça, a janela acesa, as fotos dele, a câmera e a sombra.
 5. **Montar:**
    ```
@@ -62,7 +62,7 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
    # espere o run terminar (gh api repos/KakauZz/esesobrassesoum/actions/runs --jq '.workflow_runs[0]|.status,.conclusion'),
    # depois: git pull  → epNN/animado/saida/voz_full.wav. Se o run falhar, veja o log em
    # gh api repos/KakauZz/esesobrassesoum/actions/runs/<id>/jobs e corrija/tente de novo (no máx. 2 vezes).
-   cd epNN/animado && python plano.py && python musica3.py && python editor.py tudo epNN_final.mp4
+   cd epNN/animado && python plano.py && python ../../efeitos_voz.py . && python musica3.py && python editor.py tudo epNN_final.mp4
    ```
    Fontes: `fonts/` (Oswald, Anton, Caveat). Precisa de Python, Pillow, numpy, scipy, playwright (chromium) e ffmpeg.
 6. **Revisão obrigatória (o usuário exige ZERO erros):**
