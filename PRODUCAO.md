@@ -27,7 +27,8 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
    ```
    python novo_ep.py html N
    git add -A && git commit -m "epNN: roteiro" && git push
-   # voz: o Gemini é bloqueado na sessão, então a voz é gerada pelo GitHub Actions (workflow gerar-voz):
+   # voz: SEMPRE ElevenLabs, voz Roger (a voz da série). É gerada pelo GitHub Actions (workflow gerar-voz, secret ELEVENLABS_API_KEY).
+   # NUNCA use outra voz (Gemini etc.) como plano B: se a ElevenLabs falhar, NÃO poste e avise o usuário.
    gh api -X POST repos/KakauZz/esesobrassesoum/actions/workflows/voz.yml/dispatches -f ref=main -f 'inputs[pasta]=epNN/animado'
    # espere o run terminar (gh api repos/KakauZz/esesobrassesoum/actions/runs --jq '.workflow_runs[0]|.status,.conclusion'),
    # depois: git pull  → epNN/animado/saida/voz_full.wav. Se o run falhar, veja o log em
@@ -35,7 +36,14 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
    cd epNN/animado && python plano.py && python musica3.py && python editor.py tudo epNN_final.mp4
    ```
    Fontes: `fonts/` (Oswald, Anton, Caveat). Precisa de Python, Pillow, numpy, scipy, playwright (chromium) e ffmpeg.
-6. **Conferir antes de postar:** tire 6 quadros (`ffmpeg -ss T -frames:v 1`) espalhados pelo vídeo e olhe cada um. Nada pode estar quebrado, em branco, com texto vazando ou com o personagem deformado. A duração tem que ficar entre 45 e 90 s. A voz tem que bater com a legenda (compare `plano.json` → `falas` com a duração da voz).
+6. **Revisão obrigatória (o usuário exige ZERO erros):**
+   - Monte uma folha de contato com 1 quadro a cada 1,5 s do vídeo final e olhe TODOS, comparando cada quadro com a fala que está tocando.
+   - **Direção:** quem anda olha para o lado para onde vai. Descer escada = olhar e andar para o lado em que os degraus descem (`person`: `f:1` olha para a direita, `f:-1` para a esquerda). O chão e os degraus se movem no sentido oposto ao do personagem.
+   - **Movimento coerente:** se o personagem corre (faixas da rua e postes passando), tudo o que está no chão (carros, postes, placas) também tem que passar na perspectiva. Nada fica parado enquanto o cenário anda.
+   - **Continuidade:** a mesma roupa, o horário do HUD sempre avançando e os fatos dos episódios anteriores mantidos.
+   - Renderize 3 quadros seguidos (0,1 s de intervalo) de cada cena com personagem andando ou correndo e confirme o sentido do movimento.
+   - Se encontrar qualquer erro: corrija, renderize de novo e revise de novo. Na dúvida, NÃO poste e avise o usuário.
+   **Conferir também:** tire 6 quadros (`ffmpeg -ss T -frames:v 1`) espalhados pelo vídeo e olhe cada um. Nada pode estar quebrado, em branco, com texto vazando ou com o personagem deformado. A duração tem que ficar entre 45 e 90 s. A voz tem que bater com a legenda (compare `plano.json` → `falas` com a duração da voz).
    Se algo falhar e não der para corrigir em 2 tentativas: **não poste**. Avise o usuário com o motivo.
 7. **Publicar o arquivo:** copie para `videos/epNN_final.mp4`, faça `git add -f videos/epNN_final.mp4`, commit e push (antes, `git pull --rebase`). Confira com `curl -I` que o link raw responde 200.
 8. **Agendar no Metricool** (brandId `7941222`, fuso `America/Sao_Paulo`). Antes, confira os horários do dia com `getBestTimeToPostByNetwork`; o padrão é este:

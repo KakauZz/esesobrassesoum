@@ -13,15 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-      - name: Gerar voz (Gemini, Zubenelgenubi)
+      - name: Gerar voz (ElevenLabs, Roger — a voz da série)
         env:
-          KEYS: ${{ secrets.GEMINI_KEYS }}
-        run: |
-          i=1; for k in $KEYS; do echo "GEMINI_API_KEY_$i=$k" >> chaves_api.txt; i=$((i+1)); done
-          python3 gerar_voz.py "${{ inputs.pasta }}"
-          rm chaves_api.txt
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python3 gerar_voz.py "${{ inputs.pasta }}"
       - name: Salvar a voz no repositório
         run: |
           git config user.name "gerar-voz"; git config user.email "actions@github.com"
-          git add -f "${{ inputs.pasta }}/saida/voz_full.wav"
+          git add -f "${{ inputs.pasta }}/saida/voz_full.wav" "${{ inputs.pasta }}/saida/el_meta.json"
           git commit -m "voz: ${{ inputs.pasta }}" && git push

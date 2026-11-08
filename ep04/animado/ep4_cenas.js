@@ -25,7 +25,7 @@ scene(710,716,(t)=>{const u=t-710;ctx.fillStyle='#1a1a24';ctx.fillRect(0,0,W,H);
   const S_=1.05,hx=600,hy=1100,foot=hy+87*S_,run=70,rise=48,o=(u*260)%run;
   ctx.fillStyle='#22222e';ctx.fillRect(0,0,W,H);
   // degraus descendo para a esquerda (a superfície sobe e passa por baixo dele)
-  ctx.save();ctx.translate(o,o*rise/run);
+  ctx.save();ctx.translate(o,-o*rise/run);
   ctx.beginPath();ctx.moveTo(hx+run*12,H+400);ctx.lineTo(hx+run*12,foot-rise*12);
   for(let i=12;i>-16;i--){const x=hx+i*run,y=foot-i*rise;ctx.lineTo(x+run/2,y);ctx.lineTo(x-run/2,y);ctx.lineTo(x-run/2,y+rise)}
   ctx.lineTo(hx-16*run,H+400);ctx.closePath();ctx.fillStyle='#4a4a5c';ctx.fill();ctx.strokeStyle=OUT;ctx.lineWidth=5;ctx.stroke();
@@ -35,7 +35,7 @@ scene(710,716,(t)=>{const u=t-710;ctx.fillStyle='#1a1a24';ctx.fillRect(0,0,W,H);
   ctx.restore();
   const floor=Math.max(1,13-Math.floor(u*2.4));
   ctx.fillStyle=floor==1?'#b71c1c':'#1d6b3a';rr(60,160,220,140,12);ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=5;ctx.stroke();ctx.fillStyle='#fff';ctx.font='900 90px Inter';ctx.textAlign='center';ctx.fillText(floor==1?'T':floor+'º',170,265);ctx.textAlign='left';
-  person(hx,hy-Math.abs(Math.sin(u*14))*14,S_,{f:-1,walk:u*14,lean:-.1,look:.05,noShadow:true});
+  person(hx,hy-Math.abs(Math.sin(u*14))*14,S_,{f:-1,walk:u*14,lean:-.08,look:.12,noShadow:true});
   // linhas de velocidade
   ctx.strokeStyle='rgba(255,255,255,.12)';ctx.lineWidth=4;const r=rng(3);for(let i=0;i<14;i++){const y=(r()*H+u*900)%H;ctx.beginPath();ctx.moveTo(r()*W,y);ctx.lineTo(r()*W*.2+W*.8,y-60);ctx.stroke()}
   const g=ctx.createRadialGradient(540,800,50,540,800,1000);g.addColorStop(0,'rgba(255,90,60,.12)');g.addColorStop(1,'rgba(0,0,0,.6)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
@@ -50,7 +50,7 @@ scene(720,728,(t)=>{const u=t-720;sky('#05071a','#0f1430','#1f1d40');const r=rng
   // postes apagados
   for(let s of [-1,1])for(let i=0;i<5;i++){const k=((i/5)+u*.35)%1,kk=k*k,x=vx+s*lerp(80,900,kk),y=lerp(vy,H+300,kk),hh=lerp(60,900,kk);ctx.strokeStyle='#2a2d44';ctx.lineWidth=lerp(2,18,kk);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y-hh);ctx.lineTo(x-s*hh*.18,y-hh);ctx.stroke()}
   // carro abandonado
-  ctx.save();ctx.globalAlpha=.9;car(250,1380,'#5a2a2a',1,.8);ctx.restore();
+  {const kc=Math.min(1.2,.08+u*.16),kk=kc*kc;if(kc<1.15){ctx.save();ctx.globalAlpha=.95;car(vx-lerp(70,760,kk),lerp(vy+10,H+120,kk),'#5a2a2a',1,lerp(.12,1.6,kk));ctx.restore()}}
   // a sombra, pequena, lá na frente
   if(u<7.2){const k=seg(u,0,7.2);shadowRun(vx+20+Math.sin(u*2)*10,lerp(1300,1205,k),lerp(.62,.34,k),u*15,1-seg(u,6.5,7.2),2)}
   // ele correndo de costas, perto da câmera
