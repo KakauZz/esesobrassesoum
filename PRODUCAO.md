@@ -125,3 +125,10 @@ O Metricool grátis tem **20 posts publicados por mês**, contados por rede, e o
 1. **Instagram pelo Windsor.ai:** a ação `create_video_post` (conector `instagram`, conta 17841458074935033) com `video_url` = link raw do vídeo, `caption` = legenda e `share_to_feed: true`. Essa ação publica NA HORA, então crie uma tarefa agendada única (create_trigger com run_once_at no melhor horário do Instagram, initiation own_followup) cujo prompt seja: "chame add_repo KakauZz/esesobrassesoum se precisar e publique no Instagram pelo Windsor.ai (create_video_post) o vídeo <link> com a legenda <legenda>; depois avise o usuário em 1 linha". Se o horário já passou, publique na hora.
 2. **TikTok e YouTube:** se o Metricool não aceitar, não poste nessas redes nesse dia e avise o usuário ("Metricool sem posts no mês; postei só no Instagram pelo Windsor").
 3. **Windsor.ai:** o período de teste vai até cerca de 07/12/2026. Depois, o plano grátis aceita só 1 fonte de dados; mantenha só o **Instagram** (postagem + comentários/votos). Se o Windsor recusar, avise o usuário.
+
+## Divisão das redes (decisão do usuário, a partir de 09/11/2026)
+- **Metricool = só TikTok.** Os 20 posts grátis do mês ficam para o TikTok. Antes de agendar, leia `metricool_contagem.json`. Se o mês já tiver 20, NÃO use o Metricool. Depois de agendar, some +1 e faça commit.
+  - Para render mais, poste o TikTok de **segunda a sexta**, que são os dias de maior alcance pelos dados do Metricool. Fim de semana só se ainda sobrar cota no fim do mês.
+  - Nos dias sem TikTok, mande o vídeo para o usuário (SendUserFile) com a legenda pronta, dizendo que, se ele quiser, pode postar à mão.
+- **Instagram = Windsor.ai** (`create_video_post`), todo dia, no melhor horário, por meio de uma tarefa agendada única (ver "Plano B de postagem"). Não usa cota do Metricool.
+- **YouTube = sem postagem automática por enquanto**, até o usuário configurar a API do YouTube. Todo dia, mande o vídeo e um título pronto para ele postar à mão, se quiser.
