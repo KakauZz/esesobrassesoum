@@ -40,7 +40,7 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
 7. **Publicar o arquivo:** copie para `videos/epNN_final.mp4`, faça `git add -f videos/epNN_final.mp4`, commit e push (antes, `git pull --rebase`). Confira com `curl -I` que o link raw responde 200.
 8. **Agendar no Metricool** (brandId `7941222`, fuso `America/Sao_Paulo`). Antes, confira os horários do dia com `getBestTimeToPostByNetwork`; o padrão é este:
    - **Instagram 10h:** `instagramData {type:"REEL", isAiGenerated:true}`
-   - **TikTok 10h:** `tiktokData {isAigc:true, privacyOption:"PUBLIC_TO_EVERYONE"}`
+   - **TikTok 10h:** `tiktokData {title:"E se sobrasse só UM? EP. N — <TÍTULO>", isAigc:true, privacyOption:"PUBLIC_TO_EVERYONE"}` (o título é obrigatório)
    - **YouTube 16h:** `youtubeData {type:"short", title:"…", madeForKids:false, category:"FILM_ANIMATION", privacy:"public"}`
    - Em `media`, use o link do release. Se o horário já tiver passado, poste 30 min depois de agora.
    - Legenda no padrão da série:
