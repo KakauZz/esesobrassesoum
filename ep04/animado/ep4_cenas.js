@@ -6,6 +6,18 @@ function shadowRun(x,y,sc,ph,alpha,trail){for(let i=(trail??3);i>=0;i--){ctx.sav
 function vignette(a){const v=ctx.createRadialGradient(W/2,H*.5,300,W/2,H*.5,1100);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,`rgba(0,0,0,${a??.6})`);ctx.fillStyle=v;ctx.fillRect(0,0,W,H)}
 function tileWall(x,y,w,h,c1,c2){ctx.fillStyle=c1;ctx.fillRect(x,y,w,h);ctx.fillStyle=c2;for(let yy=y;yy<y+h;yy+=46)ctx.fillRect(x,yy,w,3);for(let xx=x;xx<x+w;xx+=92)ctx.fillRect(xx,y,3,h)}
 
+function carBack(x,y,s,col){ // carro visto de TRÁS (para cenas de câmera de frente / rua em perspectiva). (x,y) = meio do chão
+  ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.strokeStyle=OUT;ctx.lineWidth=6;
+  ctx.fillStyle='rgba(0,0,0,.35)';ctx.beginPath();ctx.ellipse(0,0,175,22,0,0,7);ctx.fill();
+  ctx.fillStyle='#15151b';rr(-150,-62,52,62,10);ctx.fill();rr(98,-62,52,62,10);ctx.fill();
+  ctx.fillStyle=col;rr(-165,-175,330,140,26);ctx.fill();ctx.stroke();
+  ctx.fillStyle=col;rr(-120,-262,240,100,30);ctx.fill();ctx.stroke();
+  ctx.fillStyle='#1e2a3a';rr(-98,-245,196,70,16);ctx.fill();ctx.fillStyle='rgba(255,255,255,.12)';ctx.fillRect(-80,-238,40,56);
+  ctx.fillStyle='#5a1414';rr(-150,-140,62,30,8);ctx.fill();ctx.stroke();rr(88,-140,62,30,8);ctx.fill();ctx.stroke();
+  ctx.fillStyle='#e8e2c8';rr(-46,-112,92,30,4);ctx.fill();ctx.stroke();
+  ctx.fillStyle='rgba(0,0,0,.25)';ctx.fillRect(-165,-70,330,14);
+  ctx.restore()}
+
 // 1. recap (700–704)
 scene(700,704,(t)=>{const u=t-700;ctx.fillStyle=lg(0,H,['#120c1e','#24163a','#0d0a16']);ctx.fillRect(0,0,W,H);
   const g=ctx.createRadialGradient(W/2,H*.42,40,W/2,H*.42,900);g.addColorStop(0,'rgba(60,200,130,.28)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
@@ -50,7 +62,7 @@ scene(720,728,(t)=>{const u=t-720;sky('#05071a','#0f1430','#1f1d40');const r=rng
   // postes apagados
   for(let s of [-1,1])for(let i=0;i<5;i++){const k=((i/5)+u*.35)%1,kk=k*k,x=vx+s*lerp(80,900,kk),y=lerp(vy,H+300,kk),hh=lerp(60,900,kk);ctx.strokeStyle='#2a2d44';ctx.lineWidth=lerp(2,18,kk);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y-hh);ctx.lineTo(x-s*hh*.18,y-hh);ctx.stroke()}
   // carro abandonado
-  {const kc=Math.min(1.2,.08+u*.16),kk=kc*kc;if(kc<1.15){ctx.save();ctx.globalAlpha=.95;car(vx-lerp(70,760,kk),lerp(vy+10,H+120,kk),'#5a2a2a',1,lerp(.12,1.6,kk));ctx.restore()}}
+  {const kc=Math.min(1.2,.08+u*.16),kk=kc*kc;if(kc<1.15){ctx.save();ctx.globalAlpha=.95;carBack(vx-lerp(70,700,kk),lerp(vy+10,H+60,kk),lerp(.08,1.25,kk),'#7a2e2e');ctx.restore()}}
   // a sombra, pequena, lá na frente
   if(u<7.2){const k=seg(u,0,7.2);shadowRun(vx+20+Math.sin(u*2)*10,lerp(1300,1205,k),lerp(.62,.34,k),u*15,1-seg(u,6.5,7.2),2)}
   // ele correndo de costas, perto da câmera
