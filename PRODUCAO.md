@@ -15,6 +15,15 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
 - Para chegar a mais de 1min30, aprofunde a trama (mais passos até a revelação, mais reações, consequências), não acrescente objetos soltos.
 - Todo personagem é **pessoa comum**: a "sombra" é só alguém se escondendo. O tom é mistério e aventura, para todas as idades.
 
+## Detalhes de ambiente (pedido do usuário): deixam o clima mais bonito
+Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **atmosfera**, não objetos da trama. Eles não são falados na narração, só aparecem.
+- **Exemplos bons (fofos e leves, nunca feios ou assustadores):** um gato fofinho atravessando a rua ou dormindo num muro, pombos levantando voo, folhas voando com o vento, uma chuva fina começando, gotas escorrendo no vidro, poça refletindo a luz, neblina leve, vagalumes, estrelas cadentes, luz de poste piscando de leve, cortina mexendo com o vento, vapor saindo de um bueiro, um balão solto subindo.
+- **Quando usar:** só em momentos que combinam. Chuva começando quando a tensão sobe; folhas voando quando ele corre ou abre uma porta para a rua; um gato num momento calmo, antes de uma revelação; estrelas no fim do episódio. **De 1 a 3 por episódio, no máximo**, nunca em toda cena.
+- **Sem roubar a atenção:** o detalhe fica no fundo ou de passagem, nunca na frente da pista principal, da legenda ou do rosto dele.
+- **Coerência (as mesmas regras de direção):** o gato anda na direção para onde olha, a chuva cai na perspectiva da cena e as folhas seguem o vento. **Se começou a chover, continua chovendo** nas cenas seguintes ao ar livre do mesmo momento (ou para de forma visível), e o chão fica molhado.
+- O gato pode virar um **mascote recorrente** (o mesmo gato: laranja e branco, com uma coleira azul), aparecendo de vez em quando. Ele nunca se machuca, nunca some de forma triste e nunca dá susto.
+- Nada de bichos feios, insetos nojentos, ratos ou baratas, e nada que dê medo.
+
 ## Bíblia da história (o rumo da série; os votos mudam o caminho, não o destino)
 - **Quem mais sobrou:** Matheus não está sozinho.
   - **A sombra** é uma **criança** (pegadas pequenas) que se esconde de medo.
