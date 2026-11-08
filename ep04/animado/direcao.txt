@@ -10,7 +10,7 @@
 10. curioso, rápido
 11. intrigado
 12. suspense, quase sussurro
-13. voz de rádio chiando, misteriosa, devagar
+13. voz de rádio chiando, misteriosa, devagar, como um conselho
 14. seco, curto
 15. suspense
 16. sombrio
@@ -30,7 +30,7 @@
 30. surpreso, acelerando
 31. ênfase forte em NA FRENTE, arrepiado
 32. sussurro assustado, pausa antes de 'quem'
-33. sussurro, com medo
+33. arrepiado, ligando os pontos, com medo
 34. tenso, rápido
 35. [carta] lendo a mensagem, misterioso
 36. muito tenso, lento

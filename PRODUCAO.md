@@ -11,6 +11,8 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
 - **Nada de morte** nem nada perto disso: ninguém morre, se machuca de verdade, desmaia, sangra, some para sempre, e não aparecem corpos, armas ou ameaças de morte.
 - **Nada de terror:** sem monstros, criaturas, fantasmas, gore, gritos de dor ou imagens assustadoras.
 - **Suspense pode:** algo passando atrás dele, uma sombra no fundo, luzes piscando, porta rangendo, uma mensagem misteriosa, passos no corredor. É o "frio na barriga", não o susto.
+- **Tudo tem que servir (regra do usuário):** cada objeto, pista ou cena nova precisa ter **função na história**: levar à escolha do final, revelar algo, ou ser retomado em um próximo episódio (anote no fim do PRODUCAO.md, em "Pistas em aberto"). Nada de enfeite só para ganhar tempo. Exemplo do que NÃO fazer: um rádio que fala uma frase solta e some. Exemplo do que fazer: o rádio diz "segue a luz", o celular diz "entra no vagão", e a escolha A/B é em quem confiar.
+- Para chegar a mais de 1min30, aprofunde a trama (mais passos até a revelação, mais reações, consequências), não acrescente objetos soltos.
 - Todo personagem é **pessoa comum**: a "sombra" é só alguém se escondendo. O tom é mistério e aventura, para todas as idades.
 
 ## Bíblia da história (o rumo da série; os votos mudam o caminho, não o destino)
@@ -81,3 +83,10 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
      ```
    - Título do YouTube: `E se sobrasse só UM? EP. N — <TÍTULO> #shorts`
 9. **Avisar o usuário** (SendUserMessage + notificação): o placar de cada rede e quem venceu, o resumo do episódio novo, os links do vídeo e dos posts agendados no Metricool, e qualquer problema que tenha aparecido.
+
+
+## Pistas em aberto (retomar nos próximos episódios)
+- EP. 4 (O METRÔ): o **rádio** (canal 13) com a voz que mandou "seguir a luz". De quem é a voz? (o fotógrafo)
+- EP. 4: o **celular** desconhecido que mandou "entrar no vagão". Quem mandou? (a criança, que quer ajuda, mas está com medo)
+- EP. 4: as **pegadas pequenas** e a catraca girando (a criança)
+- EP. 4: o mapa "VOCÊ ESTÁ AQUI · dia 48" e a foto de Matheus correndo (o fotógrafo)
