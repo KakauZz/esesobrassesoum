@@ -119,3 +119,9 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 ## Limpeza (para o repositório não estourar)
 - Depois de agendar o episódio do dia, apague de `videos/` todos os .mp4 com mais de 3 episódios (`git rm`). O Metricool já guarda a cópia dele, e os arquivos *_teste.mp4 que não foram usados podem sair também. Deixe sempre o `epNN_final.mp4` dos últimos 3 episódios.
 - Não versione arquivos grandes de trabalho (cache/, saida/*.mp4).
+
+## Plano B de postagem (quando o Metricool acabar)
+O Metricool grátis tem **20 posts publicados por mês**, contados por rede, e o contador volta a zerar todo dia 1º. Se o `createScheduledPost` der erro de limite de posts:
+1. **Instagram pelo Windsor.ai:** a ação `create_video_post` (conector `instagram`, conta 17841458074935033) com `video_url` = link raw do vídeo, `caption` = legenda e `share_to_feed: true`. Essa ação publica NA HORA, então crie uma tarefa agendada única (create_trigger com run_once_at no melhor horário do Instagram, initiation own_followup) cujo prompt seja: "chame add_repo KakauZz/esesobrassesoum se precisar e publique no Instagram pelo Windsor.ai (create_video_post) o vídeo <link> com a legenda <legenda>; depois avise o usuário em 1 linha". Se o horário já passou, publique na hora.
+2. **TikTok e YouTube:** se o Metricool não aceitar, não poste nessas redes nesse dia e avise o usuário ("Metricool sem posts no mês; postei só no Instagram pelo Windsor").
+3. **Windsor.ai:** o período de teste vai até cerca de 07/12/2026. Depois, o plano grátis aceita só 1 fonte de dados; mantenha só o **Instagram** (postagem + comentários/votos). Se o Windsor recusar, avise o usuário.
