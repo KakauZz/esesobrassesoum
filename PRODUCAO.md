@@ -115,3 +115,7 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 
 ## Aprendizados
 - 08/11: horários iniciais Instagram 10h, TikTok 10h e YouTube 16h (dados do Metricool). EP. 4-A ficou com a voz rápida demais; o EP. 4-B (2min14) ficou melhor no ritmo.
+
+## Limpeza (para o repositório não estourar)
+- Depois de agendar o episódio do dia, apague de `videos/` todos os .mp4 com mais de 3 episódios (`git rm`). O Metricool já guarda a cópia dele, e os arquivos *_teste.mp4 que não foram usados podem sair também. Deixe sempre o `epNN_final.mp4` dos últimos 3 episódios.
+- Não versione arquivos grandes de trabalho (cache/, saida/*.mp4).
