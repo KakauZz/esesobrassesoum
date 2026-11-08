@@ -46,11 +46,17 @@ def main(pasta):
     else:
         T = [(a / 1.05, b / 1.05) for a, b in json.load(open(os.path.join(out, "ts_raw.json")))]
     feitos = []
+    rms = lambda v: float(np.sqrt(np.mean(v ** 2)) + 1e-9)
+    marc = [any(t in l for t in EF) for l in D[:len(T)]] + [False] * max(0, len(T) - len(D))
+    normais = [rms(x[int(a_ * sr):int(b_ * sr)]) for (a_, b_), m in zip(T, marc) if not m and b_ > a_]
+    alvo = float(np.median(normais)) * 10 ** (-3 / 20) if normais else None   # efeitos ficam ~3 dB abaixo do narrador
     for i, linha in enumerate(D[:len(T)]):
         for tag, fn in EF.items():
             if tag in linha:
                 a = max(0, int((T[i][0] - .03) * sr)); b = min(len(x), int((T[i][1] + (.45 if fn is carta else .08)) * sr))
-                seg = x[a:b]; z = fn(seg, sr, rng)
+                seg = x[a:b].copy()
+                if alvo: seg = seg * min(4.0, alvo / rms(x[int(T[i][0] * sr):int(T[i][1] * sr)]))   # nivela com o narrador
+                z = fn(seg, sr, rng)
                 f = min(len(z), int(.015 * sr)); ramp = np.linspace(0, 1, f)
                 z[:f] = z[:f] * ramp + seg[:f] * (1 - ramp); z[-f:] = z[-f:] * ramp[::-1] + seg[-f:] * (1 - ramp[::-1])
                 y[a:b] = z; feitos.append(f"{i+1}{tag}"); break
