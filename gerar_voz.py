@@ -78,16 +78,27 @@ def main(pasta):
              "generationConfig": {"responseMimeType": "application/json"}}
     for f in ("ts_raw.json", "roger_ts.json", "el_meta.json"):
         if os.path.exists(os.path.join(out, f)): os.remove(os.path.join(out, f))
-    try:
-        r = com_rodizio(lambda k: chamar(MODELO_TEMPOS, body2, k), "tempos")
-        ts = json.loads(r["candidates"][0]["content"]["parts"][0]["text"])
-        if len(ts) == len(F) and all(len(x) == 2 for x in ts):
-            json.dump([[round(float(a), 2), round(float(b), 2)] for a, b in ts], open(os.path.join(out, "ts_raw.json"), "w"))
-            print("tempos ok")
-        else:
-            print("aviso: transcrição com número errado de falas; o plano.py usa só as pausas do áudio"); ts = None
-    except SystemExit as e:
-        print("aviso: sem tempos transcritos (", e, "); o plano.py usa só as pausas do áudio"); ts = None
+    dur_raw = len(pcm) / 2 / 24000
+    def valido(ts):
+        if len(ts) != len(F) or not all(len(x) == 2 for x in ts): return False
+        st = [float(a) for a, b in ts]
+        if st[0] > 2 or st[-1] > dur_raw - .5: return False                     # fora do áudio
+        if any(b2 <= a2 for a2, b2 in zip(st, st[1:])): return False             # fora de ordem
+        media = dur_raw / len(F)
+        return all(b2 - a2 < max(6, media * 3) for a2, b2 in zip(st, st[1:]))   # saltos absurdos
+    ts = None
+    for tentativa in range(2):
+        try:
+            r = com_rodizio(lambda k: chamar(MODELO_TEMPOS, body2, k), "tempos")
+            cand = json.loads(r["candidates"][0]["content"]["parts"][0]["text"])
+            if valido(cand): ts = cand; break
+            print(f"aviso: transcrição inválida (tentativa {tentativa+1})")
+        except SystemExit as e:
+            print("aviso: sem tempos transcritos (", e, ")"); break
+    if ts:
+        json.dump([[round(float(a), 2), round(float(b), 2)] for a, b in ts], open(os.path.join(out, "ts_raw.json"), "w")); print("tempos ok")
+    else:
+        print("aviso: sem tempos confiáveis; o plano.py usa só as pausas reais do áudio")
 
     # 3) eco só nas falas marcadas [carta] (no áudio original)
     x = np.frombuffer(pcm, dtype=np.int16).astype(np.float32)

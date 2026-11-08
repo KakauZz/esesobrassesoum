@@ -1392,7 +1392,7 @@ scene(740,746,(t)=>{const u=t-740;ctx.fillStyle='#0b0c12';ctx.fillRect(0,0,W,H);
   // plataforma
   ctx.fillStyle='#3a3b44';ctx.fillRect(0,1320,W,600);ctx.fillStyle='#e8c84a';ctx.fillRect(0,1320,W,22);
   ctx.fillStyle='rgba(255,220,150,.12)';ctx.beginPath();ctx.moveTo(220+pan*.0,1342);ctx.lineTo(520,1342);ctx.lineTo(760,H);ctx.lineTo(80,H);ctx.closePath();ctx.fill();
-  personFront(220,1840,1.15,{back:true});
+  {const k2=easeOut(seg(u,4,5.9)),bob=Math.abs(Math.sin(u*9))*10*(u>4&&u<5.9?1:0);personFront(lerp(220,330,k2),lerp(1840,1600,k2)-bob,lerp(1.15,.85,k2),{back:true})}
   vignette(.6);
 });
 
@@ -1409,7 +1409,7 @@ scene(750,756,(t)=>{const u=t-750;ctx.fillStyle='#2e2f36';ctx.fillRect(0,0,W,H);
 // 7. o rosto — "quem tirou essa foto?" (760–764)
 scene(760,764,(t)=>{const u=t-760;ctx.fillStyle='#120e10';ctx.fillRect(0,0,W,H);
   const g=ctx.createRadialGradient(W/2,H*.5,100,W/2,H*.5,1000);g.addColorStop(0,'rgba(255,210,140,.28)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-  face(W/2,H*.52,1.2+u*.05,{open:1.2,eye:1.3,brow:-.8,mouthO:u>2?.6:.25,pupil:.6,px:u>2?18:-8});
+  face(W/2,H*.52,1.2+u*.05,{open:1.2,eye:1.3,brow:-.8,mouthO:u>2?.6:.25,pupil:.6,px:u>3?Math.sin((u-3)*7)*30:(u>2?18:-8)});
   if(u>2){ctx.fillStyle=`rgba(200,20,20,${.1*(.5+.5*Math.sin(u*10))})`;ctx.fillRect(0,0,W,H)}
 });
 
@@ -1463,7 +1463,7 @@ scene(705,709.5,(t)=>{const u=t-705;ctx.fillStyle='#0b0d18';ctx.fillRect(0,0,W,H
   ctx.fillStyle='#22243a';ctx.fillRect(0,1560,W,360);ctx.fillStyle='rgba(255,255,255,.05)';for(let x=0;x<W;x+=180)ctx.fillRect(x,1560,4,360);
   // ele: dentro (atrás do vidro) até ~1.3s, depois atravessa a porta e vem pra calçada, crescendo em direção à câmera
   const k=easeOut(seg(u,.2,4.2)),py=lerp(1555,1900,k),ps=lerp(.8,1.55,k),fora=u>1.3;
-  const door=()=>{const op=easeOut(seg(u,.9,1.5))*(1-seg(u,2.4,4.4)),sw=op*1.25+Math.sin(u*6)*Math.exp(-Math.max(0,u-2.4)*.8)*.18*(u>2.4?1:0);
+  const door=()=>{const op=easeOut(seg(u,.9,1.5))*(1-seg(u,2.2,2.6)),sw=op*1.25+(u>2.2?Math.sin((u-2.2)*5.5)*Math.exp(-(u-2.2)*.45)*1.0:0);
     const dw=Math.max(30,600*Math.cos(Math.min(1.45,Math.abs(sw))));
     ctx.fillStyle='rgba(170,210,255,.16)';ctx.strokeStyle='#9aa3b8';ctx.lineWidth=12;ctx.fillRect(240,520,dw,1040);ctx.strokeRect(240,520,dw,1040);
     ctx.fillStyle='rgba(255,255,255,.18)';ctx.beginPath();ctx.moveTo(260,560);ctx.lineTo(260+dw*.25,560);ctx.lineTo(260,900);ctx.fill();
