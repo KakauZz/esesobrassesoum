@@ -22,16 +22,19 @@
 22. decidido, tenso
 23. sussurro, com medo
 24. tenso, crescendo
-25. curioso
-26. arrepiado, ênfase em 'você está aqui'
-27. impacto
-28. curioso, baixo
-29. surpreso, acelerando
-30. ênfase forte em NA FRENTE, arrepiado
-31. sussurro assustado, pausa antes de 'quem'
-32. tenso, rápido
-33. [carta] lendo a mensagem, misterioso
-34. muito tenso, lento
-35. sussurro
-36. dramático, a pergunta da escolha
-37. animado e convidativo, chamando o público
+25. tenso, baixo
+26. curioso
+27. arrepiado, ênfase em 'você está aqui'
+28. impacto
+29. curioso, baixo
+30. surpreso, acelerando
+31. ênfase forte em NA FRENTE, arrepiado
+32. sussurro assustado, pausa antes de 'quem'
+33. sussurro, com medo
+34. tenso, rápido
+35. [carta] lendo a mensagem, misterioso
+36. muito tenso, lento
+37. suspense, devagar
+38. sussurro
+39. dramático, a pergunta da escolha
+40. animado e convidativo, chamando o público
