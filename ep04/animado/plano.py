@@ -3,7 +3,7 @@
 import json, os, re, subprocess
 HERE=os.path.dirname(os.path.abspath(__file__)); O=os.path.join(HERE,"saida")
 VOZ=os.path.join(O,"voz_full.wav")
-FALAS=['Vocês escolheram: A. Ele correu atrás da sombra.', 'Treze andares de escada. Ele desce pulando os degraus.', 'Lá embaixo, a porta da rua ainda tá balançando.', 'Na avenida vazia... a sombra. Correndo.', 'Ele grita. Ela não olha pra trás.', 'A sombra desce a escada do metrô.', 'Um metrô que não funciona há quarenta e oito dias.', 'Na plataforma... um trem parado.', 'Só um vagão tá aceso. E as portas... se abrem.', 'No chão, uma foto.', 'É ele. Correndo na avenida. Dois minutos atrás.', 'Mas a sombra tava NA FRENTE dele.', 'Então... quem tirou essa foto?', 'Do fundo do túnel, uma lanterna pisca. Duas vezes.', 'E agora, Matheus? Entra no vagão aceso... ou segue a luz no túnel?', 'Comenta A ou B! A mais votada vira o episódio 5.']
+FALAS=['Vocês escolheram: A. Ele correu atrás da sombra.', 'Treze andares de escada. Ele desce pulando os degraus.', 'Lá embaixo, a rua tá deserta.', 'Na avenida vazia... a sombra. Correndo.', 'Ele grita. Ela não olha pra trás.', 'A sombra desce a escada do metrô.', 'Um metrô que não funciona há quarenta e oito dias.', 'Na plataforma... um trem parado.', 'Só um vagão tá aceso. E as portas... se abrem.', 'No chão, uma foto.', 'É ele. Correndo na avenida. Dois minutos atrás.', 'Mas a sombra tava NA FRENTE dele.', 'Então... quem tirou essa foto?', 'Do fundo do túnel, uma lanterna pisca. Duas vezes.', 'E agora, Matheus? Entra no vagão aceso... ou segue a luz no túnel?', 'Comenta A ou B! A mais votada vira o episódio 5.']
 # tomadas por fala: (inicio_anim, fim_anim, fração da fala, HUD)
 SHOTS=[[(700,704,1,"")],
        [(710,716,1,"DIA 48 · 20:59")],

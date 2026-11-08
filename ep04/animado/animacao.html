@@ -1306,10 +1306,10 @@ scene(700,704,(t)=>{const u=t-700;ctx.fillStyle=lg(0,H,['#120c1e','#24163a','#0d
 
 // 2. descendo a escada correndo — 13 → 1 (710–716)
 scene(710,716,(t)=>{const u=t-710;ctx.fillStyle='#1a1a24';ctx.fillRect(0,0,W,H);
-  const S_=1.05,hx=600,hy=1100,foot=hy+87*S_,run=70,rise=48,o=(u*260)%run;
+  const S_=1.05,hx=540,hy=1100,foot=hy+87*S_,run=70,rise=48,o=(u*260)%run;
   ctx.fillStyle='#22222e';ctx.fillRect(0,0,W,H);
   // degraus descendo para a esquerda (a superfície sobe e passa por baixo dele)
-  ctx.save();ctx.translate(o,-o*rise/run);
+  ctx.save();ctx.translate(2*hx,0);ctx.scale(-1,1);ctx.translate(o,-o*rise/run);
   ctx.beginPath();ctx.moveTo(hx+run*12,H+400);ctx.lineTo(hx+run*12,foot-rise*12);
   for(let i=12;i>-16;i--){const x=hx+i*run,y=foot-i*rise;ctx.lineTo(x+run/2,y);ctx.lineTo(x-run/2,y);ctx.lineTo(x-run/2,y+rise)}
   ctx.lineTo(hx-16*run,H+400);ctx.closePath();ctx.fillStyle='#4a4a5c';ctx.fill();ctx.strokeStyle=OUT;ctx.lineWidth=5;ctx.stroke();
@@ -1319,7 +1319,7 @@ scene(710,716,(t)=>{const u=t-710;ctx.fillStyle='#1a1a24';ctx.fillRect(0,0,W,H);
   ctx.restore();
   const floor=Math.max(1,13-Math.floor(u*2.4));
   ctx.fillStyle=floor==1?'#b71c1c':'#1d6b3a';rr(60,160,220,140,12);ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=5;ctx.stroke();ctx.fillStyle='#fff';ctx.font='900 90px Inter';ctx.textAlign='center';ctx.fillText(floor==1?'T':floor+'º',170,265);ctx.textAlign='left';
-  person(hx,hy-Math.abs(Math.sin(u*14))*14,S_,{f:-1,walk:u*14,lean:-.08,look:.12,noShadow:true});
+  person(hx,hy-Math.abs(Math.sin(u*14))*14,S_,{f:1,walk:u*14,lean:-.1,look:.18,noShadow:true});
   // linhas de velocidade
   ctx.strokeStyle='rgba(255,255,255,.12)';ctx.lineWidth=4;const r=rng(3);for(let i=0;i<14;i++){const y=(r()*H+u*900)%H;ctx.beginPath();ctx.moveTo(r()*W,y);ctx.lineTo(r()*W*.2+W*.8,y-60);ctx.stroke()}
   const g=ctx.createRadialGradient(540,800,50,540,800,1000);g.addColorStop(0,'rgba(255,90,60,.12)');g.addColorStop(1,'rgba(0,0,0,.6)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);

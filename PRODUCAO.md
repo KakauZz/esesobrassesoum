@@ -18,9 +18,9 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
 4. **Escrever o episódio** (é a parte criativa; siga o `epN-1_cenas.js` como modelo):
    - `epN_cenas.js`: de 10 a 14 cenas, criadas com `scene(a,b,(t)=>{...})` dentro da faixa do episódio. Reaproveite as funções que já existem (personagem, `miniScene`, `lg`, `rr`, `rng`, `seg`, `easeOut`...).
    - Abertura com o recap: "NO EPISÓDIO N-1, VOCÊS ESCOLHERAM" + a opção que venceu, com o confete.
-   - História de 60 a 75 segundos que continua da escolha vencedora e termina num gancho.
+   - **Duração: por volta de 1min30 (entre 80 e 100 s).** São de 20 a 26 falas e de 16 a 20 cenas. A história continua da escolha vencedora e termina num gancho.
    - No fim, a escolha nova com **A em verde e B** (o mesmo visual do EP. 3), depois o cartão "E SE SOBRASSE SÓ UM?", "EP. N+1 · EM BREVE" e "Segue pra não perder 👆".
-   - `plano.py`: `FALAS` com 15 a 20 frases curtas. A primeira é "Vocês escolheram: X. ..." e as duas últimas são a pergunta A/B e "Comenta A ou B! A mais votada vira o episódio N+1.". `SHOTS` tem uma lista por fala, como no EP. 3, com o HUD "DIA 48 · HH:MM" avançando no tempo da história.
+   - `plano.py`: `FALAS` com 20 a 26 frases curtas. A primeira é "Vocês escolheram: X. ..." e as duas últimas são a pergunta A/B e "Comenta A ou B! A mais votada vira o episódio N+1.". `SHOTS` tem uma lista por fala, como no EP. 3, com o HUD "DIA 48 · HH:MM" avançando no tempo da história.
    - `direcao.txt`: uma linha por fala com a emoção da voz.
    - **Continuidade:** Matheus, 24 anos, sozinho em São Paulo desde o "dia 1". Mantenha os fatos já mostrados: a carta da praça, a janela acesa, as fotos dele, a câmera e a sombra.
 5. **Montar:**
@@ -42,8 +42,11 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
    - **Movimento coerente:** se o personagem corre (faixas da rua e postes passando), tudo o que está no chão (carros, postes, placas) também tem que passar na perspectiva. Nada fica parado enquanto o cenário anda.
    - **Continuidade:** a mesma roupa, o horário do HUD sempre avançando e os fatos dos episódios anteriores mantidos.
    - Renderize 3 quadros seguidos (0,1 s de intervalo) de cada cena com personagem andando ou correndo e confirme o sentido do movimento.
+   - **Fala x imagem:** cada fala tem que descrever exatamente o que aparece na tela naquele momento. Se a fala cita uma porta, a porta precisa aparecer. Se não aparecer, mude a fala ou a cena.
+   - **Erros que já aconteceram e NÃO podem se repetir:** personagem subindo quando a fala diz que desce; carro parado enquanto ele corre na avenida; voz diferente da Roger; fala sobre algo que não está na tela.
+   - **O usuário NÃO revisa os vídeos.** A revisão é toda sua: seja rigoroso.
    - Se encontrar qualquer erro: corrija, renderize de novo e revise de novo. Na dúvida, NÃO poste e avise o usuário.
-   **Conferir também:** tire 6 quadros (`ffmpeg -ss T -frames:v 1`) espalhados pelo vídeo e olhe cada um. Nada pode estar quebrado, em branco, com texto vazando ou com o personagem deformado. A duração tem que ficar entre 45 e 90 s. A voz tem que bater com a legenda (compare `plano.json` → `falas` com a duração da voz).
+   **Conferir também:** tire 6 quadros (`ffmpeg -ss T -frames:v 1`) espalhados pelo vídeo e olhe cada um. Nada pode estar quebrado, em branco, com texto vazando ou com o personagem deformado. A duração tem que ficar entre 80 e 100 s. A voz tem que bater com a legenda (compare `plano.json` → `falas` com a duração da voz).
    Se algo falhar e não der para corrigir em 2 tentativas: **não poste**. Avise o usuário com o motivo.
 7. **Publicar o arquivo:** copie para `videos/epNN_final.mp4`, faça `git add -f videos/epNN_final.mp4`, commit e push (antes, `git pull --rebase`). Confira com `curl -I` que o link raw responde 200.
 8. **Agendar no Metricool** (brandId `7941222`, fuso `America/Sao_Paulo`). Antes, confira os horários do dia com `getBestTimeToPostByNetwork`; o padrão é este:
