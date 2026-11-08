@@ -120,6 +120,9 @@ for i,f in enumerate(FALAS):
         d=(s1-s0)*fr; shots.append({"a":a,"b":b,"start":round(t,3),"dur":round(d,3),"hud":h,"glitch":(i<=1),"cont":cont}); t+=d
 # cartão final de 2.8s depois da última fala
 shots[-1]["dur"]=round(total-shots[-1]["start"],3)
+# legendas nunca se sobrepõem: cada uma termina antes da próxima começar
+for _i in range(len(caps)-1):
+    caps[_i]["end"]=round(min(caps[_i]["end"],caps[_i+1]["start"]-0.04),3)
 shots.append({"a":790,"b":793.2,"start":round(total,3),"dur":2.8,"hud":""}); total=total+2.8
 plano={"total":round(total,3),"voz":dur,"falas":[{"i":i,"start":starts[i],"end":ends[i]} for i in range(len(FALAS))],"shots":shots,"caps":caps}
 json.dump(plano,open(os.path.join(O,"plano.json"),"w"),ensure_ascii=False,indent=1)

@@ -76,8 +76,10 @@ YEL, RED, GOLD, REDDOT = "&H4AD8FF&", "&H4A4AFF&", "&H5CC7F2&", "&H303BFF&"
 def legenda_ass(PL, path):
     ev = []
     # legenda palavra por palavra
-    for c in PL["caps"]:
+    CAPS = PL["caps"]
+    for ci, c in enumerate(CAPS):
         ws = c["words"]; n = len(ws)
+        lim = CAPS[ci + 1]["start"] - 0.02 if ci + 1 < len(CAPS) else 1e9  # nunca invade a próxima legenda
         if c.get("wts"): st = c["wts"]
         else:
             wt = [len(w) + 2 for w in ws]; tot = sum(wt); acc = 0; st = []
@@ -91,7 +93,7 @@ def legenda_ass(PL, path):
             if big: chunks.append(ch); ch = []
         if ch: chunks.append(ch)
         for i in range(n):
-            t0 = st[i]; t1 = st[i + 1] if i + 1 < n else c["end"] + 0.25
+            t0 = st[i]; t1 = st[i + 1] if i + 1 < n else min(c["end"] + 0.25, lim)
             bk = next(b for b in chunks if i in b)
             lines = []; ln = []
             for j in bk:

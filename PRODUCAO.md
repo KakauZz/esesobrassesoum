@@ -64,7 +64,9 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
    - **Continuidade:** a mesma roupa, o horário do HUD sempre avançando e os fatos dos episódios anteriores mantidos.
    - Renderize 3 quadros seguidos (0,1 s de intervalo) de cada cena com personagem andando ou correndo e confirme o sentido do movimento.
    - **Fala x imagem:** cada fala tem que descrever exatamente o que aparece na tela naquele momento. Se a fala cita uma porta, a porta precisa aparecer. Se não aparecer, mude a fala ou a cena.
-   - **Erros que já aconteceram e NÃO podem se repetir:** personagem subindo quando a fala diz que desce; carro parado enquanto ele corre na avenida; voz diferente da Sadachbia; fala sobre algo que não está na tela.
+   - **Legendas:** nenhuma legenda pode aparecer por cima de outra. Confira com:
+     `python3 -c "import re;t=lambda x:sum(float(a)*b for a,b in zip(x.split(':'),(3600,60,1)));e=sorted((t(p[1]),t(p[2])) for p in (l.split(',',9) for l in open('saida/legenda.ass',encoding='utf-8') if l.startswith('Dialogue')) if p[3]=='Cap');print('sobrepostas:',sum(b[0]<a[1]-.005 for a,b in zip(e,e[1:])))"` → tem que dar 0.
+   - **Erros que já aconteceram e NÃO podem se repetir:** personagem subindo quando a fala diz que desce; carro parado enquanto ele corre na avenida; voz diferente da Sadachbia; fala sobre algo que não está na tela; legendas sobrepostas; objeto que aparece e não serve para nada (o rádio do 1º rascunho do EP. 4).
    - **O usuário NÃO revisa os vídeos.** A revisão é toda sua: seja rigoroso.
    - Se encontrar qualquer erro: corrija, renderize de novo e revise de novo. Na dúvida, NÃO poste e avise o usuário.
    **Conferir também:** tire 6 quadros (`ffmpeg -ss T -frames:v 1`) espalhados pelo vídeo e olhe cada um. Nada pode estar quebrado, em branco, com texto vazando ou com o personagem deformado. **A duração do vídeo final tem que ser MAIOR que 92 s (meta de 95 a 110 s).** Se der menos, acrescente falas e cenas e gere a voz de novo. NUNCA poste com 90 s ou menos. A voz tem que bater com a legenda (compare `plano.json` → `falas` com a duração da voz).
