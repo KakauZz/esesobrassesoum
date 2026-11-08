@@ -21,14 +21,15 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
    - **Duração: por volta de 1min30 (entre 80 e 100 s).** São de 20 a 26 falas e de 16 a 20 cenas. A história continua da escolha vencedora e termina num gancho.
    - No fim, a escolha nova com **A em verde e B** (o mesmo visual do EP. 3), depois o cartão "E SE SOBRASSE SÓ UM?", "EP. N+1 · EM BREVE" e "Segue pra não perder 👆".
    - `plano.py`: `FALAS` com 20 a 26 frases curtas. A primeira é "Vocês escolheram: X. ..." e as duas últimas são a pergunta A/B e "Comenta A ou B! A mais votada vira o episódio N+1.". `SHOTS` tem uma lista por fala, como no EP. 3, com o HUD "DIA 48 · HH:MM" avançando no tempo da história.
-   - `direcao.txt`: uma linha por fala com a emoção da voz.
+   - `direcao.txt`: uma linha por fala com a emoção da voz. Marque `[carta]` na linha de qualquer fala que seja leitura de carta ou bilhete (ganha eco).
    - **Continuidade:** Matheus, 24 anos, sozinho em São Paulo desde o "dia 1". Mantenha os fatos já mostrados: a carta da praça, a janela acesa, as fotos dele, a câmera e a sombra.
 5. **Montar:**
    ```
    python novo_ep.py html N
    git add -A && git commit -m "epNN: roteiro" && git push
-   # voz: SEMPRE ElevenLabs, voz Roger (a voz da série). É gerada pelo GitHub Actions (workflow gerar-voz, secret ELEVENLABS_API_KEY).
-   # NUNCA use outra voz (Gemini etc.) como plano B: se a ElevenLabs falhar, NÃO poste e avise o usuário.
+   # voz: SEMPRE Gemini, voz SADACHBIA, gemini-2.5-flash-preview-tts, 1.05x, realce de agudos, eco só em carta ([carta] no direcao.txt).
+   # Tempos: gemini-3.5-flash (ts_raw.json). Gerada pelo GitHub Actions (workflow gerar-voz, secret GEMINI_KEYS; ~10 gerações/dia por chave).
+   # NUNCA troque de voz: se falhar, NÃO poste e avise o usuário.
    gh api -X POST repos/KakauZz/esesobrassesoum/actions/workflows/voz.yml/dispatches -f ref=main -f 'inputs[pasta]=epNN/animado'
    # espere o run terminar (gh api repos/KakauZz/esesobrassesoum/actions/runs --jq '.workflow_runs[0]|.status,.conclusion'),
    # depois: git pull  → epNN/animado/saida/voz_full.wav. Se o run falhar, veja o log em
@@ -39,11 +40,12 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
 6. **Revisão obrigatória (o usuário exige ZERO erros):**
    - Monte uma folha de contato com 1 quadro a cada 1,5 s do vídeo final e olhe TODOS, comparando cada quadro com a fala que está tocando.
    - **Direção:** quem anda olha para o lado para onde vai. Descer escada = olhar e andar para o lado em que os degraus descem (`person`: `f:1` olha para a direita, `f:-1` para a esquerda). O chão e os degraus se movem no sentido oposto ao do personagem.
+   - **Direção de veículos e cenário (regra do usuário):** a orientação de tudo segue a da rua e a da câmera. Se a cena é de frente (ele andando para o fundo, rua em perspectiva), os carros aparecem **de frente ou de traseira**, em perspectiva, nunca de lado. Se a cena é de lado (ele andando da esquerda para a direita), a rua é horizontal e os carros aparecem **de lado**. Postes, faixas, calçadas e sombras seguem o mesmo ponto de fuga. Antes de desenhar cada cena, decida onde fica a rua e a câmera, e desenhe tudo coerente com isso.
    - **Movimento coerente:** se o personagem corre (faixas da rua e postes passando), tudo o que está no chão (carros, postes, placas) também tem que passar na perspectiva. Nada fica parado enquanto o cenário anda.
    - **Continuidade:** a mesma roupa, o horário do HUD sempre avançando e os fatos dos episódios anteriores mantidos.
    - Renderize 3 quadros seguidos (0,1 s de intervalo) de cada cena com personagem andando ou correndo e confirme o sentido do movimento.
    - **Fala x imagem:** cada fala tem que descrever exatamente o que aparece na tela naquele momento. Se a fala cita uma porta, a porta precisa aparecer. Se não aparecer, mude a fala ou a cena.
-   - **Erros que já aconteceram e NÃO podem se repetir:** personagem subindo quando a fala diz que desce; carro parado enquanto ele corre na avenida; voz diferente da Roger; fala sobre algo que não está na tela.
+   - **Erros que já aconteceram e NÃO podem se repetir:** personagem subindo quando a fala diz que desce; carro parado enquanto ele corre na avenida; voz diferente da Sadachbia; fala sobre algo que não está na tela.
    - **O usuário NÃO revisa os vídeos.** A revisão é toda sua: seja rigoroso.
    - Se encontrar qualquer erro: corrija, renderize de novo e revise de novo. Na dúvida, NÃO poste e avise o usuário.
    **Conferir também:** tire 6 quadros (`ffmpeg -ss T -frames:v 1`) espalhados pelo vídeo e olhe cada um. Nada pode estar quebrado, em branco, com texto vazando ou com o personagem deformado. A duração tem que ficar entre 80 e 100 s. A voz tem que bater com a legenda (compare `plano.json` → `falas` com a duração da voz).

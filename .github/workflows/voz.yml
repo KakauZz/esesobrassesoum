@@ -12,14 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-      - name: Gerar voz (Gemini — a voz da série)
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q numpy
+      - name: Gerar voz (Gemini Sadachbia — a voz da série)
         env:
           GEMINI_KEYS: ${{ secrets.GEMINI_KEYS }}
-          VOZ_GEMINI: ${{ vars.VOZ_GEMINI }}
         run: python3 gerar_voz.py "${{ inputs.pasta }}"
       - name: Salvar a voz no repositório
         run: |
           git config user.name "gerar-voz"; git config user.email "actions@github.com"
-          git add -f "${{ inputs.pasta }}/saida/voz_full.wav"
-          git commit -m "voz: ${{ inputs.pasta }}" && git push
+          git add -f "${{ inputs.pasta }}/saida/voz_full.wav"; git add -f "${{ inputs.pasta }}/saida/ts_raw.json" || true
+          git commit -m "voz: ${{ inputs.pasta }}" && git pull --rebase && git push

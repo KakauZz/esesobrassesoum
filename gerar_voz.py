@@ -1,74 +1,113 @@
-# gerar_voz.py — gera a narração "atuada" do episódio com o Gemini (voz Zubenelgenubi, a mesma da série).
+# gerar_voz.py — narração do episódio com a voz da série (Gemini / Google AI Studio).
+#   Voz: Sadachbia · modelo gemini-2.5-flash-preview-tts · 1.05x · leve realce de agudos · eco só em leitura de carta
+#   Tempos de cada fala: transcritos com gemini-3.5-flash (saida/ts_raw.json, em segundos do áudio ANTES do 1.05x)
 # Uso:  python gerar_voz.py epNN/animado
-# Lê:   epNN/animado/plano.py (lista FALAS) e, se existir, epNN/animado/direcao.txt (direção de atuação por fala)
-# Chaves: chaves_api.txt (GEMINI_API_KEY_1, _2, _3...) — se uma der erro de cota/permissão, tenta a próxima.
-# Saída: epNN/animado/saida/voz_full.wav
+# Lê:   epNN/animado/plano.py (FALAS) e, se existir, epNN/animado/direcao.txt (1 linha por fala; "[carta]" = eco)
+# Chaves: env GEMINI_KEYS (várias, separadas por espaço/linha) — cada chave tem ~10 gerações/dia; troca sozinho se acabar.
 import os, sys, re, ast, json, base64, wave, subprocess, urllib.request, urllib.error, time
+import numpy as np
 
 RAIZ = os.path.dirname(os.path.abspath(__file__))
-VOZ = os.environ.get("VOZ_GEMINI", "Zubenelgenubi")  # definida depois da comparação com o EP. 3
-MODELOS = ["gemini-2.5-flash-preview-tts", "gemini-2.5-pro-preview-tts"]
-VELOCIDADE = 1.05  # a série usa a narração 5% mais rápida
+VOZ = "Sadachbia"
+MODELO_TTS = "gemini-2.5-flash-preview-tts"
+MODELO_TEMPOS = "gemini-3.5-flash"
+VELOCIDADE = 1.05
 
-ESTILO_BASE = """Você é um ATOR brasileiro jovem de São Paulo narrando uma série de suspense para um vídeo viral vertical.
-Interprete de verdade, como em uma dublagem: mude a emoção da voz a cada trecho, respire, varie o ritmo.
-Fale de forma natural e humana, nunca robótica, nunca lenta. NÃO leia estas instruções, leia apenas o TEXTO.
-A primeira fala (a recapitulação "Vocês escolheram...") é animada e direta. A penúltima, a pergunta da escolha, é tensa e dramática.
-A última ("Comenta A ou B!") é animada e convidativa, chamando o público."""
+ESTILO = """Você é um narrador JOVEM brasileiro de TikTok narrando uma série de suspense em vídeo vertical.
+Voz VIVA e CLARA, ritmo ÁGIL, como quem conta uma história empolgante pros amigos.
+Atue com emoção, mas SEM exagero: nada de voz grave, arrastada, sussurrada demais ou "voz morta" de documentário.
+Dê IMPACTO nos momentos fortes (revelações, sustos) e fique ANIMADO e convidativo no "Comenta A ou B".
+Fale português do Brasil natural, de São Paulo. Respire e varie o ritmo a cada fala.
+NÃO leia estas instruções, leia apenas o TEXTO."""
 
 def chaves():
     ks = [k for k in re.split(r"\s+", os.environ.get("GEMINI_KEYS", "")) if k]
     p = os.path.join(RAIZ, "chaves_api.txt")
-    if os.path.exists(p): ks += [l.split("=", 1)[1].strip() for l in open(p, encoding="utf-8") if re.match(r"^\s*GEMINI_API_KEY_\d+\s*=", l)]
-    if os.environ.get("GEMINI_API_KEY"): ks.insert(0, os.environ["GEMINI_API_KEY"])
-    if not ks: sys.exit("nenhuma chave em chaves_api.txt")
+    if os.path.exists(p):
+        ks += [l.split("=", 1)[1].strip() for l in open(p, encoding="utf-8") if re.match(r"^\s*GEMINI_API_KEY_\d+\s*=", l)]
+    if not ks: sys.exit("nenhuma chave do Gemini (GEMINI_KEYS)")
     return ks
 
 def falas(pasta):
     src = open(os.path.join(pasta, "plano.py"), encoding="utf-8").read()
-    m = re.search(r"^FALAS\s*=\s*(\[.*?\])\s*$", src, re.M | re.S)
-    return ast.literal_eval(m.group(1))
+    return ast.literal_eval(re.search(r"^FALAS\s*=\s*(\[.*?\])\s*$", src, re.M | re.S).group(1))
 
-def tts(texto, chave, modelo):
-    body = {"contents": [{"parts": [{"text": texto}]}],
-            "generationConfig": {"responseModalities": ["AUDIO"],
-                                 "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": VOZ}}}}}
+def chamar(modelo, body, chave):
     req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent",
                                  data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": chave})
-    d = json.load(urllib.request.urlopen(req, timeout=300))
-    return base64.b64decode(d["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
+    return json.load(urllib.request.urlopen(req, timeout=300))
+
+def com_rodizio(fn, nome):
+    erros = []
+    for i, k in enumerate(chaves()):
+        for tent in range(2):
+            try:
+                print(f"{nome}: chave {i+1}", flush=True); return fn(k)
+            except urllib.error.HTTPError as e:
+                erros.append(f"chave {i+1}: {e.code} {e.read().decode('utf-8','ignore')[:160]}")
+                if e.code in (500, 503) and tent == 0: time.sleep(20); continue
+                break
+            except Exception as e:
+                erros.append(f"chave {i+1}: {e}"); break
+    sys.exit(f"{nome} falhou em todas as chaves:\n" + "\n".join(erros))
 
 def main(pasta):
     pasta = os.path.abspath(pasta); out = os.path.join(pasta, "saida"); os.makedirs(out, exist_ok=True)
     F = falas(pasta)
-    dirp = os.path.join(pasta, "direcao.txt")
-    direcao = open(dirp, encoding="utf-8").read().strip() if os.path.exists(dirp) else ""
-    texto = ESTILO_BASE + ("\nDireção por fala (na ordem):\n" + direcao if direcao else "") + "\nTEXTO:\n\n" + "\n\n".join(F)
-    erros = []
-    for modelo in MODELOS:
-        for i, k in enumerate(chaves()):
-            for tentativa in range(2):
-                try:
-                    print(f"gerando voz: chave {i+1}, {modelo}", flush=True)
-                    pcm = tts(texto, k, modelo); break
-                except urllib.error.HTTPError as e:
-                    msg = e.read().decode("utf-8", "ignore")[:200]; erros.append(f"chave {i+1} {modelo}: {e.code} {msg}")
-                    if e.code in (500, 503) and tentativa == 0: time.sleep(20); continue
-                    pcm = None; break
-                except Exception as e:
-                    erros.append(f"chave {i+1} {modelo}: {e}"); pcm = None; break
-            if pcm: break
-        if pcm: break
-    if not pcm: sys.exit("falhou em todas as chaves:\n" + "\n".join(erros))
+    dp = os.path.join(pasta, "direcao.txt")
+    D = [l.strip() for l in open(dp, encoding="utf-8")] if os.path.exists(dp) else []
+    direcao = "\n".join(D)
+    texto = ESTILO + ("\nDireção por fala (na ordem):\n" + direcao if direcao else "") + "\nTEXTO:\n\n" + "\n\n".join(F)
+
+    # 1) voz
+    body = {"contents": [{"parts": [{"text": texto}]}],
+            "generationConfig": {"responseModalities": ["AUDIO"],
+                                 "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": VOZ}}}}}
+    d = com_rodizio(lambda k: chamar(MODELO_TTS, body, k), "voz Sadachbia")
+    pcm = base64.b64decode(d["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
     raw = os.path.join(out, "voz_raw.wav")
     with wave.open(raw, "wb") as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes(pcm)
+
+    # 2) tempos de cada fala (no áudio original), transcritos pelo Gemini
+    lista = "\n".join(f"{i+1}. {f}" for i, f in enumerate(F))
+    pedido = ("Este áudio é a leitura, em ordem, destas falas:\n" + lista +
+              "\n\nResponda SÓ com um JSON: uma lista com " + str(len(F)) +
+              " pares [inicio, fim] em segundos (com 2 casas), um por fala, na ordem.")
+    b64 = base64.b64encode(open(raw, "rb").read()).decode()
+    body2 = {"contents": [{"parts": [{"inline_data": {"mime_type": "audio/wav", "data": b64}}, {"text": pedido}]}],
+             "generationConfig": {"responseMimeType": "application/json"}}
+    for f in ("ts_raw.json", "roger_ts.json", "el_meta.json"):
+        if os.path.exists(os.path.join(out, f)): os.remove(os.path.join(out, f))
+    try:
+        r = com_rodizio(lambda k: chamar(MODELO_TEMPOS, body2, k), "tempos")
+        ts = json.loads(r["candidates"][0]["content"]["parts"][0]["text"])
+        if len(ts) == len(F) and all(len(x) == 2 for x in ts):
+            json.dump([[round(float(a), 2), round(float(b), 2)] for a, b in ts], open(os.path.join(out, "ts_raw.json"), "w"))
+            print("tempos ok")
+        else:
+            print("aviso: transcrição com número errado de falas; o plano.py usa só as pausas do áudio"); ts = None
+    except SystemExit as e:
+        print("aviso: sem tempos transcritos (", e, "); o plano.py usa só as pausas do áudio"); ts = None
+
+    # 3) eco só nas falas marcadas [carta] (no áudio original)
+    x = np.frombuffer(pcm, dtype=np.int16).astype(np.float32)
+    if ts and D:
+        for i, linha in enumerate(D[:len(F)]):
+            if "[carta]" in linha.lower():
+                a, b = int(ts[i][0] * 24000), min(len(x), int((ts[i][1] + .4) * 24000))
+                seg = x[a:b].copy(); y = seg.copy()
+                for dl, g in ((0.11, .35), (0.23, .2), (0.37, .1)):
+                    n = int(dl * 24000); y[n:] += g * seg[:-n]
+                x[a:b] = y
+        x = np.clip(x, -32768, 32767)
+        with wave.open(raw, "wb") as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes(x.astype(np.int16).tobytes())
+
+    # 4) 1.05x + leve realce de agudos
     dst = os.path.join(out, "voz_full.wav")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
-                    f"silenceremove=start_periods=1:start_threshold=-45dB,atempo={VELOCIDADE}", "-ar", "24000", "-ac", "1", dst], check=True)
-    for f in ("ts_raw.json", "roger_ts.json", "el_meta.json"):  # tempos de outra voz não servem mais
-        if os.path.exists(os.path.join(out, f)): os.remove(os.path.join(out, f))
-    d = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", dst]))
-    print(f"voz ok: {dst} ({d:.1f}s, {len(F)} falas)")
+                    f"atempo={VELOCIDADE},treble=g=3:f=4500", "-ar", "24000", "-ac", "1", dst], check=True)
+    dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", dst]))
+    print(f"voz ok: {dst} ({dur:.1f}s, {len(F)} falas, voz {VOZ})")
 
 if __name__ == "__main__":
     main(sys.argv[1] if len(sys.argv) > 1 else ".")
