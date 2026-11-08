@@ -4,7 +4,7 @@ from scipy.signal import fftconvolve, butter, sosfilt
 from scipy.io import wavfile
 HERE=os.path.dirname(os.path.abspath(__file__)); PL=json.load(open(os.path.join(HERE,"saida","plano.json")))
 SR=44100; T=PL["total"]; N=int(SR*T); t=np.arange(N)/SR; L=np.zeros(N); R=np.zeros(N)
-F=[f["start"] for f in PL["falas"]]; HOOK_END=F[1]; CALM_END=F[5]; SAD_END=F[13]; BUILD_END=F[17]
+F=[f["start"] for f in PL["falas"]]; HOOK_END=F[1]; CALM_END=F[5]; SAD_END=F[len(F)-6]; BUILD_END=F[len(F)-2]
 hz=lambda m:440*2**((m-69)/12); rng=np.random.default_rng(2)
 def add(sig,st,g,pan=0.0):
     i=int(st*SR); n=min(len(sig),N-i)
