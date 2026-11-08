@@ -18,9 +18,11 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
 4. **Escrever o episódio** (é a parte criativa; siga o `epN-1_cenas.js` como modelo):
    - `epN_cenas.js`: de 10 a 14 cenas, criadas com `scene(a,b,(t)=>{...})` dentro da faixa do episódio. Reaproveite as funções que já existem (personagem, `miniScene`, `lg`, `rr`, `rng`, `seg`, `easeOut`...).
    - Abertura com o recap: "NO EPISÓDIO N-1, VOCÊS ESCOLHERAM" + a opção que venceu, com o confete.
-   - **Duração: por volta de 1min30 (entre 80 e 100 s).** São de 20 a 26 falas e de 16 a 20 cenas. A história continua da escolha vencedora e termina num gancho.
+   - **DURAÇÃO OBRIGATÓRIA: MAIS DE 1min30 SEMPRE (o usuário só ganha dinheiro acima disso). Meta: 95 a 110 s.**
+     A voz Sadachbia fala cerca de 2,7 s por fala, então escreva **de 34 a 40 falas** e **de 24 a 30 cenas**. A história continua da escolha vencedora, tem pelo menos 2 reviravoltas no meio e termina num gancho.
+     Não encha linguiça (cartela parada, repetição): o tempo extra tem que ser história.
    - No fim, a escolha nova com **A em verde e B** (o mesmo visual do EP. 3), depois o cartão "E SE SOBRASSE SÓ UM?", "EP. N+1 · EM BREVE" e "Segue pra não perder 👆".
-   - `plano.py`: `FALAS` com 20 a 26 frases curtas. A primeira é "Vocês escolheram: X. ..." e as duas últimas são a pergunta A/B e "Comenta A ou B! A mais votada vira o episódio N+1.". `SHOTS` tem uma lista por fala, como no EP. 3, com o HUD "DIA 48 · HH:MM" avançando no tempo da história.
+   - `plano.py`: `FALAS` com 34 a 40 frases curtas. A primeira é "Vocês escolheram: X. ..." e as duas últimas são a pergunta A/B e "Comenta A ou B! A mais votada vira o episódio N+1.". `SHOTS` tem uma lista por fala, como no EP. 3, com o HUD "DIA 48 · HH:MM" avançando no tempo da história.
    - `direcao.txt`: uma linha por fala com a emoção da voz. Marque `[carta]` na linha de qualquer fala que seja leitura de carta ou bilhete (ganha eco).
    - **Continuidade:** Matheus, 24 anos, sozinho em São Paulo desde o "dia 1". Mantenha os fatos já mostrados: a carta da praça, a janela acesa, as fotos dele, a câmera e a sombra.
 5. **Montar:**
@@ -48,7 +50,7 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
    - **Erros que já aconteceram e NÃO podem se repetir:** personagem subindo quando a fala diz que desce; carro parado enquanto ele corre na avenida; voz diferente da Sadachbia; fala sobre algo que não está na tela.
    - **O usuário NÃO revisa os vídeos.** A revisão é toda sua: seja rigoroso.
    - Se encontrar qualquer erro: corrija, renderize de novo e revise de novo. Na dúvida, NÃO poste e avise o usuário.
-   **Conferir também:** tire 6 quadros (`ffmpeg -ss T -frames:v 1`) espalhados pelo vídeo e olhe cada um. Nada pode estar quebrado, em branco, com texto vazando ou com o personagem deformado. A duração tem que ficar entre 80 e 100 s. A voz tem que bater com a legenda (compare `plano.json` → `falas` com a duração da voz).
+   **Conferir também:** tire 6 quadros (`ffmpeg -ss T -frames:v 1`) espalhados pelo vídeo e olhe cada um. Nada pode estar quebrado, em branco, com texto vazando ou com o personagem deformado. **A duração do vídeo final tem que ser MAIOR que 92 s (meta de 95 a 110 s).** Se der menos, acrescente falas e cenas e gere a voz de novo. NUNCA poste com 90 s ou menos. A voz tem que bater com a legenda (compare `plano.json` → `falas` com a duração da voz).
    Se algo falhar e não der para corrigir em 2 tentativas: **não poste**. Avise o usuário com o motivo.
 7. **Publicar o arquivo:** copie para `videos/epNN_final.mp4`, faça `git add -f videos/epNN_final.mp4`, commit e push (antes, `git pull --rebase`). Confira com `curl -I` que o link raw responde 200.
 8. **Agendar no Metricool** (brandId `7941222`, fuso `America/Sao_Paulo`). Antes, confira os horários do dia com `getBestTimeToPostByNetwork`; o padrão é este:
