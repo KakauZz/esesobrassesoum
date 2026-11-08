@@ -7,6 +7,21 @@ Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (
 - **Vídeos:** `videos/epNN_final.mp4` dentro do repositório. Link público para o Metricool: `https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/videos/epNN_final.mp4`
 - **Personagem e estilo:** `epNN/animado/animacao.html` acumula todas as cenas da série. Cada episódio ganha sua própria faixa de tempo: EP1 0–60, EP2 400–433, EP3 500–644, **EP4 700–799, EP5 800–899** e assim por diante.
 
+## Regras de conteúdo (do usuário, obrigatórias)
+- **Nada de morte** nem nada perto disso: ninguém morre, se machuca de verdade, desmaia, sangra, some para sempre, e não aparecem corpos, armas ou ameaças de morte.
+- **Nada de terror:** sem monstros, criaturas, fantasmas, gore, gritos de dor ou imagens assustadoras.
+- **Suspense pode:** algo passando atrás dele, uma sombra no fundo, luzes piscando, porta rangendo, uma mensagem misteriosa, passos no corredor. É o "frio na barriga", não o susto.
+- Todo personagem é **pessoa comum**: a "sombra" é só alguém se escondendo. O tom é mistério e aventura, para todas as idades.
+
+## Bíblia da história (o rumo da série; os votos mudam o caminho, não o destino)
+- **Quem mais sobrou:** Matheus não está sozinho.
+  - **A sombra** é uma **criança** (pegadas pequenas) que se esconde de medo.
+  - **O fotógrafo** é um **adulto** que acompanha Matheus desde o dia 1, escreveu a carta da praça e mantém um diário. Ele não é vilão: ele observa porque sabe de algo.
+- **O segredo:** as pessoas não sumiram. Quem "saiu do lugar" foram eles três: estão numa São Paulo "cópia", vazia. O mundo real continua do outro lado. As falhas (rádio chiando, celular ligando sozinho, luzes piscando) são o mundo real tentando aparecer. Daí o rádio dizer "não confia no que você vê".
+- **O relógio da série:** o calendário dos dias riscados. Perto do **dia 60**, a passagem de volta se abre no lugar onde tudo começou, o quarto em que Matheus acordou no dia 1.
+- **O final (sem morte, sem perda):** os três chegam juntos à passagem, mas ela só abre para **um de cada vez** ("E se sobrasse só UM?"). A última votação decide **quem atravessa primeiro e o que cada um leva de volta**, e todos voltam, cada um do seu jeito. O mistério se resolve com reencontro.
+- **Pistas a plantar, uma por episódio, sem pressa:** a criança (pegadas, um tênis pequeno, um desenho), o diário do fotógrafo, falhas do mundo real (vozes no rádio, celular, TVs ligando sozinhas), o calendário avançando e o lugar do dia 1. Nunca contradiga fatos já mostrados.
+
 ## Passo a passo
 1. **Achar o último episódio postado.** É o maior `epNN` com `epNN_final.mp4` no repositório. As opções A e B dele estão no fim de `epNN_cenas.js` (a cena da "escolha").
 2. **Contar os votos** pelo Windsor.ai (`instagram` e `tiktok_organic`; antes de `get_data`, chame `get_fields`), só nos comentários do post desse episódio:
