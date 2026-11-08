@@ -1455,6 +1455,117 @@ scene(790,794,(t)=>{const u=t-790;ctx.fillStyle='#050507';ctx.fillRect(0,0,W,H);
   const k2=seg(u,.6,1);ctx.save();ctx.globalAlpha=k2;ctx.textAlign='center';ctx.fillStyle='#f4e2b0';ctx.font='700 56px "DejaVu Sans Mono", monospace';ctx.fillText('EP. 5 · EM BREVE',W/2,H*.4+420);
   ctx.fillStyle='#fff';ctx.font='800 50px Inter';ctx.fillText('Segue pra não perder 👆',W/2,H*.4+520);ctx.restore()});
 
+// ===== cenas extras do EP. 4 (história ampliada) =====
+// A. saguão — ele empurra a porta de vidro (que ainda balançava) e SAI em direção à câmera (705–709.5). Câmera do lado de FORA, de frente pra porta.
+scene(705,709.5,(t)=>{const u=t-705;ctx.fillStyle='#0b0d18';ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='#1a1d30';ctx.fillRect(0,0,W,1560);ctx.fillStyle='rgba(255,255,255,.04)';for(let x=0;x<W;x+=135)ctx.fillRect(x,0,4,1560);
+  ctx.fillStyle='#2b2a3a';ctx.fillRect(240,520,600,1040);const g=ctx.createRadialGradient(540,700,20,540,700,600);g.addColorStop(0,'rgba(255,220,160,.25)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(240,520,600,1040);
+  ctx.fillStyle='#22243a';ctx.fillRect(0,1560,W,360);ctx.fillStyle='rgba(255,255,255,.05)';for(let x=0;x<W;x+=180)ctx.fillRect(x,1560,4,360);
+  // ele: dentro (atrás do vidro) até ~1.3s, depois atravessa a porta e vem pra calçada, crescendo em direção à câmera
+  const k=easeOut(seg(u,.2,4.2)),py=lerp(1555,1900,k),ps=lerp(.8,1.55,k),fora=u>1.3;
+  const door=()=>{const op=easeOut(seg(u,.9,1.5))*(1-seg(u,2.4,4.4)),sw=op*1.25+Math.sin(u*6)*Math.exp(-Math.max(0,u-2.4)*.8)*.18*(u>2.4?1:0);
+    const dw=Math.max(30,600*Math.cos(Math.min(1.45,Math.abs(sw))));
+    ctx.fillStyle='rgba(170,210,255,.16)';ctx.strokeStyle='#9aa3b8';ctx.lineWidth=12;ctx.fillRect(240,520,dw,1040);ctx.strokeRect(240,520,dw,1040);
+    ctx.fillStyle='rgba(255,255,255,.18)';ctx.beginPath();ctx.moveTo(260,560);ctx.lineTo(260+dw*.25,560);ctx.lineTo(260,900);ctx.fill();
+    ctx.fillStyle='#c9ccd6';rr(240+dw-70,1000,18,140,6);ctx.fill();ctx.strokeStyle=OUT;ctx.lineWidth=14;ctx.strokeRect(232,512,616,1056)};
+  if(!fora){personFront(540,py,ps,{});door()}else{door();personFront(540,py,ps,{})}
+  vignette(.55);
+});
+
+// B. o rádio caído no asfalto — visto de cima (716.2–719.8)
+scene(716.2,719.8,(t)=>{const u=t-716.2;ctx.fillStyle='#24252e';ctx.fillRect(0,0,W,H);
+  const r=rng(44);ctx.fillStyle='rgba(255,255,255,.05)';for(let i=0;i<500;i++)ctx.fillRect(r()*W,r()*H,3,3);
+  ctx.fillStyle='#e8d48a';ctx.fillRect(500,0,80,700);ctx.fillRect(500,1100,80,820);
+  const z=lerp(.85,1.25,ease(seg(u,0,3.6)));ctx.save();ctx.translate(W/2,H*.5);ctx.scale(z,z);ctx.rotate(.35);
+  // rádio comunicador (walkie-talkie) caído
+  ctx.strokeStyle=OUT;ctx.lineWidth=8;ctx.fillStyle='#1d1f26';rr(-130,-260,260,520,40);ctx.fill();ctx.stroke();
+  ctx.fillStyle='#2c2f39';rr(-60,-420,40,180,14);ctx.fill();ctx.stroke();
+  ctx.fillStyle='#0f1012';for(let y=-200;y<-40;y+=28)rr(-90,y,180,14,6),ctx.fill();
+  ctx.fillStyle='#6fbf73';rr(-90,10,180,90,10);ctx.fill();ctx.stroke();
+  ctx.fillStyle='#1d3a1e';ctx.font='700 38px "DejaVu Sans Mono", monospace';ctx.fillText('CH 13',-70,70);
+  ctx.fillStyle=(Math.floor(u*4)%2)?'#ff3b3b':'#5a1414';ctx.beginPath();ctx.arc(80,-230,14,0,7);ctx.fill();
+  ctx.fillStyle='#3a3d48';ctx.beginPath();ctx.arc(-50,170,30,0,7);ctx.fill();ctx.stroke();ctx.beginPath();ctx.arc(50,170,30,0,7);ctx.fill();ctx.stroke();
+  ctx.restore();
+  // chiado (ondas)
+  ctx.strokeStyle=`rgba(255,255,255,${.25+.15*Math.sin(u*20)})`;ctx.lineWidth=6;for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(W/2+120,H*.5-260,90+i*55+((u*120)%55),-1.2,-.1);ctx.stroke()}
+  vignette(.6);
+});
+
+// C. close no rádio — a voz no chiado, depois o rádio morre (736.2–739.8)
+scene(736.2,739.8,(t)=>{const u=t-736.2;ctx.fillStyle='#0d0e12';ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.fillStyle='#1d1f26';rr(140,300,800,1300,60);ctx.fill();ctx.stroke();
+  const alive=u<2.9;
+  ctx.fillStyle=alive?'#7fd283':'#1c2a1d';rr(220,520,640,320,20);ctx.fill();ctx.stroke();
+  if(alive){ctx.strokeStyle='#1d3a1e';ctx.lineWidth=6;ctx.beginPath();for(let x=0;x<600;x+=6){const a=(u>.6&&u<2.5)?(60*Math.sin(x*.09+u*30)*Math.sin(x*.013)):(12*Math.sin(x*1.7+u*80));x?ctx.lineTo(240+x,680+a):ctx.moveTo(240+x,680+a)}ctx.stroke();
+    ctx.fillStyle='#1d3a1e';ctx.font='700 40px "DejaVu Sans Mono", monospace';ctx.fillText('CH 13  ▮▮▮▯',250,575)}
+  ctx.fillStyle='#0f1012';for(let y=950;y<1450;y+=40)rr(240,y,600,20,8),ctx.fill();
+  ctx.fillStyle=alive?((Math.floor(u*6)%2)?'#ff3b3b':'#5a1414'):'#2a1010';ctx.beginPath();ctx.arc(860,380,22,0,7);ctx.fill();
+  if(!alive){const f=1-seg(u,2.9,3.4);ctx.fillStyle=`rgba(255,255,255,${f*.6})`;ctx.fillRect(220,520,640,320)}
+  // estática na tela toda
+  const r=rng(Math.floor(u*24));ctx.fillStyle=`rgba(255,255,255,${alive?.05:.02})`;for(let i=0;i<300;i++)ctx.fillRect(r()*W,r()*H,4,2);
+  vignette(.65);
+});
+
+// D. catracas — uma ainda girando (746.2–749.8). Câmera de frente para a linha de catracas.
+scene(746.2,749.8,(t)=>{const u=t-746.2;ctx.fillStyle='#14161e';ctx.fillRect(0,0,W,H);
+  tileWall(0,300,W,800,'#2c3640','#232c34');ctx.fillStyle='#1d6fd1';ctx.fillRect(0,420,W,60);ctx.fillStyle='#fff';ctx.font='900 40px Inter';ctx.fillText('ACESSO ÀS PLATAFORMAS  ↓',60,465);
+  ctx.fillStyle='#3a3b44';ctx.fillRect(0,1100,W,820);
+  for(let c=0;c<4;c++){const x=150+c*260,y=1100;ctx.strokeStyle=OUT;ctx.lineWidth=6;ctx.fillStyle='#8a8e9a';rr(x-60,y-320,120,320,16);ctx.fill();ctx.stroke();
+    ctx.fillStyle='#22c55e';ctx.fillRect(x-30,y-300,60,24);
+    const spin=(c==2)?(u*7*Math.exp(-u*.35)):0;ctx.save();ctx.translate(x,y-200);ctx.strokeStyle='#c9ccd6';ctx.lineWidth=16;ctx.lineCap='round';
+    for(let a=0;a<3;a++){const an=spin+a*2.09;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(Math.cos(an)*120,Math.sin(an)*28);ctx.stroke()}ctx.restore();
+    if(c==2){ctx.strokeStyle='rgba(255,255,255,.35)';ctx.lineWidth=5;for(let i=0;i<2;i++){ctx.beginPath();ctx.arc(x,y-200,150+i*30,-.6+u,.4+u);ctx.stroke()}}}
+  vignette(.6);
+});
+
+// E. escada rolante parada, pegadas pequenas na poeira (756.2–759.8). Câmera no topo olhando pra baixo.
+scene(756.2,759.8,(t)=>{const u=t-756.2;ctx.fillStyle='#0c0d12';ctx.fillRect(0,0,W,H);
+  const vx=W/2,vy=520,z=lerp(1,1.15,ease(seg(u,0,3.6)));ctx.save();ctx.translate(W/2,H*.6);ctx.scale(z,z);ctx.translate(-W/2,-H*.6);
+  ctx.fillStyle='#2a2c36';ctx.beginPath();ctx.moveTo(vx-90,vy);ctx.lineTo(vx+90,vy);ctx.lineTo(W-60,H);ctx.lineTo(60,H);ctx.closePath();ctx.fill();
+  for(let i=0;i<16;i++){const k=i/16,kk=k*k,y=lerp(vy,H,kk),hw=lerp(90,480,kk);ctx.fillStyle=i%2?'#353845':'#3d4150';ctx.fillRect(vx-hw,y,hw*2,lerp(6,70,kk));ctx.fillStyle='rgba(255,255,255,.08)';ctx.fillRect(vx-hw,y,hw*2,3)}
+  ctx.strokeStyle='#5a5e6a';ctx.lineWidth=18;ctx.beginPath();ctx.moveTo(vx-110,vy-40);ctx.lineTo(10,H);ctx.moveTo(vx+110,vy-40);ctx.lineTo(W-10,H);ctx.stroke();
+  // poeira e pegadas pequenas descendo
+  ctx.fillStyle='rgba(200,190,170,.10)';ctx.fillRect(0,vy,W,H-vy);
+  for(let i=1;i<12;i++){const k=i/12,kk=k*k,y=lerp(vy+20,H-60,kk),s=lerp(.15,1,kk),x=vx+(i%2?-1:1)*30*s;if(seg(u,.3+(12-i)*.12,.5+(12-i)*.12)<=0)continue;
+    ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='rgba(20,18,16,.75)';ctx.beginPath();ctx.ellipse(0,0,16,30,0,0,7);ctx.fill();ctx.beginPath();ctx.ellipse(0,40,11,15,0,0,7);ctx.fill();ctx.restore()}
+  ctx.restore();
+  ctx.fillStyle='#b71c1c';rr(80,140,300,90,12);ctx.fill();ctx.fillStyle='#fff';ctx.font='900 44px Inter';ctx.fillText('PARADA',125,200);
+  vignette(.65);
+});
+
+// F. o mapa do metrô — "VOCÊ ESTÁ AQUI · DIA 48" (764.2–769.8)
+scene(764.2,769.8,(t)=>{const u=t-764.2;ctx.fillStyle='#1a1c22';ctx.fillRect(0,0,W,H);
+  const z=lerp(1,1.35,ease(seg(u,1.5,5.4)));ctx.save();ctx.translate(560,880);ctx.scale(z,z);ctx.translate(-560,-880);
+  ctx.strokeStyle=OUT;ctx.lineWidth=8;ctx.fillStyle='#f1efe8';rr(90,300,900,1200,20);ctx.fill();ctx.stroke();
+  ctx.fillStyle='#1b1b20';ctx.font='900 48px Inter';ctx.fillText('MAPA DA REDE',140,380);
+  const L=[['#1d4ed8',[[150,600],[400,620],[560,880],[760,1100],[940,1180]]],['#16a34a',[[200,1300],[420,1100],[560,880],[700,700],[900,520]]],['#dc2626',[[140,900],[340,880],[560,880],[780,860],[950,900]]],['#eab308',[[560,450],[560,880],[520,1400]]]];
+  for(const [c,pts] of L){ctx.strokeStyle=c;ctx.lineWidth=18;ctx.lineJoin='round';ctx.beginPath();pts.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.stroke();
+    for(const [x,y] of pts){ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(x,y,14,0,7);ctx.fill();ctx.strokeStyle=OUT;ctx.lineWidth=4;ctx.stroke()}}
+  ctx.fillStyle='#1b1b20';ctx.font='800 34px Inter';ctx.fillText('SÉ',580,860);
+  // círculo vermelho desenhado à mão + texto
+  const k=seg(u,.6,2);ctx.strokeStyle='#c62828';ctx.lineWidth=10;ctx.lineCap='round';ctx.beginPath();for(let a=0;a<=k*7;a+=.05){const rr_=78+6*Math.sin(a*3);const x=560+Math.cos(a)*rr_,y=880+Math.sin(a)*rr_*.85;a?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();
+  if(u>1.8){ctx.save();ctx.globalAlpha=seg(u,1.8,2.4);ctx.fillStyle='#c62828';ctx.font='700 62px Caveat';ctx.fillText('VOCÊ ESTÁ AQUI',350,1030);ctx.font='700 56px Caveat';ctx.fillText('dia 48',470,1095);ctx.restore()}
+  ctx.restore();
+  vignette(.5);
+});
+
+// G. dentro do vagão aceso: um celular vibrando no banco + mensagem (776.2–779.8)
+scene(776.2,779.8,(t)=>{const u=t-776.2;ctx.fillStyle='#d9dbe2';ctx.fillRect(0,0,W,H);
+  const close=ease(seg(u,1.4,2.2));
+  // interior do vagão (banco azul)
+  ctx.save();ctx.globalAlpha=1-close;ctx.fillStyle='#e9e4cf';ctx.fillRect(0,0,W,700);ctx.fillStyle='#ffe6a8';for(let i=0;i<3;i++)rr(60+i*340,140,300,330,20),ctx.fill();
+  ctx.fillStyle='#2a4f8a';rr(40,1000,1000,240,30);ctx.fill();ctx.fillStyle='#1f3c6b';rr(40,780,1000,240,30);ctx.fill();
+  ctx.fillStyle='#bfc4cf';ctx.fillRect(0,1240,W,680);ctx.fillStyle='#8a8e9a';for(let x=0;x<W;x+=200)ctx.fillRect(x,240,14,1000);
+  const vib=Math.sin(u*60)*6*(u<1.4?1:0);ctx.save();ctx.translate(560+vib,1080);ctx.rotate(-.15);ctx.fillStyle='#111';rr(-60,-110,120,220,18);ctx.fill();ctx.fillStyle='#bfe3ff';rr(-50,-96,100,180,10);ctx.fill();ctx.restore();
+  ctx.strokeStyle='rgba(0,0,0,.25)';ctx.lineWidth=5;if(u<1.4)for(let i=0;i<2;i++){ctx.beginPath();ctx.arc(560,1080,150+i*40,-.8,.8);ctx.stroke();ctx.beginPath();ctx.arc(560,1080,150+i*40,2.34,3.94);ctx.stroke()}
+  ctx.restore();
+  // close na tela do celular
+  if(close>0){ctx.save();ctx.globalAlpha=close;ctx.fillStyle='#0c0c10';ctx.fillRect(0,0,W,H);ctx.strokeStyle='#333';ctx.lineWidth=14;ctx.fillStyle='#111';rr(150,160,780,1600,90);ctx.fill();ctx.stroke();
+    ctx.fillStyle='#10151d';rr(190,230,700,1460,60);ctx.fill();ctx.fillStyle='#9aa3b8';ctx.font='700 46px Inter';ctx.textAlign='center';ctx.fillText('21:03',540,330);
+    ctx.fillStyle='#2b313d';rr(230,620,620,330,34);ctx.fill();ctx.fillStyle='#9aa3b8';ctx.font='700 34px Inter';ctx.fillText('NÚMERO DESCONHECIDO',540,690);
+    ctx.fillStyle='#fff';ctx.font='900 64px Inter';ctx.fillText('NÃO ENTRA',540,800);ctx.fillText('NO VAGÃO.',540,880);ctx.textAlign='left';ctx.restore()}
+});
+
 function render(t,o){
   ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.clearRect(0,0,W,H);
   const sc=S.find(s=>t>=s.a&&t<s.b)||S[S.length-1];

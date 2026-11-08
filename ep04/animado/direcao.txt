@@ -1,16 +1,37 @@
 1. animado e direto, recapitulando
-2. ofegante, rápido, urgente
-3. tenso, sussurrando
-4. pausa dramática, depois urgente
-5. frustrado, alto
-6. suspense, mais baixo
-7. sombrio, lento
-8. sussurro, com medo
-9. tenso, crescendo
-10. curioso, baixo
-11. surpreso, acelerando
-12. ênfase forte em "NA FRENTE", arrepiado
-13. sussurro assustado, pausa antes de "quem"
-14. muito tenso, lento
-15. dramático, a pergunta da escolha
-16. animado e convidativo, chamando o público
+2. ofegante, rápido
+3. tenso, contando os andares com urgência
+4. ofegante, decidido
+5. revelação, tenso
+6. tenso, mais baixo
+7. pausa, depois urgente
+8. gritando com força: ESPERA!
+9. frustrado
+10. curioso, rápido
+11. intrigado
+12. suspense, quase sussurro
+13. voz de rádio chiando, misteriosa, devagar
+14. seco, curto
+15. suspense
+16. sombrio
+17. baixo, tenso
+18. arrepiado
+19. sussurro, com medo
+20. intrigado
+21. arrepiado, devagar no 'pequenas'
+22. decidido, tenso
+23. sussurro, com medo
+24. tenso, crescendo
+25. curioso
+26. arrepiado, ênfase em 'você está aqui'
+27. impacto
+28. curioso, baixo
+29. surpreso, acelerando
+30. ênfase forte em NA FRENTE, arrepiado
+31. sussurro assustado, pausa antes de 'quem'
+32. tenso, rápido
+33. [carta] lendo a mensagem, misterioso
+34. muito tenso, lento
+35. sussurro
+36. dramático, a pergunta da escolha
+37. animado e convidativo, chamando o público
