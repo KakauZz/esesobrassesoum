@@ -1,0 +1,1087 @@
+{
+ "total": 134.627,
+ "voz": 131.326792,
+ "falas": [
+  {
+   "i": 0,
+   "start": 0.0,
+   "end": 2.816
+  },
+  {
+   "i": 1,
+   "start": 3.405,
+   "end": 6.954
+  },
+  {
+   "i": 2,
+   "start": 7.538,
+   "end": 10.103
+  },
+  {
+   "i": 3,
+   "start": 10.635,
+   "end": 13.89
+  },
+  {
+   "i": 4,
+   "start": 14.719,
+   "end": 19.14
+  },
+  {
+   "i": 5,
+   "start": 19.19,
+   "end": 23.429
+  },
+  {
+   "i": 6,
+   "start": 24.153,
+   "end": 27.595
+  },
+  {
+   "i": 7,
+   "start": 28.397,
+   "end": 30.933
+  },
+  {
+   "i": 8,
+   "start": 31.679,
+   "end": 33.864
+  },
+  {
+   "i": 9,
+   "start": 34.692,
+   "end": 37.313
+  },
+  {
+   "i": 10,
+   "start": 38.27,
+   "end": 40.648
+  },
+  {
+   "i": 11,
+   "start": 41.234,
+   "end": 43.494
+  },
+  {
+   "i": 12,
+   "start": 44.193,
+   "end": 45.669
+  },
+  {
+   "i": 13,
+   "start": 46.507,
+   "end": 50.165
+  },
+  {
+   "i": 14,
+   "start": 50.722,
+   "end": 52.721
+  },
+  {
+   "i": 15,
+   "start": 53.495,
+   "end": 55.95
+  },
+  {
+   "i": 16,
+   "start": 56.595,
+   "end": 59.66
+  },
+  {
+   "i": 17,
+   "start": 60.468,
+   "end": 63.083
+  },
+  {
+   "i": 18,
+   "start": 63.863,
+   "end": 65.674
+  },
+  {
+   "i": 19,
+   "start": 66.565,
+   "end": 71.978
+  },
+  {
+   "i": 20,
+   "start": 72.731,
+   "end": 75.035
+  },
+  {
+   "i": 21,
+   "start": 76.06,
+   "end": 78.562
+  },
+  {
+   "i": 22,
+   "start": 79.225,
+   "end": 82.762
+  },
+  {
+   "i": 23,
+   "start": 83.549,
+   "end": 85.478
+  },
+  {
+   "i": 24,
+   "start": 86.243,
+   "end": 88.181
+  },
+  {
+   "i": 25,
+   "start": 88.978,
+   "end": 90.932
+  },
+  {
+   "i": 26,
+   "start": 91.353,
+   "end": 95.14
+  },
+  {
+   "i": 27,
+   "start": 95.19,
+   "end": 97.415
+  },
+  {
+   "i": 28,
+   "start": 97.739,
+   "end": 100.798
+  },
+  {
+   "i": 29,
+   "start": 101.578,
+   "end": 104.169
+  },
+  {
+   "i": 30,
+   "start": 104.219,
+   "end": 106.225
+  },
+  {
+   "i": 31,
+   "start": 106.526,
+   "end": 108.902
+  },
+  {
+   "i": 32,
+   "start": 108.952,
+   "end": 112.645
+  },
+  {
+   "i": 33,
+   "start": 112.695,
+   "end": 114.102
+  },
+  {
+   "i": 34,
+   "start": 114.78,
+   "end": 116.987
+  },
+  {
+   "i": 35,
+   "start": 117.681,
+   "end": 120.656
+  },
+  {
+   "i": 36,
+   "start": 121.361,
+   "end": 126.666
+  },
+  {
+   "i": 37,
+   "start": 127.372,
+   "end": 131.327
+  }
+ ],
+ "shots": [
+  {
+   "a": 700,
+   "b": 703.8,
+   "start": 0.0,
+   "dur": 3.405,
+   "hud": "",
+   "glitch": true,
+   "cont": false
+  },
+  {
+   "a": 704,
+   "b": 706,
+   "start": 3.405,
+   "dur": 4.133,
+   "hud": "DIA 48 · 20:59",
+   "glitch": true,
+   "cont": false
+  },
+  {
+   "a": 706,
+   "b": 707.8,
+   "start": 7.538,
+   "dur": 3.097,
+   "hud": "DIA 48 · 20:59",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 708,
+   "b": 711,
+   "start": 10.635,
+   "dur": 4.084,
+   "hud": "DIA 48 · 21:00",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 711,
+   "b": 713.8,
+   "start": 14.719,
+   "dur": 4.471,
+   "hud": "DIA 48 · 21:00",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 714,
+   "b": 716,
+   "start": 19.19,
+   "dur": 4.963,
+   "hud": "DIA 48 · 21:00",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 716,
+   "b": 717.8,
+   "start": 24.153,
+   "dur": 4.244,
+   "hud": "DIA 48 · 21:00",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 718,
+   "b": 720,
+   "start": 28.397,
+   "dur": 3.282,
+   "hud": "DIA 48 · 21:01",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 720,
+   "b": 721.8,
+   "start": 31.679,
+   "dur": 3.013,
+   "hud": "DIA 48 · 21:01",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 722,
+   "b": 723.4,
+   "start": 34.692,
+   "dur": 3.578,
+   "hud": "DIA 48 · 21:01",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 723.4,
+   "b": 724.6,
+   "start": 38.27,
+   "dur": 2.964,
+   "hud": "DIA 48 · 21:01",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 724.6,
+   "b": 725.8,
+   "start": 41.234,
+   "dur": 2.959,
+   "hud": "DIA 48 · 21:01",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 726,
+   "b": 727,
+   "start": 44.193,
+   "dur": 2.314,
+   "hud": "DIA 48 · 21:01",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 727,
+   "b": 729,
+   "start": 46.507,
+   "dur": 4.215,
+   "hud": "DIA 48 · 21:01",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 729,
+   "b": 731.8,
+   "start": 50.722,
+   "dur": 2.773,
+   "hud": "DIA 48 · 21:01",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 732,
+   "b": 733.6,
+   "start": 53.495,
+   "dur": 3.1,
+   "hud": "DIA 48 · 21:02",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 733.6,
+   "b": 736,
+   "start": 56.595,
+   "dur": 3.873,
+   "hud": "DIA 48 · 21:02",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 736,
+   "b": 737.8,
+   "start": 60.468,
+   "dur": 3.395,
+   "hud": "DIA 48 · 21:02",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 738,
+   "b": 739.2,
+   "start": 63.863,
+   "dur": 2.702,
+   "hud": "DIA 48 · 21:02",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 739.2,
+   "b": 742.8,
+   "start": 66.565,
+   "dur": 6.166,
+   "hud": "DIA 48 · 21:02",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 743,
+   "b": 744,
+   "start": 72.731,
+   "dur": 3.329,
+   "hud": "DIA 48 · 21:03",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 744,
+   "b": 745.5,
+   "start": 76.06,
+   "dur": 3.165,
+   "hud": "DIA 48 · 21:03",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 745.5,
+   "b": 746.8,
+   "start": 79.225,
+   "dur": 4.324,
+   "hud": "DIA 48 · 21:03",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 747,
+   "b": 748,
+   "start": 83.549,
+   "dur": 2.694,
+   "hud": "DIA 48 · 21:03",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 748,
+   "b": 750.8,
+   "start": 86.243,
+   "dur": 2.735,
+   "hud": "DIA 48 · 21:03",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 751,
+   "b": 752.8,
+   "start": 88.978,
+   "dur": 2.375,
+   "hud": "DIA 48 · 21:04",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 753,
+   "b": 755,
+   "start": 91.353,
+   "dur": 3.837,
+   "hud": "DIA 48 · 21:04",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 755,
+   "b": 756.4,
+   "start": 95.19,
+   "dur": 2.549,
+   "hud": "DIA 48 · 21:04",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 756.4,
+   "b": 758.8,
+   "start": 97.739,
+   "dur": 3.839,
+   "hud": "DIA 48 · 21:04",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 759,
+   "b": 762.8,
+   "start": 101.578,
+   "dur": 2.641,
+   "hud": "DIA 48 · 21:04",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 763,
+   "b": 765.4,
+   "start": 104.219,
+   "dur": 2.307,
+   "hud": "DIA 48 · 21:04",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 765.4,
+   "b": 768.8,
+   "start": 106.526,
+   "dur": 2.426,
+   "hud": "DIA 48 · 21:04",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 769,
+   "b": 772.4,
+   "start": 108.952,
+   "dur": 3.743,
+   "hud": "DIA 48 · 21:05",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 772.4,
+   "b": 773.8,
+   "start": 112.695,
+   "dur": 2.085,
+   "hud": "DIA 48 · 21:05",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 773.8,
+   "b": 774.8,
+   "start": 114.78,
+   "dur": 2.901,
+   "hud": "DIA 48 · 21:05",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 775,
+   "b": 778.8,
+   "start": 117.681,
+   "dur": 3.68,
+   "hud": "DIA 48 · 21:05",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 779,
+   "b": 782.6,
+   "start": 121.361,
+   "dur": 6.011,
+   "hud": "DIA 48 · 21:05",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 782.6,
+   "b": 784.8,
+   "start": 127.372,
+   "dur": 4.455,
+   "hud": "DIA 48 · 21:05",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 785,
+   "b": 788.2,
+   "start": 131.827,
+   "dur": 2.8,
+   "hud": ""
+  }
+ ],
+ "caps": [
+  {
+   "start": 0.05,
+   "end": 2.816,
+   "words": [
+    "Vocês",
+    "escolheram:",
+    "B.",
+    "Ele",
+    "ficou",
+    "pra",
+    "descobrir",
+    "quem",
+    "é."
+   ],
+   "wts": null
+  },
+  {
+   "start": 3.455,
+   "end": 6.954,
+   "words": [
+    "Ele",
+    "não",
+    "corre.",
+    "Ele",
+    "fecha",
+    "a",
+    "porta...",
+    "e",
+    "volta",
+    "pra",
+    "sala",
+    "das",
+    "fotos."
+   ],
+   "wts": null
+  },
+  {
+   "start": 7.588,
+   "end": 10.103,
+   "words": [
+    "Se",
+    "alguém",
+    "montou",
+    "tudo",
+    "isso...",
+    "deixou",
+    "pistas."
+   ],
+   "wts": null
+  },
+  {
+   "start": 10.685,
+   "end": 13.89,
+   "words": [
+    "Ele",
+    "revira",
+    "a",
+    "mesa.",
+    "O",
+    "calendário.",
+    "As",
+    "fotos.",
+    "A",
+    "câmera."
+   ],
+   "wts": null
+  },
+  {
+   "start": 14.769,
+   "end": 19.14,
+   "words": [
+    "Nada",
+    "fora",
+    "do",
+    "lugar.",
+    "Nada...",
+    "a",
+    "não",
+    "ser",
+    "um",
+    "detalhe."
+   ],
+   "wts": null
+  },
+  {
+   "start": 19.24,
+   "end": 23.429,
+   "words": [
+    "Embaixo",
+    "da",
+    "câmera,",
+    "colada",
+    "com",
+    "fita...",
+    "uma",
+    "chave."
+   ],
+   "wts": null
+  },
+  {
+   "start": 24.203,
+   "end": 27.595,
+   "words": [
+    "E",
+    "na",
+    "etiqueta,",
+    "escrito",
+    "à",
+    "mão:",
+    "treze",
+    "B."
+   ],
+   "wts": null
+  },
+  {
+   "start": 28.447,
+   "end": 30.933,
+   "words": [
+    "A",
+    "chave",
+    "entra",
+    "direitinho",
+    "na",
+    "gaveta",
+    "trancada",
+    "da",
+    "mesa."
+   ],
+   "wts": null
+  },
+  {
+   "start": 31.729,
+   "end": 33.864,
+   "words": [
+    "Lá",
+    "dentro...",
+    "um",
+    "caderno",
+    "velho."
+   ],
+   "wts": null
+  },
+  {
+   "start": 34.742,
+   "end": 37.313,
+   "words": [
+    "Na",
+    "capa:",
+    "Diário.",
+    "Dia",
+    "um."
+   ],
+   "wts": null
+  },
+  {
+   "start": 38.32,
+   "end": 40.648,
+   "words": [
+    "E",
+    "aquela",
+    "letra...",
+    "ele",
+    "conhece."
+   ],
+   "wts": null
+  },
+  {
+   "start": 41.284,
+   "end": 43.494,
+   "words": [
+    "É",
+    "a",
+    "mesma",
+    "letra",
+    "da",
+    "carta",
+    "que",
+    "ele",
+    "achou",
+    "na",
+    "praça."
+   ],
+   "wts": null
+  },
+  {
+   "start": 44.243,
+   "end": 45.669,
+   "words": [
+    "Ele",
+    "abre",
+    "na",
+    "primeira",
+    "página."
+   ],
+   "wts": null
+  },
+  {
+   "start": 46.557,
+   "end": 50.165,
+   "words": [
+    "Dia",
+    "um.",
+    "Ele",
+    "acordou.",
+    "Eu",
+    "também."
+   ],
+   "wts": null
+  },
+  {
+   "start": 50.772,
+   "end": 52.721,
+   "words": [
+    "Mas",
+    "ele",
+    "ainda",
+    "não",
+    "sabe",
+    "que",
+    "eu",
+    "existo."
+   ],
+   "wts": null
+  },
+  {
+   "start": 53.545,
+   "end": 55.95,
+   "words": [
+    "Cada",
+    "página...",
+    "é",
+    "um",
+    "dia",
+    "dele."
+   ],
+   "wts": null
+  },
+  {
+   "start": 56.645,
+   "end": 59.66,
+   "words": [
+    "O",
+    "mercado.",
+    "O",
+    "estádio.",
+    "As",
+    "letras",
+    "pintadas",
+    "no",
+    "asfalto."
+   ],
+   "wts": null
+  },
+  {
+   "start": 60.518,
+   "end": 63.083,
+   "words": [
+    "Tudo",
+    "desenhado...",
+    "visto",
+    "de",
+    "longe."
+   ],
+   "wts": null
+  },
+  {
+   "start": 63.913,
+   "end": 65.674,
+   "words": [
+    "Ele",
+    "vai",
+    "direto",
+    "pra",
+    "última",
+    "página."
+   ],
+   "wts": null
+  },
+  {
+   "start": 66.615,
+   "end": 71.978,
+   "words": [
+    "Dia",
+    "quarenta",
+    "e",
+    "oito.",
+    "Ele",
+    "achou",
+    "a",
+    "minha",
+    "sala.",
+    "Agora",
+    "ele",
+    "precisa",
+    "escolher."
+   ],
+   "wts": null
+  },
+  {
+   "start": 72.781,
+   "end": 75.035,
+   "words": [
+    "Escolher...",
+    "o",
+    "quê?"
+   ],
+   "wts": null
+  },
+  {
+   "start": 76.11,
+   "end": 78.562,
+   "words": [
+    "Na",
+    "contracapa,",
+    "um",
+    "envelope",
+    "lacrado."
+   ],
+   "wts": null
+  },
+  {
+   "start": 79.275,
+   "end": 82.762,
+   "words": [
+    "Escrito:",
+    "só",
+    "abra",
+    "no",
+    "dia",
+    "sessenta."
+   ],
+   "wts": null
+  },
+  {
+   "start": 83.599,
+   "end": 85.478,
+   "words": [
+    "De",
+    "repente...",
+    "a",
+    "câmera",
+    "apita."
+   ],
+   "wts": null
+  },
+  {
+   "start": 86.293,
+   "end": 88.181,
+   "words": [
+    "Três...",
+    "dois...",
+    "um..."
+   ],
+   "wts": null
+  },
+  {
+   "start": 89.028,
+   "end": 90.932,
+   "words": [
+    "Flash!"
+   ],
+   "wts": null
+  },
+  {
+   "start": 91.403,
+   "end": 95.14,
+   "words": [
+    "Ele",
+    "pega",
+    "a",
+    "câmera.",
+    "Na",
+    "tela,",
+    "a",
+    "foto",
+    "que",
+    "ela",
+    "acabou",
+    "de",
+    "tirar."
+   ],
+   "wts": null
+  },
+  {
+   "start": 95.24,
+   "end": 97.415,
+   "words": [
+    "Ele,",
+    "no",
+    "meio",
+    "da",
+    "sala..."
+   ],
+   "wts": null
+  },
+  {
+   "start": 97.789,
+   "end": 100.798,
+   "words": [
+    "E",
+    "na",
+    "janela",
+    "atrás",
+    "dele,",
+    "no",
+    "prédio",
+    "da",
+    "frente...",
+    "uma",
+    "luz",
+    "acesa."
+   ],
+   "wts": null
+  },
+  {
+   "start": 101.628,
+   "end": 104.169,
+   "words": [
+    "Alguém",
+    "tava",
+    "olhando."
+   ],
+   "wts": null
+  },
+  {
+   "start": 104.269,
+   "end": 106.225,
+   "words": [
+    "Ele",
+    "corre",
+    "pra",
+    "janela."
+   ],
+   "wts": null
+  },
+  {
+   "start": 106.576,
+   "end": 108.902,
+   "words": [
+    "No",
+    "prédio",
+    "da",
+    "frente,",
+    "a",
+    "luz",
+    "pisca."
+   ],
+   "wts": null
+  },
+  {
+   "start": 109.002,
+   "end": 112.645,
+   "words": [
+    "E",
+    "no",
+    "vidro",
+    "embaçado",
+    "aparece,",
+    "letra",
+    "por",
+    "letra..."
+   ],
+   "wts": null
+  },
+  {
+   "start": 112.745,
+   "end": 114.102,
+   "words": [
+    "Treze...",
+    "B."
+   ],
+   "wts": null
+  },
+  {
+   "start": 114.83,
+   "end": 116.987,
+   "words": [
+    "E",
+    "a",
+    "luz",
+    "se",
+    "apaga."
+   ],
+   "wts": null
+  },
+  {
+   "start": 117.731,
+   "end": 120.656,
+   "words": [
+    "Treze",
+    "B.",
+    "Igualzinho",
+    "à",
+    "etiqueta",
+    "da",
+    "chave."
+   ],
+   "wts": null
+  },
+  {
+   "start": 121.411,
+   "end": 126.666,
+   "words": [
+    "E",
+    "agora,",
+    "Matheus?",
+    "Vai",
+    "até",
+    "o",
+    "apartamento",
+    "treze",
+    "B...",
+    "ou",
+    "abre",
+    "o",
+    "envelope",
+    "agora?"
+   ],
+   "wts": null
+  },
+  {
+   "start": 127.422,
+   "end": 131.327,
+   "words": [
+    "Comenta",
+    "A",
+    "ou",
+    "B!",
+    "A",
+    "mais",
+    "votada",
+    "vira",
+    "o",
+    "episódio",
+    "5."
+   ],
+   "wts": null
+  }
+ ]
+}
