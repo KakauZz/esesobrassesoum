@@ -116,6 +116,9 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 ## Aprendizados
 - 08/11: números de partida no TikTok: 39 seguidores, EP. 1 com 3,5 mil views (média de 28 s assistidos de 94 s, só 4% viram até o fim), EP. 2 com 143 views (73 s de 76 s, 19% até o fim). Instagram: 60 seguidores, EP. 2 com 1,7 mil views. Meta: reter mais no começo.
 - 08/11: horários iniciais Instagram 10h, TikTok 10h e YouTube 16h (dados do Metricool). EP. 4-A ficou com a voz rápida demais; o EP. 4-B (2min14) ficou melhor no ritmo.
+- 09/11: EP. 3 teve 9×0 para A (Instagram 4, TikTok 5): votação unânime = pouco debate. Deixar as duas opções mais tentadoras. Foi ao ar o EP. 4-A (O METRÔ, 1min42).
+- 09/11: TikTok EP. 1 (postado às 17h) fez 3,8 mil views; EP. 2 e EP. 3 (12h) fizeram 201 e 48. O Metricool marca 18h como pico de segunda (1096, empatado com 10h). **Novo padrão TikTok: 18h** (testar 1 semana). Retenção EP. 3 no TikTok: 35,6 s de 72 s (11% até o fim); no Instagram 42% pulam nos 3 primeiros segundos → gancho mais forte já no 1º quadro.
+- 09/11: cota do Metricool em novembro: 7/20 usados, 13 restantes para 15 dias úteis (10 a 30/11). Fins de semana e 2 dias úteis ficam para postagem manual no TikTok.
 
 ## Limpeza (para o repositório não estourar)
 - Depois de agendar o episódio do dia, apague de `videos/` todos os .mp4 com mais de 3 episódios (`git rm`). O Metricool já guarda a cópia dele, e os arquivos *_teste.mp4 que não foram usados podem sair também. Deixe sempre o `epNN_final.mp4` dos últimos 3 episódios.
