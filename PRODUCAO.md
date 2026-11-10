@@ -143,6 +143,20 @@ O Metricool grátis tem **20 posts publicados por mês**, contados por rede, e o
 - **Instagram = Windsor.ai** (`create_video_post`), todo dia, no melhor horário, por meio de uma tarefa agendada única (ver "Plano B de postagem"). Não usa cota do Metricool.
 - **YouTube = sem postagem automática por enquanto**, até o usuário configurar a API do YouTube. Todo dia, mande o vídeo e um título pronto para ele postar à mão, se quiser.
 
+## Prender a atenção SEMPRE (pedido do usuário, 10/11: "tem que chamar a atenção do seguidor sempre")
+Vale para TODO episódio, do primeiro ao último segundo. Revise cada item antes de postar.
+1. **0 a 2 s, o gancho visual:** antes do recap, abra com um *flash-forward* de 1,5 s do momento mais intrigante do episódio (ex.: o desenho "eu, você e o moço da câmera", a placa "ESTAÇÃO SÉ"), com um tremor/zoom rápido. O 1º quadro nunca é tela parada nem só texto.
+2. **Título-gancho na tela nos 3 primeiros segundos:** uma frase curta em letras grandes no topo, desenhada na cena de abertura (ex.: "ELE NÃO DEVIA TER ENTRADO 😳", "QUEM DESENHOU ISSO?"). Uma pergunta ou uma revelação, nunca o nome do episódio.
+3. **Recap em no máximo 3 s.** Logo depois, a 1ª reviravolta tem que vir em até 8 s.
+4. **Mini-gancho a cada 15–20 s:** uma pergunta, um som, algo aparecendo no fundo ou uma frase do tipo "mas não era só isso…". Nunca passe 20 s sem uma novidade.
+5. **Corte ou movimento a cada 2–3 s:** zoom, troca de câmera ou algo entrando no quadro. Nenhuma cena parada por mais de 3 s.
+6. **Falar com quem assiste** pelo menos 2 vezes no meio do episódio ("e você, entraria?", "repara no canto da tela…"), para puxar comentário antes do final.
+7. **Pista escondida:** coloque 1 detalhe pequeno que só quem presta atenção vê (e diga na legenda/primeiro comentário "achou a pista escondida? 👀"). Isso faz rever e comentar. A pista tem que servir à história.
+8. **Final em gancho forte:** a última imagem antes da escolha é uma revelação ou uma pergunta sem resposta. As opções A e B precisam dividir o público.
+9. **Legenda do post e primeiro comentário** começam com uma pergunta ou uma frase de choque (até 8 palavras), sem spoiler do final.
+10. **Duração:** com as falas curtas, fique entre 95 e 115 s. Vídeo mais curto e mais denso segura mais gente até o fim.
+Meça todo dia: se a média assistida no TikTok não subir dos 11 s do EP. 4, deixe o gancho dos 2 primeiros segundos ainda mais forte e anote em "Aprendizados".
+
 ## Tudo para crescer (o objetivo agora: 10 mil seguidores e 100 mil views em 30 dias no TikTok)
 - **1 episódio por dia, sem falhar.** A constância é o que mais faz crescer.
 - **Gancho nos primeiros 2 segundos:** o recap é rápido e a primeira imagem já é um mistério. A legenda do post começa com uma pergunta ou uma revelação.
