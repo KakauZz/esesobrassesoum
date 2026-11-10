@@ -1,36 +1,36 @@
 1. GANCHO forte e intrigante logo na primeira palavra, como quem conta um segredo
-2. recap animado e rápido
-3. tenso, revelação no final
-4. esforço, seco no final
-5. surpresa, impacto em "sozinho"
-6. arrepiado
-7. misterioso, acompanhando a luz
-8. tenso, baixo
-9. [carta] lendo a mensagem, misterioso
-10. falando direto com quem assiste, provocando
-11. decidido, ritmado
-12. tenso, ritmado
-13. sussurrado, suspense
-14. suspense, pausa antes de "um tênis"
-15. curioso
-16. revelação, intrigado
-17. misterioso
-18. devagar, preparando
-19. [carta] lendo o que está escrito, devagar e misterioso
-20. arrepiado, ligando os pontos
-21. impacto em "dia sessenta"
-22. tenso
-23. pergunta com frio na barriga
-24. rápido, susto
-25. baixo, tenso
-26. sussurrado
-27. [radio] voz misteriosa no alto-falante, calma
-28. arrepiado, revelação
-29. pergunta intrigada, baixo
-30. alívio rápido e tenso de novo
-31. pausa, depois impacto em "Estação Sé"
-32. incrédulo
-33. revelação, devagar
+2. tom de lembrança, rápido, apresentando a história pra quem chegou agora
+3. rápido, tenso
+4. impacto, revelação
+5. arrepiado, solitário
+6. misterioso, ritmado
+7. revelação arrepiante
+8. recap animado e rápido
+9. tenso, seco no final
+10. surpresa, impacto em "sozinho"
+11. misterioso, acompanhando a luz
+12. tenso, baixo
+13. [carta] lendo a mensagem, misterioso
+14. falando direto com quem assiste, provocando
+15. decidido, ritmado
+16. sussurrado, suspense
+17. suspense, pausa antes de "um tênis"
+18. curioso
+19. revelação, intrigado
+20. devagar, preparando
+21. [carta] lendo o que está escrito, devagar e misterioso
+22. arrepiado, ligando os pontos
+23. impacto em "dia sessenta"
+24. pergunta com frio na barriga
+25. rápido, susto
+26. baixo, tenso
+27. sussurrado
+28. [radio] voz misteriosa no alto-falante, calma
+29. arrepiado, revelação
+30. pergunta intrigada, baixo
+31. alívio rápido e tenso de novo
+32. pausa, depois impacto em "Estação Sé"
+33. incrédulo, revelação
 34. curto, tenso
 35. urgente, empolgado
 36. misterioso
