@@ -1,199 +1,223 @@
 {
- "total": 150.903,
- "voz": 147.603042,
+ "total": 111.285,
+ "voz": 107.9855,
  "falas": [
   {
    "i": 0,
    "start": 0.0,
-   "end": 4.026
+   "end": 3.94617
   },
   {
    "i": 1,
-   "start": 4.076,
-   "end": 8.645
+   "start": 4.48437,
+   "end": 7.41458
   },
   {
    "i": 2,
-   "start": 8.695,
-   "end": 13.513
+   "start": 7.99279,
+   "end": 10.1263
   },
   {
    "i": 3,
-   "start": 14.218,
-   "end": 17.024
+   "start": 10.6535,
+   "end": 13.0955
   },
   {
    "i": 4,
-   "start": 17.651,
-   "end": 20.94
+   "start": 13.633999999999999,
+   "end": 16.7634
   },
   {
    "i": 5,
-   "start": 21.918,
-   "end": 25.773
+   "start": 17.3839,
+   "end": 18.7537
   },
   {
    "i": 6,
-   "start": 26.522,
-   "end": 28.796
+   "start": 19.2834,
+   "end": 22.1227
   },
   {
    "i": 7,
-   "start": 29.463,
-   "end": 34.417
+   "start": 22.660999999999998,
+   "end": 24.2834
   },
   {
    "i": 8,
-   "start": 34.467,
-   "end": 36.547
+   "start": 24.8665,
+   "end": 27.7257
   },
   {
    "i": 9,
-   "start": 37.207,
-   "end": 39.637
+   "start": 28.3617,
+   "end": 30.3721
   },
   {
    "i": 10,
-   "start": 40.277,
-   "end": 43.931
+   "start": 30.8949,
+   "end": 32.9822
   },
   {
    "i": 11,
-   "start": 44.695,
-   "end": 47.657
+   "start": 33.4958,
+   "end": 35.2006
   },
   {
    "i": 12,
-   "start": 48.298,
-   "end": 52.162
+   "start": 35.7575,
+   "end": 38.6701
   },
   {
    "i": 13,
-   "start": 52.855,
-   "end": 55.151
+   "start": 39.2192,
+   "end": 42.156
   },
   {
    "i": 14,
-   "start": 55.861,
-   "end": 58.112
+   "start": 42.691100000000006,
+   "end": 44.6678
   },
   {
    "i": 15,
-   "start": 58.162,
-   "end": 62.034
+   "start": 45.179,
+   "end": 48.0083
   },
   {
    "i": 16,
-   "start": 62.786,
-   "end": 65.843
+   "start": 48.5352,
+   "end": 49.7854
   },
   {
    "i": 17,
-   "start": 66.585,
-   "end": 70.023
+   "start": 50.2395,
+   "end": 51.4913
   },
   {
    "i": 18,
-   "start": 70.746,
-   "end": 74.847
+   "start": 52.035000000000004,
+   "end": 54.6252
   },
   {
    "i": 19,
-   "start": 75.239,
-   "end": 78.42
+   "start": 55.1338,
+   "end": 56.7255
   },
   {
    "i": 20,
-   "start": 78.977,
-   "end": 85.801
+   "start": 57.2582,
+   "end": 59.1926
   },
   {
    "i": 21,
-   "start": 86.447,
-   "end": 88.082
+   "start": 59.6344,
+   "end": 61.186
   },
   {
    "i": 22,
-   "start": 88.721,
-   "end": 91.595
+   "start": 61.7012,
+   "end": 63.712
   },
   {
    "i": 23,
-   "start": 91.718,
-   "end": 95.255
+   "start": 64.2037,
+   "end": 65.4918
   },
   {
    "i": 24,
-   "start": 95.305,
-   "end": 99.528
+   "start": 65.9406,
+   "end": 67.5424
   },
   {
    "i": 25,
-   "start": 100.25,
-   "end": 102.331
+   "start": 68.0353,
+   "end": 70.0081
   },
   {
    "i": 26,
-   "start": 102.381,
-   "end": 105.645
+   "start": 70.4971,
+   "end": 73.1198
   },
   {
    "i": 27,
-   "start": 105.695,
-   "end": 108.179
+   "start": 73.59400000000001,
+   "end": 75.0546
   },
   {
    "i": 28,
-   "start": 108.229,
-   "end": 110.613
+   "start": 75.5472,
+   "end": 76.7643
   },
   {
    "i": 29,
-   "start": 111.357,
-   "end": 115.07
+   "start": 77.2359,
+   "end": 79.0742
   },
   {
    "i": 30,
-   "start": 115.736,
-   "end": 116.649
+   "start": 79.5783,
+   "end": 81.7279
   },
   {
    "i": 31,
-   "start": 117.339,
-   "end": 121.575
+   "start": 82.18730000000001,
+   "end": 83.6612
   },
   {
    "i": 32,
-   "start": 122.267,
-   "end": 126.936
+   "start": 84.1202,
+   "end": 85.6802
   },
   {
    "i": 33,
-   "start": 127.606,
-   "end": 131.008
+   "start": 86.1228,
+   "end": 87.1753
   },
   {
    "i": 34,
-   "start": 131.704,
-   "end": 135.538
+   "start": 87.60430000000001,
+   "end": 90.7796
   },
   {
    "i": 35,
-   "start": 135.852,
-   "end": 142.936
+   "start": 91.2834,
+   "end": 94.1525
   },
   {
    "i": 36,
-   "start": 143.598,
-   "end": 147.603
+   "start": 94.6123,
+   "end": 96.602
+  },
+  {
+   "i": 37,
+   "start": 97.0952,
+   "end": 99.5927
+  },
+  {
+   "i": 38,
+   "start": 100.06,
+   "end": 103.748
+  },
+  {
+   "i": 39,
+   "start": 104.24000000000001,
+   "end": 107.9855
   }
  ],
  "shots": [
   {
    "a": 800,
-   "b": 803.6,
+   "b": 801.8,
    "start": 0.0,
-   "dur": 4.076,
+   "dur": 4.484,
+   "hud": "",
+   "glitch": true,
+   "cont": false
+  },
+  {
+   "a": 802,
+   "b": 803.6,
+   "start": 4.484,
+   "dur": 3.508,
    "hud": "",
    "glitch": true,
    "cont": false
@@ -201,17 +225,17 @@
   {
    "a": 804,
    "b": 806.6,
-   "start": 4.076,
-   "dur": 4.619,
+   "start": 7.993,
+   "dur": 2.661,
    "hud": "DIA 48 · 21:03",
-   "glitch": true,
+   "glitch": false,
    "cont": false
   },
   {
    "a": 806.6,
    "b": 809.6,
-   "start": 8.695,
-   "dur": 5.523,
+   "start": 10.653,
+   "dur": 2.98,
    "hud": "DIA 48 · 21:03",
    "glitch": false,
    "cont": true
@@ -219,8 +243,8 @@
   {
    "a": 810,
    "b": 813,
-   "start": 14.218,
-   "dur": 3.433,
+   "start": 13.634,
+   "dur": 3.75,
    "hud": "DIA 48 · 21:04",
    "glitch": false,
    "cont": false
@@ -228,8 +252,8 @@
   {
    "a": 813.2,
    "b": 816.2,
-   "start": 17.651,
-   "dur": 4.267,
+   "start": 17.384,
+   "dur": 1.899,
    "hud": "DIA 48 · 21:04",
    "glitch": false,
    "cont": false
@@ -237,8 +261,8 @@
   {
    "a": 816.4,
    "b": 819.4,
-   "start": 21.918,
-   "dur": 4.604,
+   "start": 19.283,
+   "dur": 3.378,
    "hud": "DIA 48 · 21:04",
    "glitch": false,
    "cont": false
@@ -246,35 +270,44 @@
   {
    "a": 819.6,
    "b": 821.6,
-   "start": 26.522,
-   "dur": 2.941,
+   "start": 22.661,
+   "dur": 2.206,
    "hud": "DIA 48 · 21:05",
    "glitch": false,
    "cont": false
   },
   {
    "a": 821.6,
+   "b": 823.6,
+   "start": 24.866,
+   "dur": 3.495,
+   "hud": "DIA 48 · 21:05",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 823.6,
    "b": 825,
-   "start": 29.463,
-   "dur": 5.004,
+   "start": 28.362,
+   "dur": 2.533,
    "hud": "DIA 48 · 21:05",
    "glitch": false,
    "cont": true
   },
   {
    "a": 825.2,
-   "b": 828,
-   "start": 34.467,
-   "dur": 2.74,
+   "b": 828.2,
+   "start": 30.895,
+   "dur": 2.601,
    "hud": "DIA 48 · 21:06",
    "glitch": false,
    "cont": false
   },
   {
-   "a": 828,
+   "a": 828.2,
    "b": 831,
-   "start": 37.207,
-   "dur": 3.07,
+   "start": 33.496,
+   "dur": 2.262,
    "hud": "DIA 48 · 21:06",
    "glitch": false,
    "cont": true
@@ -282,53 +315,44 @@
   {
    "a": 831.2,
    "b": 834,
-   "start": 40.277,
-   "dur": 4.418,
+   "start": 35.758,
+   "dur": 3.462,
    "hud": "DIA 48 · 21:06",
    "glitch": false,
    "cont": false
   },
   {
    "a": 834.2,
-   "b": 836.8,
-   "start": 44.695,
-   "dur": 3.603,
+   "b": 839.8,
+   "start": 39.219,
+   "dur": 3.472,
    "hud": "DIA 48 · 21:07",
    "glitch": false,
    "cont": false
   },
   {
-   "a": 836.8,
-   "b": 839.8,
-   "start": 48.298,
-   "dur": 4.557,
-   "hud": "DIA 48 · 21:07",
-   "glitch": false,
-   "cont": true
-  },
-  {
    "a": 840,
    "b": 842,
-   "start": 52.855,
-   "dur": 3.006,
+   "start": 42.691,
+   "dur": 2.488,
    "hud": "DIA 48 · 21:07",
    "glitch": false,
    "cont": false
   },
   {
    "a": 842,
-   "b": 844,
-   "start": 55.861,
-   "dur": 2.301,
+   "b": 846,
+   "start": 45.179,
+   "dur": 3.356,
    "hud": "DIA 48 · 21:07",
    "glitch": false,
    "cont": true
   },
   {
-   "a": 844,
+   "a": 846,
    "b": 847,
-   "start": 58.162,
-   "dur": 4.624,
+   "start": 48.535,
+   "dur": 1.704,
    "hud": "DIA 48 · 21:07",
    "glitch": false,
    "cont": true
@@ -336,8 +360,8 @@
   {
    "a": 847,
    "b": 848.6,
-   "start": 62.786,
-   "dur": 3.799,
+   "start": 50.239,
+   "dur": 1.796,
    "hud": "DIA 48 · 21:07",
    "glitch": false,
    "cont": true
@@ -345,8 +369,8 @@
   {
    "a": 848.6,
    "b": 850,
-   "start": 66.585,
-   "dur": 4.161,
+   "start": 52.035,
+   "dur": 3.099,
    "hud": "DIA 48 · 21:07",
    "glitch": false,
    "cont": true
@@ -354,8 +378,8 @@
   {
    "a": 850.2,
    "b": 853,
-   "start": 70.746,
-   "dur": 4.493,
+   "start": 55.134,
+   "dur": 2.124,
    "hud": "DIA 48 · 21:08",
    "glitch": false,
    "cont": false
@@ -363,17 +387,26 @@
   {
    "a": 853.2,
    "b": 856,
-   "start": 75.239,
-   "dur": 3.738,
+   "start": 57.258,
+   "dur": 2.376,
    "hud": "DIA 48 · 21:08",
    "glitch": false,
    "cont": false
   },
   {
    "a": 856,
+   "b": 857.6,
+   "start": 59.634,
+   "dur": 2.067,
+   "hud": "DIA 48 · 21:08",
+   "glitch": false,
+   "cont": true
+  },
+  {
+   "a": 857.6,
    "b": 858.8,
-   "start": 78.977,
-   "dur": 7.47,
+   "start": 61.701,
+   "dur": 2.502,
    "hud": "DIA 48 · 21:08",
    "glitch": false,
    "cont": true
@@ -381,8 +414,8 @@
   {
    "a": 859,
    "b": 861.8,
-   "start": 86.447,
-   "dur": 2.274,
+   "start": 64.204,
+   "dur": 1.737,
    "hud": "DIA 48 · 21:09",
    "glitch": false,
    "cont": false
@@ -390,8 +423,8 @@
   {
    "a": 861.8,
    "b": 864.6,
-   "start": 88.721,
-   "dur": 2.997,
+   "start": 65.941,
+   "dur": 2.095,
    "hud": "DIA 48 · 21:09",
    "glitch": false,
    "cont": true
@@ -399,8 +432,8 @@
   {
    "a": 864.8,
    "b": 867.2,
-   "start": 91.718,
-   "dur": 3.587,
+   "start": 68.035,
+   "dur": 2.462,
    "hud": "DIA 48 · 21:09",
    "glitch": false,
    "cont": false
@@ -408,62 +441,71 @@
   {
    "a": 867.2,
    "b": 870.4,
-   "start": 95.305,
-   "dur": 4.945,
+   "start": 70.497,
+   "dur": 3.097,
    "hud": "DIA 48 · 21:09",
    "glitch": false,
    "cont": true
   },
   {
    "a": 870.6,
-   "b": 873.4,
-   "start": 100.25,
-   "dur": 2.131,
+   "b": 872,
+   "start": 73.594,
+   "dur": 1.953,
    "hud": "DIA 48 · 21:09",
    "glitch": false,
    "cont": false
   },
   {
+   "a": 872,
+   "b": 873.4,
+   "start": 75.547,
+   "dur": 1.689,
+   "hud": "DIA 48 · 21:09",
+   "glitch": false,
+   "cont": true
+  },
+  {
    "a": 873.6,
-   "b": 875.4,
-   "start": 102.381,
-   "dur": 3.314,
+   "b": 875.6,
+   "start": 77.236,
+   "dur": 2.342,
    "hud": "DIA 48 · 21:10",
    "glitch": false,
    "cont": false
   },
   {
-   "a": 875.4,
-   "b": 877.2,
-   "start": 105.695,
-   "dur": 2.534,
-   "hud": "DIA 48 · 21:10",
-   "glitch": false,
-   "cont": true
-  },
-  {
-   "a": 877.2,
+   "a": 875.6,
    "b": 879.2,
-   "start": 108.229,
-   "dur": 3.128,
+   "start": 79.578,
+   "dur": 2.609,
    "hud": "DIA 48 · 21:10",
    "glitch": false,
    "cont": true
   },
   {
    "a": 879.4,
-   "b": 882.6,
-   "start": 111.357,
-   "dur": 4.379,
+   "b": 881.2,
+   "start": 82.187,
+   "dur": 1.933,
    "hud": "DIA 48 · 21:10",
    "glitch": false,
    "cont": false
   },
   {
+   "a": 881.2,
+   "b": 882.6,
+   "start": 84.12,
+   "dur": 2.003,
+   "hud": "DIA 48 · 21:10",
+   "glitch": false,
+   "cont": true
+  },
+  {
    "a": 882.8,
    "b": 884.6,
-   "start": 115.736,
-   "dur": 1.603,
+   "start": 86.123,
+   "dur": 1.482,
    "hud": "DIA 48 · 21:10",
    "glitch": false,
    "cont": false
@@ -471,53 +513,53 @@
   {
    "a": 884.6,
    "b": 888.4,
-   "start": 117.339,
-   "dur": 4.928,
+   "start": 87.604,
+   "dur": 3.679,
    "hud": "DIA 48 · 21:10",
    "glitch": false,
    "cont": true
   },
   {
    "a": 888.6,
-   "b": 890.4,
-   "start": 122.267,
-   "dur": 5.339,
+   "b": 890,
+   "start": 91.283,
+   "dur": 3.329,
    "hud": "DIA 48 · 21:10",
    "glitch": false,
    "cont": false
   },
   {
-   "a": 890.4,
-   "b": 892,
-   "start": 127.606,
-   "dur": 4.098,
+   "a": 890,
+   "b": 891.8,
+   "start": 94.612,
+   "dur": 2.483,
    "hud": "DIA 48 · 21:10",
    "glitch": false,
    "cont": true
   },
   {
-   "a": 892.2,
+   "a": 891.8,
    "b": 893.2,
-   "start": 131.704,
-   "dur": 4.148,
-   "hud": "DIA 48 · 21:10",
-   "glitch": false,
-   "cont": false
-  },
-  {
-   "a": 893.2,
-   "b": 895.2,
-   "start": 135.852,
-   "dur": 7.746,
+   "start": 97.095,
+   "dur": 2.965,
    "hud": "DIA 48 · 21:10",
    "glitch": false,
    "cont": true
   },
   {
-   "a": 895.2,
+   "a": 893.4,
+   "b": 895,
+   "start": 100.06,
+   "dur": 4.18,
+   "hud": "DIA 48 · 21:10",
+   "glitch": false,
+   "cont": false
+  },
+  {
+   "a": 895,
    "b": 896.4,
-   "start": 143.598,
-   "dur": 4.505,
+   "start": 104.24,
+   "dur": 4.246,
    "hud": "DIA 48 · 21:10",
    "glitch": false,
    "cont": true
@@ -525,7 +567,7 @@
   {
    "a": 896.6,
    "b": 899.8,
-   "start": 148.103,
+   "start": 108.486,
    "dur": 2.8,
    "hud": ""
   }
@@ -533,12 +575,29 @@
  "caps": [
   {
    "start": 0.05,
-   "end": 4.026,
+   "end": 3.946,
+   "words": [
+    "Alguém",
+    "deixou",
+    "esse",
+    "desenho",
+    "pro",
+    "Matheus...",
+    "e",
+    "ele",
+    "tá",
+    "nele."
+   ],
+   "wts": null
+  },
+  {
+   "start": 4.534,
+   "end": 7.415,
    "words": [
     "Vocês",
-    "escolheram:",
-    "A.",
-    "Ele",
+    "escolheram",
+    "A:",
+    "ele",
     "entrou",
     "no",
     "vagão",
@@ -547,81 +606,65 @@
    "wts": null
   },
   {
-   "start": 4.126,
-   "end": 8.645,
+   "start": 8.043,
+   "end": 10.126,
    "words": [
     "E",
-    "no",
-    "segundo",
-    "em",
-    "que",
-    "ele",
-    "pisa",
-    "lá",
-    "dentro...",
     "as",
     "portas",
     "se",
-    "fecham."
+    "fecharam",
+    "atrás",
+    "dele."
    ],
    "wts": null
   },
   {
-   "start": 8.745,
-   "end": 13.513,
+   "start": 10.704,
+   "end": 13.095,
    "words": [
     "Ele",
     "empurra",
-    "a",
-    "porta",
     "com",
     "força.",
-    "Trancada."
+    "Trancadas."
    ],
    "wts": null
   },
   {
-   "start": 14.268,
-   "end": 17.024,
+   "start": 13.684,
+   "end": 16.763,
    "words": [
     "Aí",
     "vem",
     "um",
     "tranco.",
-    "E",
-    "o",
+    "O",
     "trem",
-    "começa",
-    "a",
-    "andar."
+    "anda.",
+    "Sozinho."
    ],
    "wts": null
   },
   {
-   "start": 17.701,
-   "end": 20.94,
+   "start": 17.434,
+   "end": 18.754,
    "words": [
-    "Um",
-    "trem",
-    "com",
-    "a",
-    "cabine",
-    "vazia...",
-    "andando",
-    "sozinho."
+    "Sem",
+    "ninguém",
+    "na",
+    "cabine."
    ],
    "wts": null
   },
   {
-   "start": 21.968,
-   "end": 25.773,
+   "start": 19.333,
+   "end": 22.123,
    "words": [
-    "Pela",
-    "janela,",
-    "a",
-    "luz",
-    "da",
+    "A",
     "lanterna",
+    "do",
+    "túnel",
     "passa...",
     "e",
     "fica",
@@ -631,11 +674,10 @@
    "wts": null
   },
   {
-   "start": 26.572,
-   "end": 28.796,
+   "start": 22.711,
+   "end": 24.283,
    "words": [
-    "Então,",
-    "o",
+    "O",
     "celular",
     "vibra",
     "de",
@@ -646,12 +688,10 @@
    "wts": null
   },
   {
-   "start": 29.513,
-   "end": 34.417,
+   "start": 24.916,
+   "end": 27.726,
    "words": [
-    "Nova",
-    "mensagem:",
-    "não",
+    "Não",
     "precisa",
     "ter",
     "medo.",
@@ -663,83 +703,79 @@
    "wts": null
   },
   {
-   "start": 34.517,
-   "end": 36.547,
+   "start": 28.412,
+   "end": 30.372,
+   "words": [
+    "E",
+    "você?",
+    "Teria",
+    "coragem",
+    "de",
+    "ir?"
+   ],
+   "wts": null
+  },
+  {
+   "start": 30.945,
+   "end": 32.982,
    "words": [
     "Ele",
-    "segue",
-    "pro",
-    "fundo",
-    "do",
-    "trem."
-   ],
-   "wts": null
-  },
-  {
-   "start": 37.257,
-   "end": 39.637,
-   "words": [
+    "foi.",
     "Vagão",
     "por",
-    "vagão,",
-    "sempre",
-    "pra",
-    "trás."
+    "vagão."
    ],
    "wts": null
   },
   {
-   "start": 40.327,
-   "end": 43.931,
+   "start": 33.546,
+   "end": 35.201,
+   "words": [
+    "Um",
+    "vagão",
+    "vazio",
+    "atrás",
+    "do",
+    "outro."
+   ],
+   "wts": null
+  },
+  {
+   "start": 35.807,
+   "end": 38.67,
    "words": [
     "O",
     "último",
-    "vagão",
     "tá",
     "escuro.",
     "Só",
     "as",
     "luzinhas",
     "do",
-    "chão",
-    "piscam."
+    "chão."
    ],
    "wts": null
   },
   {
-   "start": 44.745,
-   "end": 47.657,
+   "start": 39.269,
+   "end": 42.156,
    "words": [
     "E",
     "no",
-    "meio",
-    "do",
-    "corredor...",
+    "chão...",
     "um",
-    "tênis."
-   ],
-   "wts": null
-  },
-  {
-   "start": 48.348,
-   "end": 52.162,
-   "words": [
-    "Um",
-    "tênis",
-    "vermelho,",
-    "pequenininho.",
+    "tênis.",
     "De",
     "criança."
    ],
    "wts": null
   },
   {
-   "start": 52.905,
-   "end": 55.151,
+   "start": 42.741,
+   "end": 44.668,
    "words": [
     "Dentro",
     "dele,",
-    "tem",
     "um",
     "papel",
     "dobrado."
@@ -747,27 +783,25 @@
    "wts": null
   },
   {
-   "start": 55.911,
-   "end": 58.112,
+   "start": 45.229,
+   "end": 48.008,
    "words": [
-    "Ele",
-    "abre.",
     "É",
     "um",
-    "desenho."
+    "desenho.",
+    "Três",
+    "pessoas",
+    "de",
+    "mãos",
+    "dadas."
    ],
    "wts": null
   },
   {
-   "start": 58.212,
-   "end": 62.034,
+   "start": 48.585,
+   "end": 49.785,
    "words": [
-    "Três",
-    "bonequinhos",
-    "de",
-    "mãos",
-    "dadas,",
-    "na",
+    "Na",
     "frente",
     "de",
     "uma",
@@ -776,22 +810,18 @@
    "wts": null
   },
   {
-   "start": 62.836,
-   "end": 65.843,
+   "start": 50.289,
+   "end": 51.491,
    "words": [
     "E",
     "embaixo,",
-    "com",
-    "letra",
-    "torta,",
-    "tá",
     "escrito:"
    ],
    "wts": null
   },
   {
-   "start": 66.635,
-   "end": 70.023,
+   "start": 52.085,
+   "end": 54.625,
    "words": [
     "Eu,",
     "você...",
@@ -804,15 +834,11 @@
    "wts": null
   },
   {
-   "start": 70.796,
-   "end": 74.847,
+   "start": 55.184,
+   "end": 56.725,
    "words": [
     "O",
     "moço",
-    "da",
-    "câmera...",
-    "o",
-    "mesmo",
     "que",
     "tirou",
     "as",
@@ -822,25 +848,19 @@
    "wts": null
   },
   {
-   "start": 75.289,
-   "end": 78.42,
+   "start": 57.308,
+   "end": 59.193,
    "words": [
-    "Ele",
-    "vira",
-    "o",
-    "papel.",
-    "Atrás,",
-    "só",
-    "uma",
-    "coisa:",
+    "No",
+    "verso:",
     "dia",
     "sessenta."
    ],
    "wts": null
   },
   {
-   "start": 79.027,
-   "end": 85.801,
+   "start": 59.684,
+   "end": 61.186,
    "words": [
     "Hoje",
     "é",
@@ -848,7 +868,14 @@
     "dia",
     "quarenta",
     "e",
-    "oito.",
+    "oito."
+   ],
+   "wts": null
+  },
+  {
+   "start": 61.751,
+   "end": 63.712,
+   "words": [
     "Faltam",
     "doze",
     "dias...",
@@ -858,11 +885,10 @@
    "wts": null
   },
   {
-   "start": 86.497,
-   "end": 88.082,
+   "start": 64.254,
+   "end": 65.492,
    "words": [
-    "De",
-    "repente,",
+    "Aí",
     "o",
     "trem",
     "freia",
@@ -872,8 +898,8 @@
    "wts": null
   },
   {
-   "start": 88.771,
-   "end": 91.595,
+   "start": 65.991,
+   "end": 67.542,
    "words": [
     "E",
     "todas",
@@ -885,22 +911,20 @@
    "wts": null
   },
   {
-   "start": 91.768,
-   "end": 95.255,
+   "start": 68.085,
+   "end": 70.008,
    "words": [
     "No",
     "escuro,",
     "o",
     "alto-falante",
-    "do",
-    "trem",
-    "chia."
+    "chia..."
    ],
    "wts": null
   },
   {
-   "start": 95.355,
-   "end": 99.528,
+   "start": 70.547,
+   "end": 73.12,
    "words": [
     "Matheus...",
     "não",
@@ -913,74 +937,74 @@
    "wts": null
   },
   {
-   "start": 100.3,
-   "end": 102.331,
+   "start": 73.644,
+   "end": 75.055,
    "words": [
     "É",
     "a",
     "mesma",
     "voz",
     "do",
-    "rádio",
-    "da",
-    "avenida."
+    "rádio."
    ],
    "wts": null
   },
   {
-   "start": 102.431,
-   "end": 105.645,
+   "start": 75.597,
+   "end": 76.764,
+   "words": [
+    "Como",
+    "ela",
+    "sabe",
+    "o",
+    "nome",
+    "dele?"
+   ],
+   "wts": null
+  },
+  {
+   "start": 77.286,
+   "end": 79.074,
    "words": [
     "As",
     "luzes",
     "voltam.",
     "O",
     "trem",
-    "parou",
-    "numa",
-    "estação."
+    "parou."
    ],
    "wts": null
   },
   {
-   "start": 105.745,
-   "end": 108.179,
+   "start": 79.628,
+   "end": 81.728,
    "words": [
     "Ele",
     "lê",
     "a",
     "placa...",
-    "e",
-    "gela."
-   ],
-   "wts": null
-  },
-  {
-   "start": 108.279,
-   "end": 110.613,
-   "words": [
     "Estação",
-    "Sé.",
-    "A",
-    "mesma",
-    "estação",
-    "de",
-    "onde",
-    "ele",
-    "saiu."
+    "Sé."
    ],
    "wts": null
   },
   {
-   "start": 111.407,
-   "end": 115.07,
+   "start": 82.237,
+   "end": 83.661,
    "words": [
     "O",
     "trem",
     "deu",
     "uma",
     "volta",
-    "inteira...",
+    "inteira..."
+   ],
+   "wts": null
+  },
+  {
+   "start": 84.17,
+   "end": 85.68,
+   "words": [
     "e",
     "voltou",
     "pro",
@@ -990,8 +1014,8 @@
    "wts": null
   },
   {
-   "start": 115.786,
-   "end": 116.649,
+   "start": 86.173,
+   "end": 87.175,
    "words": [
     "As",
     "portas",
@@ -1001,53 +1025,41 @@
    "wts": null
   },
   {
-   "start": 117.389,
-   "end": 121.575,
+   "start": 87.654,
+   "end": 90.78,
    "words": [
     "E",
     "lá",
     "no",
-    "fim",
-    "da",
-    "plataforma,",
+    "fundo...",
     "a",
-    "sombra",
-    "pequena",
-    "sobe",
+    "criança!",
+    "Subindo",
     "a",
-    "escada",
-    "correndo."
+    "escada."
    ],
    "wts": null
   },
   {
-   "start": 122.317,
-   "end": 126.936,
+   "start": 91.333,
+   "end": 94.153,
    "words": [
     "No",
     "chão,",
-    "perto",
-    "da",
-    "porta,",
     "a",
     "lanterna",
     "do",
     "túnel.",
-    "Ainda",
-    "acesa."
+    "Acesa."
    ],
    "wts": null
   },
   {
-   "start": 127.656,
-   "end": 131.008,
+   "start": 94.662,
+   "end": 96.602,
    "words": [
-    "E",
-    "ela",
-    "aponta",
+    "Apontando",
     "pra",
-    "uma",
-    "porta:",
     "saída",
     "de",
     "emergência."
@@ -1055,40 +1067,28 @@
    "wts": null
   },
   {
-   "start": 131.754,
-   "end": 135.538,
+   "start": 97.145,
+   "end": 99.593,
    "words": [
-    "A",
-    "criança",
-    "foi",
-    "pra",
-    "um",
-    "lado.",
-    "A",
-    "lanterna",
-    "aponta",
-    "pro",
-    "outro."
+    "Repara",
+    "na",
+    "porta...",
+    "o",
+    "mesmo",
+    "desenho."
    ],
    "wts": null
   },
   {
-   "start": 135.902,
-   "end": 142.936,
+   "start": 100.11,
+   "end": 103.748,
    "words": [
     "E",
-    "agora,",
-    "Matheus?",
+    "agora?",
     "Segue",
     "a",
-    "criança",
-    "pela",
-    "escada...",
+    "criança...",
     "ou",
-    "pega",
-    "a",
-    "lanterna",
-    "e",
     "abre",
     "a",
     "saída",
@@ -1098,8 +1098,8 @@
    "wts": null
   },
   {
-   "start": 143.648,
-   "end": 147.603,
+   "start": 104.29,
+   "end": 107.986,
    "words": [
     "Comenta",
     "A",
