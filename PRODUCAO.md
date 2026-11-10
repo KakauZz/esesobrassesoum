@@ -101,9 +101,9 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 - EP. 4: o **celular** desconhecido que mandou "entrar no vagão". Quem mandou? (a criança, que quer ajuda, mas está com medo)
 - EP. 4: as **pegadas pequenas** e a catraca girando (a criança)
 - EP. 4: o mapa "VOCÊ ESTÁ AQUI · dia 48" e a foto de Matheus correndo (o fotógrafo)
-- EP. 5 (O VAGÃO): o **tênis vermelho** pequeno e o **desenho** "eu, você e o moço da câmera" (três de mãos dadas na frente de uma porta = a passagem). No verso: **"dia 60"** (faltam 12 dias). Quem desenhou: a criança.
-- EP. 5: o **alto-falante** do trem com a mesma voz do rádio: "não confia no que você vê" (o fotógrafo). O trem deu a volta e voltou para a Sé (a cidade "cópia" se repete).
-- EP. 5: a **lanterna** deixada acesa na plataforma, apontando para a **saída de emergência** (o fotógrafo quer que ele vá por ali). A criança subiu a escada.
+- EP. 5 (O VAGÃO, versão final simplificada): quem manda as mensagens é a **criança** (tênis vermelho do tamanho das pegadas do EP. 4). O **desenho** "eu, você e o moço da câmera" (três de mãos dadas na frente de uma porta) mostra que ela quer os três juntos. O trem voltou para a Sé e a criança subiu a escada.
+- EP. 5: a **lanterna** do túnel (a luz que o rádio mandou seguir no EP. 4) aponta para a **saída de emergência**, que tem o mesmo desenho colado: é "a porta do desenho". Escolha: A) seguir a criança / B) abrir a porta do desenho.
+- Ficaram DE FORA do EP. 5 final (não use como se tivessem acontecido): o "dia 60" no verso, o alto-falante do trem e o mapa da volta. Podem entrar no futuro, explicados com calma, um por episódio.
 
 ## Postagem (decisão do usuário)
 - **Não marcar como conteúdo de IA:** `isAiGenerated:false` (Instagram), `isAigc:false` (TikTok), `isAiGeneratedContent:false` (YouTube).
