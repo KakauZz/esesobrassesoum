@@ -3,7 +3,7 @@
 import json, os, re, subprocess
 HERE=os.path.dirname(os.path.abspath(__file__)); O=os.path.join(HERE,"saida")
 VOZ=os.path.join(O,"voz_full.wav")
-FALAS=['Alguém deixou esse desenho pro Matheus... e ele tá nele.', 'Vocês escolheram A: ele entrou no vagão.', 'E as portas se fecharam atrás dele.', 'Ele empurra. Trancadas.', 'Aí o trem começa a andar. Sozinho.', 'Sem ninguém na cabine.', 'A lanterna do túnel fica pra trás.', 'O celular vibra no banco.', 'Não precisa ter medo. Vem pro último vagão.', 'E você? Ia até lá?', 'Ele foi. Vagão por vagão.', 'O último vagão tá escuro.', 'E no chão... um tênis. De criança.', 'Dentro, um papel dobrado.', 'É o desenho. Três pessoas de mãos dadas.', 'Na frente de uma porta.', 'E embaixo, escrito:', 'Eu, você... e o moço da câmera.', 'O moço que tirou as fotos dele?', 'No verso: dia sessenta.', 'Hoje é dia quarenta e oito.', 'Faltam doze dias... pra quê?', 'Aí o trem freia com tudo.', 'E as luzes se apagam.', 'O alto-falante chia...', 'Matheus... não confia no que você vê.', 'A mesma voz do rádio.', 'As luzes voltam. O trem parou.', 'Ele lê a placa... Estação Sé.', 'O trem deu a volta... e voltou pro começo.', 'As portas abrem.', 'A criança! Subindo a escada, correndo.', 'E no chão, a lanterna. Acesa.', 'Apontando pra saída de emergência.', 'Repara na porta... tem o mesmo desenho.', 'E agora? Segue a criança... ou abre a saída de emergência?', 'Comenta A ou B! A mais votada vira o episódio 6.']
+FALAS=['Alguém deixou esse desenho pro Matheus... e ele tá nele. Olha o moletom laranja.', 'Mas antes: no episódio quatro, vocês escolheram A. Ele entrou no vagão aceso.', 'E no segundo em que ele pisa lá dentro... as portas se fecham.', 'Ele empurra com força. Trancadas.', 'Aí vem um tranco. E o trem começa a andar. Sozinho.', 'Sem ninguém na cabine. Nenhum maquinista.', 'Pela janela, a lanterna do túnel passa... e fica pra trás.', 'Aí o celular vibra de novo no banco.', 'Não precisa ter medo. Vem pro último vagão.', 'E você? Teria coragem de ir até lá?', 'Ele foi. Vagão por vagão, sempre pra trás.', 'Passando por um vagão vazio atrás do outro.', 'O último vagão tá escuro. Só as luzinhas do chão piscam.', 'E no meio do corredor... um tênis. Um tênis de criança.', 'Dentro dele, tem um papel dobrado.', 'Ele abre. É um desenho. Três pessoas de mãos dadas.', 'Na frente de uma porta.', 'E embaixo, com letra de criança, tá escrito:', 'Eu, você... e o moço da câmera.', 'O moço da câmera... o mesmo que tirou as fotos dele?', 'Ele vira o papel. No verso: dia sessenta.', 'Hoje é o dia quarenta e oito.', 'Faltam doze dias... pra quê?', 'De repente, o trem freia com tudo.', 'E todas as luzes se apagam.', 'No escuro, o alto-falante do trem chia...', 'Matheus... não confia no que você vê.', 'É a mesma voz do rádio da avenida.', 'Quem tá falando com ele... e como sabe o nome dele?', 'As luzes voltam. O trem parou numa estação.', 'Ele lê a placa... Estação Sé.', 'O trem deu uma volta inteira...', 'e voltou pro mesmo lugar de onde saiu.', 'As portas se abrem.', 'E lá no fim da plataforma... a criança! Subindo a escada, correndo.', 'No chão, perto da porta, a lanterna do túnel. Ainda acesa.', 'Apontando pra saída de emergência.', 'Repara na porta... tem o mesmo desenho do papel.', 'E agora, Matheus? Segue a criança pela escada... ou abre a saída de emergência?', 'Comenta A ou B! A mais votada vira o episódio 6.']
 # tomadas por fala: (inicio_anim, fim_anim, fração da fala, HUD)
 SHOTS=[
        [(800, 801.8, 1, '')],
@@ -16,7 +16,8 @@ SHOTS=[
        [(819.6, 821.6, 1, 'DIA 48 · 21:05')],
        [(821.6, 823.6, 1, 'DIA 48 · 21:05', 'cont')],
        [(823.6, 825, 1, 'DIA 48 · 21:05', 'cont')],
-       [(825.2, 828.5, 1, 'DIA 48 · 21:06')],
+       [(825.2, 828.2, 1, 'DIA 48 · 21:06')],
+       [(828.2, 831, 1, 'DIA 48 · 21:06', 'cont')],
        [(831.2, 834, 1, 'DIA 48 · 21:06')],
        [(834.2, 839.8, 1, 'DIA 48 · 21:07')],
        [(840, 842, 1, 'DIA 48 · 21:07')],
@@ -32,10 +33,12 @@ SHOTS=[
        [(861.8, 864.6, 1, 'DIA 48 · 21:09', 'cont')],
        [(864.8, 867.2, 1, 'DIA 48 · 21:09')],
        [(867.2, 870.4, 1, 'DIA 48 · 21:09', 'cont')],
-       [(870.6, 873.4, 1, 'DIA 48 · 21:09')],
+       [(870.6, 872, 1, 'DIA 48 · 21:09')],
+       [(872, 873.4, 1, 'DIA 48 · 21:09', 'cont')],
        [(873.6, 875.6, 1, 'DIA 48 · 21:10')],
        [(875.6, 879.2, 1, 'DIA 48 · 21:10', 'cont')],
-       [(879.4, 882.6, 1, 'DIA 48 · 21:10')],
+       [(879.4, 881.2, 1, 'DIA 48 · 21:10')],
+       [(881.2, 882.6, 1, 'DIA 48 · 21:10', 'cont')],
        [(882.8, 884.6, 1, 'DIA 48 · 21:10')],
        [(884.6, 888.4, 1, 'DIA 48 · 21:10', 'cont')],
        [(888.6, 890, 1, 'DIA 48 · 21:10')],
