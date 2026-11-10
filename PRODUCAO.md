@@ -149,14 +149,15 @@ O Metricool grátis tem **20 posts publicados por mês**, contados por rede, e o
 Vale para TODO episódio, do primeiro ao último segundo. Revise cada item antes de postar.
 1. **0 a 2 s, o gancho visual:** antes do recap, abra com um *flash-forward* de 1,5 s do momento mais intrigante do episódio (ex.: o desenho "eu, você e o moço da câmera", a placa "ESTAÇÃO SÉ"), com um tremor/zoom rápido. O 1º quadro nunca é tela parada nem só texto.
 2. **Título-gancho na tela nos 3 primeiros segundos:** uma frase curta em letras grandes no topo, desenhada na cena de abertura (ex.: "ELE NÃO DEVIA TER ENTRADO 😳", "QUEM DESENHOU ISSO?"). Uma pergunta ou uma revelação, nunca o nome do episódio.
-3. **Recap em no máximo 3 s.** Logo depois, a 1ª reviravolta tem que vir em até 8 s.
-4. **Mini-gancho a cada 15–20 s:** uma pergunta, um som, algo aparecendo no fundo ou uma frase do tipo "mas não era só isso…". Nunca passe 20 s sem uma novidade.
-5. **Corte ou movimento a cada 2–3 s:** zoom, troca de câmera ou algo entrando no quadro. Nenhuma cena parada por mais de 3 s.
-6. **Falar com quem assiste** pelo menos 2 vezes no meio do episódio ("e você, entraria?", "repara no canto da tela…"), para puxar comentário antes do final.
-7. **Pista escondida:** coloque 1 detalhe pequeno que só quem presta atenção vê (e diga na legenda/primeiro comentário "achou a pista escondida? 👀"). Isso faz rever e comentar. A pista tem que servir à história.
-8. **Final em gancho forte:** a última imagem antes da escolha é uma revelação ou uma pergunta sem resposta. As opções A e B precisam dividir o público.
-9. **Legenda do post e primeiro comentário** começam com uma pergunta ou uma frase de choque (até 8 palavras), sem spoiler do final.
-10. **Duração:** com as falas curtas, fique entre 95 e 115 s. Vídeo mais curto e mais denso segura mais gente até o fim.
+3. **Lembrança do começo da série (pedido do usuário, 10/11), logo depois do gancho, em TODO episódio:** 5 a 6 falas curtas (~15 s) para quem chegou agora, reaproveitando as cenas antigas (sem desenhar de novo): ele acorda no dia 1 (cena 0–4), todos os jornais dizendo que as pessoas estão sumindo (110–117), o contador do mundo caindo até 1 e "VOCÊ" (120–125), a cidade vazia pela janela (7–11), a carta no dia 48 (41–46) e a parede de fotos (560–570). Use o HUD "DIA 1 · 07:12" nas cenas do passado. No EP. 5 o texto foi: "Pra quem chegou agora: dia um. Matheus acorda... / e em todos os jornais, a mesma notícia: / as pessoas estão sumindo. No mundo inteiro. / Até sobrar só ele. Sozinho em São Paulo. / No dia quarenta e oito, ele acha uma carta... / e descobre que alguém fotografa ele desde o primeiro dia." Varie as palavras a cada episódio e, conforme a história avança, troque a última fala pelo fato mais importante até agora.
+4. **Recap do episódio anterior em no máximo 3 s.** Logo depois, a 1ª reviravolta tem que vir em até 8 s.
+5. **Mini-gancho a cada 15–20 s:** uma pergunta, um som, algo aparecendo no fundo ou uma frase do tipo "mas não era só isso…". Nunca passe 20 s sem uma novidade.
+6. **Corte ou movimento a cada 2–3 s:** zoom, troca de câmera ou algo entrando no quadro. Nenhuma cena parada por mais de 3 s.
+7. **Falar com quem assiste** pelo menos 2 vezes no meio do episódio ("e você, entraria?", "repara no canto da tela…"), para puxar comentário antes do final.
+8. **Pista escondida:** coloque 1 detalhe pequeno que só quem presta atenção vê (e diga na legenda/primeiro comentário "achou a pista escondida? 👀"). Isso faz rever e comentar. A pista tem que servir à história.
+9. **Final em gancho forte:** a última imagem antes da escolha é uma revelação ou uma pergunta sem resposta. As opções A e B precisam dividir o público.
+10. **Legenda do post e primeiro comentário** começam com uma pergunta ou uma frase de choque (até 8 palavras), sem spoiler do final.
+11. **Duração:** com as falas curtas, fique entre 95 e 115 s. Vídeo mais curto e mais denso segura mais gente até o fim.
 Meça todo dia: se a média assistida no TikTok não subir dos 11 s do EP. 4, deixe o gancho dos 2 primeiros segundos ainda mais forte e anote em "Aprendizados".
 
 ## Tudo para crescer (o objetivo agora: 10 mil seguidores e 100 mil views em 30 dias no TikTok)
