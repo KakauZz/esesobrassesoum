@@ -31,7 +31,7 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 - **O segredo:** as pessoas não sumiram. Quem "saiu do lugar" foram eles três: estão numa São Paulo "cópia", vazia. O mundo real continua do outro lado. As falhas (rádio chiando, celular ligando sozinho, luzes piscando) são o mundo real tentando aparecer. Daí o rádio dizer "não confia no que você vê".
 - **O relógio da série:** o calendário dos dias riscados. Perto do **dia 60**, a passagem de volta se abre no lugar onde tudo começou, o quarto em que Matheus acordou no dia 1.
 - **O final (sem morte, sem perda):** os três chegam juntos à passagem, mas ela só abre para **um de cada vez** ("E se sobrasse só UM?"). A última votação decide **quem atravessa primeiro e o que cada um leva de volta**, e todos voltam, cada um do seu jeito. O mistério se resolve com reencontro.
-- **Pistas a plantar, uma por episódio, sem pressa:** a criança (pegadas, um tênis pequeno, um desenho), o diário do fotógrafo, falhas do mundo real (vozes no rádio, celular, TVs ligando sozinhas), o calendário avançando e o lugar do dia 1. Nunca contradiga fatos já mostrados.
+- **Pistas a plantar, no máximo uma por episódio, sem pressa (e sempre explicada na narração):** a criança (pegadas, um tênis pequeno, um desenho), o diário do fotógrafo, falhas do mundo real (vozes no rádio, celular, TVs ligando sozinhas), o calendário avançando e o lugar do dia 1. Nunca contradiga fatos já mostrados.
 
 ## Passo a passo
 1. **Achar o último episódio postado.** É o maior `epNN` com `epNN_final.mp4` no repositório. As opções A e B dele estão no fim de `epNN_cenas.js` (a cena da "escolha").
@@ -145,6 +145,14 @@ O Metricool grátis tem **20 posts publicados por mês**, contados por rede, e o
 - **YouTube = sem postagem automática por enquanto**, até o usuário configurar a API do YouTube. Todo dia, mande o vídeo e um título pronto para ele postar à mão, se quiser.
 - 10/11 (tarde): o usuário achou o EP. 5 sem graça ("não fiquei com vontade de assistir"). Refeito: abertura-gancho de 1,8 s ("QUEM DESENHOU ISSO? 😳" + o desenho, com círculo em "é ele!"), recap em 1,6 s, 40 falas curtas, 2 falas falando com o público e a pista do desenho colado na porta. Ficou com **1min51**. Legenda do post começa com a pergunta. Medida de ritmo: use **letras por segundo** (EP. 4-A rápido demais = 16/s; EP. 5 = 12/s), não falas por 10 s.
 - **Armadilhas técnicas (10/11):** (1) se mudar a faixa de uma cena (ex.: 800–803.6 → 800–801.8), apague a entrada antiga de `cache/index.json`, senão o editor usa o vídeo velho; (2) se o `ts_raw.json` não vier (o Gemini de tempos deu 503), o `plano.py` alinha pelas pausas: confira se nenhuma fala ficou com mais de 5 s (no EP. 5 isso foi resolvido com o limiar -32 dB); (3) a voz do Gemini às vezes vai ficando mais alta até o fim: nivele o volume antes do `efeitos_voz.py`.
+
+## História simples e narração fiel (dica do usuário, 10/11: "não coloque tantas coisas, senão as pessoas ficam perdidas")
+- **Um mistério por episódio.** Cada episódio tem UMA pergunta central (ex.: "quem deixou o desenho?") e tudo gira em volta dela.
+- **No máximo 2 elementos novos por episódio** (objeto, pista, lugar ou personagem). O EP. 5 teve elementos demais (trem andando sozinho, lanterna, celular, tênis, desenho, dia 60, alto-falante, volta do trem, criança, porta), e a partir de agora isso não se repete. O que não couber fica para o próximo episódio.
+- **Explique cada coisa que aparece.** Quando algo novo entra, a narração diz o que é e por que importa, com palavras simples ("É o desenho de uma criança. E ele está nele."). Nada fica no ar sem explicação.
+- **Narração fiel ao que acontece:** a fala descreve exatamente o que está na tela, na ordem em que acontece, sem pular passos e sem afirmar o que a imagem não mostra. Se a imagem mostra uma coisa e a fala diz outra, corrija antes de postar.
+- **Retome, não acumule:** antes de criar pista nova, use as que já estão em "Pistas em aberto" e explique para que ela serve. Pista retomada é mais clara que pista nova.
+- **Teste do amigo:** depois de escrever, resuma o episódio em 2 frases. Se não der, está complicado demais: corte.
 
 ## Prender a atenção SEMPRE (pedido do usuário, 10/11: "tem que chamar a atenção do seguidor sempre")
 Vale para TODO episódio, do primeiro ao último segundo. Revise cada item antes de postar.
