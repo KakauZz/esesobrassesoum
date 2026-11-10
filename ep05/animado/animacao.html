@@ -1609,13 +1609,28 @@ function trainSide(sx,tx,lit,o){o=o||{};
     ctx.fillStyle=`rgba(200,235,255,${on})`;ctx.fillRect(x-8,1286,16,8)}}
 }
 
-// 1. recap (800–803.6) — já com o vagão aceso e as portas atrás (gancho no 1º quadro)
-scene(800,803.6,(t)=>{const u=t-800;ctx.fillStyle='#0e0c14';ctx.fillRect(0,0,W,H);
+// 0. ABERTURA-GANCHO (800–801.8): flash-forward do desenho, com título grande no topo
+function hookTitle(txt,k,y){ctx.save();ctx.textAlign='center';ctx.translate(W/2,y);const s=lerp(1.6,1,easeOut(k));ctx.scale(s,s);ctx.globalAlpha=Math.min(1,k*3);
+  ctx.font='900 112px Inter';ctx.lineWidth=20;ctx.strokeStyle='#000';ctx.lineJoin='round';txt.split('|').forEach((l,i)=>{ctx.strokeText(l,0,i*124);ctx.fillStyle='#ffd84a';ctx.fillText(l,0,i*124)});ctx.restore()}
+scene(800,801.8,(t)=>{const u=t-800;ctx.fillStyle='#14151c';ctx.fillRect(0,0,W,H);
+  const z=lerp(1.25,1.05,easeOut(seg(u,0,.5)))+u*.04,sh=u<.35?Math.sin(u*90)*14:0;
+  ctx.save();ctx.translate(W/2+sh,H*.52);ctx.scale(z,z);ctx.translate(-W/2,-H*.52);
+  const d=S.find(x=>x.a===840);if(d)d.fn(849.95);ctx.restore();
+  // círculo vermelho no bonequinho de moletom laranja (é ele!)
+  if(u>.55){const k=seg(u,.55,1.2);const cx=W/2+sh,cy=H*.52+(H*.46-H*.52+170-160-34)*z;ctx.strokeStyle='#ff3b3b';ctx.lineWidth=12;ctx.lineCap='round';ctx.beginPath();for(let a=0;a<=k*6.6;a+=.05){const x=cx+Math.cos(a)*(120+8*Math.sin(a*3))*z,y=cy+60*z+Math.sin(a)*150*z;a?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();
+    if(u>1.1){ctx.save();ctx.globalAlpha=seg(u,1.1,1.4);ctx.fillStyle='#ff3b3b';ctx.font='700 70px Caveat';ctx.fillText('é ele!',cx+150*z,cy-90*z);ctx.restore()}}
+  ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(0,150,W,330);
+  hookTitle('QUEM DESENHOU|ISSO? 😳',seg(u,0,.35),290);
+  if(u<.12){ctx.fillStyle=`rgba(255,255,255,${.8*(1-u/.12)})`;ctx.fillRect(0,0,W,H)}
+});
+
+// 1. recap rápido (802–803.6) — já com o vagão aceso e as portas atrás
+scene(802,803.6,(t)=>{const u=(t-802)*2.25;ctx.fillStyle='#0e0c14';ctx.fillRect(0,0,W,H);
   // fundo: vagão aceso com portas abertas, celular brilhando no banco
   ctx.save();ctx.globalAlpha=.55;ctx.fillStyle='#c8ccd6';rr(-60,1180,1200,700,30);ctx.fill();ctx.fillStyle='#ffe6a8';for(let w=0;w<3;w++)rr(40+w*360,1260,260,240,16),ctx.fill();
   ctx.fillStyle='#ffe6a8';ctx.fillRect(400,1540,280,380);ctx.fillStyle='#8a8e9a';ctx.fillRect(330,1540,90,380);ctx.fillRect(660,1540,90,380);ctx.restore();
   const g=ctx.createRadialGradient(W/2,H*.42,40,W/2,H*.42,900);g.addColorStop(0,'rgba(60,200,130,.28)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-  ctx.textAlign='center';ctx.fillStyle='#f4e2b0';ctx.font='700 50px "DejaVu Sans Mono", monospace';ctx.globalAlpha=easeOut(seg(u,0,.4));ctx.fillText('NO EPISÓDIO 4, VOCÊS ESCOLHERAM',W/2,520);ctx.globalAlpha=1;ctx.textAlign='left';
+  ctx.textAlign='center';ctx.fillStyle='#f4e2b0';ctx.font='700 50px "DejaVu Sans Mono", monospace';ctx.globalAlpha=easeOut(seg(u,0,.4));ctx.fillText('NO EPISÓDIO 4, VOCÊS ESCOLHERAM',W/2,560);ctx.globalAlpha=1;ctx.textAlign='left';
   const kb=easeOut(seg(u,.9,1.5));ctx.save();ctx.globalAlpha=1-kb;ctx.translate(kb*700,0);ctx.fillStyle='rgba(170,60,60,.92)';rr(70,900,940,190,36);ctx.fill();ctx.fillStyle='#fff';ctx.font='900 130px Inter';ctx.fillText('B',120,1045);ctx.font='800 50px Inter';ctx.fillText('Seguir a luz no túnel',250,1020);ctx.restore();
   const ka=easeBack(seg(u,1.2,1.8)),sc=1+ka*.12,yy=lerp(660,760,ka);
   ctx.save();ctx.translate(W/2,yy+95);ctx.scale(sc,sc);ctx.translate(-W/2,-(yy+95));
@@ -1905,8 +1920,9 @@ scene(882.8,888.4,(t)=>{const u=t-882.8;ctx.fillStyle='#e9e4cf';ctx.fillRect(0,0
   vignette(.45);
 });
 
-// 19. a lanterna no chão, acesa, apontando para a SAÍDA DE EMERGÊNCIA (888.6–892)
-scene(888.6,892,(t)=>{const u=t-888.6;const pan=lerp(0,-560,ease(seg(u,1.4,3.2)));ctx.fillStyle='#0b0c12';ctx.fillRect(0,0,W,H);
+// 19. a lanterna no chão, acesa, apontando para a SAÍDA DE EMERGÊNCIA; depois zoom no desenho colado na porta (888.6–893.2)
+scene(888.6,893.2,(t)=>{const u=t-888.6;const pan=lerp(0,-560,ease(seg(u,1.4,3.2)));ctx.fillStyle='#0b0c12';ctx.fillRect(0,0,W,H);
+  const zz=lerp(1,2.6,ease(seg(u,3.3,4.4)));ctx.save();ctx.translate(540,1000);ctx.scale(zz,zz);ctx.translate(-540,-1000);
   ctx.save();ctx.translate(pan,0);
   tileWall(-200,200,2000,1100,'#2a3333','#222b2b');ctx.fillStyle='#3a3b44';ctx.fillRect(-200,1300,2000,700);ctx.fillStyle='#e8c84a';ctx.fillRect(-200,1880,2000,20);
   // porta de emergência (à direita)
@@ -1921,12 +1937,20 @@ scene(888.6,892,(t)=>{const u=t-888.6;const pan=lerp(0,-560,ease(seg(u,1.4,3.2))
   ctx.save();ctx.translate(420,1530);ctx.rotate(-.65);ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.fillStyle='#2b2e38';rr(-150,-40,220,80,20);ctx.fill();ctx.stroke();ctx.fillStyle='#3d414e';rr(60,-60,80,120,14);ctx.fill();ctx.stroke();
   ctx.fillStyle='#fff7d6';rr(132,-48,16,96,6);ctx.fill();ctx.restore();
   const gl=ctx.createRadialGradient(520,1460,4,520,1460,140);gl.addColorStop(0,'rgba(255,250,220,.95)');gl.addColorStop(1,'rgba(255,250,220,0)');ctx.fillStyle=gl;ctx.fillRect(380,1320,280,280);
+  // PISTA: o mesmo desenho de criança, pequeno, colado na porta (porta + três bonequinhos)
+  ctx.save();ctx.translate(1100,1000);ctx.rotate(-.08);ctx.fillStyle='#f6f1df';ctx.fillRect(0,0,110,130);ctx.strokeStyle=OUT;ctx.lineWidth=3;ctx.strokeRect(0,0,110,130);
+  ctx.fillStyle='#8a5a2e';ctx.fillRect(38,14,34,52);ctx.lineCap='round';ctx.strokeStyle='#26262e';ctx.lineWidth=3;
+  for(const [x,h,c] of [[24,44,'#3c6fd1'],[55,36,'#e2683c'],[84,24,'#d63a3a']]){ctx.beginPath();ctx.arc(x,112-h-6,6,0,7);ctx.stroke();ctx.strokeStyle=c;ctx.beginPath();ctx.moveTo(x,112-h);ctx.lineTo(x,112-h*.4);ctx.stroke();ctx.strokeStyle='#26262e';ctx.beginPath();ctx.moveTo(x,112-h*.4);ctx.lineTo(x-6,112);ctx.moveTo(x,112-h*.4);ctx.lineTo(x+6,112);ctx.stroke()}
+  ctx.strokeStyle='#3c9a4a';ctx.beginPath();ctx.moveTo(8,113);ctx.lineTo(102,113);ctx.stroke();ctx.restore();
+  ctx.restore();
+  // brilho chamando atenção para a pista
+  if(u>3.3){const k=.5+.5*Math.sin(u*8);ctx.strokeStyle=`rgba(255,216,74,${.6*k})`;ctx.lineWidth=6;ctx.strokeRect(1100+pan-12,988,134,154)}
   ctx.restore();
   vignette(.6);
 });
 
-// 20. escolha (892.2–896.4)
-scene(892.2,896.4,(t)=>{const u=t-892.2;ctx.fillStyle='#0c0a10';ctx.fillRect(0,0,W,H);
+// 20. escolha (893.4–896.4)
+scene(893.4,896.4,(t)=>{const u=t-893.4;ctx.fillStyle='#0c0a10';ctx.fillRect(0,0,W,H);
   // fundo: à esquerda a escada por onde a criança subiu; à direita a lanterna e a saída de emergência
   ctx.save();ctx.globalAlpha=.55;
   ctx.fillStyle='#4a4c58';for(let i=0;i<9;i++)ctx.fillRect(40+i*34,1560-i*44,260,44);
@@ -1936,7 +1960,7 @@ scene(892.2,896.4,(t)=>{const u=t-892.2;ctx.fillStyle='#0c0a10';ctx.fillRect(0,0
   ctx.restore();
   ctx.fillStyle='rgba(10,8,14,.40)';ctx.fillRect(0,0,W,H);
   personTurn(540,1700,1.0,{eye:1.2,brow:-.5,lid:0},Math.sin(u*1.4)*.9);
-  const ca=easeOut(seg(u,1,1.6)),cb=easeOut(seg(u,1.4,2));
+  const ca=easeOut(seg(u,.3,.8)),cb=easeOut(seg(u,.6,1.1));
   ctx.save();ctx.globalAlpha=ca;ctx.translate(lerp(-600,0,ca),0);ctx.fillStyle='rgba(30,120,80,.92)';rr(70,420,940,190,36);ctx.fill();ctx.fillStyle='#fff';ctx.font='900 130px Inter';ctx.fillText('A',120,565);ctx.font='800 48px Inter';ctx.fillText('Seguir a criança na escada',250,540);ctx.restore();
   ctx.save();ctx.globalAlpha=cb;ctx.translate(lerp(600,0,cb),0);ctx.fillStyle='rgba(170,60,60,.92)';rr(70,650,940,190,36);ctx.fill();ctx.fillStyle='#fff';ctx.font='900 130px Inter';ctx.fillText('B',120,795);ctx.font='800 48px Inter';ctx.fillText('Abrir a saída de emergência',250,770);ctx.restore();
 });

@@ -1,37 +1,37 @@
-1. animado e direto, recapitulando, com energia já na primeira palavra
-2. tenso, a revelação no final
-3. esforço, frustrado, curto
-4. surpresa, tenso
-5. arrepiado, devagar
-6. misterioso, acompanhando a luz
-7. tenso, baixo
-8. [carta] lendo a mensagem, misterioso e calmo
-9. decidido, baixo
-10. ritmado, tenso
-11. sussurrado, suspense
-12. suspense, pausa antes de "um tênis"
-13. surpreso, intrigado
+1. GANCHO forte e intrigante logo na primeira palavra, rápido, como quem conta um segredo
+2. rápido, recap animado
+3. tenso, impacto no final
+4. curto, seco
+5. surpresa, impacto em "sozinho"
+6. arrepiado
+7. misterioso
+8. tenso, baixo
+9. [carta] lendo a mensagem, misterioso
+10. falando direto com quem assiste, provocando
+11. decidido, ritmado
+12. sussurrado, suspense
+13. suspense, pausa antes de "um tênis"
 14. curioso
-15. curioso, revelação curta
-16. intrigado, descrevendo
-17. devagar, preparando a revelação
-18. [carta] voz de criança lida com cuidado, misteriosa
+15. revelação, intrigado
+16. misterioso
+17. devagar, preparando
+18. [carta] lendo o que está escrito, devagar e misterioso
 19. arrepiado, ligando os pontos
-20. tenso, impacto em "dia sessenta"
-21. pensativo, com frio na barriga
-22. rápido, susto
-23. baixo, tenso
-24. sussurrado, suspense
-25. [radio] voz misteriosa no alto-falante, grave e calma
-26. arrepiado, revelação
-27. aliviado e depois tenso
-28. pausa, frio na barriga
-29. impacto, revelação
-30. incrédulo, devagar
+20. impacto em "dia sessenta"
+21. tenso
+22. pergunta com frio na barriga
+23. rápido, susto
+24. baixo, tenso
+25. sussurrado
+26. [radio] voz misteriosa no alto-falante, calma
+27. arrepiado, revelação
+28. alívio rápido e tenso de novo
+29. pausa, depois impacto em "Estação Sé"
+30. incrédulo
 31. curto, tenso
-32. rápido, urgente
-33. misterioso, devagar
-34. revelação, tenso
-35. dividido, pesando as opções
+32. urgente, empolgado
+33. misterioso
+34. revelação
+35. falando com quem assiste, cochichando, intrigado
 36. muito animado e convidativo, fazendo a pergunta
 37. animado, chamando o público

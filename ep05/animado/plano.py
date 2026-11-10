@@ -3,46 +3,46 @@
 import json, os, re, subprocess
 HERE=os.path.dirname(os.path.abspath(__file__)); O=os.path.join(HERE,"saida")
 VOZ=os.path.join(O,"voz_full.wav")
-FALAS=['Vocês escolheram: A. Ele entrou no vagão aceso.', 'E no segundo em que ele pisa lá dentro... as portas se fecham.', 'Ele empurra a porta com força. Trancada.', 'Aí vem um tranco. E o trem começa a andar.', 'Um trem com a cabine vazia... andando sozinho.', 'Pela janela, a luz da lanterna passa... e fica pra trás.', 'Então, o celular vibra de novo no banco.', 'Nova mensagem: não precisa ter medo. Vem pro último vagão.', 'Ele segue pro fundo do trem.', 'Vagão por vagão, sempre pra trás.', 'O último vagão tá escuro. Só as luzinhas do chão piscam.', 'E no meio do corredor... um tênis.', 'Um tênis vermelho, pequenininho. De criança.', 'Dentro dele, tem um papel dobrado.', 'Ele abre. É um desenho.', 'Três bonequinhos de mãos dadas, na frente de uma porta.', 'E embaixo, com letra torta, tá escrito:', 'Eu, você... e o moço da câmera.', 'O moço da câmera... o mesmo que tirou as fotos dele?', 'Ele vira o papel. Atrás, só uma coisa: dia sessenta.', 'Hoje é o dia quarenta e oito. Faltam doze dias... pra quê?', 'De repente, o trem freia com tudo.', 'E todas as luzes se apagam.', 'No escuro, o alto-falante do trem chia.', 'Matheus... não confia no que você vê.', 'É a mesma voz do rádio da avenida.', 'As luzes voltam. O trem parou numa estação.', 'Ele lê a placa... e gela.', 'Estação Sé. A mesma estação de onde ele saiu.', 'O trem deu uma volta inteira... e voltou pro mesmo lugar.', 'As portas se abrem.', 'E lá no fim da plataforma, a sombra pequena sobe a escada correndo.', 'No chão, perto da porta, a lanterna do túnel. Ainda acesa.', 'E ela aponta pra uma porta: saída de emergência.', 'A criança foi pra um lado. A lanterna aponta pro outro.', 'E agora, Matheus? Segue a criança pela escada... ou pega a lanterna e abre a saída de emergência?', 'Comenta A ou B! A mais votada vira o episódio 6.']
+FALAS=['Alguém deixou esse desenho pro Matheus... e ele tá nele.', 'Vocês escolheram A: ele entrou no vagão.', 'E as portas se fecharam atrás dele.', 'Ele empurra. Trancadas.', 'Aí o trem começa a andar. Sozinho.', 'Sem ninguém na cabine.', 'A lanterna do túnel fica pra trás.', 'O celular vibra no banco.', 'Não precisa ter medo. Vem pro último vagão.', 'E você? Ia até lá?', 'Ele foi. Vagão por vagão.', 'O último vagão tá escuro.', 'E no chão... um tênis. De criança.', 'Dentro, um papel dobrado.', 'É o desenho. Três pessoas de mãos dadas.', 'Na frente de uma porta.', 'E embaixo, escrito:', 'Eu, você... e o moço da câmera.', 'O moço que tirou as fotos dele?', 'No verso: dia sessenta.', 'Hoje é dia quarenta e oito.', 'Faltam doze dias... pra quê?', 'Aí o trem freia com tudo.', 'E as luzes se apagam.', 'O alto-falante chia...', 'Matheus... não confia no que você vê.', 'A mesma voz do rádio.', 'As luzes voltam. O trem parou.', 'Ele lê a placa... Estação Sé.', 'O trem deu a volta... e voltou pro começo.', 'As portas abrem.', 'A criança! Subindo a escada, correndo.', 'E no chão, a lanterna. Acesa.', 'Apontando pra saída de emergência.', 'Repara na porta... tem o mesmo desenho.', 'E agora? Segue a criança... ou abre a saída de emergência?', 'Comenta A ou B! A mais votada vira o episódio 6.']
 # tomadas por fala: (inicio_anim, fim_anim, fração da fala, HUD)
 SHOTS=[
-       [(800, 803.6, 1, '')],
+       [(800, 801.8, 1, '')],
+       [(802, 803.6, 1, '')],
        [(804, 806.6, 1, 'DIA 48 · 21:03')],
        [(806.6, 809.6, 1, 'DIA 48 · 21:03', 'cont')],
        [(810, 813, 1, 'DIA 48 · 21:04')],
        [(813.2, 816.2, 1, 'DIA 48 · 21:04')],
        [(816.4, 819.4, 1, 'DIA 48 · 21:04')],
        [(819.6, 821.6, 1, 'DIA 48 · 21:05')],
-       [(821.6, 825, 1, 'DIA 48 · 21:05', 'cont')],
-       [(825.2, 828, 1, 'DIA 48 · 21:06')],
-       [(828, 831, 1, 'DIA 48 · 21:06', 'cont')],
+       [(821.6, 823.6, 1, 'DIA 48 · 21:05', 'cont')],
+       [(823.6, 825, 1, 'DIA 48 · 21:05', 'cont')],
+       [(825.2, 828.5, 1, 'DIA 48 · 21:06')],
        [(831.2, 834, 1, 'DIA 48 · 21:06')],
-       [(834.2, 836.8, 1, 'DIA 48 · 21:07')],
-       [(836.8, 839.8, 1, 'DIA 48 · 21:07', 'cont')],
+       [(834.2, 839.8, 1, 'DIA 48 · 21:07')],
        [(840, 842, 1, 'DIA 48 · 21:07')],
-       [(842, 844, 1, 'DIA 48 · 21:07', 'cont')],
-       [(844, 847, 1, 'DIA 48 · 21:07', 'cont')],
+       [(842, 846, 1, 'DIA 48 · 21:07', 'cont')],
+       [(846, 847, 1, 'DIA 48 · 21:07', 'cont')],
        [(847, 848.6, 1, 'DIA 48 · 21:07', 'cont')],
        [(848.6, 850, 1, 'DIA 48 · 21:07', 'cont')],
        [(850.2, 853, 1, 'DIA 48 · 21:08')],
        [(853.2, 856, 1, 'DIA 48 · 21:08')],
-       [(856, 858.8, 1, 'DIA 48 · 21:08', 'cont')],
+       [(856, 857.6, 1, 'DIA 48 · 21:08', 'cont')],
+       [(857.6, 858.8, 1, 'DIA 48 · 21:08', 'cont')],
        [(859, 861.8, 1, 'DIA 48 · 21:09')],
        [(861.8, 864.6, 1, 'DIA 48 · 21:09', 'cont')],
        [(864.8, 867.2, 1, 'DIA 48 · 21:09')],
        [(867.2, 870.4, 1, 'DIA 48 · 21:09', 'cont')],
        [(870.6, 873.4, 1, 'DIA 48 · 21:09')],
-       [(873.6, 875.4, 1, 'DIA 48 · 21:10')],
-       [(875.4, 877.2, 1, 'DIA 48 · 21:10', 'cont')],
-       [(877.2, 879.2, 1, 'DIA 48 · 21:10', 'cont')],
+       [(873.6, 875.6, 1, 'DIA 48 · 21:10')],
+       [(875.6, 879.2, 1, 'DIA 48 · 21:10', 'cont')],
        [(879.4, 882.6, 1, 'DIA 48 · 21:10')],
        [(882.8, 884.6, 1, 'DIA 48 · 21:10')],
        [(884.6, 888.4, 1, 'DIA 48 · 21:10', 'cont')],
-       [(888.6, 890.4, 1, 'DIA 48 · 21:10')],
-       [(890.4, 892, 1, 'DIA 48 · 21:10', 'cont')],
-       [(892.2, 893.2, 1, 'DIA 48 · 21:10')],
-       [(893.2, 895.2, 1, 'DIA 48 · 21:10', 'cont')],
-       [(895.2, 896.4, 1, 'DIA 48 · 21:10', 'cont')]]
+       [(888.6, 890, 1, 'DIA 48 · 21:10')],
+       [(890, 891.8, 1, 'DIA 48 · 21:10', 'cont')],
+       [(891.8, 893.2, 1, 'DIA 48 · 21:10', 'cont')],
+       [(893.4, 895, 1, 'DIA 48 · 21:10')],
+       [(895, 896.4, 1, 'DIA 48 · 21:10', 'cont')]]
 dur=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",VOZ]))
 out=subprocess.run(["ffmpeg","-i",VOZ,"-af","silencedetect=noise=-38dB:d=0.16","-f","null","-"],capture_output=True,text=True).stderr
 ss=[float(x) for x in re.findall(r"silence_start: ([\d.]+)",out)]; se=[float(x) for x in re.findall(r"silence_end: ([\d.]+)",out)]
