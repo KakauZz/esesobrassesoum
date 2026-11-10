@@ -101,6 +101,9 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 - EP. 4: o **celular** desconhecido que mandou "entrar no vagão". Quem mandou? (a criança, que quer ajuda, mas está com medo)
 - EP. 4: as **pegadas pequenas** e a catraca girando (a criança)
 - EP. 4: o mapa "VOCÊ ESTÁ AQUI · dia 48" e a foto de Matheus correndo (o fotógrafo)
+- EP. 5 (O VAGÃO): o **tênis vermelho** pequeno e o **desenho** "eu, você e o moço da câmera" (três de mãos dadas na frente de uma porta = a passagem). No verso: **"dia 60"** (faltam 12 dias). Quem desenhou: a criança.
+- EP. 5: o **alto-falante** do trem com a mesma voz do rádio: "não confia no que você vê" (o fotógrafo). O trem deu a volta e voltou para a Sé (a cidade "cópia" se repete).
+- EP. 5: a **lanterna** deixada acesa na plataforma, apontando para a **saída de emergência** (o fotógrafo quer que ele vá por ali). A criança subiu a escada.
 
 ## Postagem (decisão do usuário)
 - **Não marcar como conteúdo de IA:** `isAiGenerated:false` (Instagram), `isAigc:false` (TikTok), `isAiGeneratedContent:false` (YouTube).
@@ -119,6 +122,8 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 - 09/11: EP. 3 teve 9×0 para A (Instagram 4, TikTok 5): votação unânime = pouco debate. Deixar as duas opções mais tentadoras. Foi ao ar o EP. 4-A (O METRÔ, 1min42).
 - 09/11: TikTok EP. 1 (postado às 17h) fez 3,8 mil views; EP. 2 e EP. 3 (12h) fizeram 201 e 48. O Metricool marca 18h como pico de segunda (1096, empatado com 10h). **Novo padrão TikTok: 18h** (testar 1 semana). Retenção EP. 3 no TikTok: 35,6 s de 72 s (11% até o fim); no Instagram 42% pulam nos 3 primeiros segundos → gancho mais forte já no 1º quadro.
 - 09/11: cota do Metricool em novembro: 7/20 usados, 13 restantes para 15 dias úteis (10 a 30/11). Fins de semana e 2 dias úteis ficam para postagem manual no TikTok.
+
+- 10/11: EP. 4 teve 4×0 para A (Instagram 2, TikTok 2). Retenção caiu: TikTok EP. 4 com 11,3 s de média em 102 s (1,7% até o fim) e Instagram com 49% pulando nos 3 primeiros segundos. Mas o TikTok às 18h fez 383 views em 12 h (o EP. 3 às 12h fez 101): **18h confirmado no TikTok**. Mudanças no EP. 5: o recap já mostra o vagão aceso no fundo (imagem de mistério no 1º quadro) e a 2ª fala já é uma reviravolta ("as portas se fecham"). Instagram testa 18h hoje (EP. 2–4 saíram ao meio-dia e caíram de 1,8 mil para 399).
 
 ## Limpeza (para o repositório não estourar)
 - Depois de agendar o episódio do dia, apague de `videos/` todos os .mp4 com mais de 3 episódios (`git rm`). O Metricool já guarda a cópia dele, e os arquivos *_teste.mp4 que não foram usados podem sair também. Deixe sempre o `epNN_final.mp4` dos últimos 3 episódios.
