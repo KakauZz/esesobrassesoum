@@ -124,6 +124,7 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 - 09/11: cota do Metricool em novembro: 7/20 usados, 13 restantes para 15 dias úteis (10 a 30/11). Fins de semana e 2 dias úteis ficam para postagem manual no TikTok.
 
 - 10/11: EP. 4 teve 4×0 para A (Instagram 2, TikTok 2). Retenção caiu: TikTok EP. 4 com 11,3 s de média em 102 s (1,7% até o fim) e Instagram com 49% pulando nos 3 primeiros segundos. Mas o TikTok às 18h fez 383 views em 12 h (o EP. 3 às 12h fez 101): **18h confirmado no TikTok**. Mudanças no EP. 5: o recap já mostra o vagão aceso no fundo (imagem de mistério no 1º quadro) e a 2ª fala já é uma reviravolta ("as portas se fecham"). Instagram testa 18h hoje (EP. 2–4 saíram ao meio-dia e caíram de 1,8 mil para 399).
+- 10/11: EP. 5 (O VAGÃO) saiu com **2min31** (37 falas): com as pausas novas a Sadachbia está falando ~4 s por fala, não 2,7 s. Para ficar na meta de 95–115 s, use **34–35 falas mais curtas** (até ~8 palavras cada). Agendado: TikTok 18h (Metricool, 8/20 no mês) e Instagram 18h (Windsor, tarefa única).
 
 ## Limpeza (para o repositório não estourar)
 - Depois de agendar o episódio do dia, apague de `videos/` todos os .mp4 com mais de 3 episódios (`git rm`). O Metricool já guarda a cópia dele, e os arquivos *_teste.mp4 que não foram usados podem sair também. Deixe sempre o `epNN_final.mp4` dos últimos 3 episódios.
