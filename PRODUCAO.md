@@ -142,6 +142,8 @@ O Metricool grátis tem **20 posts publicados por mês**, contados por rede, e o
   - **Nos dias sem cota (1 vídeo por dia é obrigatório):** mande o vídeo para o usuário (SendUserFile) com a legenda e o título prontos e peça para ele postar no TikTok à mão, no melhor horário.
 - **Instagram = Windsor.ai** (`create_video_post`), todo dia, no melhor horário, por meio de uma tarefa agendada única (ver "Plano B de postagem"). Não usa cota do Metricool.
 - **YouTube = sem postagem automática por enquanto**, até o usuário configurar a API do YouTube. Todo dia, mande o vídeo e um título pronto para ele postar à mão, se quiser.
+- 10/11 (tarde): o usuário achou o EP. 5 sem graça ("não fiquei com vontade de assistir"). Refeito: abertura-gancho de 1,8 s ("QUEM DESENHOU ISSO? 😳" + o desenho, com círculo em "é ele!"), recap em 1,6 s, 40 falas curtas, 2 falas falando com o público e a pista do desenho colado na porta. Ficou com **1min51**. Legenda do post começa com a pergunta. Medida de ritmo: use **letras por segundo** (EP. 4-A rápido demais = 16/s; EP. 5 = 12/s), não falas por 10 s.
+- **Armadilhas técnicas (10/11):** (1) se mudar a faixa de uma cena (ex.: 800–803.6 → 800–801.8), apague a entrada antiga de `cache/index.json`, senão o editor usa o vídeo velho; (2) se o `ts_raw.json` não vier (o Gemini de tempos deu 503), o `plano.py` alinha pelas pausas: confira se nenhuma fala ficou com mais de 5 s (no EP. 5 isso foi resolvido com o limiar -32 dB); (3) a voz do Gemini às vezes vai ficando mais alta até o fim: nivele o volume antes do `efeitos_voz.py`.
 
 ## Prender a atenção SEMPRE (pedido do usuário, 10/11: "tem que chamar a atenção do seguidor sempre")
 Vale para TODO episódio, do primeiro ao último segundo. Revise cada item antes de postar.
