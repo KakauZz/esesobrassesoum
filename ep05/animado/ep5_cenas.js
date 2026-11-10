@@ -124,8 +124,6 @@ scene(816.4,819.4,(t)=>{const u=t-816.4;ctx.fillStyle='#e9e4cf';ctx.fillRect(0,0
   // a lanterna (luz parada no túnel) entra pela direita e sai pela esquerda
   const lx=lerp(1300,-300,seg(u,.4,2.4));const g=ctx.createRadialGradient(lx,860,4,lx,860,300);g.addColorStop(0,'rgba(255,250,220,.98)');g.addColorStop(.08,'rgba(255,240,190,.6)');g.addColorStop(1,'rgba(255,240,190,0)');ctx.fillStyle=g;ctx.fillRect(110,380,860,1060);
   ctx.fillStyle='#ffffff';ctx.fillRect(lx-150,856,300,8);
-  // reflexo dele no vidro
-  ctx.globalAlpha=.09;face(560,980,.55,{headOnly:true,open:1.2,brow:-.5,px:lx<540?-20:20});ctx.globalAlpha=1;
   ctx.restore();ctx.strokeStyle=OUT;ctx.lineWidth=14;rr(110,380,860,1060,60);ctx.stroke();ctx.fillStyle='rgba(255,255,255,.08)';ctx.beginPath();ctx.moveTo(150,420);ctx.lineTo(340,420);ctx.lineTo(150,700);ctx.fill();
   vignette(.5);
 });
@@ -232,17 +230,17 @@ scene(850.2,853,(t)=>{const u=t-850.2;ctx.fillStyle='#12141c';ctx.fillRect(0,0,W
 
 // 12. o verso do papel: DIA 60 + quanto falta (853.2–858.8)
 scene(853.2,858.8,(t)=>{const u=t-853.2;ctx.fillStyle='#14151c';ctx.fillRect(0,0,W,H);
-  const fl=seg(u,0,1),sx=Math.cos(fl*Math.PI);ctx.save();ctx.translate(W/2,H*.38);ctx.scale(Math.abs(sx)*.75+.001,.75);
+  const fl=seg(u,0,1),sx=Math.cos(fl*Math.PI);ctx.save();ctx.translate(W/2,H*.33);ctx.scale(Math.abs(sx)*.62+.001,.62);
   ctx.fillStyle='#f6f1df';ctx.fillRect(-440,-560,880,1120);ctx.strokeStyle=OUT;ctx.lineWidth=6;ctx.strokeRect(-440,-560,880,1120);
   if(sx<0){ctx.fillStyle='#c62828';ctx.font='700 200px Caveat';ctx.textAlign='center';ctx.fillText('dia 60',0,60);ctx.textAlign='left';
     const k=seg(u,1.2,2.2);ctx.strokeStyle='#c62828';ctx.lineWidth=12;ctx.beginPath();for(let a=0;a<=k*6.6;a+=.05){const x=Math.cos(a)*(330+10*Math.sin(a*3)),y=-10+Math.sin(a)*170;a?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke()}
   else{ctx.fillStyle='rgba(0,0,0,.12)';ctx.fillRect(-300,-300,600,500)}
   ctx.restore();
   // a contagem: do dia 48 (hoje) ao dia 60 (fala 21)
-  const k2=seg(u,2.8,3.4);if(k2>0){ctx.save();ctx.globalAlpha=k2;ctx.fillStyle='#f4e2b0';ctx.font='700 46px "DejaVu Sans Mono", monospace';ctx.textAlign='center';ctx.fillText('HOJE: DIA 48',W/2,1290);
-    for(let i=0;i<13;i++){const d=48+i,x=90+(i%7)*150,y=1380+Math.floor(i/7)*170,on=seg(u,3.2+i*.14,3.4+i*.14);
+  const k2=seg(u,2.8,3.4);if(k2>0){ctx.save();ctx.globalAlpha=k2;ctx.fillStyle='#f4e2b0';ctx.font='700 46px "DejaVu Sans Mono", monospace';ctx.textAlign='center';ctx.fillText('HOJE: DIA 48',W/2,1080);
+    for(let i=0;i<13;i++){const d=48+i,x=90+(i%7)*150,y=1120+Math.floor(i/7)*150,on=seg(u,3.2+i*.14,3.4+i*.14);
       ctx.globalAlpha=k2*(.3+.7*on);ctx.fillStyle=d==48?'#3ccf8e':(d==60?'#c62828':'#2b313d');rr(x-60,y,120,130,16);ctx.fill();ctx.fillStyle='#fff';ctx.font='800 50px Inter';ctx.fillText(String(d),x,y+85)}
-    ctx.globalAlpha=k2*seg(u,5,5.5);ctx.fillStyle='#ffd84a';ctx.font='900 64px Inter';ctx.fillText('FALTAM 12 DIAS',W/2,1780);ctx.textAlign='left';ctx.restore()}
+    ctx.globalAlpha=k2*seg(u,5,5.5);ctx.fillStyle='#ffd84a';ctx.font='900 64px Inter';ctx.fillText('FALTAM 12 DIAS',W/2,1490);ctx.textAlign='left';ctx.restore()}
   vignette(.45);
 });
 
@@ -292,9 +290,9 @@ scene(873.6,879.2,(t)=>{const u=t-873.6;
   ctx.fillStyle='#3a3b44';ctx.fillRect(140,1060,800,160);ctx.fillStyle='#e8c84a';ctx.fillRect(140,1060,800,14);ctx.restore();
   ctx.strokeStyle=OUT;ctx.lineWidth=14;rr(140,420,800,800,50);ctx.stroke();
   ctx.fillStyle='#8f939d';ctx.fillRect(0,1480,W,440);
+  // ele de costas, chegando na janela (fica dentro do zoom e sai por baixo do quadro)
+  {const k=easeOut(seg(u,.8,2.6));personFront(540,lerp(1900,1700,k),lerp(1.6,1.35,k),{back:true,walk:(u>.8&&u<2.6)?u*8:null})}
   ctx.restore();
-  // ele de costas, chegando na janela
-  if(z<1.5){ctx.save();ctx.globalAlpha=1-seg(z,1.2,1.5);const k=easeOut(seg(u,.8,2.6));personFront(540,lerp(1900,1700,k),lerp(1.6,1.35,k),{back:true,walk:u<2.6?u*8:null});ctx.restore()}
   if(lit<1){ctx.fillStyle='rgba(2,2,6,.85)';ctx.fillRect(0,0,W,H)}
   vignette(.45);
 });
