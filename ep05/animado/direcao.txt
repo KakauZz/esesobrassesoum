@@ -9,11 +9,11 @@
 9. tenso, seco no final
 10. surpresa, impacto em "sozinho"
 11. misterioso, acompanhando a luz
-12. tenso, baixo
+12. tenso, voz clara
 13. [carta] lendo a mensagem, misterioso
 14. falando direto com quem assiste, provocando
 15. decidido, ritmado
-16. sussurrado, suspense
+16. suspense, voz clara e firme
 17. suspense, pausa antes de "um tênis"
 18. curioso
 19. revelação, intrigado
@@ -23,11 +23,11 @@
 23. impacto em "dia sessenta"
 24. pergunta com frio na barriga
 25. rápido, susto
-26. baixo, tenso
-27. sussurrado
+26. tenso, voz clara
+27. tenso, voz clara e firme
 28. [radio] voz misteriosa no alto-falante, calma
 29. arrepiado, revelação
-30. pergunta intrigada, baixo
+30. pergunta intrigada, voz clara
 31. alívio rápido e tenso de novo
 32. pausa, depois impacto em "Estação Sé"
 33. incrédulo, revelação
@@ -35,6 +35,6 @@
 35. urgente, empolgado
 36. misterioso
 37. revelação
-38. falando com quem assiste, cochichando, intrigado
+38. falando com quem assiste, intrigado, voz clara e firme
 39. muito animado e convidativo, fazendo a pergunta
 40. animado, chamando o público
