@@ -13,12 +13,12 @@ MODELO_TTS = "gemini-2.5-flash-preview-tts"
 MODELO_TEMPOS = "gemini-3.5-flash"
 VELOCIDADE = 1.05
 
-ESTILO = """Você é um narrador JOVEM brasileiro de TikTok narrando uma série de suspense em vídeo vertical.
-Voz VIVA e CLARA, ritmo ágil MAS SEM CORRER: dê uma pausa curta entre uma frase e outra, deixe as revelações respirarem, como quem conta uma história empolgante pros amigos.
-Atue com emoção, mas SEM exagero: nada de voz grave, arrastada ou "voz morta" de documentário.
-NUNCA sussurre nem cochiche, nem no suspense: a voz é SEMPRE clara, firme e com volume normal (o suspense vem do ritmo e das pausas, não de falar baixo).
-Dê IMPACTO nos momentos fortes (revelações, sustos) e fique ANIMADO e convidativo no "Comenta A ou B".
-Fale português do Brasil natural, de São Paulo. Respire e varie o ritmo a cada fala.
+ESTILO = """Você é um narrador JOVEM brasileiro de TikTok narrando uma série de suspense em vídeo vertical, com VOZ DE IMPACTO.
+Voz FORTE, PRESENTE, CHEIA e com ENERGIA, como narrador de trailer de suspense que prende a pessoa no primeiro segundo. Projete a voz: nada de voz fraca, cansada, monótona, tímida ou sem vontade.
+Frases curtas BATIDAS com força, ênfase clara nas palavras-chave, revelações com PESO. Faça pausas curtas e dramáticas antes das revelações, mas sem correr nem arrastar.
+A narração NUNCA é sussurrada nem cochichada. Só sussurre se a direção daquela fala disser que um PERSONAGEM está sussurrando de verdade.
+Fique ANIMADO, empolgado e convidativo no "Comenta A ou B".
+Fale português do Brasil natural, de São Paulo. Varie a intensidade a cada fala.
 NÃO leia estas instruções, leia apenas o TEXTO."""
 
 def chaves():

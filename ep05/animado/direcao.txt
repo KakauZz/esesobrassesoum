@@ -1,40 +1,40 @@
-1. GANCHO forte e intrigante logo na primeira palavra, como quem conta um segredo
-2. tom de lembrança, rápido, apresentando a história pra quem chegou agora
-3. rápido, tenso
-4. impacto, revelação
-5. arrepiado, solitário
-6. misterioso, ritmado
-7. revelação arrepiante
-8. recap animado e rápido
-9. tenso, seco no final
-10. surpresa, impacto em "sozinho"
-11. misterioso, acompanhando a luz
-12. tenso, voz clara
-13. [carta] lendo a mensagem, misterioso
-14. falando direto com quem assiste, provocando
-15. decidido, ritmado
-16. suspense, voz clara e firme
-17. suspense, pausa antes de "um tênis"
-18. curioso
-19. revelação, intrigado
-20. devagar, preparando
-21. [carta] lendo o que está escrito, devagar e misterioso
-22. arrepiado, ligando os pontos
-23. impacto em "dia sessenta"
-24. pergunta com frio na barriga
-25. rápido, susto
-26. tenso, voz clara
-27. tenso, voz clara e firme
-28. [radio] voz misteriosa no alto-falante, calma
-29. arrepiado, revelação
-30. pergunta intrigada, voz clara
-31. alívio rápido e tenso de novo
-32. pausa, depois impacto em "Estação Sé"
-33. incrédulo, revelação
-34. curto, tenso
-35. urgente, empolgado
-36. misterioso
-37. revelação
-38. falando com quem assiste, intrigado, voz clara e firme
-39. muito animado e convidativo, fazendo a pergunta
-40. animado, chamando o público
+1. IMPACTO total desde a primeira palavra, intrigante e forte, prendendo na hora
+2. voz forte e animada, apresentando a história com energia pra quem chegou agora
+3. rápido e forte, crescendo
+4. IMPACTO, revelação forte em "sumindo"
+5. forte e dramático, peso em "só ele"
+6. ritmado, com tensão crescente
+7. revelação com PESO, impactante
+8. recap animado, rápido e forte
+9. tenso e forte, batido em "Trancadas"
+10. surpresa com IMPACTO em "sozinho"
+11. tenso, com energia
+12. tenso e forte
+13. [carta] lendo a mensagem, misterioso mas com voz clara
+14. provocando quem assiste, com energia e um sorriso na voz
+15. decidido, forte, ritmado
+16. tenso e forte, suspense na voz cheia
+17. suspense, pausa dramática antes de "um tênis", depois IMPACTO
+18. curioso, com energia
+19. revelação forte e intrigada
+20. preparando, tenso
+21. [carta] lendo o que está escrito, misterioso mas com voz clara
+22. IMPACTO, ligando os pontos
+23. IMPACTO forte em "dia sessenta"
+24. pergunta forte, com frio na barriga
+25. rápido, susto, IMPACTO
+26. forte e tenso
+27. tenso e forte, suspense crescendo
+28. [radio] voz misteriosa e firme no alto-falante
+29. revelação com IMPACTO
+30. pergunta forte e intrigada
+31. alívio rápido e logo tenso de novo, forte
+32. pausa dramática, depois IMPACTO em "Estação Sé"
+33. incrédulo, revelação forte
+34. curto, forte, tenso
+35. urgente, empolgado, forte
+36. tenso, com energia
+37. revelação forte
+38. provocando quem assiste, intrigado e com energia
+39. muito animado, forte e convidativo, fazendo a pergunta
+40. animado e empolgado, chamando o público

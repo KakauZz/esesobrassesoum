@@ -107,7 +107,7 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 
 ## Postagem (decisão do usuário)
 - **Não marcar como conteúdo de IA:** `isAiGenerated:false` (Instagram), `isAigc:false` (TikTok), `isAiGeneratedContent:false` (YouTube).
-- **Nada de voz sussurrada (pedido do usuário, 10/11: "tira essa voz sussurrando, tá ruim").** No `direcao.txt` NUNCA use "sussurrado", "cochichando" ou "baixo". Para suspense, use "tenso, voz clara e firme". O `gerar_voz.py` já pede isso no ESTILO.
+- **Voz de IMPACTO e sem sussurro na narração (pedido do usuário, 10/11).** A narração é sempre forte, presente e com energia, como trailer de suspense ("cadê a voz impactante?"). Sussurro SÓ quando um personagem literalmente sussurra na história; contar a história sussurrando não pode. No `direcao.txt` use palavras como "forte", "IMPACTO", "com energia", "revelação com peso"; nunca "sussurrado", "cochichando", "baixo", "devagar" ou "calmo" para o narrador. O ESTILO do `gerar_voz.py` já pede isso.
 - Ritmo da voz: o usuário achou o EP. 4-A rápido demais. Mantenha 1.05x, mas a direção pede pausas entre as falas (já está no ESTILO do gerar_voz.py). Se a voz sair com mais de 3,2 falas por 10 s, gere de novo pedindo um ritmo mais calmo.
 
 ## Crescimento: rodar TODO DIA, antes de criar o episódio
