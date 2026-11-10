@@ -153,6 +153,7 @@ O Metricool grátis tem **20 posts publicados por mês**, contados por rede, e o
 - **Narração fiel ao que acontece:** a fala descreve exatamente o que está na tela, na ordem em que acontece, sem pular passos e sem afirmar o que a imagem não mostra. Se a imagem mostra uma coisa e a fala diz outra, corrija antes de postar.
 - **Retome, não acumule:** antes de criar pista nova, use as que já estão em "Pistas em aberto" e explique para que ela serve. Pista retomada é mais clara que pista nova.
 - **Teste do amigo:** depois de escrever, resuma o episódio em 2 frases. Se não der, está complicado demais: corte.
+- 10/11: **o usuário aprovou o EP. 5 final** ("bem explicadinho e legal"). Use ele como MODELO de estrutura: gancho com o desenho (2 s) → lembrança do EP. 1 (6 falas) → recap do voto → 1 mistério só → cada pista explicada na hora → 2 viradas → final ligando pistas antigas → escolha A/B equilibrada. Voz forte, sem sussurro, ~1min50.
 
 ## Prender a atenção SEMPRE (pedido do usuário, 10/11: "tem que chamar a atenção do seguidor sempre")
 Vale para TODO episódio, do primeiro ao último segundo. Revise cada item antes de postar.
