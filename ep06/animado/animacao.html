@@ -2219,7 +2219,7 @@ scene(938.6,946.6,(t)=>{const u=t-938.6;const z=lerp(1,1.22,ease(seg(u,2.4,6))),
   ctx.fillStyle='#2f3240';ctx.fillRect(0,1420,W,500);ctx.strokeStyle='rgba(0,0,0,.2)';ctx.lineWidth=3;for(let y=1460;y<H;y+=70){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
   ctx.fillStyle='rgba(255,214,140,.10)';ctx.fillRect(470,1420,140,500);
   // as pegadas chegam e terminam na pedra
-  for(let i=0;i<4;i++){const y=1880-i*130;e6Print(540+(i%2?28:-28),y,lerp(.7,.5,i/4),0,i%2?'sock':'shoe',.9)}
+  for(let i=0;i<4;i++){const y=1820-i*120;e6Print(540+(i%2?40:-40),y,lerp(1.1,.8,i/4),0,i%2?'sock':'shoe',1)}
   // a capa amarela aparecendo atrás da coluna, do lado direito (fala 21), tremendo de leve (fala 22)
   if(u>2.6){const k=easeOut(seg(u,2.6,3.6)),tr=u>5.6?Math.sin(u*30)*3:0;ctx.save();ctx.beginPath();ctx.rect(750,0,400,1250);ctx.clip();
     ctx.fillStyle='#f2c230';ctx.strokeStyle=OUT;ctx.lineWidth=6;ctx.beginPath();ctx.moveTo(740,1000);ctx.quadraticCurveTo(740+60*k+tr,1080,740+80*k+tr,1240);ctx.lineTo(740,1240);ctx.closePath();ctx.fill();ctx.stroke();
