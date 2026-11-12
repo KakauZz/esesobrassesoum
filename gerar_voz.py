@@ -17,6 +17,7 @@ ESTILO = """Você é um narrador JOVEM brasileiro de TikTok narrando uma série 
 Voz FORTE, PRESENTE, CHEIA e com ENERGIA, como narrador de trailer de suspense que prende a pessoa no primeiro segundo. Projete a voz: nada de voz fraca, cansada, monótona, tímida ou sem vontade.
 Frases curtas BATIDAS com força, ênfase clara nas palavras-chave, revelações com PESO. Faça pausas curtas e dramáticas antes das revelações, mas sem correr nem arrastar.
 A narração NUNCA é sussurrada nem cochichada. Só sussurre se a direção daquela fala disser que um PERSONAGEM está sussurrando de verdade.
+Mantenha a MESMA voz forte e projetada do começo ao FIM: não vá baixando nem virando cochicho com o passar das falas, mesmo nas de suspense ou tensão (suspense = voz firme e tensa, NUNCA sussurro).
 Fique ANIMADO, empolgado e convidativo no "Comenta A ou B".
 Fale português do Brasil natural, de São Paulo. Varie a intensidade a cada fala.
 NÃO leia estas instruções, leia apenas o TEXTO."""
@@ -52,6 +53,21 @@ def com_rodizio(fn, nome):
                 erros.append(f"chave {i+1}: {e}"); break
     sys.exit(f"{nome} falhou em todas as chaves:\n" + "\n".join(erros))
 
+def sonoridade(pcm, sr=24000):
+    """Mede quanto a voz é 'cheia' (vozeada) x sussurrada, por trechos. Voz normal da série: ~0.42-0.45; cochicho: ~0.33."""
+    x = np.frombuffer(pcm, np.int16).astype(float) / 32768
+    fr = int(.04 * sr); vs = []
+    for i in range(0, len(x) - fr, fr // 2):
+        f = x[i:i + fr]
+        if np.sqrt((f ** 2).mean()) < 0.01: continue
+        f = f - f.mean(); ac = np.correlate(f, f, "full")[fr - 1:]; ac /= ac[0] + 1e-9
+        vs.append(ac[sr // 400:sr // 70].max())
+    vs = np.array(vs); q = max(1, len(vs) // 4)
+    blocos = [vs[j:j + q].mean() for j in range(0, len(vs), q) if len(vs[j:j + q]) > q // 2]
+    return float(vs.mean()), float(min(blocos))
+
+LIMITE_MEDIA, LIMITE_TRECHO = 0.38, 0.34   # abaixo disso = cochichando -> gera de novo
+
 def main(pasta):
     pasta = os.path.abspath(pasta); out = os.path.join(pasta, "saida"); os.makedirs(out, exist_ok=True)
     F = falas(pasta)
@@ -64,8 +80,17 @@ def main(pasta):
     body = {"contents": [{"parts": [{"text": texto}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": VOZ}}}}}
-    d = com_rodizio(lambda k: chamar(MODELO_TTS, body, k), "voz Sadachbia")
-    pcm = base64.b64decode(d["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
+    melhor = None
+    for tent in range(4):
+        d = com_rodizio(lambda k: chamar(MODELO_TTS, body, k), "voz Sadachbia")
+        pcm_t = base64.b64decode(d["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
+        med, pior = sonoridade(pcm_t)
+        print(f"checagem de sussurro (tentativa {tent+1}): média {med:.2f}, pior trecho {pior:.2f}", flush=True)
+        if melhor is None or med > melhor[0]: melhor = (med, pior, pcm_t)
+        if med >= LIMITE_MEDIA and pior >= LIMITE_TRECHO: break
+    med, pior, pcm = melhor
+    if med < LIMITE_MEDIA or pior < LIMITE_TRECHO:
+        sys.exit(f"VOZ COCHICHADA em todas as tentativas (média {med:.2f}, pior {pior:.2f}). NÃO poste; gere de novo mais tarde.")
     raw = os.path.join(out, "voz_raw.wav")
     with wave.open(raw, "wb") as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes(pcm)
 
