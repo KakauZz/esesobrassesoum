@@ -96,6 +96,14 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 9. **Avisar o usuário** (SendUserMessage + notificação): o placar de cada rede e quem venceu, o resumo do episódio novo, os links do vídeo e dos posts agendados no Metricool, e qualquer problema que tenha aparecido.
 
 
+## Nova série (a partir do EP. 11): "E SE VOCÊ GANHASSE UM SUPERPODER POR DIA?" (escolhida pelo usuário em 14/11)
+- **Premissa:** depois do final, Matheus volta para uma cidade cheia de gente, mas o calendário dele marca um dia que ainda não aconteceu. A partir daí, todo dia ele acorda com UM poder diferente que dura até a meia-noite (voar, ficar invisível, ouvir pensamentos, parar o tempo, falar com animais, atravessar paredes...).
+- **Votação diária:** o público escolhe o poder do dia seguinte ou o que ele faz com o poder (ex.: "A: voar / B: ficar invisível"; "A: usar pra ajudar a vizinha / B: usar pra descobrir quem manda os poderes").
+- **CONSEQUÊNCIAS (pedido do usuário):** cada escolha tem consequência de verdade nos episódios seguintes. Exemplos: usou o poder em público → um vídeo dele viraliza e alguém começa a procurá-lo; usou para benefício próprio → no dia seguinte o poder vem "com defeito" (voa, mas não consegue pousar direito); ajudou alguém → ganha um aliado que volta depois; parou o tempo → o relógio da cidade fica 1 minuto atrasado e isso vira pista. As consequências se acumulam e mudam o rumo da série, e a narração deixa claro "por causa da escolha de vocês...". Anote cada consequência em "Pistas em aberto" para retomar.
+- **Regras continuam:** nada de morte, ferimento grave, terror ou monstro. Consequência = complicação, perder algo temporário, alguém descobrir o segredo, um problema para resolver. Nunca perda permanente ou dor.
+- **Mistério central (um por vez, sem pressa):** quem está dando os poderes e por quê, ligado ao calendário adiantado. A criança de capa amarela, o fotógrafo e o gato laranja podem voltar como aliados.
+- **Cada episódio:** gancho visual do poder nos 2 primeiros s, o poder sendo descoberto, usado, a consequência da escolha anterior aparecendo, uma virada e a nova votação A/B.
+
 ## Pistas em aberto (retomar nos próximos episódios)
 - EP. 4 (O METRÔ): o **rádio** (canal 13) com a voz que mandou "seguir a luz". De quem é a voz? (o fotógrafo)
 - EP. 4: o **celular** desconhecido que mandou "entrar no vagão". Quem mandou? (a criança, que quer ajuda, mas está com medo)
