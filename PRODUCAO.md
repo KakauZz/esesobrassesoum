@@ -145,6 +145,7 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 - 14/11 (pedido do usuário): o **EP. 10 (FINAL)** tem que ser o melhor episódio da série, digno de final, e **pode durar até 3 min** (meta 2–3 min). Amarrar todas as pistas em aberto, cenas novas caprichadas, clímax no quarto do dia 1 com o calendário no dia 60. Depois dele, volta a meta de 95–115 s na nova série.
 
 - 14/11 (decisão do usuário, substitui o plano anterior de EP. 10/EP. 11): **o EP. 10 (domingo 15/11) é o ENCERRAMENTO** da série, até 3 min, sem votação no fim. Revelação: **a criança de capa amarela é o Matheus no passado e o fotógrafo é o Matheus no futuro**, versões dele de outros pontos do multiverso que se juntaram para ajudá-lo a voltar. Termina com "FIM" e "SEGUNDA: UMA NOVA HISTÓRIA COMEÇA". **Segunda 16/11 começa a série 2, "E se você ganhasse UM superpoder por dia?", no EP. 1** (pastas s2epNN, vídeos videos/s2epNN_final.mp4).
+- 14/11 (decisão do usuário): **horário fixo 18h todo dia, no TikTok e no Instagram.** O teste de 17h/20h acabou antes da hora; não mudar o horário por conta própria.
 ## Limpeza (para o repositório não estourar)
 - Depois de agendar o episódio do dia, apague de `videos/` todos os .mp4 com mais de 3 episódios (`git rm`). O Metricool já guarda a cópia dele, e os arquivos *_teste.mp4 que não foram usados podem sair também. Deixe sempre o `epNN_final.mp4` dos últimos 3 episódios.
 - Não versione arquivos grandes de trabalho (cache/, saida/*.mp4).
