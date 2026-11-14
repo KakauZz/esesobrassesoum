@@ -1,0 +1,4 @@
+{
+  "_explica": "Registro anti-duplicação: depois de CADA publicação, adicione {episodio, rede, horario, id} e faça commit+push na hora. Antes de publicar, confira aqui e no Metricool (getScheduledPosts).",
+  "posts": []
+}
