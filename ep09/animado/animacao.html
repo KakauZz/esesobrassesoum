@@ -3373,7 +3373,7 @@ scene(1248.2,1251,(t)=>{const u=t-1248.2;ctx.fillStyle='#2b2018';ctx.fillRect(0,
 // 15. passos no corredor: a porta, a sombra crescendo no vão; a menina se esconde atrás das pernas dele (1251.2–1254)
 scene(1251.2,1254,(t)=>{const u=t-1251.2;e9Doorway(u,{who:0});
   const k=seg(u,.4,2.8);ctx.save();ctx.beginPath();ctx.rect(300,380,480,1120);ctx.clip();ctx.fillStyle=`rgba(0,0,0,${.55*k})`;ctx.beginPath();ctx.ellipse(lerp(820,580,k),1460,lerp(40,160,k),40,0,0,7);ctx.fill();
-    ctx.fillRect(lerp(820,560,k)-40,lerp(1460,700,k),80,1460-lerp(1460,700,k));ctx.restore();
+    const sx=lerp(860,560,k),ss=lerp(.4,1,k);ctx.fillStyle=`rgba(0,0,0,${.6*k})`;ctx.beginPath();ctx.ellipse(sx,1440-ss*700,ss*60,ss*70,0,0,7);ctx.fill();ctx.beginPath();ctx.moveTo(sx-ss*110,1460);ctx.quadraticCurveTo(sx-ss*130,1440-ss*560,sx,1440-ss*620);ctx.quadraticCurveTo(sx+ss*130,1440-ss*560,sx+ss*110,1460);ctx.closePath();ctx.fill();ctx.restore();
   const sh=Math.sin(u*18)*3*(u>.4?1:0);ctx.save();ctx.translate(sh,0);
   personFront(150,1820,1.4,{back:true});e8Kid(330,1900,.6,{u,hide:1,peek:1,tremble:1});ctx.restore();
   vignette(.5);
@@ -3396,6 +3396,14 @@ scene(1260.2,1267,(t)=>{const u=t-1260.2;ctx.fillStyle='#0c0a10';ctx.fillRect(0,
   const ca=easeOut(seg(u,.3,.8)),cb=easeOut(seg(u,.6,1.1));
   ctx.save();ctx.globalAlpha=ca;ctx.translate(lerp(-600,0,ca),0);ctx.fillStyle='rgba(30,120,80,.92)';rr(70,430,940,200,36);ctx.fill();ctx.fillStyle='#fff';ctx.font='900 130px Inter';ctx.fillText('A',120,580);ctx.font='800 48px Inter';ctx.fillText('Ouvir o fotógrafo',250,555);ctx.restore();
   ctx.save();ctx.globalAlpha=cb;ctx.translate(lerp(600,0,cb),0);ctx.fillStyle='rgba(170,60,60,.92)';rr(70,670,940,200,36);ctx.fill();ctx.fillStyle='#fff';ctx.font='900 130px Inter';ctx.fillText('B',120,820);ctx.font='800 46px Inter';ctx.fillText('Pegar o diário e fugir',250,795);ctx.restore();
+});
+
+// 2b. a menina puxa a mão dele, com medo: treme, sobrancelhas preocupadas, boquinha triste (1270–1272.4)
+scene(1270,1272.4,(t)=>{const u=t-1270;ctx.fillStyle='#141322';ctx.fillRect(0,0,W,H);
+  e7Bedroom(u,{photo:true,mm:13,win13:true});ctx.fillStyle='rgba(8,8,16,.35)';ctx.fillRect(0,0,W,H);
+  e8Kid(360,1640,1.15,{u,reach:1,tremble:1,smile:-14,py:-6});
+  const hx=lerp(760,640,easeOut(seg(u,.4,2)));ctx.save();ctx.translate(hx,1280);ctx.rotate(.1);ctx.fillStyle='#f0c49a';ctx.beginPath();ctx.ellipse(0,0,56,78,0,0,7);ctx.fill();ctx.strokeStyle=OUT;ctx.lineWidth=8;ctx.stroke();ctx.restore();
+  vignette(.5);
 });
 
 // 19. cartela final (1285–1288.2)
