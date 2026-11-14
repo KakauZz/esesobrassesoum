@@ -103,6 +103,11 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 - **Mistério leve (um por vez):** por que ele está trocando de vida e qual a ligação entre as pessoas. **Reviravolta final da série (guardar para o último episódio, não revelar antes):** todas as vidas em que ele acordou estão ligadas a uma escolha que ele mesmo vai fazer; quem está "mostrando" essas vidas é o Matheus do futuro, para ele decidir quem quer ser. Plante pistas pequenas (o mesmo relógio em todas as casas, um bilhete com a letra dele).
 - **Cada episódio:** gancho visual nos 2 primeiros s ("ELE ACORDOU NO CORPO DO CHEFE 😳"), quem ele é hoje, a tentação, a consequência da escolha anterior aparecendo, uma virada engraçada e a nova votação A/B. O gato laranja pode aparecer em todas as vidas (é a única coisa que o reconhece).
 
+## Placar de TODAS as redes (regra do usuário, 14/11)
+- A votação vale a SOMA de todas as redes (TikTok + Instagram + YouTube, quando der para ler os comentários). Vence a opção com mais votos no total.
+- **No começo de todo episódio (no recap), mostre o placar de cada rede e o total**, numa cartela rápida (~2,5 s), por exemplo: "TIKTOK: A 2 × B 3 · INSTAGRAM: A 4 × B 1 · TOTAL: A 6 × B 4 → VENCEU A EM TODAS AS REDES". A narração diz: "Somando todas as redes, venceu a A." Assim quem só vê uma rede entende por que a outra opção ganhou.
+- Use o mesmo placar na legenda do post e no primeiro comentário ("Placar de todas as redes: A 6 × B 4").
+
 ## Pistas em aberto (retomar nos próximos episódios)
 - EP. 4 (O METRÔ): o **rádio** (canal 13) com a voz que mandou "seguir a luz". De quem é a voz? (o fotógrafo)
 - EP. 4: o **celular** desconhecido que mandou "entrar no vagão". Quem mandou? (a criança, que quer ajuda, mas está com medo)
