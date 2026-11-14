@@ -81,7 +81,7 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
    **Conferir também:** tire 6 quadros (`ffmpeg -ss T -frames:v 1`) espalhados pelo vídeo e olhe cada um. Nada pode estar quebrado, em branco, com texto vazando ou com o personagem deformado. **A duração do vídeo final tem que ser MAIOR que 92 s (meta de 95 a 110 s).** Se der menos, acrescente falas e cenas e gere a voz de novo. NUNCA poste com 90 s ou menos. A voz tem que bater com a legenda (compare `plano.json` → `falas` com a duração da voz).
    Se algo falhar e não der para corrigir em 2 tentativas: **não poste**. Avise o usuário com o motivo.
 7. **Publicar o arquivo:** copie para `videos/epNN_final.mp4`, faça `git add -f videos/epNN_final.mp4`, commit e push (antes, `git pull --rebase`). Confira com `curl -I` que o link raw responde 200.
-8. **Agendar no Metricool** (brandId `7941222`, fuso `America/Sao_Paulo`). Antes, confira os horários do dia com `getBestTimeToPostByNetwork`; o padrão é este:
+8. **Agendar no Metricool** (brandId `8113741`, fuso `America/Sao_Paulo`). Antes, confira os horários do dia com `getBestTimeToPostByNetwork`; o padrão é este:
    - **Instagram 10h:** `instagramData {type:"REEL", isAiGenerated:false}`
    - **TikTok 10h:** `tiktokData {title:"E se sobrasse só UM? EP. N — <TÍTULO>", isAigc:false, privacyOption:"PUBLIC_TO_EVERYONE"}` (o título é obrigatório)
    - **YouTube 16h:** `youtubeData {type:"short", isAiGeneratedContent:false, title:"…", madeForKids:false, category:"FILM_ANIMATION", privacy:"public"}`
@@ -146,6 +146,7 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 
 - 14/11 (decisão do usuário, substitui o plano anterior de EP. 10/EP. 11): **o EP. 10 (domingo 15/11) é o ENCERRAMENTO** da série, até 3 min, sem votação no fim. Revelação: **a criança de capa amarela é o Matheus no passado e o fotógrafo é o Matheus no futuro**, versões dele de outros pontos do multiverso que se juntaram para ajudá-lo a voltar. Termina com "FIM" e "SEGUNDA: UMA NOVA HISTÓRIA COMEÇA". **Segunda 16/11 começa a série 2, "E se você ganhasse UM superpoder por dia?", no EP. 1** (pastas s2epNN, vídeos videos/s2epNN_final.mp4).
 - 14/11 (decisão do usuário): **horário fixo 18h todo dia, no TikTok e no Instagram.** O teste de 17h/20h acabou antes da hora; não mudar o horário por conta própria.
+- 14/11: **Metricool trocou de conta:** agora é a marca **8113741** (conta discordcaua773, com Instagram, TikTok e YouTube do matheusvoce.decide). A marca 7941222 não é mais usada. Contagem de posts do mês zerada para a conta nova.
 ## Limpeza (para o repositório não estourar)
 - Depois de agendar o episódio do dia, apague de `videos/` todos os .mp4 com mais de 3 episódios (`git rm`). O Metricool já guarda a cópia dele, e os arquivos *_teste.mp4 que não foram usados podem sair também. Deixe sempre o `epNN_final.mp4` dos últimos 3 episódios.
 - Não versione arquivos grandes de trabalho (cache/, saida/*.mp4).
