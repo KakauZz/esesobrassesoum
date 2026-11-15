@@ -1,68 +1,80 @@
-1. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO total, épico, voz forte de trailer
-2. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e envolvente, apresentando com energia
-3. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, mistério com peso
-4. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e dramático
-5. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): ritmado, forte, intrigante
-6. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): animado e forte,  do resultado
-7. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, empolgado, marcando 'A'
-8. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, decidido
-9. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte
-10. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, intrigante
-11. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e misterioso, peso em 'última página'
-12. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, tenso, presente
-13. [carta] VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): leitura forte e clara do diário, com peso
-14. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): virada forte, intrigante
-15. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, com peso
-16. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): emocionante e forte, caloroso
-17. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): caloroso, forte, ritmado, alegre
-18. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, épico, crescendo
-19. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, ritmado, emocionante
-20. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante, peso
-21. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte
-22. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e , voz de homem
-23. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): tensão crescente, forte
-24. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO com IMPACTO máximo
-25. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): revelação forte, impactado
-26. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): falando com o público, animado e provocador
-27. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, intrigado
-28. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): revelação forte, emocionante
-29. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): tensão forte
-30. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, revelação crescendo, ritmado
-31. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO com IMPACTO máximo, surpresa
-32. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionado, peso em 'ele'
-33. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO com IMPACTO e emoção
-34. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante
-35. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, maravilhado
-36. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, épico
-37. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, ligando as pistas com energia
-38. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, pergunta com
-39. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): revelação forte
-40. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, revelação
-41. [carta] VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): leitura forte e emocionante da carta, voz presente
-42. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, curioso
-43. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, misterioso, contando com peso
-44. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, épico
-45. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, crescendo
-46. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, urgência
-47. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO total
-48. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): épico e forte, maravilhado
-49. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, tensão
-50. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): emocionante e forte
-51. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): carinhoso e forte, sorrindo
+1. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, mistério épico, voz de trailer
+2. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, épico, crescendo
+3. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO total, épico, voz forte de trailer
+4. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e envolvente, apresentando com energia
+5. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, mistério com peso
+6. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e dramático
+7. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): ritmado, forte, intrigante
+8. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): animado e forte,  do resultado
+9. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, empolgado, marcando 'A'
+10. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, decidido
+11. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte
+12. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, intrigante
+13. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e misterioso, peso em 'última página'
+14. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, tenso, presente
+15. [carta] VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): leitura forte e clara do diário, com peso
+16. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): virada forte, intrigante
+17. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, com peso
+18. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): emocionante e forte, caloroso
+19. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): caloroso, forte, ritmado, alegre
+20. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, épico, crescendo
+21. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, ritmado, emocionante
+22. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante, peso
+23. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte
+24. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e , voz de homem
+25. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): tensão crescente, forte
+26. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO com IMPACTO máximo
+27. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): revelação forte, impactado
+28. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): falando com o público, animado e provocador
+29. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, intrigado
+30. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): revelação forte, emocionante
+31. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): tensão forte
+32. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, revelação crescendo, ritmado
+33. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO com IMPACTO máximo, surpresa
+34. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionado, peso em 'ele'
+35. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO com IMPACTO e emoção
+36. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante
+37. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, maravilhado
+38. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, épico
+39. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, ligando as pistas com energia
+40. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, pergunta com
+41. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): revelação forte
+42. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, revelação
+43. [carta] VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): leitura forte e emocionante da carta, voz presente
+44. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, curioso
+45. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, misterioso, contando com peso
+46. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, épico
+47. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, crescendo
+48. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, urgência
+49. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO total
+50. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): épico e forte, maravilhado
+51. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, tensão
 52. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): emocionante e forte
-53. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): caloroso e forte
-54. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): tensão forte, épico
-55. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, épico, crescendo
-56. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): virada forte, alívio
-57. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): emocionado e forte
-58. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, curioso
-59. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): emocionado, forte, caloroso
-60. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, conclusão com peso e emoção
-61. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante, voz presente
-62. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte,  emocionante
-63. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante
-64. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, crescendo, esperançoso
-65. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante, conclusão com peso
-66. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): falando direto com o público, forte, caloroso e
-67. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): animado e forte
-68. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): muito animado, forte e convidativo
+53. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): virada forte, tensão
+54. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): URGÊNCIA, impacto
+55. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante
+56. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e caloroso, emocionado, sorrindo
+57. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionado, encorajando
+58. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): carinhoso e forte, sorrindo
+59. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): emocionante e forte
+60. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): caloroso e forte
+61. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): URGÊNCIA máxima, impacto
+62. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): tensão forte, épico
+63. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO, épico, crescendo
+64. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): virada forte, alívio
+65. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): emocionado e forte
+66. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, curioso
+67. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): emocionado, forte, caloroso
+68. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): virada forte, intrigante
+69. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, suspense
+70. [carta] VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): leitura forte e clara do bilhete, com peso
+71. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO com IMPACTO, épico
+72. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, conclusão com peso e emoção
+73. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante, voz presente
+74. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte,  emocionante
+75. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante
+76. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, crescendo, esperançoso
+77. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, emocionante, conclusão com peso
+78. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): falando direto com o público, forte, caloroso e
+79. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): animado e forte
+80. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): muito animado, forte e convidativo
