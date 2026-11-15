@@ -3621,7 +3621,7 @@ SHAKE.push(1300.02);
 // 4. "Uma carta. Uma menina. E um fotógrafo." — três quadros que entram um a um (1303–1306.5)
 scene(1303,1306.5,(t)=>{const u=t-1303;ctx.fillStyle='#0d0d16';ctx.fillRect(0,0,W,H);
   const P3=[[0,'#c97b4a'],[1,'#f2c230'],[2,'#5a6248']];
-  P3.forEach(([i,c])=>{const T0=[0,1.05,1.62][i];const k=easeOut(seg(u,T0,T0+.35));if(k<=0)return;const y=330+i*520;ctx.save();ctx.translate(lerp(i%2?W+600:-600,W/2,k),y+260);ctx.rotate((i-1)*.03);
+  P3.forEach(([i,c])=>{const T0=[0,.9,1.85][i];const k=easeOut(seg(u,T0,T0+.35));if(k<=0)return;const y=330+i*520;ctx.save();ctx.translate(lerp(i%2?W+600:-600,W/2,k),y+260);ctx.rotate((i-1)*.03);
     ctx.fillStyle='#f3efe6';ctx.fillRect(-440,-250,880,500);ctx.save();ctx.beginPath();ctx.rect(-420,-230,840,420);ctx.clip();ctx.fillStyle=['#2a2238','#1b1d36','#2b2018'][i];ctx.fillRect(-420,-230,840,420);
     if(i===0)envelope(0,-20,1.6,0);if(i===1)e8Kid(0,180,.42,{u,smile:6});if(i===2)e9Photog(0,200,.42,{cam:1});ctx.restore();
     ctx.fillStyle='#1f2f6b';ctx.font='700 46px Caveat';ctx.textAlign='center';ctx.fillText(['a carta','a menina','o fotógrafo'][i],0,232);ctx.restore()});
