@@ -11,54 +11,58 @@
 11. forte e misterioso, peso em 'última página', sem sussurro
 12. forte, tenso, presente
 13. [carta] leitura forte e clara do diário, com peso
-14. REVELAÇÃO com IMPACTO
-15. forte, ritmado, emocionante
-16. forte, emocionante, peso
-17. suspense forte, sem sussurro
-18. forte e gentil, voz de homem calmo e acolhedor
-19. tensão crescente, forte, devagar com peso
-20. REVELAÇÃO com IMPACTO máximo
-21. revelação forte, impactado
-22. falando com o público, animado e provocador
-23. forte, intrigado
-24. revelação forte, emocionante
-25. tensão forte, devagar com peso, sem sussurro
-26. forte, revelação crescendo, ritmado
-27. REVELAÇÃO com IMPACTO máximo, surpresa
-28. forte, emocionado, peso em 'ele'
-29. REVELAÇÃO com IMPACTO e emoção
-30. forte, emocionante, com ternura
-31. forte, maravilhado
-32. forte, épico
-33. forte, ligando as pistas com energia
-34. forte, pergunta com suspense
-35. revelação forte
-36. IMPACTO, revelação
-37. [carta] leitura forte e emocionante da carta, voz presente
-38. forte, curioso
-39. forte, misterioso, contando com peso
-40. forte, épico
-41. forte, crescendo
-42. IMPACTO, urgência
-43. IMPACTO total
-44. épico e forte, maravilhado
-45. forte, tensão
-46. emocionante e forte
-47. carinhoso e forte, sorrindo
-48. emocionante e forte
-49. caloroso e forte
-50. tensão forte, épico
-51. IMPACTO, épico, crescendo
-52. virada forte, alívio
-53. emocionado e forte
-54. forte, curioso
-55. emocionado, forte, caloroso
-56. forte, conclusão com peso e emoção
-57. forte, emocionante, reflexivo, voz presente
-58. forte, suspense emocionante
-59. forte, reflexivo, emocionante, devagar com peso, sem sussurro
-60. forte, crescendo, esperançoso
-61. forte, emocionante, conclusão com peso
-62. falando direto com o público, forte, caloroso e reflexivo
-63. animado e forte
-64. muito animado, forte e convidativo
+14. virada forte, intrigante
+15. forte, com peso
+16. emocionante e forte, caloroso
+17. caloroso, forte, ritmado, alegre
+18. IMPACTO, épico, crescendo
+19. forte, ritmado, emocionante
+20. forte, emocionante, peso
+21. suspense forte, sem sussurro
+22. forte e gentil, voz de homem calmo e acolhedor
+23. tensão crescente, forte, devagar com peso
+24. REVELAÇÃO com IMPACTO máximo
+25. revelação forte, impactado
+26. falando com o público, animado e provocador
+27. forte, intrigado
+28. revelação forte, emocionante
+29. tensão forte, devagar com peso, sem sussurro
+30. forte, revelação crescendo, ritmado
+31. REVELAÇÃO com IMPACTO máximo, surpresa
+32. forte, emocionado, peso em 'ele'
+33. REVELAÇÃO com IMPACTO e emoção
+34. forte, emocionante, com ternura
+35. forte, maravilhado
+36. forte, épico
+37. forte, ligando as pistas com energia
+38. forte, pergunta com suspense
+39. revelação forte
+40. IMPACTO, revelação
+41. [carta] leitura forte e emocionante da carta, voz presente
+42. forte, curioso
+43. forte, misterioso, contando com peso
+44. forte, épico
+45. forte, crescendo
+46. IMPACTO, urgência
+47. IMPACTO total
+48. épico e forte, maravilhado
+49. forte, tensão
+50. emocionante e forte
+51. carinhoso e forte, sorrindo
+52. emocionante e forte
+53. caloroso e forte
+54. tensão forte, épico
+55. IMPACTO, épico, crescendo
+56. virada forte, alívio
+57. emocionado e forte
+58. forte, curioso
+59. emocionado, forte, caloroso
+60. forte, conclusão com peso e emoção
+61. forte, emocionante, reflexivo, voz presente
+62. forte, suspense emocionante
+63. forte, reflexivo, emocionante, devagar com peso, sem sussurro
+64. forte, crescendo, esperançoso
+65. forte, emocionante, conclusão com peso
+66. falando direto com o público, forte, caloroso e reflexivo
+67. animado e forte
+68. muito animado, forte e convidativo
