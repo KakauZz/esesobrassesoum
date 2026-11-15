@@ -235,7 +235,9 @@ scene(1377,1380.5,(t)=>{const u=t-1377;ctx.fillStyle=lg(0,H,['#1e1f36','#2a2840'
 // 24. uma foto antiga: "Matheus, 7 anos" — capa amarela e os MESMOS tênis vermelhos (1381–1384.5)
 scene(1381,1384.5,(t)=>{const u=t-1381;ctx.fillStyle='#2b2018';ctx.fillRect(0,0,W,H);glow(W/2,H*.4,800,'rgba(255,220,170,A)',.35);
   CAM(W/2,H*.48,lerp(1.0,1.12,easeIO(seg(u,0,3.5))),()=>{ctx.save();ctx.translate(W/2,H*.47);ctx.rotate(-.05);softShadow(10,600,440,40,.5);ctx.fillStyle='#f3efe6';ctx.fillRect(-400,-520,800,1040);
-    ctx.save();ctx.beginPath();ctx.rect(-350,-470,700,760);ctx.clip();ctx.fillStyle=lg(-470,290,['#9cc6e8','#cfe3f0']);ctx.fillRect(-350,-470,700,760);ctx.fillStyle='#7fb07f';ctx.fillRect(-350,120,700,170);e8Kid(0,270,.9,{u:0,smile:10});
+    ctx.save();ctx.beginPath();ctx.rect(-350,-470,700,760);ctx.clip();ctx.fillStyle=lg(-470,290,['#9cc6e8','#cfe3f0']);ctx.fillRect(-350,-470,700,760);ctx.fillStyle='#7fb07f';ctx.fillRect(-350,40,700,260);
+    // foto antiga cortada: só as perninhas e os tênis vermelhos aparecem
+    ctx.save();ctx.translate(0,250);ctx.scale(1.9,1.9);ctx.fillStyle='#3a5a8a';for(const sx of[-1,1]){ctx.beginPath();rr(sx*46-20,-260,40,230,10);ctx.fill();ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.stroke();ctx.fillStyle='#d23b2e';ctx.beginPath();ctx.ellipse(sx*46+(sx>0?8:-8),-16,54,34,0,0,7);ctx.fill();ctx.stroke();ctx.strokeStyle='#fff';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(sx*46-28,-24);ctx.lineTo(sx*46+30,-24);ctx.stroke();ctx.fillStyle='#3a5a8a'}ctx.restore();
     ctx.fillStyle='rgba(200,160,90,.25)';ctx.fillRect(-350,-470,700,760);ctx.restore();
     ctx.fillStyle='#1f2f6b';ctx.font='700 70px Caveat';ctx.textAlign='center';ctx.fillText('Matheus, 7 anos',0,400);ctx.restore()});
   if(u>1.5){const k=easeBack(seg(u,1.5,1.8));ctx.save();ctx.translate(W/2,300);ctx.scale(k,k);txtC('O MESMO TÊNIS!',0,0,'900 96px Inter','#ff5a5a',18);ctx.restore()}
@@ -244,7 +246,7 @@ scene(1381,1384.5,(t)=>{const u=t-1381;ctx.fillStyle='#2b2018';ctx.fillRect(0,0,
 
 // 25. "A menina... é ele. No passado." — a criança sorri, a capa brilha (1385–1388.5)
 scene(1385,1388.5,(t)=>{const u=t-1385;ctx.fillStyle=lg(0,H,['#2a2240','#3a2e5a','#181428']);ctx.fillRect(0,0,W,H);glow(W/2,H*.5,800,'rgba(255,210,90,A)',.45);
-  CAM(W/2,H*.6,lerp(1.1,1.0,easeOut(seg(u,0,1))),()=>e8Kid(W/2,H*.85,1.55,{u,smile:lerp(0,14,seg(u,.4,1.2))}));
+  const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};CAM(W/2,H*.6,lerp(1.1,1.0,easeOut(seg(u,0,1))),()=>{e8Kid(W/2,H*.85,1.55,{u});BOY(W/2,H*.85,1.55,{smile:lerp(0,22,seg(u,.4,1.2))})});
   if(u>.8){txtC('PASSADO',W/2,330,'900 110px Inter','#ffd84a',18)}letterIn(u)});
 
 // 26. "Os três são o mesmo Matheus." — os três lado a lado, ligados por um fio de luz (1389–1392.5)
@@ -380,16 +382,16 @@ scene(1457,1460.5,(t)=>{const u=t-1457;ctx.fillStyle='#1a1424';ctx.fillRect(0,0,
   ctx.save();ctx.globalAlpha=1-seg(u,3,3.5);ctx.translate(540,y+bob);ctx.scale(s,s);
   // capa amarela de costas (sem rosto): capuz + corpo + tênis vermelhos
   ctx.fillStyle='#f2c230';ctx.strokeStyle=OUT;ctx.lineWidth=11;ctx.beginPath();ctx.moveTo(-152,-150);ctx.quadraticCurveTo(-186,-430,0,-472);ctx.quadraticCurveTo(186,-430,152,-150);ctx.quadraticCurveTo(0,-118,-152,-150);ctx.closePath();ctx.fill();ctx.stroke();
-  ctx.beginPath();ctx.ellipse(0,-560,130,120,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='rgba(180,120,10,.35)';ctx.beginPath();ctx.ellipse(0,-560,90,80,0,0,7);ctx.fill();
+  ctx.beginPath();ctx.ellipse(0,-450,170,60,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle=P.hair;ctx.beginPath();ctx.ellipse(0,-570,128,120,0,0,7);ctx.fill();ctx.stroke();ctx.strokeStyle=P.hairL;ctx.lineWidth=10;ctx.beginPath();ctx.arc(0,-580,70,-2.6,-1.2);ctx.stroke();
   const st=Math.sin(u*7);for(const sx of[-1,1]){ctx.fillStyle='#c9a152';ctx.beginPath();rr(sx*46-18,-150,36,116-(sx*st>0?20:0),10);ctx.fill();ctx.stroke();ctx.fillStyle='#d23b2e';ctx.beginPath();ctx.ellipse(sx*46,-16-(sx*st>0?20:0),46,30,0,0,7);ctx.fill();ctx.stroke()}
   ctx.restore();letterIn(u);
 });
 
 // 44. ela se vira na luz e acena: "até logo, eu grande!" (1461–1464.5)
 scene(1461,1464.5,(t)=>{const u=t-1461;ctx.fillStyle='#2a2040';ctx.fillRect(0,0,W,H);portal(540,600,1,u,'255,220,120');
-  CAM(W/2,H*.6,lerp(1.05,1.0,seg(u,0,3.5)),()=>{e8Kid(W/2,1700,1.25,{u,smile:16});
+  const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};CAM(W/2,H*.6,lerp(1.05,1.0,seg(u,0,3.5)),()=>{e8Kid(W/2,1700,1.25,{u});BOY(W/2,1700,1.25,{smile:26});
     // mãozinha acenando
-    const w=Math.sin(u*9)*.4;ctx.save();ctx.translate(W/2+200,1180);ctx.rotate(-.6+w);ctx.fillStyle='#f2c230';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();rr(-30,-200,60,200,26);ctx.fill();ctx.stroke();ctx.fillStyle='#f6ddc6';ctx.beginPath();ctx.ellipse(0,-230,46,52,0,0,7);ctx.fill();ctx.stroke();ctx.restore();});
+    const w=Math.sin(u*9)*.4;ctx.save();ctx.translate(W/2+330,1060);ctx.rotate(-.6+w);ctx.fillStyle='#f2c230';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();rr(-30,-200,60,200,26);ctx.fill();ctx.stroke();ctx.fillStyle='#f6ddc6';ctx.beginPath();ctx.ellipse(0,-230,46,52,0,0,7);ctx.fill();ctx.stroke();ctx.restore();});
   const k=easeBack(seg(u,.4,.7));ctx.save();ctx.translate(W/2,330);ctx.scale(k,k);ctx.fillStyle='#fff';ctx.strokeStyle=OUT;ctx.lineWidth=8;ctx.beginPath();rr(-400,-100,800,200,50);ctx.fill();ctx.stroke();txtC('ATÉ LOGO, EU GRANDE! 👋',0,0,'900 60px Inter','#d2861a');ctx.restore();
 });
 
@@ -476,3 +478,95 @@ scene(1512,1519,(t)=>{const u=t-1512;ctx.fillStyle='#07070c';ctx.fillRect(0,0,W,
 scene(1496,1499.2,(t)=>{const u=t-1496;ctx.fillStyle='#07070c';ctx.fillRect(0,0,W,H);const g=ctx.createRadialGradient(W/2,H*.42,50,W/2,H*.42,900);g.addColorStop(0,'rgba(120,90,255,.35)');g.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
   const k=easeBack(seg(u,0,.4));ctx.save();ctx.translate(W/2,H*.38);ctx.scale(k,k);txtC('SEGUNDA, 18H',0,0,'900 110px Inter','#ffd84a');txtC('UMA NOVA HISTÓRIA',0,140,'900 84px Inter','#fff');txtC('COM O MATHEUS',0,250,'900 84px Inter','#fff');ctx.restore();
   ctx.save();ctx.globalAlpha=seg(u,.6,1);txtC('Segue pra não perder 👆',W/2,H*.38+520,'800 56px Inter','#fff');ctx.restore()});
+
+// ======== v2: continuidade (dia 48 → 60) ========
+// A. "Mas hoje ainda é dia quarenta e oito." (1520–1523.5)
+scene(1520,1523.5,(t)=>{const u=t-1520;ctx.fillStyle='#22180f';ctx.fillRect(0,0,W,H);glow(W/2,H*.4,800,'rgba(255,200,150,A)',.3);
+  CAM(W/2,H*.62,lerp(1.25,1.4,easeIO(seg(u,0,3.5))),()=>calendar(W/2,H*.5,1.0,48,48,u));
+  ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(0,190,W,180);txtC('HOJE: DIA 48',W/2,280,'900 96px Inter','#fff',18);letterIn(u)});
+// B. "Faltam doze dias." — os dias 49 a 60 acendem um por um, contador 12 (1524–1527.5)
+scene(1524,1527.5,(t)=>{const u=t-1524;ctx.fillStyle='#22180f';ctx.fillRect(0,0,W,H);glow(W/2,H*.45,800,'rgba(255,200,150,A)',.3);
+  CAM(W/2,H*.55,lerp(1.0,1.05,seg(u,0,3.5)),()=>{calendar(W/2,H*.52,1.0,48,0,u);ctx.save();ctx.translate(W/2,H*.52);
+    for(let d=49;d<=60;d++){const k=seg(u,.2+(d-49)*.12,.4+(d-49)*.12);if(k<=0)continue;const c=(d-1)%8,r=Math.floor((d-1)/8);ctx.fillStyle=`rgba(255,216,74,${.55*k})`;ctx.beginPath();ctx.arc(-350+c*100,-280+r*100,40,0,7);ctx.fill()}ctx.restore();});
+  const n=Math.min(12,Math.floor(seg(u,.2,1.8)*12)+1);const k=easeBack(seg(u,.1,.4));ctx.save();ctx.translate(W/2,300);ctx.scale(k,k);txtC('FALTAM '+n+' DIAS',0,0,'900 100px Inter','#ffd84a',18);ctx.restore();letterIn(u)});
+// C. "E pela primeira vez... ele não espera sozinho." — os três sentados juntos no chão da sala das fotos, abajur quente (1528–1531.5)
+scene(1528,1531.5,(t)=>{const u=t-1528;ctx.fillStyle='#2b2018';ctx.fillRect(0,0,W,H);ctx.fillStyle='#4a3a2e';ctx.fillRect(0,0,W,1450);
+  const r=rng(31);for(let i=0;i<8;i++){ctx.save();ctx.translate(120+(i%4)*280,300+Math.floor(i/4)*330+r()*30);ctx.rotate((r()-.5)*.3);ctx.fillStyle='#f3efe6';ctx.fillRect(-70,-84,140,168);ctx.fillStyle=['#5a7aa0','#c97b4a','#3f7a4a','#8a6a9a'][i%4];ctx.fillRect(-58,-72,116,116);ctx.restore()}
+  ctx.fillStyle='#3a2a20';ctx.fillRect(0,1450,W,H-1450);
+  CAM(W/2,1450,lerp(1.0,1.08,easeIO(seg(u,0,3.5))),()=>{ctx.fillStyle='#3a2f2a';ctx.fillRect(900,1200,30,260);ctx.fillStyle='#e8c07a';ctx.beginPath();ctx.moveTo(850,1210);ctx.lineTo(880,1110);ctx.lineTo(950,1110);ctx.lineTo(980,1210);ctx.closePath();ctx.fill();glow(915,1200,520,'rgba(255,190,110,A)',.5);
+    e8Kid(250,1720,.55,{u,smile:12});personFront(500,1560,1.45,{smile:14,look:-.3});e9Photog(760,1730,.82,{cam:0,smile:1});
+});
+  dust(u,28,24,'rgba(255,220,170,A)');grade('rgba(255,170,90,.3)','rgba(40,60,160,.15)');letterIn(u)});
+// D. "Os três ficam juntos. Dia após dia." — montagem: polaroids dos 12 dias caindo na mesa, contador de dias subindo (1532–1535.5)
+scene(1532,1535.5,(t)=>{const u=t-1532;ctx.fillStyle='#5a3a26';ctx.fillRect(0,0,W,H);glow(W*.7,H*.2,900,'rgba(255,220,170,A)',.35);
+  const cards=[['jogando cartas','#3f7a4a'],['o pequeno desenhando','#c97b4a'],['aprendendo a fotografar','#5a7aa0'],['jantar juntos','#8a6a9a'],['vendo as estrelas','#1d2850'],['rindo muito','#e2683c']];
+  cards.forEach(([lab,c],i)=>{const k=easeOut(seg(u,.1+i*.45,.4+i*.45));if(k<=0)return;const r=rng(i+50);ctx.save();ctx.translate(200+(i%3)*340+r()*30,520+Math.floor(i/3)*620+lerp(-500,0,k));ctx.rotate((r()-.5)*.35);softShadow(6,250,200,26,.4);ctx.fillStyle='#f3efe6';ctx.fillRect(-150,-190,300,360);
+    ctx.save();ctx.beginPath();ctx.rect(-130,-170,260,260);ctx.clip();ctx.fillStyle=c;ctx.fillRect(-130,-170,260,260);ctx.globalAlpha=.9;e8Kid(-70,70,.2,{u:0,smile:10});personFront(10,10,.5,{smile:14,noShadow:true});e9Photog(80,80,.17,{cam:i===2?1:0,smile:1});ctx.restore();
+    ctx.fillStyle='#1f2f6b';ctx.font='700 36px Caveat';ctx.textAlign='center';ctx.fillText(lab,0,140);ctx.restore()});
+  const d=49+Math.floor(seg(u,.1,3.2)*10.99);ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(0,1700,W,170);txtC('DIA '+d,W/2,1785,'900 100px Oswald','#ffd84a',14);letterIn(u)});
+
+// ======== v2: a revelação do menino ========
+// K1. "Ele se abaixa... e tira o capuz amarelo." (1536–1539.5)
+scene(1536,1539.5,(t)=>{const u=t-1536;const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};ctx.fillStyle=lg(0,H,['#2a2240','#3a2e5a','#181428']);ctx.fillRect(0,0,W,H);glow(W/2,H*.4,800,'rgba(255,210,90,A)',.35);
+  const k=easeIO(seg(u,1.2,2.4));const sh=(u>2.35&&u<2.7)?Math.sin(u*80)*8:0;
+  CAM(W/2+sh,H*.45,lerp(1.0,1.15,easeIO(seg(u,0,3.5))),()=>{e8Kid(W/2,H*.95,1.7,{u,smile:4});if(k>.5)BOY(W/2,H*.95,1.7,{smile:lerp(0,24,seg(u,2.5,3.2)),open:1.15});
+    // mão dele (manga laranja) puxando o capuz pra trás
+    const hx=lerp(W/2+380,W/2+60,easeOut(seg(u,.2,1.2)))+easeIO(seg(u,2.3,3.0))*700,hy=lerp(H*.2,H*.95-1.7*600,easeOut(seg(u,.2,1.2)))+k*120;ctx.fillStyle=P.hood;ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.moveTo(W+60,hy-260);ctx.lineTo(hx+60,hy-40);ctx.lineTo(hx+20,hy+50);ctx.lineTo(W+60,hy-120);ctx.closePath();ctx.fill();ctx.stroke();ctx.fillStyle=P.skin;ctx.beginPath();ctx.ellipse(hx,hy,62,70,0,0,7);ctx.fill();ctx.stroke();});
+  if(u>2.35&&u<2.6){ctx.fillStyle=`rgba(255,255,255,${.7*(1-seg(u,2.35,2.6))})`;ctx.fillRect(0,0,W,H)}
+  ctx.save();ctx.globalAlpha=1-seg(u,2.2,2.4);ctx.fillStyle='rgba(0,0,0,.55)';ctx.fillRect(0,190,W,180);txtC('QUEM É VOCÊ?',W/2,280,'900 96px Inter','#fff',18);ctx.restore();
+});
+// K2. "O cabelo. Os olhos. O mesmo jeito de sorrir." — o menino e o Matheus lado a lado, setas ligando (1540–1543.5)
+scene(1540,1543.5,(t)=>{const u=t-1540;const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};ctx.fillStyle=lg(0,H,['#1d1a3a','#3a2a6a','#120f26']);ctx.fillRect(0,0,W,H);glow(W/2,H*.45,800,'rgba(255,200,140,A)',.3);
+  e8Kid(280,1500,.9,{u});BOY(280,1500,.9,{smile:22});face(800,H*.38,.55,{open:1,smile:22});
+  const tags=[['O CABELO',-170,.2],['OS OLHOS',-10,1.0],['O SORRISO',130,1.8]];tags.forEach(([lab,dy,a])=>{const k=seg(u,a,a+.4);if(k<=0)return;ctx.save();ctx.globalAlpha=k;ctx.strokeStyle='#ffd84a';ctx.lineWidth=8;ctx.setLineDash([18,14]);ctx.beginPath();ctx.moveTo(360,1500-540*.9+dy*.9*.5*2);ctx.lineTo(700,H*.38+dy*.55);ctx.stroke();ctx.setLineDash([]);txtC(lab,540,(1500-540*.9+H*.38)/2+dy*.8-40,'900 54px Inter','#ffd84a',12);ctx.restore()});
+  txtC('= IGUAL',W/2,1820,'900 90px Inter','#fff',16);letterIn(u)});
+// K3. "Não era uma menina. Era um menino!" (1544–1547.5)
+scene(1544,1547.5,(t)=>{const u=t-1544;const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};ctx.fillStyle=lg(0,H,['#ee6a35','#c24e22','#5a2010']);ctx.fillRect(0,0,W,H);glow(W/2,H*.45,900,'rgba(255,230,180,A)',.4);
+  const z=lerp(1.2,1.0,easeOut(seg(u,0,.5)));CAM(W/2,H*.6,z,()=>{e8Kid(W/2,H*1.0,1.6,{u});BOY(W/2,H*1.0,1.6,{smile:28,open:1.1})});
+  const k=easeBack(seg(u,.3,.6));ctx.save();ctx.translate(W/2,320);ctx.scale(k,k);txtC('ERA UM MENINO! 😱',0,0,'900 100px Inter','#fff',20);ctx.restore();
+  if(u<.2){ctx.fillStyle=`rgba(255,255,255,${.8*(1-u/.2)})`;ctx.fillRect(0,0,W,H)}});
+// K4. "Era ele. Com sete anos de idade." — a foto antiga agora inteira: o mesmo menino, rosto dele (1548–1551.5)
+scene(1548,1551.5,(t)=>{const u=t-1548;const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};ctx.fillStyle='#2b2018';ctx.fillRect(0,0,W,H);glow(W/2,H*.4,800,'rgba(255,220,170,A)',.35);
+  CAM(W/2,H*.48,lerp(1.15,1.0,easeOut(seg(u,0,3.5))),()=>{ctx.save();ctx.translate(W/2,H*.47);ctx.rotate(-.05);softShadow(10,600,440,40,.5);ctx.fillStyle='#f3efe6';ctx.fillRect(-400,-520,800,1040);
+    ctx.save();ctx.beginPath();ctx.rect(-350,-470,700,760);ctx.clip();ctx.fillStyle=lg(-470,290,['#9cc6e8','#cfe3f0']);ctx.fillRect(-350,-470,700,760);ctx.fillStyle='#7fb07f';ctx.fillRect(-350,120,700,170);e8Kid(0,290,.95,{u:0});BOY(0,290,.95,{smile:24});
+    ctx.fillStyle='rgba(200,160,90,.22)';ctx.fillRect(-350,-470,700,760);ctx.restore();ctx.fillStyle='#1f2f6b';ctx.font='700 70px Caveat';ctx.textAlign='center';ctx.fillText('Matheus, 7 anos',0,400);ctx.restore()});
+  if(u>.8){const k=easeBack(seg(u,.8,1.1));ctx.save();ctx.translate(W/2,300);ctx.scale(k,k);txtC('ERA ELE!',0,0,'900 120px Inter','#ffd84a',20);ctx.restore()}letterIn(u)});
+// K5. "Por isso tinha tanto medo: era o medo dele, pequeno." — o menino escondido no armário (lembrança), luz quente acolhendo (1552–1555.5)
+scene(1552,1555.5,(t)=>{const u=t-1552;const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};CAM(W/2,1000,lerp(1.0,1.1,easeIO(seg(u,0,3.5))),()=>{e7Wardrobe(u,.35,0);ctx.save();ctx.beginPath();ctx.rect(540,380,290,1140);ctx.clip();e8Kid(690,1500,.7,{u,hide:1});BOY(690,1500,.7,{open:.4,brow:.6,smile:-10});ctx.restore();
+    glow(690,1150,500,'rgba(255,200,120,A)',.35*seg(u,1,3));});
+  txtC('O MEDO DELE, PEQUENO',W/2,300,'900 74px Inter','#ffd84a',16);letterIn(u)});
+
+// ======== v2: o final para refletir ========
+// R1. "A criança que ele foi. E o homem que ele vai ser." — os três, nascer do sol, o menino sem capuz (1556–1559.5)
+scene(1556,1559.5,(t)=>{const u=t-1556;const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};sky('#f0a070','#ffd9a8','#cfe3f2');sun(W/2,1050,90,'#fff6dc','rgba(255,214,150,.9)');buildings(9,1500,300,800,'#8a7a9a','#ffe6a0',.2,100,1);beams(W/2,1050,Math.PI*1.5,9,1600,.08);
+  ctx.fillStyle=lg(1500,H,['#5a4a5a','#3a2e3a']);ctx.fillRect(0,1500,W,H-1500);
+  CAM(W/2,1500,lerp(1.0,1.06,seg(u,0,3.5)),()=>{const a=seg(u,.3,1.2);ctx.save();ctx.globalAlpha=a;e8Kid(220,1760,.6,{u});BOY(220,1760,.6,{smile:20});ctx.restore();personFront(540,1580,1.5,{smile:16});ctx.save();ctx.globalAlpha=seg(u,1,1.9);e9Photog(860,1760,.85,{cam:0,smile:1});ctx.restore();});
+  txtC('QUEM ELE FOI',220,1880,'900 46px Inter','#fff',10);if(u>1)txtC('QUEM ELE VAI SER',860,1880,'900 46px Inter','#fff',10);letterIn(u)});
+// R2. "Os dois voltaram pra dizer uma coisa:" — o menino e o Matheus do futuro, olhando pra câmera (1560–1563.5)
+scene(1560,1563.5,(t)=>{const u=t-1560;const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};ctx.fillStyle=lg(0,H,['#2a2240','#5a4a7a','#f0a070']);ctx.fillRect(0,0,W,H);glow(W/2,H*.5,900,'rgba(255,220,170,A)',.35);
+  CAM(W/2,H*.5,lerp(1.0,1.06,seg(u,0,3.5)),()=>{e8Kid(290,1650,1.0,{u});BOY(290,1650,1.0,{smile:20});oldFace(790,H*.52,.5,{open:1,smile:22,hat:1,shadow:0});});letterIn(u)});
+// R3. "Enquanto você lembrar de quem já foi..." — a foto do menino nas mãos dele, brilhando (1564–1567.5)
+scene(1564,1567.5,(t)=>{const u=t-1564;const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};ctx.fillStyle='#1a1424';ctx.fillRect(0,0,W,H);glow(W/2,H*.45,800,'rgba(255,220,170,A)',.45);
+  CAM(W/2,H*.48,lerp(1.0,1.12,easeIO(seg(u,0,3.5))),()=>{ctx.save();ctx.translate(W/2,H*.45);ctx.rotate(-.04);ctx.fillStyle='#f3efe6';ctx.fillRect(-300,-380,600,760);ctx.save();ctx.beginPath();ctx.rect(-260,-340,520,560);ctx.clip();ctx.fillStyle=lg(-340,220,['#9cc6e8','#cfe3f0']);ctx.fillRect(-260,-340,520,560);e8Kid(0,220,.7,{u:0});BOY(0,220,.7,{smile:24});ctx.restore();ctx.fillStyle='#1f2f6b';ctx.font='700 56px Caveat';ctx.textAlign='center';ctx.fillText('quem eu já fui',0,320);ctx.restore();
+    for(const sx of[-1,1]){ctx.fillStyle=P.skin;ctx.strokeStyle=OUT;ctx.lineWidth=8;ctx.beginPath();ctx.ellipse(W/2+sx*320,H*.45+330,70,90,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle=P.hood;ctx.beginPath();rr(W/2+sx*320-80,H*.45+390,160,500,30);ctx.fill();ctx.stroke()}});
+  dust(u,64,30,'rgba(255,235,190,A)');letterIn(u)});
+// R4. "e acreditar em quem ainda vai ser..." — ele sobe uma estrada em direção ao sol (câmera parada, ele se afasta) (1568–1571.5)
+scene(1568,1571.5,(t)=>{const u=t-1568;sky('#f0a070','#ffd9a8','#cfe3f2');sun(W/2,820,110,'#fff6dc','rgba(255,214,150,.95)');beams(W/2,820,Math.PI*1.5,11,1700,.09);
+  ctx.fillStyle='#7a8a6a';ctx.fillRect(0,900,W,H-900);ctx.fillStyle='#b9a27a';ctx.beginPath();ctx.moveTo(W/2-30,900);ctx.lineTo(W/2+30,900);ctx.lineTo(W/2+420,H);ctx.lineTo(W/2-420,H);ctx.closePath();ctx.fill();
+  ctx.strokeStyle='rgba(255,255,255,.6)';ctx.lineWidth=8;ctx.setLineDash([60,60]);ctx.lineDashOffset=0;ctx.beginPath();ctx.moveTo(W/2,900);ctx.lineTo(W/2,H);ctx.stroke();ctx.setLineDash([]);
+  const k=easeIO(seg(u,0,3.5));ctx.save();ctx.filter='brightness(0.4)';personFront(W/2,lerp(1700,1180,k),lerp(1.6,.55,k),{back:true,walk:u*7});ctx.restore();
+  txtC('QUEM VOCÊ AINDA VAI SER',W/2,300,'900 64px Inter','#fff',16)});
+// R5. "você nunca vai estar sozinho." — na janela, a sombra dele com as duas sombras ao lado (o pequeno e o grande) (1572–1575.5)
+scene(1572,1575.5,(t)=>{const u=t-1572;const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};sky('#f0a070','#ffd9a8','#cfe3f2');sun(W/2,900,90,'#fff6dc','rgba(255,214,150,.9)');buildings(9,1500,300,800,'#6a5a7a','#ffe6a0',.3,100,1);
+  ctx.fillStyle=lg(1500,H,['#5a4a5a','#3a2e3a']);ctx.fillRect(0,1500,W,H-1500);
+  ctx.save();ctx.filter='brightness(0.2)';personFront(540,1620,1.6,{back:true});ctx.restore();
+  const a=.35*seg(u,.6,2);ctx.save();ctx.globalAlpha=a;ctx.filter='brightness(0.2)';e8Kid(250,1780,.6,{u});BOY(250,1780,.6,{});e9Photog(830,1800,.8,{cam:0});ctx.restore();
+  // mãos dadas (sombras)
+  ctx.save();ctx.globalAlpha=a*2;ctx.strokeStyle='rgba(20,15,20,.9)';ctx.lineWidth=22;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(330,1560);ctx.lineTo(470,1520);ctx.moveTo(610,1520);ctx.lineTo(760,1480);ctx.stroke();ctx.restore();
+  e6Cat(900,1880,.5,u);txtC('NUNCA SOZINHO',W/2,300,'900 96px Inter','#fff',18)});
+// R6. "E você? O que o seu eu criança diria de você hoje?" — cartão em giz de cera, o menino acenando (1576–1580)
+scene(1576,1580,(t)=>{const u=t-1576;const BOY=(x,y,s,o)=>{o=o||{};ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='#e0ad1e';ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,-440,190,80,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle='#f2c230';ctx.beginPath();ctx.ellipse(0,-456,150,46,0,0,7);ctx.fill();ctx.restore();face(x,y-540*s,.5*s,Object.assign({headOnly:true,open:1.1},o))};ctx.fillStyle='#f3ecda';ctx.fillRect(0,0,W,H);ctx.fillStyle='rgba(80,110,170,.18)';for(let y=200;y<H;y+=80)ctx.fillRect(60,y,W-120,3);
+  ctx.lineCap='round';ctx.strokeStyle='#4f7fd0';ctx.lineWidth=12;for(let i=0;i<3;i++){ctx.beginPath();ctx.moveTo(80,120+i*16);ctx.lineTo(1000,110+i*14);ctx.stroke()}ctx.strokeStyle='#e8a81e';ctx.beginPath();ctx.arc(930,230,60,0,7);ctx.stroke();
+  const k=seg(u,.2,2);ctx.fillStyle='#d23b3b';ctx.font='700 104px Caveat';ctx.textAlign='center';const L=['E você?','O que o seu','eu criança diria','de você hoje?'];const tot=L.join('').length;let n=Math.floor(k*tot);L.forEach((l,i)=>{const sh=l.slice(0,Math.max(0,n));n-=l.length;ctx.fillText(sh,W/2,460+i*130)});
+  e8Kid(W/2,1820,.9,{u});BOY(W/2,1820,.9,{smile:26});const w=Math.sin(u*9)*.4;ctx.save();ctx.translate(W/2+250,1380);ctx.rotate(-.6+w);ctx.fillStyle='#f2c230';ctx.strokeStyle=OUT;ctx.lineWidth=9;ctx.beginPath();rr(-26,-160,52,160,22);ctx.fill();ctx.stroke();ctx.fillStyle='#f6ddc6';ctx.beginPath();ctx.ellipse(0,-185,38,42,0,0,7);ctx.fill();ctx.stroke();ctx.restore();
+  txtC('comenta 👇',W/2,1120,'800 64px Inter','#1f2f6b')});
