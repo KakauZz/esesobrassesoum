@@ -1,36 +1,36 @@
-1. IMPACTO total desde a primeira palavra, surpresa e energia, divertido
-2. forte e simpático, apresentando o personagem com energia
-3. ritmado e forte
-4. forte, com um toque de ironia em 'seu Roberto'
-5. forte, contando a história com energia
-6. IMPACTO em 'negado', meio indignado e divertido
-7. forte, com empatia
-8. intrigante e forte, peso em 'parou'
-9. animado e forte, acordando o público
-10. REVELAÇÃO forte, surpresa
-11. forte e impressionado, deslumbrado
-12. rápido e forte, crescendo
-13. REVELAÇÃO com IMPACTO total e humor em 'seu Roberto'
-14. divertido e forte, listando com graça
-15. falando com o público, animado e provocador
-16. intrigante e forte
-17. [carta] leitura forte e clara de uma mensagem misteriosa, voz presente
-18. animado e forte, com humor em 'carrão'
-19. forte e divertido, imitando o coro do escritório
-20. intrigante e forte
-21. forte, revelação
-22. IMPACTO em 'negado', meio indignado
-23. suspense leve, forte, crescendo, sem sussurro
-24. REVELAÇÃO forte e surpresa
-25. divertido, forte, com humor no grito 'cadê meu café'
-26. forte, com graça
-27. REVELAÇÃO com IMPACTO e humor
-28. forte e animado
-29. forte e urgente
-30. [telefone] voz de chefão exigente pelo telefone, forte
-31. tensão forte, peso em 'caneta'
-32. forte e tentador
-33. forte e caloroso
-34. forte, com peso em 'consequência', sem sussurro
-35. forte e claro, as duas opções com o mesmo peso
-36. muito animado, forte e convidativo, chamando o público pra comentar
+1. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO total desde a primeira palavra, 'Imagine' bem forte e convidativo, surpresa e energia, divertido
+2. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e simpático, apresentando o personagem com energia
+3. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): ritmado e forte
+4. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, com um toque de ironia em 'seu Roberto'
+5. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, contando a história com energia
+6. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO em 'negado', meio indignado e divertido
+7. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, com empatia
+8. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): intrigante e forte, peso em 'parou'
+9. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): animado e forte, acordando o público
+10. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO forte, surpresa
+11. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e impressionado, deslumbrado
+12. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): rápido e forte, crescendo
+13. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO com IMPACTO total e humor em 'seu Roberto'
+14. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): divertido e forte, listando com graça
+15. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): falando com o público, animado e provocador
+16. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): intrigante e forte
+17. [carta] VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): leitura forte e clara de uma mensagem misteriosa, voz presente
+18. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): animado e forte, com humor em 'carrão'
+19. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e divertido, imitando o coro do escritório
+20. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): intrigante e forte
+21. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, revelação
+22. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO em 'negado', meio indignado
+23. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): suspense leve, forte, crescendo, sem sussurro
+24. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO forte e surpresa
+25. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): divertido, forte, com humor no grito 'cadê meu café'
+26. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, com graça
+27. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): REVELAÇÃO com IMPACTO e humor
+28. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e animado
+29. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e urgente
+30. [telefone] VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): voz de chefão exigente pelo telefone, forte
+31. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): tensão forte, peso em 'caneta'
+32. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e tentador
+33. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e caloroso
+34. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, com peso em 'consequência', sem sussurro
+35. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e claro, as duas opções com o mesmo peso
+36. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): muito animado, forte e convidativo, chamando o público pra comentar
