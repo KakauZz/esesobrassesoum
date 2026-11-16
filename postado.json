@@ -35,6 +35,13 @@
       "horario": "2026-11-16T18:00:00-03:00",
       "id": "metricool 430056512 (uuid -7317883603567621285)",
       "obs": "agendado pelo Metricool; publica às 18h"
+    },
+    {
+      "episodio": "s2ep01",
+      "rede": "instagram",
+      "horario": "2026-11-16T18:03:59-03:00",
+      "id": "18184764427442532",
+      "obs": "Windsor create_video_post (tarefa 18h)"
     }
   ]
 }
