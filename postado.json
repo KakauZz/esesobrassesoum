@@ -28,6 +28,13 @@
       "horario": "2026-11-15T16:35:20-03:00",
       "id": "18123608333585992",
       "obs": "Windsor create_video_post (tarefa 18h)"
+    },
+    {
+      "episodio": "s2ep01",
+      "rede": "tiktok",
+      "horario": "2026-11-16T18:00:00-03:00",
+      "id": "metricool 430056512 (uuid -7317883603567621285)",
+      "obs": "agendado pelo Metricool; publica às 18h"
     }
   ]
 }
