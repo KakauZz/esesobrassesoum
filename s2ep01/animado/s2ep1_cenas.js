@@ -247,18 +247,17 @@ scene(2000,2003.5,(t)=>{const u=t-2000;const z=lerp(1.18,1.04,easeOut(seg(u,0,.6
   CAM(W/2+sh,H*.5,z,()=>s2Mirror(u,()=>{ctx.fillStyle=lg(250,1400,['#9fb2c0','#7c92a4']);ctx.fillRect(110,250,860,1150);rbFace(540,880,1.05,{open:1.4,brow:1,mouthO:.9,pupil:.6,px:-6,py:6});
     ctx.save();ctx.translate(250,1020);ctx.rotate(.3);ctx.fillStyle=RB.skin;ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,0,90,130,0,0,7);ctx.fill();ctx.stroke();for(let k=0;k<4;k++){ctx.beginPath();ctx.ellipse(-40+k*28,-120,18,48,0,0,7);ctx.fill();ctx.stroke()}ctx.restore()}));
   ctx.fillStyle='rgba(0,0,0,.55)';ctx.fillRect(0,110,W,430);
-  hookTitle('ELE ACORDOU|NO CORPO|DO CHEFE 😳',seg(u,0,.35),240);
+  hookTitle('IMAGINE...|NO CORPO DO|SEU CHEFE 😳',seg(u,0,.35),240);
   if(u<.12){ctx.fillStyle=`rgba(255,255,255,${.85*(1-u/.12)})`;ctx.fillRect(0,0,W,H)}
 });
 SHAKE.push(2000.05);
 
-// 1. o Matheus na mesinha dele, no escritório (câmera aproxima devagar) (2004–2007.5)
-scene(2004,2007.5,(t)=>{const u=t-2004;CAM(W/2,1300,lerp(1.0,1.12,easeIO(seg(u,0,3.5))),()=>{
-  s2Office(u,{pan:u*20,cat:true});
-  semBlur(()=>{coworker(1,150,1240,1.0,{look:.5});s2Desk(150,1330,.8,{})});
-  person(560,1300,1.55,{f:1,look:-.15,arms:[[.6,-1.4],[.5,-1.3]],blink:(u%2.6)<.12});
-  s2Desk(560,1440,1.15,{plant:true});});
-  grade('rgba(255,170,90,.25)','rgba(40,60,120,.25)');letterIn(u);
+// 1. apresentação: só o Matheus, de frente, fundo de uma cor só (pedido do usuário) (2004–2007.5)
+scene(2004,2007.5,(t)=>{const u=t-2004;ctx.fillStyle='#2f7fd0';ctx.fillRect(0,0,W,H);
+  CAM(W/2,1200,lerp(1.0,1.06,easeIO(seg(u,0,3.5))),()=>{
+    personFront(540,1250,2.7,{smile:12,brow:.2,eye:(u>1.6&&u<1.72)?.1:1});});
+  const k=easeBack(seg(u,.3,.7));ctx.save();ctx.translate(lerp(-460,90,k),330);ctx.fillStyle='rgba(255,122,40,.97)';rr(0,0,440,120,20);ctx.fill();ctx.fillStyle='#fff';ctx.font='800 34px Inter';ctx.fillText('24 ANOS',30,46);ctx.font='900 54px Inter';ctx.fillText('MATHEUS',30,102);ctx.restore();
+  letterIn(u);
 });
 
 // 2. o prédio no centro de São Paulo: a câmera desce do céu até a portaria (2008–2011.5)
