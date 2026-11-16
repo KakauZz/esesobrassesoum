@@ -131,7 +131,7 @@ def legenda_ass(PL, path):
             t = t2
     # contador de notificações no gancho
     t = 0.0
-    while t < 6.2 and "ep01" in HERE:
+    while t < 6.2 and "/ep01/" in HERE + "/":
         nn = int(12 + (min(1, t / 6)) ** 1.4 * 987)
         ev.append(f"Dialogue: 3,{ts(t)},{ts(t + 0.1)},Cnt,,0,0,0,,{{\\pos(540,300)}}{{\\fs34\\1a&H40&}}NOTIFICAÇÕES\\N{{\\fs96\\1a&H00&}}{nn}")
         t += 0.1
