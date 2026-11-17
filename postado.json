@@ -60,9 +60,23 @@
   {
    "episodio": "s2ep01",
    "rede": "youtube",
-   "horario": "2026-11-17T07:50:00-03:00",
-   "id": "metricool 431245910 (uuid 3313144092351089297)",
+   "horario": "2026-11-17T08:10:00-03:00",
+   "id": "metricool 431257261 (uuid 3313144092351089297)",
    "obs": "agendado pelo Metricool; faltava no canal"
+  },
+  {
+   "episodio": "10-parte1",
+   "rede": "youtube",
+   "horario": "2026-11-17T07:55:00-03:00",
+   "id": "metricool 431256995 (uuid -761065111075731587)",
+   "obs": "Short (EP10 cortado, pedido do usuário)"
+  },
+  {
+   "episodio": "10-parte2",
+   "rede": "youtube",
+   "horario": "2026-11-17T08:00:00-03:00",
+   "id": "metricool 431257063 (uuid 539854581857996796)",
+   "obs": "Short (EP10 cortado, pedido do usuário)"
   }
  ]
 }
