@@ -77,6 +77,20 @@
    "horario": "2026-11-17T08:00:00-03:00",
    "id": "metricool 431257063 (uuid 539854581857996796)",
    "obs": "Short (EP10 cortado, pedido do usuário)"
+  },
+  {
+   "episodio": "s2ep02",
+   "rede": "tiktok",
+   "horario": "2026-11-17T18:00:00-03:00",
+   "id": "metricool 431434726 (uuid 2994478198631385891)",
+   "obs": "agendado pelo Metricool às 18h"
+  },
+  {
+   "episodio": "s2ep02",
+   "rede": "youtube",
+   "horario": "2026-11-17T18:00:00-03:00",
+   "id": "metricool 431434955 (uuid -8485837257492053892)",
+   "obs": "Short agendado pelo Metricool às 18h"
   }
  ]
 }
