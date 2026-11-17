@@ -41,7 +41,7 @@ function hlFace(cx,cy,s,o){o=o||{};ctx.save();ctx.translate(cx,cy);ctx.scale(s,s
       ctx.fillStyle='#5b7a4a';ctx.beginPath();ctx.arc(ex+(o.px||0),ey+(o.py||0),30,0,7);ctx.fill();ctx.fillStyle='#120c0a';ctx.beginPath();ctx.arc(ex+(o.px||0),ey+(o.py||0),14*(o.pupil||1),0,7);ctx.fill();
       ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(ex+(o.px||0)+10,ey+(o.py||0)-10,8,0,7);ctx.fill();ctx.restore()}
     ctx.strokeStyle=OUT;ctx.lineWidth=11;ctx.beginPath();if(op>.05)ctx.ellipse(ex,ey,66,44*op,0,Math.PI*1.02,Math.PI*1.98);else{ctx.moveTo(ex-60,ey);ctx.quadraticCurveTo(ex,ey+20,ex+60,ey)}ctx.stroke();
-    ctx.lineWidth=7;for(let k=0;k<3;k++){const a=Math.PI*(1.15+k*.18);const bx=ex+Math.cos(a)*66*(sx>0?1:1),by=ey+Math.sin(a)*44*op;ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(bx+(sx>0?14:-14)*(k-1)-sx*6,by-20);ctx.stroke()}
+    
     const by=-82-(o.brow||0)*30;ctx.strokeStyle=HL.hairS;ctx.lineWidth=14;ctx.beginPath();ctx.moveTo(ex-56*sx*-1,by+12+(o.brow||0)*-6);ctx.quadraticCurveTo(ex,by-12,ex+56*sx,by+6);ctx.stroke();}
   // óculos vermelhos (gatinho)
   ctx.strokeStyle=HL.glass;ctx.lineWidth=12;for(const sx of[-1,1]){ctx.beginPath();ctx.moveTo(sx*30,-30);ctx.quadraticCurveTo(sx*120,-60,sx*215,-58);ctx.quadraticCurveTo(sx*212,40,sx*170,64);ctx.quadraticCurveTo(sx*110,80,sx*48,56);ctx.quadraticCurveTo(sx*24,20,sx*30,-30);ctx.closePath();ctx.stroke()}
@@ -126,7 +126,7 @@ function s2bBubble(x,y,w,h,k,txt,col,tail){if(k<=0)return;ctx.save();ctx.transla
   const tx=tail||0;ctx.beginPath();ctx.moveTo(tx-40,h/2-4);ctx.lineTo(tx-10+(tx>0?60:-60),h/2+80);ctx.lineTo(tx+40,h/2-4);ctx.closePath();ctx.fill();ctx.stroke();ctx.fillStyle='#fff';ctx.fillRect(tx-36,h/2-14,72,14);
   const L=txt.split('|');L.forEach((l,i)=>txtC(l,0,(i-(L.length-1)/2)*70,'900 62px Inter',col||'#16161c'));ctx.restore()}
 // celular com mensagem grande (bolha). o:{time, tag, l1, l2, col, bg, screen, k}
-function s2bPhoneMsg(u,o){s2Phone(u,{time:o.time,screen:o.screen,bg:o.bg,msgs:o.msgs||[]});
+function s2bPhoneMsg(u,o){s2Phone(u,{time:o.time,date:o.date,screen:o.screen,bg:o.bg,msgs:o.msgs||[]});
   const k=o.k;if(!(k>0))return;ctx.save();ctx.translate(W/2,H*.48);ctx.rotate(-.04);ctx.globalAlpha=clamp(k*2);ctx.translate(0,120+(1-easeBack(clamp(k)))*-40);
   ctx.fillStyle='rgba(250,250,252,.97)';rr(-260,-30,520,o.l3?400:330,30);ctx.fill();
   ctx.fillStyle=o.col||'#7a5cff';ctx.beginPath();ctx.arc(-200,40,34,0,7);ctx.fill();ctx.fillStyle='#fff';ctx.font='900 40px Inter';ctx.textAlign='center';ctx.fillText(o.icon||'?',-200,54);
@@ -153,7 +153,7 @@ scene(2200,2203.5,(t)=>{const u=t-2200;const z=lerp(1.18,1.04,easeOut(seg(u,0,.6
   CAM(W/2+sh,H*.5,z,()=>s2Mirror(u,()=>{ctx.fillStyle=lg(250,1400,['#a9c0b4','#86a092']);ctx.fillRect(110,250,860,1150);hlFace(540,880,1.0,{open:1.4,brow:1,mouthO:.9,pupil:.6,px:-6,py:6,pj:1});
     ctx.save();ctx.translate(820,1060);ctx.rotate(-.3);ctx.fillStyle=HL.skin;ctx.strokeStyle=OUT;ctx.lineWidth=10;ctx.beginPath();ctx.ellipse(0,0,86,124,0,0,7);ctx.fill();ctx.stroke();for(let k=0;k<4;k++){ctx.beginPath();ctx.ellipse(-40+k*28,-116,17,46,0,0,7);ctx.fill();ctx.stroke()}ctx.restore()}));
   ctx.fillStyle='rgba(0,0,0,.55)';ctx.fillRect(0,110,W,430);
-  hookTitle('IMAGINE...|NO CORPO DE QUEM|TE INVESTIGA 😳',seg(u,0,.35),240);
+  hookTitle('IMAGINE...|VIRAR QUEM|TE INVESTIGA 😳',seg(u,0,.35),240);
   if(u<.12){ctx.fillStyle=`rgba(255,255,255,${.85*(1-u/.12)})`;ctx.fillRect(0,0,W,H)}
 });
 SHAKE.push(2200.05);
@@ -164,13 +164,13 @@ function placar2(u){s2bPlacar(u,seg(u,3.2,3.6))}
 
 // 2. ontem: no corpo do chefe, a caneta assina (2210–2213.5)
 scene(2210,2213.5,(t)=>{const u=t-2210;ctx.fillStyle='#fffdf6';ctx.fillRect(0,0,W,H);ctx.fillStyle='rgba(0,0,0,.06)';for(let y=200;y<H;y+=90)ctx.fillRect(80,y,W-160,4);
-  CAM(W/2,H*.55,lerp(1.15,1.0,easeOut(seg(u,0,3.5))),()=>{ctx.fillStyle='#16161c';ctx.font='900 64px Inter';ctx.textAlign='center';ctx.fillText('AUMENTOS DO MÊS',W/2,560);ctx.textAlign='left';ctx.fillStyle='#22222a';ctx.font='700 56px Inter';ctx.fillText('Matheus',140,820);ctx.textAlign='right';ctx.fillStyle='#2a8a4a';ctx.font='900 54px Inter';ctx.fillText(u>1.6?'APROVADO':'',940,820);ctx.textAlign='left';
-    ctx.fillStyle='#555';ctx.font='600 60px Inter';ctx.fillText('Assinatura:',80,1150);ctx.strokeStyle='#333';ctx.lineWidth=6;ctx.beginPath();ctx.moveTo(420,1160);ctx.lineTo(1000,1160);ctx.stroke();
+  CAM(W/2,H*.55,lerp(1.15,1.0,easeOut(seg(u,0,3.5))),()=>{ctx.fillStyle='#16161c';ctx.font='900 64px Inter';ctx.textAlign='center';ctx.fillText('AUMENTOS DO MÊS',W/2,560);ctx.textAlign='left';ctx.fillStyle='#22222a';ctx.font='700 56px Inter';ctx.fillText('Matheus',140,820);ctx.textAlign='right';ctx.fillStyle='#2a8a4a';ctx.font='900 54px Inter';ctx.textAlign='left';
+    ctx.fillStyle='#555';ctx.font='600 60px Inter';ctx.fillText('Assinatura:',80,1300);ctx.strokeStyle='#333';ctx.lineWidth=6;ctx.beginPath();ctx.moveTo(420,1310);ctx.lineTo(1000,1310);ctx.stroke();
     // rabisco da assinatura aparecendo atrás da ponta da caneta
-    const k=seg(u,.3,1.5);ctx.strokeStyle='#1c3b8a';ctx.lineWidth=8;ctx.lineCap='round';ctx.beginPath();let px=460,py=1120;for(let a=0;a<=k*1;a+=.01){const x=460+a*480,y=1120+Math.sin(a*26)*34*(1-a*.4)-a*20;a?ctx.lineTo(x,y):ctx.moveTo(x,y);px=x;py=y}ctx.stroke();
+    const k=seg(u,.3,1.5);ctx.strokeStyle='#1c3b8a';ctx.lineWidth=8;ctx.lineCap='round';ctx.beginPath();let px=460,py=1270;for(let a=0;a<=k*1;a+=.01){const x=460+a*480,y=1270+Math.sin(a*26)*34*(1-a*.4)-a*20;a?ctx.lineTo(x,y):ctx.moveTo(x,y);px=x;py=y}ctx.stroke();
     ctx.save();ctx.translate(px,py-60);ctx.rotate(-.7);ctx.fillStyle='#d8b04a';ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.beginPath();rr(-24,-420,48,420,20);ctx.fill();ctx.stroke();ctx.fillStyle='#2a2a30';ctx.beginPath();ctx.moveTo(-24,0);ctx.lineTo(24,0);ctx.lineTo(0,70);ctx.closePath();ctx.fill();ctx.stroke();
     ctx.fillStyle=RB.skin;ctx.beginPath();ctx.ellipse(10,-160,90,110,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle=RB.suit;ctx.beginPath();rr(-80,-330,180,160,30);ctx.fill();ctx.stroke();ctx.fillStyle=RB.shirt;ctx.fillRect(-80,-200,180,30);ctx.restore();
-    if(u>1.6){const s=easeBack(seg(u,1.6,1.9));ctx.save();ctx.translate(700,720);ctx.rotate(-.12);ctx.scale(s,s);ctx.strokeStyle='#2a8a4a';ctx.lineWidth=12;ctx.strokeRect(-230,-70,460,140);ctx.fillStyle='#2a8a4a';ctx.font='900 92px Inter';ctx.textAlign='center';ctx.fillText('OK ✓',0,34);ctx.restore()}});
+    if(u>1.6){const s=easeBack(seg(u,1.6,1.9));ctx.save();ctx.translate(560,690);ctx.rotate(-.1);ctx.scale(s,s);ctx.strokeStyle='#2a8a4a';ctx.lineWidth=12;ctx.strokeRect(-290,-70,580,140);ctx.fillStyle='#2a8a4a';ctx.font='900 80px Inter';ctx.textAlign='center';ctx.fillText('APROVADO ✓',0,30);ctx.restore()}});
   ctx.save();ctx.globalAlpha=seg(u,0,.4);txtC('ONTEM',W/2,330,'800 64px Oswald','#c8352b',0);ctx.restore();letterIn(u);
 });
 
@@ -197,7 +197,7 @@ SHAKE.push(2218.45);
 // 5. à noite, chega um e-mail da diretora (2222–2225.5)
 scene(2222,2225.5,(t)=>{const u=t-2222;CAM(W/2,H*.48,lerp(1.0,1.06,seg(u,0,3.5)),()=>s2Phone(u,{time:'22:10',date:'segunda-feira',screen:['#141a33','#24305c','#0d1124'],bg:['#1b1d36','#262a4a','#15172b'],msgs:[['E-MAIL · DIRETORIA','Helena Prado: AUDITORIA','agora',seg(u,.3,.7),'#c8352b']]}));letterIn(u)});
 // 6. o e-mail aberto: auditoria amanhã, aumento suspeito: Matheus (2226–2229.5)
-scene(2226,2229.5,(t)=>{const u=t-2226;CAM(W/2,H*.5,lerp(1.05,1.16,easeIO(seg(u,0,3.5))),()=>s2bPhoneMsg(u,{time:'22:11',screen:['#141a33','#24305c','#0d1124'],bg:['#1b1d36','#262a4a','#15172b'],k:seg(u,.15,.5),tag:'Helena Prado · Diretora',col:'#c8352b',icon:'✉',l1:'AUDITORIA amanhã, 10h.',l2:'Aumento suspeito:',l3:'MATHEUS.'}));letterIn(u)});
+scene(2226,2229.5,(t)=>{const u=t-2226;CAM(W/2,H*.5,lerp(1.05,1.16,easeIO(seg(u,0,3.5))),()=>s2bPhoneMsg(u,{time:'22:11',screen:['#141a33','#24305c','#0d1124'],bg:['#1b1d36','#262a4a','#15172b'],k:seg(u,.15,.5),tag:'Helena Prado · Diretora',col:'#c8352b',icon:'✉',l1:'AUDITORIA amanhã!',l2:'Aumento suspeito:',l3:'MATHEUS.'}));letterIn(u)});
 
 // 7. ele vai dormir preocupado: na cama gigante do chefe, de olhos abertos, suando (2230–2233.5)
 scene(2230,2233.5,(t)=>{const u=t-2230;CAM(W/2,1200,lerp(1.06,1.0,easeOut(seg(u,0,3.5))),()=>{s2LuxRoom(u,{pan:0});ctx.fillStyle='rgba(12,16,48,.72)';ctx.fillRect(0,0,W,H);
@@ -254,7 +254,7 @@ scene(2254,2257.5,(t)=>{const u=t-2254;ctx.fillStyle=lg(0,H,['#5a1a2a','#7a2238'
   letterIn(u);
 });
 // 15/16. a mesma mensagem sem nome: "Toda escolha volta. Hoje, você decide de novo." (2258–2264)
-scene(2258,2264,(t)=>{const u=t-2258;CAM(W/2,H*.48,lerp(1.0,1.15,easeIO(seg(u,0,6))),()=>s2bPhoneMsg(u,{time:'07:04',screen:['#1b1430','#3a2a66','#120c22'],bg:['#2a2440','#3c3260','#1a1630'],k:seg(u,.3,.8),tag:'Número desconhecido',l1:'Toda escolha volta.',l2:'Hoje, você decide',l3:'de novo.'}));
+scene(2258,2264,(t)=>{const u=t-2258;CAM(W/2,H*.48,lerp(1.0,1.15,easeIO(seg(u,0,6))),()=>s2bPhoneMsg(u,{time:'07:04',date:'terça-feira',screen:['#1b1430','#3a2a66','#120c22'],bg:['#2a2440','#3c3260','#1a1630'],k:seg(u,.3,.8),tag:'Número desconhecido',l1:'Toda escolha volta.',l2:'Hoje, você decide',l3:'de novo.'}));
   if(u<.6){glow(W/2,H*.55,500,'rgba(160,120,255,A)',.4*(1-u/.6))}letterIn(u)});
 
 // 17. na empresa, a diretora (ele) passa pelo corredor e todo mundo fica quieto (2266–2269.5)
@@ -355,7 +355,7 @@ scene(2316,2319.5,(t)=>{const u=t-2316;ctx.fillStyle='#fffdf6';ctx.fillRect(0,0,
   CAM(W/2,H*.5,lerp(1.0,1.15,easeIO(seg(u,0,3.5))),()=>{ctx.fillStyle='#16161c';ctx.font='900 64px Inter';ctx.textAlign='center';ctx.fillText('PARECER DA AUDITORIA',W/2,520);ctx.fillStyle='#c8352b';ctx.fillRect(160,560,760,8);
     ctx.textAlign='left';ctx.font='800 54px Inter';ctx.strokeStyle='#333';ctx.lineWidth=6;ctx.strokeRect(140,700,70,70);ctx.fillStyle='#1f8a4a';ctx.fillText('A · ARQUIVAR',240,756);ctx.strokeRect(140,860,70,70);ctx.fillStyle='#2f5fc9';ctx.fillText('B · DEVOLVER',240,916);
     ctx.fillStyle='#555';ctx.font='600 50px Inter';ctx.fillText('Assinatura:',80,1150);ctx.strokeStyle='#333';ctx.beginPath();ctx.moveTo(380,1160);ctx.lineTo(1000,1160);ctx.stroke();
-    const hov=Math.sin(u*3)*30;ctx.save();ctx.translate(560+hov,880);ctx.rotate(-.7);softShadow(40,120,160,20,.25);ctx.fillStyle='#d8b04a';ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.beginPath();rr(-24,-420,48,420,20);ctx.fill();ctx.stroke();ctx.fillStyle='#2a2a30';ctx.beginPath();ctx.moveTo(-24,0);ctx.lineTo(24,0);ctx.lineTo(0,70);ctx.closePath();ctx.fill();ctx.stroke();
+    const hov=Math.sin(u*3)*30;ctx.save();ctx.translate(880+hov,1090);ctx.rotate(-.7);softShadow(40,120,160,20,.25);ctx.fillStyle='#d8b04a';ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.beginPath();rr(-24,-420,48,420,20);ctx.fill();ctx.stroke();ctx.fillStyle='#2a2a30';ctx.beginPath();ctx.moveTo(-24,0);ctx.lineTo(24,0);ctx.lineTo(0,70);ctx.closePath();ctx.fill();ctx.stroke();
     ctx.fillStyle=HL.skin;ctx.beginPath();ctx.ellipse(10,-160,84,104,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle=HL.blz;ctx.beginPath();rr(-80,-330,180,160,30);ctx.fill();ctx.stroke();ctx.fillStyle=HL.blouse;ctx.fillRect(-80,-200,180,30);ctx.restore();});
   glow(W*.8,H*.2,700,'rgba(255,220,170,A)',.25);letterIn(u);
 });
@@ -381,8 +381,8 @@ scene(2324,2327.5,(t)=>{const u=t-2324;ctx.fillStyle=lg(0,H,['#14204a','#24357a'
 // 34. a mensagem para pensar: uma balança — "a conta dos outros" x "a sua conta" (2328–2331.5)
 scene(2328,2331.5,(t)=>{const u=t-2328;ctx.fillStyle=lg(0,H,['#0c0a14','#1a1530','#08070c']);ctx.fillRect(0,0,W,H);beams(W/2,0,Math.PI/2,5,1600,.08);glow(W/2,H*.45,800,'rgba(255,220,160,A)',.2);
   const tilt=lerp(-.22,.22,easeIO(seg(u,1.2,2.6)));CAM(W/2,H*.5,lerp(1.0,1.08,seg(u,0,3.5)),()=>{ctx.save();ctx.translate(W/2,1000);ctx.strokeStyle='#d8b04a';ctx.fillStyle='#d8b04a';ctx.lineWidth=16;ctx.beginPath();ctx.moveTo(0,-300);ctx.lineTo(0,420);ctx.stroke();ctx.beginPath();rr(-160,410,320,40,12);ctx.fill();
-    ctx.save();ctx.translate(0,-300);ctx.rotate(tilt);ctx.beginPath();ctx.moveTo(-380,0);ctx.lineTo(380,0);ctx.stroke();
-    for(const sx of[-1,1]){ctx.save();ctx.translate(sx*380,0);ctx.rotate(-tilt);ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(-110,260);ctx.moveTo(0,0);ctx.lineTo(110,260);ctx.stroke();ctx.beginPath();ctx.ellipse(0,270,150,34,0,0,7);ctx.fill();
+    ctx.save();ctx.translate(0,-300);ctx.rotate(tilt);ctx.beginPath();ctx.moveTo(-290,0);ctx.lineTo(290,0);ctx.stroke();
+    for(const sx of[-1,1]){ctx.save();ctx.translate(sx*290,0);ctx.rotate(-tilt);ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(-110,260);ctx.moveTo(0,0);ctx.lineTo(110,260);ctx.stroke();ctx.beginPath();ctx.ellipse(0,270,150,34,0,0,7);ctx.fill();
       ctx.font='900 42px Inter';ctx.textAlign='center';ctx.fillStyle='#fff';ctx.fillText(sx<0?'DOS OUTROS':'A SUA',0,350);ctx.font='900 90px Inter';ctx.fillText(sx<0?'⚖️':'💸',0,230);ctx.fillStyle='#d8b04a';ctx.restore()}
     ctx.restore();ctx.restore()});
   txtC('FÁCIL SER JUSTO...',W/2,340,'900 90px Inter','#fff',16);if(u>1.8){ctx.save();ctx.globalAlpha=seg(u,1.8,2.2);txtC('...QUANDO NÃO É COM VOCÊ',W/2,450,'800 60px Inter','#ffd84a',12);ctx.restore()}
@@ -392,11 +392,11 @@ scene(2328,2331.5,(t)=>{const u=t-2328;ctx.fillStyle=lg(0,H,['#0c0a14','#1a1530'
 scene(2332,2335.5,(t)=>{const u=t-2332;const z=lerp(1.0,1.12,easeIO(seg(u,0,3.5)));
   CAM(W/2,H*.45,z,()=>s2Mirror(u,()=>{ctx.fillStyle=lg(250,1400,['#7c8a9a','#5c6878']);ctx.fillRect(110,250,860,1150);const m=easeIO(seg(u,.8,1.8));
     ctx.save();ctx.globalAlpha=1-m;hlFace(540,900,1.0,{open:1,brow:.3});ctx.restore();ctx.save();ctx.globalAlpha=m;withP({},()=>face(540,900,1.0,{open:.9,brow:.4,py:6,lid:.25}));ctx.restore()}));
-  if(u>2){ctx.save();ctx.globalAlpha=seg(u,2,2.4);ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(0,1460,W,200);txtC('E SE FOSSE VOCÊ? 🪞',W/2,1560,'900 80px Inter','#ffd84a',14);ctx.restore()}
+  if(u>2){ctx.save();ctx.globalAlpha=seg(u,2,2.4);ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(0,1330,W,170);txtC('E SE FOSSE VOCÊ? 🪞',W/2,1415,'900 80px Inter','#ffd84a',14);ctx.restore()}
 });
 // 36/37. ESCOLHA: A (verde) x B — sobre o rosto da diretora, com a caneta (2336–2343)
 scene(2336,2343,(t)=>{const u=t-2336;ctx.fillStyle='#0c0a10';ctx.fillRect(0,0,W,H);
-  ctx.save();ctx.globalAlpha=.5;hlFace(W/2,H*.7,.8,{open:1,brow:.5,px:-20,py:10});ctx.restore();ctx.fillStyle='rgba(10,8,14,.42)';ctx.fillRect(0,0,W,H);
+  hlFace(W/2,H*.7,.8,{open:1,brow:.5,px:-20,py:10});ctx.fillStyle='rgba(10,8,14,.68)';ctx.fillRect(0,0,W,H);
   txtC('O QUE ELE FAZ?',W/2,320,'900 92px Inter','#fff',18);
   const ca=easeOut(seg(u,.3,.8)),cb=easeOut(seg(u,.6,1.1));
   ctx.textAlign='left';
