@@ -1,0 +1,27 @@
+name: postar-youtube
+on:
+  workflow_dispatch:
+    inputs:
+      video: {description: "caminho do vídeo no repo (ex. videos/s2ep02_final.mp4)", required: true}
+      title: {description: "título (com #shorts)", required: true}
+      description: {description: "descrição", required: false, default: ""}
+      publish_at: {description: "agendar no YouTube (ISO UTC, ex. 2026-11-17T21:00:00Z); vazio = publica já", required: false, default: ""}
+concurrency: {group: youtube, cancel-in-progress: false}
+jobs:
+  enviar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -q google-api-python-client google-auth
+      - name: enviar para o YouTube
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          python scripts/youtube_upload.py --video "${{ inputs.video }}" --title "${{ inputs.title }}" \
+            --description "${{ inputs.description }}" --publish_at "${{ inputs.publish_at }}" | tee saida_youtube.txt
+      - uses: actions/upload-artifact@v4
+        with: {name: resultado, path: saida_youtube.txt}
