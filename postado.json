@@ -1,47 +1,68 @@
 {
-  "_explica": "Registro anti-duplicação: depois de CADA publicação, adicione {episodio, rede, horario, id} e faça commit+push na hora. Antes de publicar, confira aqui e no Metricool (getScheduledPosts).",
-  "posts": [
-    {
-      "episodio": 9,
-      "rede": "tiktok",
-      "horario": "2026-11-14T17:03:32-03:00",
-      "id": "7708120297131478280",
-      "obs": "achado no Windsor (tiktok_organic); postado antes desta execução"
-    },
-    {
-      "episodio": 9,
-      "rede": "instagram",
-      "horario": "2026-11-14T19:45:00-03:00",
-      "id": "18420695458082974",
-      "obs": "Windsor create_video_post"
-    },
-    {
-      "episodio": 10,
-      "rede": "tiktok",
-      "horario": "2026-11-15T18:00:00-03:00",
-      "id": "metricool 428858238 (uuid 33247089511320024)",
-      "obs": "agendado pelo Metricool; publica às 18h"
-    },
-    {
-      "episodio": 10,
-      "rede": "instagram",
-      "horario": "2026-11-15T16:35:20-03:00",
-      "id": "18123608333585992",
-      "obs": "Windsor create_video_post (tarefa 18h)"
-    },
-    {
-      "episodio": "s2ep01",
-      "rede": "tiktok",
-      "horario": "2026-11-16T18:00:00-03:00",
-      "id": "metricool 430134400 (uuid -7317883603567621285)",
-      "obs": "agendado pelo Metricool às 18h; mídia trocada para a v2 ('Imagine...')"
-    },
-    {
-      "episodio": "s2ep01",
-      "rede": "instagram",
-      "horario": "2026-11-16T18:03:59-03:00",
-      "id": "18184764427442532",
-      "obs": "Windsor create_video_post (tarefa 18h)"
-    }
-  ]
+ "_explica": "Registro anti-duplicação: depois de CADA publicação, adicione {episodio, rede, horario, id} e faça commit+push na hora. Antes de publicar, confira aqui e no Metricool (getScheduledPosts).",
+ "posts": [
+  {
+   "episodio": 9,
+   "rede": "tiktok",
+   "horario": "2026-11-14T17:03:32-03:00",
+   "id": "7708120297131478280",
+   "obs": "achado no Windsor (tiktok_organic); postado antes desta execução"
+  },
+  {
+   "episodio": 9,
+   "rede": "instagram",
+   "horario": "2026-11-14T19:45:00-03:00",
+   "id": "18420695458082974",
+   "obs": "Windsor create_video_post"
+  },
+  {
+   "episodio": 10,
+   "rede": "tiktok",
+   "horario": "2026-11-15T18:00:00-03:00",
+   "id": "metricool 428858238 (uuid 33247089511320024)",
+   "obs": "agendado pelo Metricool; publica às 18h"
+  },
+  {
+   "episodio": 10,
+   "rede": "instagram",
+   "horario": "2026-11-15T16:35:20-03:00",
+   "id": "18123608333585992",
+   "obs": "Windsor create_video_post (tarefa 18h)"
+  },
+  {
+   "episodio": "s2ep01",
+   "rede": "tiktok",
+   "horario": "2026-11-16T18:00:00-03:00",
+   "id": "metricool 430134400 (uuid -7317883603567621285)",
+   "obs": "agendado pelo Metricool às 18h; mídia trocada para a v2 ('Imagine...')"
+  },
+  {
+   "episodio": "s2ep01",
+   "rede": "instagram",
+   "horario": "2026-11-16T18:03:59-03:00",
+   "id": "18184764427442532",
+   "obs": "Windsor create_video_post (tarefa 18h)"
+  },
+  {
+   "episodio": 10,
+   "rede": "youtube",
+   "horario": "2026-11-15T16:31:03-03:00",
+   "id": "Zb_DYUJ4kwI",
+   "obs": "Metricool (pedido do usuário)"
+  },
+  {
+   "episodio": 9,
+   "rede": "youtube",
+   "horario": "2026-11-17T07:45:00-03:00",
+   "id": "metricool 431245843 (uuid 905393672489029558)",
+   "obs": "agendado pelo Metricool; faltava no canal"
+  },
+  {
+   "episodio": "s2ep01",
+   "rede": "youtube",
+   "horario": "2026-11-17T07:50:00-03:00",
+   "id": "metricool 431245910 (uuid 3313144092351089297)",
+   "obs": "agendado pelo Metricool; faltava no canal"
+  }
+ ]
 }
