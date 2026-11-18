@@ -90,9 +90,9 @@ scene(2410,2413.5,(t)=>{const u=t-2410;ctx.fillStyle='#3a3040';ctx.fillRect(0,0,
     ctx.fillStyle='#fff';ctx.font='800 50px Inter';ctx.fillText('Matheus',0,-40);
     if(u>.8){const k=seg(u,.8,1.05);ctx.save();ctx.translate(0,180);ctx.rotate(-.14);const sc=lerp(2.2,1,easeOut(k));ctx.scale(sc,sc);ctx.globalAlpha=clamp(k*3);ctx.strokeStyle='#ffd84a';ctx.lineWidth=14;ctx.strokeRect(-300,-80,600,160);ctx.fillStyle='#ffd84a';ctx.font='900 104px Inter';ctx.fillText('ARQUIVADO',0,38);ctx.restore()}
     ctx.restore();
-    // a mão da diretora (manga vinho) segurando o carimbo, subindo depois de carimbar
-    const up=u<.8?lerp(-200,0,easeIO(seg(u,.2,.8))):lerp(0,-260,easeOut(seg(u,1.05,1.6)));ctx.save();ctx.translate(W/2+40,H*.52+120+up-260);ctx.fillStyle='#5a3a2a';ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.beginPath();rr(-70,-40,140,80,14);ctx.fill();ctx.stroke();ctx.fillRect(-18,-200,36,170);ctx.strokeRect(-18,-200,36,170);
-    ctx.fillStyle=HL.skin;ctx.beginPath();ctx.ellipse(0,-230,70,60,0,0,7);ctx.fill();ctx.stroke();ctx.fillStyle=HL.blz;ctx.beginPath();rr(-70,-420,140,180,30);ctx.fill();ctx.stroke();ctx.restore()});
+    // o carimbo de madeira desce, carimba e sobe
+    const up=u<.8?lerp(-420,0,easeIO(seg(u,.2,.8))):lerp(0,-520,easeOut(seg(u,1.05,1.6)));ctx.save();ctx.translate(W/2,H*.52+60+up);ctx.fillStyle='#8a5a36';ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.beginPath();rr(-150,-50,300,70,12);ctx.fill();ctx.stroke();ctx.fillStyle='#2a2a30';ctx.fillRect(-140,20,280,24);ctx.strokeRect(-140,20,280,24);
+    ctx.fillStyle='#a8774e';ctx.fillRect(-26,-190,52,140);ctx.strokeRect(-26,-190,52,140);ctx.beginPath();ctx.ellipse(0,-210,70,46,0,0,7);ctx.fill();ctx.stroke();ctx.restore()});
   ctx.save();ctx.globalAlpha=seg(u,0,.4);txtC('ONTEM',W/2,300,'800 64px Oswald','#ff8a8a',0);ctx.restore();letterIn(u);
 });
 SHAKE.push(2410.82);
@@ -129,7 +129,7 @@ scene(2422,2425.5,(t)=>{const u=t-2422;ctx.fillStyle='#fffdf6';ctx.fillRect(0,0,
 SHAKE.push(2422.92);
 // 6. "De quem? Do Lucas. O melhor amigo dele.": os dois lado a lado, fundo de uma cor só (2426–2429.5)
 scene(2426,2429.5,(t)=>{const u=t-2426;ctx.fillStyle='#3f8f7a';ctx.fillRect(0,0,W,H);
-  CAM(W/2,1200,lerp(1.1,1.0,easeOut(seg(u,0,1.2))),()=>{personFront(330,1200,1.6,{smile:6,look:.5,eye:(u>2.2&&u<2.32)?.1:1});luFront(750,1200,1.6,{smile:8,look:-.5,eye:(u>1.3&&u<1.42)?.1:1})});
+  CAM(W/2,1200,lerp(1.1,1.0,easeOut(seg(u,0,1.2))),()=>{personFront(300,1250,2.1,{smile:6,look:.5,eye:(u>2.2&&u<2.32)?.1:1});luFront(780,1250,2.1,{smile:8,look:-.5,eye:(u>1.3&&u<1.42)?.1:1})});
   const k=easeBack(seg(u,.5,.9));ctx.save();ctx.translate(lerp(W+40,560,k),330);ctx.fillStyle='rgba(20,60,50,.95)';rr(0,0,460,130,22);ctx.fill();ctx.fillStyle='#bff0dc';ctx.font='800 36px Inter';ctx.textAlign='left';ctx.fillText('O MELHOR AMIGO',30,50);ctx.fillStyle='#fff';ctx.font='900 58px Inter';ctx.fillText('LUCAS',30,110);ctx.restore();
   const k2=easeBack(seg(u,.9,1.3));ctx.save();ctx.translate(lerp(-500,60,k2),360);ctx.fillStyle='rgba(180,70,30,.95)';rr(0,0,360,100,22);ctx.fill();ctx.fillStyle='#fff';ctx.font='900 50px Inter';ctx.textAlign='left';ctx.fillText('MATHEUS',30,68);ctx.restore();
   if(u>1.6){const k3=easeBack(seg(u,1.6,1.9));ctx.save();ctx.translate(540,640);ctx.scale(k3,k3);txtC('💚',0,0,'110px Inter','#fff');ctx.restore()}
@@ -181,13 +181,13 @@ scene(2456,2459.5,(t)=>{const u=t-2456;ctx.fillStyle=lg(0,H,['#1b1d36','#262a4a'
   CAM(W/2,H*.6,lerp(1.0,1.06,seg(u,0,3.5)),()=>face(W/2,H*.64,.85,{open:1.3,brow:1,mouthO:.4+.3*Math.abs(Math.sin(u*9)),px:Math.sin(u*3)*8}));
   s2cCall(u,'MATHEUS','chamada · 00:0'+Math.min(9,Math.floor(u+1)),seg(u,0,.3));
   s2bBubble(W/2,640,820,200,seg(u,.4,.7),'SOU EU, O LUCAS!|TÔ NO SEU CORPO! 😱','#2c6c5b',-80);
-  s2cInside(W/2,1460);letterIn(u);
+  s2cInside(W-180,470);letterIn(u);
 });
 // 15. [telefone] "E eu vi o seu holerite. Dez mil?!" (2460–2463.5)
 scene(2460,2463.5,(t)=>{const u=t-2460;ctx.fillStyle=lg(0,H,['#1b1d36','#262a4a','#15172b']);ctx.fillRect(0,0,W,H);glow(W/2,H*.55,800,'rgba(255,200,150,A)',.3);
   CAM(W/2,H*.62,lerp(1.06,1.0,easeOut(seg(u,0,1))),()=>face(W/2,H*.68,.8,{open:1.45,brow:1.2,mouthO:.8,pupil:.6}));
   // o holerite subindo na frente
-  const k=easeOut(seg(u,.2,.8));ctx.save();ctx.translate(W/2+160,lerp(H+300,1180,k));ctx.rotate(.08);ctx.fillStyle='#fffdf6';ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.beginPath();rr(-230,-170,460,340,16);ctx.fill();ctx.stroke();
+  const k=easeOut(seg(u,.2,.8));ctx.save();ctx.translate(W/2+250,lerp(H+300,880,k));ctx.scale(.75,.75);ctx.rotate(.08);ctx.fillStyle='#fffdf6';ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.beginPath();rr(-230,-170,460,340,16);ctx.fill();ctx.stroke();
   ctx.fillStyle='#16161c';ctx.font='900 36px Inter';ctx.textAlign='center';ctx.fillText('HOLERITE · MATHEUS',0,-100);ctx.fillStyle='#1f8a4a';ctx.font='900 90px Oswald';ctx.fillText('R$ 9.900',0,40);ctx.restore();
   s2cCall(u,'MATHEUS','chamada · 00:1'+Math.min(9,Math.floor(u+2)),1);
   if(u>1.2)s2bBubble(W/2,620,620,180,seg(u,1.2,1.5),'DEZ MIL?! 😳','#c8352b',-60);
@@ -207,7 +207,7 @@ scene(2468,2471.5,(t)=>{const u=t-2468;ctx.fillStyle=lg(0,H,['#1b1d36','#262a4a'
   CAM(W/2,H*.62,lerp(1.0,1.1,easeIO(seg(u,0,3.5))),()=>face(W/2,H*.68,.8,{open:.9,brow:-.6,lid:.25,smile:-14,py:12}));
   s2cCall(u,'MATHEUS','chamada · 00:2'+Math.min(9,Math.floor(u+1)),1);
   s2bBubble(W/2,640,860,200,seg(u,.3,.6),'CORTARAM MINHA|PROMOÇÃO POR ISSO? 😔','#2b3452',-80);
-  s2cInside(W/2,1460);letterIn(u);
+  s2cInside(W-180,470);letterIn(u);
 });
 // 18. "E agora? Ele conta a verdade?" — o Lucas (Matheus dentro) olha pra câmera (2472–2475.5)
 scene(2472,2475.5,(t)=>{const u=t-2472;ctx.fillStyle=lg(0,H,['#2c6c5b','#3f8f7a','#1d4a3e']);ctx.fillRect(0,0,W,H);glow(W/2,H*.4,900,'rgba(255,230,170,A)',.3);
@@ -219,7 +219,7 @@ scene(2472,2475.5,(t)=>{const u=t-2472;ctx.fillStyle=lg(0,H,['#2c6c5b','#3f8f7a'
 // 19. antes de responder, chega uma notificação (2476–2479.5)
 scene(2476,2479.5,(t)=>{const u=t-2476;CAM(W/2,H*.48,lerp(1.0,1.06,seg(u,0,3.5)),()=>s2Phone(u,{time:'07:09',date:'quarta-feira',screen:['#163a2e','#2c6c5b','#0f261e'],bg:['#cfe0f2','#b9cfe6','#8fa9c6'],msgs:[['E-MAIL · NOVA ERA TECH','Para: Lucas · ENTREVISTA','agora',seg(u,.4,.8),'#2f9a6a']]}));letterIn(u)});
 // 20. [carta] o e-mail: entrevista hoje, dez horas (2480–2483.5)
-scene(2480,2483.5,(t)=>{const u=t-2480;CAM(W/2,H*.5,lerp(1.05,1.16,easeIO(seg(u,0,3.5))),()=>s2bPhoneMsg(u,{time:'07:10',screen:['#163a2e','#2c6c5b','#0f261e'],bg:['#cfe0f2','#b9cfe6','#8fa9c6'],k:seg(u,.15,.5),tag:'RH · Nova Era Tech',col:'#2f9a6a',icon:'✉',l1:'Lucas: entrevista',l2:'HOJE, às 10h.',l3:'Empresa nova!'}));letterIn(u)});
+scene(2480,2483.5,(t)=>{const u=t-2480;CAM(W/2,H*.5,lerp(1.05,1.16,easeIO(seg(u,0,3.5))),()=>s2bPhoneMsg(u,{time:'07:10',screen:['#163a2e','#2c6c5b','#0f261e'],bg:['#cfe0f2','#b9cfe6','#8fa9c6'],date:'quarta-feira',k:seg(u,.15,.5),tag:'RH · Nova Era Tech',col:'#2f9a6a',icon:'✉',l1:'Lucas: entrevista',l2:'HOJE, às 10h.',l3:'Empresa nova!'}));letterIn(u)});
 // 21. um emprego melhor pro Lucas: vaga de coordenador (2484–2487.5)
 scene(2484,2487.5,(t)=>{const u=t-2484;ctx.fillStyle=lg(0,H,['#103a2a','#1f6a4a','#0b2a1e']);ctx.fillRect(0,0,W,H);glow(W/2,H*.45,900,'rgba(140,255,200,A)',.3);
   CAM(W/2,H*.5,lerp(1.0,1.08,seg(u,0,3.5)),()=>{softShadow(W/2,H*.5+440,380,40,.4);ctx.save();ctx.translate(W/2,H*.5);ctx.fillStyle='#fffdf6';ctx.strokeStyle=OUT;ctx.lineWidth=8;ctx.beginPath();rr(-380,-420,760,840,24);ctx.fill();ctx.stroke();
@@ -265,9 +265,9 @@ scene(2496,2499.5,(t)=>{const u=t-2496;ctx.fillStyle=lg(0,H,['#3a2a20','#5a4030'
   letterIn(u);
 });
 // 25. nove e meia: ele (no corpo do Lucas) anda para a DIREITA na calçada; a fachada da Nova Era chega pela direita (2500–2503.5)
-scene(2500,2503.5,(t)=>{const u=t-2500;const gx=u*280;CAM(W/2,1250,1.0,()=>{s2Street(gx,u);
+scene(2500,2503.5,(t)=>{const u=t-2500;const gx=u*240;CAM(W/2,1250,1.0,()=>{s2Street(gx,u);
   // fachada da Nova Era (presa no chão, passa junto com os postes)
-  const fx=1750-gx;ctx.fillStyle='#e9eef0';ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.fillRect(fx,700,560,560);ctx.strokeRect(fx,700,560,560);ctx.fillStyle='#2f9a6a';ctx.fillRect(fx,700,560,120);ctx.strokeRect(fx,700,560,120);txtC('NOVA ERA TECH',fx+280,762,'900 54px Oswald','#fff');
+  const fx=1250-gx;ctx.fillStyle='#e9eef0';ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.fillRect(fx,700,560,560);ctx.strokeRect(fx,700,560,560);ctx.fillStyle='#2f9a6a';ctx.fillRect(fx,700,560,120);ctx.strokeRect(fx,700,560,120);txtC('NOVA ERA TECH',fx+280,762,'900 54px Oswald','#fff');
   ctx.fillStyle='#9fc8e0';ctx.fillRect(fx+180,920,200,340);ctx.strokeRect(fx+180,920,200,340);
   // folhas voando com o vento (da esquerda pra direita, ambiente)
   for(let i=0;i<7;i++){const r=rng(i+500);const x=((r()*W+u*(260+r()*120))%(W+100))-50,y=900+r()*500+Math.sin(u*3+i)*40;ctx.save();ctx.translate(x,y);ctx.rotate(u*4+i);ctx.fillStyle=i%2?'#e2a23c':'#c8702a';ctx.beginPath();ctx.ellipse(0,0,18,9,0,0,7);ctx.fill();ctx.restore()}
@@ -294,7 +294,7 @@ scene(2512,2515.5,(t)=>{const u=t-2512;CAM(W/2,1150,lerp(1.1,1.2,seg(u,0,3.5)),(
 // 29. o celular vibra: o "Matheus" de novo (é o Lucas) (2516–2519.5)
 scene(2516,2519.5,(t)=>{const u=t-2516;CAM(W/2,H*.48,lerp(1.0,1.06,seg(u,0,3.5)),()=>s2Phone(u,{time:'09:58',date:'quarta-feira',ring:u<1.2,screen:['#163a2e','#2c6c5b','#0f261e'],bg:['#dfe6ea','#c3ced6','#a7b4be'],msgs:[['MATHEUS (é o Lucas!)','Nova mensagem 💬','agora',seg(u,.3,.7),'#ee6a35']]}));letterIn(u)});
 // 30. [carta] "Faz o que achar certo. Eu confio em você." (2520–2523.5)
-scene(2520,2523.5,(t)=>{const u=t-2520;CAM(W/2,H*.5,lerp(1.05,1.14,easeIO(seg(u,0,3.5))),()=>s2bPhoneMsg(u,{time:'09:58',screen:['#163a2e','#2c6c5b','#0f261e'],bg:['#dfe6ea','#c3ced6','#a7b4be'],k:seg(u,.15,.5),tag:'Matheus (é o Lucas)',col:'#ee6a35',icon:'💬',l1:'Faz o que achar',l2:'certo. Eu confio',l3:'em você. 💚'}));letterIn(u)});
+scene(2520,2523.5,(t)=>{const u=t-2520;CAM(W/2,H*.5,lerp(1.05,1.14,easeIO(seg(u,0,3.5))),()=>s2bPhoneMsg(u,{time:'09:58',screen:['#163a2e','#2c6c5b','#0f261e'],bg:['#dfe6ea','#c3ced6','#a7b4be'],date:'quarta-feira',k:seg(u,.15,.5),tag:'Matheus (é o Lucas)',col:'#ee6a35',icon:'💬',l1:'Faz o que achar',l2:'certo. Eu confio',l3:'em você. 💚'}));letterIn(u)});
 // 31. a escolha é toda dele: de costas, na frente da porta das entrevistas (2524–2527.5)
 scene(2524,2527.5,(t)=>{const u=t-2524;CAM(W/2,1100,lerp(1.0,1.1,easeIO(seg(u,0,3.5))),()=>{ctx.fillStyle=lg(0,H,['#2a2f3a','#3a4150','#1c2028']);ctx.fillRect(0,0,W,H);
   // porta com luz saindo pela fresta
@@ -308,9 +308,9 @@ scene(2524,2527.5,(t)=>{const u=t-2524;CAM(W/2,1100,lerp(1.0,1.1,easeIO(seg(u,0,
 // 32. tentação A: faltar — as duas canecas juntinhas na mesa de sempre (2528–2531.5)
 scene(2528,2531.5,(t)=>{const u=t-2528;ctx.fillStyle=lg(0,H,['#0f3a24','#1f6a42','#0b2a1a']);ctx.fillRect(0,0,W,H);glow(W/2,H*.45,900,'rgba(120,255,170,A)',.3);
   CAM(W/2,H*.5,lerp(1.0,1.1,easeIO(seg(u,0,3.5))),()=>{ctx.fillStyle='#8a6446';ctx.strokeStyle=OUT;ctx.lineWidth=7;ctx.beginPath();rr(60,1100,960,90,14);ctx.fill();ctx.stroke();
-    const mug=(x,col,lab)=>{ctx.save();ctx.translate(x,1100);ctx.fillStyle=col;ctx.strokeStyle=OUT;ctx.lineWidth=8;ctx.beginPath();rr(-110,-260,220,260,24);ctx.fill();ctx.stroke();ctx.lineWidth=20;ctx.beginPath();ctx.arc(x<540?-120:120,-140,56,x<540?Math.PI*.5:-Math.PI*.5,x<540?Math.PI*1.5:Math.PI*.5);ctx.stroke();ctx.strokeStyle=col;ctx.lineWidth=10;ctx.stroke();txtC(lab,0,-130,'900 40px Inter','#fff');
+    const mug=(x,col,lab)=>{ctx.save();ctx.translate(x,1100);ctx.fillStyle=col;ctx.strokeStyle=OUT;ctx.lineWidth=8;ctx.beginPath();rr(-110,-260,220,260,24);ctx.fill();ctx.stroke();ctx.lineWidth=20;ctx.beginPath();ctx.arc(x<540?-120:120,-140,56,x<540?Math.PI*.5:-Math.PI*.5,x<540?Math.PI*1.5:Math.PI*.5);ctx.stroke();ctx.strokeStyle=col;ctx.lineWidth=10;ctx.stroke();txtC(lab,0,-130,'900 32px Inter','#fff');
       for(let k=0;k<3;k++){const ph=(u*.8+k/3)%1;ctx.strokeStyle=`rgba(255,255,255,${.5*(1-ph)})`;ctx.lineWidth=8;ctx.beginPath();ctx.moveTo(-40+k*40,-280-ph*120);ctx.quadraticCurveTo(-20+k*40,-320-ph*120,-40+k*40,-360-ph*120);ctx.stroke()}ctx.restore()};
-    mug(400,'#ee6a35','MATH');mug(680,'#3f8f7a','LUCAS');
+    mug(400,'#ee6a35','MATHEUS');mug(680,'#3f8f7a','LUCAS');
     if(u>.8){const k=easeBack(seg(u,.8,1.1));ctx.save();ctx.translate(540,700);ctx.scale(k,k);txtC('🤝',0,0,'150px Inter','#fff');ctx.restore()}});
   txtC('A?',W/2,330,'900 120px Inter','#7dffa8',20);if(u>1.4){ctx.save();ctx.globalAlpha=seg(u,1.4,1.8);txtC('FALTAR E MANTER O AMIGO',W/2,1480,'900 60px Inter','#fff',14);ctx.restore()}
   letterIn(u);
