@@ -133,6 +133,13 @@
    "horario": "2026-11-19T18:00:00-03:00",
    "id": "metricool 434208475 (uuid 1101767381726019969)",
    "obs": "Short agendado pelo Metricool às 18h"
+  },
+  {
+   "episodio": "s2ep04",
+   "rede": "instagram",
+   "horario": "2026-11-19T18:01:00-03:00",
+   "id": "17894518119457603",
+   "obs": "Windsor create_video_post (lembrete 18h)"
   }
  ]
 }
