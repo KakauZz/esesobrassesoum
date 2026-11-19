@@ -159,7 +159,7 @@ scene(2642,2645.5,(t)=>{const u=t-2642;const z=lerp(1.0,1.15,easeOut(seg(u,.3,.7
     for(let i=0;i<5;i++)s4Pao(220+i*160,1330,.9,(i%2?.1:-.1));ctx.restore();
     ctx.strokeStyle='#8a5a36';ctx.lineWidth=24;ctx.beginPath();rr(110,300,860,1100,30);ctx.stroke()});
   if(u>.3&&u<.5){ctx.fillStyle=`rgba(255,255,255,${.6*(1-seg(u,.3,.5))})`;ctx.fillRect(0,0,W,H)}
-  if(u>.9){const k=easeBack(seg(u,.9,1.2));ctx.save();ctx.translate(W/2,230);ctx.scale(k,k);txtC('UM BIGODE?! 😱',0,0,'900 96px Inter','#ffd84a',18);ctx.restore()}
+  if(u>.9){const k=easeBack(seg(u,.9,1.2));ctx.save();ctx.translate(W/2,1490);ctx.scale(k,k);txtC('UM BIGODE?! 😱',0,0,'900 96px Inter','#ffd84a',18);ctx.restore()}
 });
 SHAKE.push(2642.32);
 // 12. "HOJE ELE É: SEU ZÉ" — crachá girando (2646–2649.5)
@@ -171,7 +171,7 @@ scene(2646,2649.5,(t)=>{const u=t-2646;ctx.fillStyle=lg(0,H,['#5a3416','#8a5426'
   letterIn(u);
 });
 // 13. o mesmo que vende pão pra ele todo dia: atrás do balcão, com a foto do freguês (2650–2653.5)
-scene(2650,2653.5,(t)=>{const u=t-2650;CAM(W/2,1150,lerp(1.12,1.02,easeOut(seg(u,0,3.5))),()=>{s4Bakery(u,{pan:0});
+scene(2650,2653.5,(t)=>{const u=t-2650;CAM(lerp(500,590,easeIO(seg(u,0,3.5))),960,1.0,()=>{s4Bakery(u,{pan:0});
   // foto polaroid do freguês na parede
   ctx.save();ctx.translate(640,880);ctx.rotate(.08);ctx.fillStyle='#fbf7ee';ctx.strokeStyle=OUT;ctx.lineWidth=5;ctx.fillRect(-90,-100,180,220);ctx.strokeRect(-90,-100,180,220);ctx.save();ctx.beginPath();ctx.rect(-74,-84,148,148);ctx.clip();ctx.fillStyle='#cfe0f0';ctx.fillRect(-74,-84,148,148);face(0,-6,.2,{headOnly:true,smile:10});ctx.restore();ctx.strokeRect(-74,-84,148,148);txtC('freguês 🥖',0,92,'700 34px Caveat','#3a2a20');ctx.restore();
   zeFront(400,1300,1.5,{smile:10,look:.3});s4Counter(1250,0);
@@ -229,7 +229,7 @@ scene(2674,2677.5,(t)=>{const u=t-2674;ctx.fillStyle=lg(0,H,['#5a3a22','#7a5030'
 });
 // 20. "Matheus: trezentos e quarenta reais!" — o círculo vermelho (2678–2681.5)
 scene(2678,2681.5,(t)=>{const u=t-2678;ctx.fillStyle=lg(0,H,['#5a3a22','#7a5030','#3a2414']);ctx.fillRect(0,0,W,H);glow(W/2,H*.5,800,'rgba(255,210,150,A)',.3);
-  CAM(lerp(W/2,780,easeIO(seg(u,0,1.2))),lerp(H*.52,H*.52+70,easeIO(seg(u,0,1.2))),lerp(1.0,1.6,easeIO(seg(u,0,1.2))),()=>s4Book(W/2,H*.52,1.0,{circ:seg(u,1.0,1.8)}));
+  CAM(lerp(W/2,730,easeIO(seg(u,0,1.2))),lerp(H*.52,H*.52+70,easeIO(seg(u,0,1.2))),lerp(1.0,1.45,easeIO(seg(u,0,1.2))),()=>s4Book(W/2,H*.52,1.0,{circ:seg(u,1.0,1.8)}));
   if(u>1.8){const k=easeBack(seg(u,1.8,2.1));ctx.save();ctx.translate(W/2,320);ctx.scale(k,k);ctx.fillStyle='#c8352b';rr(-400,-80,800,160,36);ctx.fill();txtC('MATHEUS: R$ 340 😳',0,2,'900 68px Inter','#fff');ctx.restore()}
   letterIn(u);
 });
@@ -327,14 +327,14 @@ scene(2722,2725.5,(t)=>{const u=t-2722;CAM(W/2,H*.48,lerp(1.0,1.06,seg(u,0,3.5))
     ctx.save();ctx.translate(W/2,H*.48);ctx.rotate(-.04);ctx.fillStyle='rgba(250,250,252,.97)';rr(-250,-120,500,520,36);ctx.fill();
     txtC('PIX 💸',0,-50,'900 58px Inter','#2f4bb0');txtC('Padaria do Zé',0,40,'800 44px Inter','#16161c');txtC('R$ 340',0,150,'900 100px Oswald','#16161c');
     const p=seg(u,1.0,1.3);ctx.fillStyle=p>0?'#1f8a4a':'#2f4bb0';rr(-200,250,400,100,30);ctx.fill();txtC(p>0?'PAGO ✓':'PAGAR',0,302,'900 50px Inter','#fff');ctx.restore()});
-  txtC('B?',W/2,230,'900 120px Inter','#ffd84a',20);if(u>1.4){ctx.save();ctx.globalAlpha=seg(u,1.4,1.8);txtC('PAGAR PELO CELULAR',W/2,1500,'900 62px Inter','#fff',14);ctx.restore()}
+  txtC('B?',W/2,300,'900 120px Inter','#ffd84a',20);if(u>1.4){ctx.save();ctx.globalAlpha=seg(u,1.4,1.8);txtC('PAGAR PELO CELULAR',W/2,1500,'900 62px Inter','#fff',14);ctx.restore()}
   letterIn(u);
 });
 // 32a. só que aí o Zé vê... o app do banco: SALDO (2726–2729.5)
 scene(2726,2729.5,(t)=>{const u=t-2726;CAM(W/2,H*.48,lerp(1.0,1.14,easeIO(seg(u,0,3.5))),()=>{s2Phone(u,{time:'05:41',date:'quinta-feira',screen:['#1a2a6a','#2f4bb0','#121c4a'],bg:['#1b1d36','#262a4a','#15172b']});
     ctx.save();ctx.translate(W/2,H*.48);ctx.rotate(-.04);ctx.fillStyle='rgba(250,250,252,.97)';rr(-250,-120,500,420,36);ctx.fill();txtC('BANCO · MATHEUS',0,-50,'800 40px Inter','#2f4bb0');txtC('salário recebido',0,40,'700 40px Inter','#666');
     ctx.save();ctx.beginPath();rr(-230,90,460,140,20);ctx.clip();txtC('R$ 9.900',0,165,'900 104px Oswald','#1f8a4a');if(u<1.2){ctx.fillStyle='#c9cdd8';ctx.fillRect(-230,90,460*(1-seg(u,.6,1.2)),140)}ctx.restore();ctx.restore()});
-  if(u>1.3){const k=easeBack(seg(u,1.3,1.6));ctx.save();ctx.translate(W/2,220);ctx.scale(k,k);txtC('👀👀',0,0,'110px Inter','#fff');ctx.restore()}
+  if(u>1.3){const k=easeBack(seg(u,1.3,1.6));ctx.save();ctx.translate(W/2,300);ctx.scale(k,k);txtC('👀👀',0,0,'110px Inter','#fff');ctx.restore()}
   letterIn(u);
 });
 // 32b. o Zé (no corpo do Matheus) arregala os olhos: DEZ MIL?! (2730–2733.5)
@@ -352,7 +352,7 @@ scene(2734,2737.5,(t)=>{const u=t-2734;sky('#7fb0e0','#cde2f0','#ffdcb0');sun(85
     // pombos levantando voo (ambiente)
     for(let i=0;i<4;i++){const r=rng(i+2734);const f=seg(u,.2+i*.1,3.5);const x=200+r()*700+f*300,y=1250-f*700-r()*60;ctx.save();ctx.translate(x,y);ctx.fillStyle='#9aa0ac';ctx.strokeStyle=OUT;ctx.lineWidth=4;ctx.beginPath();ctx.ellipse(0,0,26,16,0,0,7);ctx.fill();ctx.stroke();const wg=Math.sin(u*20+i)*18;ctx.beginPath();ctx.moveTo(-6,-4);ctx.quadraticCurveTo(-20,-30-wg,-44,-20-wg);ctx.quadraticCurveTo(-24,-6,-6,-4);ctx.fill();ctx.stroke();ctx.restore()}
     personFront(540,1390,1.3,{smile:10,mouthO:.3+.25*Math.abs(Math.sin(u*10)),look:Math.sin(u*2)*.5})});
-  const B=[['VOCÊ SOUBE?!',330,520,.5],['DEZ MIL! 😱',800,600,.9],['O MATHEUS?!',340,880,1.3]];B.forEach(([s,x,y,a])=>{if(u>a)s2bBubble(x,y,440,130,seg(u,a,a+.3),s,'#c8352b',0)});
+  const B=[['VOCÊ SOUBE?!',320,520,.5],['DEZ MIL! 😱',790,600,.9],['O MATHEUS?!',330,880,1.3]];B.forEach(([s,x,y,a])=>{if(u>a)s2bBubble(x,y,500,130,seg(u,a,a+.3),s,'#c8352b',0)});
   txtC('O MAIOR FOFOQUEIRO 🗣️',W/2,300,'900 62px Inter','#16161c',0);zeInside(W-180,1500);letterIn(u);
 });
 // 34. a mensagem: "O que ninguém vê... também conta." — a página do caderno sob a luz (2738–2741.5)
