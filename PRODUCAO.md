@@ -107,8 +107,9 @@ Essa é a ÚNICA exceção à regra "tudo tem que servir": são detalhes de **at
 
 ## Placar de TODAS as redes (regra do usuário, 14/11)
 - A votação vale a SOMA de todas as redes (TikTok + Instagram + YouTube, quando der para ler os comentários). Vence a opção com mais votos no total.
-- **No começo de todo episódio (no recap), mostre o placar de cada rede e o total**, numa cartela rápida (~2,5 s), por exemplo: "TIKTOK: A 2 × B 3 · INSTAGRAM: A 4 × B 1 · TOTAL: A 6 × B 4 → VENCEU A EM TODAS AS REDES". A narração diz: "Somando todas as redes, venceu a A." Assim quem só vê uma rede entende por que a outra opção ganhou.
-- Use o mesmo placar na legenda do post e no primeiro comentário ("Placar de todas as redes: A 6 × B 4").
+- **REGRA NOVA (20/11, pedido do usuário): NÃO mostre quantos votos/comentários teve — nem no vídeo, nem na legenda, nem no primeiro comentário.** Nada de "A 6 × B 4", nada de contador (+9999) e nada de número por rede.
+- No começo do episódio, a cartela só mostra comentários das redes (TikTok, Instagram, YouTube) entrando, sem números, e termina em "VENCEU A" (ou B). A narração diz só: "Somando todas as redes, venceu a A."
+- Na legenda e no primeiro comentário, escreva só "Venceu a A em todas as redes" (sem placar). A contagem real fica só no aviso privado para o usuário.
 
 ## Pistas em aberto (retomar nos próximos episódios)
 - EP. 4 (O METRÔ): o **rádio** (canal 13) com a voz que mandou "seguir a luz". De quem é a voz? (o fotógrafo)
