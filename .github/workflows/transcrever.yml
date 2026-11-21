@@ -11,6 +11,6 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
       - run: pip install -q faster-whisper
-      - run: python scripts/transcrever.py "${{ inputs.arquivo }}" palavras.json
+      - run: python scripts/transcrever.py "${{ inputs.arquivo }}" palavras.json && echo "JSONINI" && python -c "import json;print(json.dumps(json.load(open('palavras.json')),ensure_ascii=False))"
       - uses: actions/upload-artifact@v4
         with: {name: palavras, path: palavras.json}
