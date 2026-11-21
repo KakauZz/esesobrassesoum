@@ -1,0 +1,16 @@
+name: transcrever
+on:
+  workflow_dispatch:
+    inputs:
+      arquivo: {description: "wav no repo", required: true}
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -q faster-whisper
+      - run: python scripts/transcrever.py "${{ inputs.arquivo }}" palavras.json
+      - uses: actions/upload-artifact@v4
+        with: {name: palavras, path: palavras.json}
