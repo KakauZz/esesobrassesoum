@@ -161,6 +161,20 @@
    "horario": "2026-11-20T18:01:00-03:00",
    "id": "18125937725318871",
    "obs": "Windsor create_video_post (lembrete 18h)"
+  },
+  {
+   "episodio": "s2ep06",
+   "rede": "tiktok",
+   "horario": "2026-11-21T18:00:00-03:00",
+   "id": "metricool 436664135 (uuid 7976093038848003773)",
+   "obs": "agendado pelo Metricool às 18h"
+  },
+  {
+   "episodio": "s2ep06",
+   "rede": "youtube",
+   "horario": "2026-11-21T18:00:00-03:00",
+   "id": "metricool 436664150 (uuid -25239155332462382)",
+   "obs": "Short agendado pelo Metricool às 18h"
   }
  ]
 }
