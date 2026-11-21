@@ -149,7 +149,7 @@ scene(3030,3033.5,(t)=>{const u=t-3030;const m=easeIO(seg(u,.2,1.8));CAM(lerp(W/
 SHAKE.push(3032.5);
 // 11. no celular dela, um perfil: Fofoca da Rua (3034–3037.5)
 scene(3034,3037.5,(t)=>{const u=t-3034;CAM(W/2,H*.5,lerp(1.06,1.0,easeOut(seg(u,0,1))),()=>s6Phone(u,{},()=>s6Profile(u,{})));
-  const k=easeBack(seg(u,.4,.7));ctx.save();ctx.translate(W/2,170);ctx.scale(k,k);ctx.fillStyle='#16161c';rr(-330,-60,660,120,30);ctx.fill();txtC('FOFOCA DA RUA ☕',0,2,'900 60px Inter','#ff8ab8');ctx.restore();
+  const k=easeBack(seg(u,.4,.7));ctx.save();ctx.translate(W/2,300);ctx.scale(k,k);ctx.fillStyle='#16161c';rr(-330,-60,660,120,30);ctx.fill();txtC('FOFOCA DA RUA ☕',0,2,'900 60px Inter','#ff8ab8');ctx.restore();
   letterIn(u);
 });
 // 12. vinte mil seguidores! tudo que ela posta viraliza (3038–3041.5)
@@ -239,13 +239,13 @@ function s6Cam(u,o){o=o||{};ctx.fillStyle=lg(-560,560,['#fbe0ec','#f3cde0','#e2b
     ctx.textAlign='left';ctx.fillStyle='#7a5cff';ctx.font='800 30px Inter';ctx.fillText('Número desconhecido',-150,-10);ctx.fillStyle='#16161c';ctx.font='700 30px Inter';ctx.fillText('nova mensagem',-150,32);ctx.restore()}}
 // 21. ele abre a câmera. tudo pronto (3074–3077.5)
 scene(3074,3077.5,(t)=>{const u=t-3074;CAM(W/2,H*.5,lerp(1.1,1.0,easeOut(seg(u,0,1.2))),()=>s6Phone(u,{},()=>s6Cam(u,{rec:u%1<.5})));
-  const k=easeBack(seg(u,.5,.8));ctx.save();ctx.translate(W/2,170);ctx.scale(k,k);ctx.fillStyle='#16161c';rr(-300,-60,600,120,30);ctx.fill();txtC('TUDO PRONTO 🎥',0,2,'900 60px Inter','#fff');ctx.restore();
+  const k=easeBack(seg(u,.5,.8));ctx.save();ctx.translate(W/2,300);ctx.scale(k,k);ctx.fillStyle='#16161c';rr(-300,-60,600,120,30);ctx.fill();txtC('TUDO PRONTO 🎥',0,2,'900 60px Inter','#fff');ctx.restore();
   letterIn(u);
 });
 // 22. mas chega uma mensagem de um número desconhecido (3078–3081.5)
 scene(3078,3081.5,(t)=>{const u=t-3078;CAM(W/2,H*.5,lerp(1.0,1.06,seg(u,0,3.5)),()=>s6Phone(u,{buzz:u>.4&&u<1.4},()=>s6Cam(u,{notif:seg(u,.4,.8),smile:0,open:1.2,brow:.6})));
-  if(u>.4&&u<1.6){ctx.save();ctx.translate(W/2,170);const k=1+.06*Math.sin(u*30);ctx.scale(k,k);txtC('BZZZ! 📳',0,0,'900 100px Inter','#7a5cff',16);ctx.restore()}
-  if(u>1.8){const k=easeBack(seg(u,1.8,2.1));ctx.save();ctx.translate(W/2,170);ctx.scale(k,k);ctx.fillStyle='#7a5cff';rr(-380,-60,760,120,30);ctx.fill();txtC('NÚMERO DESCONHECIDO',0,2,'900 54px Inter','#fff');ctx.restore()}
+  if(u>.4&&u<1.6){ctx.save();ctx.translate(W/2,300);const k=1+.06*Math.sin(u*30);ctx.scale(k,k);txtC('BZZZ! 📳',0,0,'900 100px Inter','#7a5cff',16);ctx.restore()}
+  if(u>1.8){const k=easeBack(seg(u,1.8,2.1));ctx.save();ctx.translate(W/2,300);ctx.scale(k,k);ctx.fillStyle='#7a5cff';rr(-380,-60,760,120,30);ctx.fill();txtC('NÚMERO DESCONHECIDO',0,2,'900 54px Inter','#fff');ctx.restore()}
   letterIn(u);
 });
 // 23. [carta] "Toda mentira muda de lugar. Assinado: M." (3082–3085.5)
@@ -281,7 +281,7 @@ scene(3098,3101.5,(t)=>{const u=t-3098;ctx.fillStyle=lg(0,H,['#0f3a24','#1f6a42'
     const sw=Math.sin(u*9);ctx.save();ctx.translate(sw*40,0);ctx.rotate(sw*.06);biaFront(0,420,1.6,{smile:14,look:sw*.5});ctx.restore();
     for(let i=0;i<4;i++){const ph=(u*.8+i/4)%1;ctx.save();ctx.globalAlpha=1-ph;txtC('🎵',-200+i*130,300-ph*600,'900 60px Inter','#fff');ctx.restore()}
     txtC('▶ 0:09',-180,-500,'800 34px Inter','#fff',6)}));
-  txtC('A?',W/2,170,'900 110px Inter','#7dffa8',20);
+  txtC('A?',W/2,300,'900 110px Inter','#7dffa8',20);
   if(u>1.0){ctx.save();ctx.globalAlpha=seg(u,1.0,1.4);ctx.fillStyle='rgba(0,0,0,.6)';rr(90,1400,900,120,30);ctx.fill();txtC('POSTAR A DANCINHA 💃',W/2,1462,'900 62px Inter','#fff');ctx.restore()}
   letterIn(u);
 });
@@ -305,7 +305,7 @@ scene(3110,3113.5,(t)=>{const u=t-3110;ctx.fillStyle=lg(0,H,['#14204a','#24357a'
       ctx.save();ctx.translate(540,0);ctx.scale(.52,.58);ctx.translate(-540,0);s4Bakery(u,{pan:0});zeFront(540,1360,1.7,{smile:lerp(-6,16,seg(u,.8,1.4)),look:0});s4Counter(1300,0);ctx.restore();ctx.restore();
     ctx.fillStyle='#ff2a4a';rr(-250,-520,170,56,12);ctx.fill();txtC('AO VIVO',-165,-491,'900 30px Inter','#fff',0);txtC('👁 '+(800+Math.floor(u*400)),120,-491,'800 32px Inter','#fff',6);
     for(let i=0;i<6;i++){const ph=(u*.7+i/6)%1;ctx.save();ctx.globalAlpha=1-ph;txtC('❤️',200,400-ph*500,'900 50px Inter','#fff');ctx.restore()}}));
-  txtC('B?',W/2,170,'900 110px Inter','#ffd84a',20);
+  txtC('B?',W/2,300,'900 110px Inter','#ffd84a',20);
   if(u>1.0){ctx.save();ctx.globalAlpha=seg(u,1.0,1.4);ctx.fillStyle='rgba(0,0,0,.6)';rr(70,1400,940,120,30);ctx.fill();txtC('LIMPAR O NOME DO ZÉ 🥖',W/2,1462,'900 58px Inter','#fff');ctx.restore()}
   letterIn(u);
 });
