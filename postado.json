@@ -196,6 +196,13 @@
    "horario": "2026-11-22T18:00:00-03:00",
    "id": "metricool 437551996 (uuid 514428638499979530)",
    "obs": "Short agendado pelo Metricool às 18h"
+  },
+  {
+   "episodio": "s2ep07",
+   "rede": "instagram",
+   "horario": "2026-11-22T18:00:40-03:00",
+   "id": "18115146746138991",
+   "obs": "Windsor create_video_post (lembrete 18h) + comentário 18179609056443272 + story 18653373055059870"
   }
  ]
 }
