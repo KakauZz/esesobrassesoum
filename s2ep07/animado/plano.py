@@ -47,7 +47,7 @@ if os.path.exists(tsp):  # posição aproximada (transcrição) + pausas reais d
         ends.append(round(en,3)); starts.append(round(s,3)); last=s
     ends.append(round(dur,3))
 # ajuste manual (checado pelo ritmo de letras/s): início da fala 24
-for _i,_v in {}.items(): starts[_i]=_v; ends[_i-1]=round(_v-0.05,3)
+for _i,_v in {25:70.49}.items(): starts[_i]=_v; ends[_i-1]=round(_v-0.05,3)
 rp=os.path.join(O,"roger_ts.json")
 if os.path.exists(rp):  # tempos exatos por palavra (ElevenLabs /with-timestamps, voz Roger)
     R=json.load(open(rp)); starts=[];ends=[];WTS=[]
