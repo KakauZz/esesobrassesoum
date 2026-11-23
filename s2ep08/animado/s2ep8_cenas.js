@@ -355,7 +355,7 @@ scene(3514,3517.5,(t)=>{const u=t-3514;ctx.fillStyle=lg(0,H,['#ff9a6a','#ffc48a'
     ctx.fillStyle='#c8a878';ctx.fillRect(0,1100,W,H-1100);ctx.fillStyle='#8a5a34';ctx.strokeStyle=OUT;ctx.lineWidth=8;ctx.fillRect(-20,1200,W+40,300);ctx.strokeRect(-20,1200,W+40,300);ctx.fillStyle='#a8744a';ctx.fillRect(-20,1200,W+40,40);
     s8Stack(240,1200,.9,8);
     const vb=u%1<.6?Math.sin(u*80)*8:0;ctx.save();ctx.translate(640+vb,1170);ctx.rotate(-.1);ctx.fillStyle='#0d0e12';rr(-80,-140,160,280,26);ctx.fill();ctx.fillStyle='#2fbf71';rr(-66,-124,132,248,18);ctx.fill();txtC('📞',0,-20,'900 60px Inter','#fff');txtC('MATHEUS',0,60,'900 24px Inter','#fff');ctx.restore()});
-  if(u%1<.6){ctx.save();ctx.translate(W/2,1600);const k=1+.06*Math.sin(u*30);ctx.scale(k,k);txtC('BZZZ! 📳',0,0,'900 100px Inter','#c8352b',16);ctx.restore()}
+  if(u%1<.6){ctx.save();ctx.translate(W/2,1470);const k=1+.06*Math.sin(u*30);ctx.scale(k,k);txtC('BZZZ! 📳',0,0,'900 100px Inter','#c8352b',16);ctx.restore()}
   ctx.save();ctx.globalAlpha=seg(u,0,.4);txtC('FIM DA TARDE',W/2,960,'800 76px Oswald','#fff',12);ctx.restore();
   letterIn(u);
 });
