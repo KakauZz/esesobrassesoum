@@ -217,6 +217,20 @@
    "horario": "2026-11-23T18:01:00-03:00",
    "id": "17988990198105097",
    "obs": "Windsor create_video_post (lembrete 18h) + comentário 17896887078437509 + story 18167476864500481"
+  },
+  {
+   "episodio": "s2ep09",
+   "rede": "tiktok",
+   "horario": "2026-11-24T18:00:00-03:00",
+   "id": "manual (usuário)",
+   "obs": "cota do Metricool acabou: vídeo + legenda enviados ao usuário (SendUserFile) para postar à mão às 18h"
+  },
+  {
+   "episodio": "s2ep09",
+   "rede": "youtube",
+   "horario": "2026-11-24T18:00:00-03:00",
+   "id": "manual (usuário)",
+   "obs": "cota do Metricool acabou: vídeo + legenda enviados ao usuário (SendUserFile) para postar à mão às 18h"
   }
  ]
 }
