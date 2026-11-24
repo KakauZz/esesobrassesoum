@@ -231,6 +231,13 @@
    "horario": "2026-11-24T18:00:00-03:00",
    "id": "manual (usuário)",
    "obs": "cota do Metricool acabou: vídeo + legenda enviados ao usuário (SendUserFile) para postar à mão às 18h"
+  },
+  {
+   "episodio": "s2ep09",
+   "rede": "instagram",
+   "horario": "2026-11-24T18:00:50-03:00",
+   "id": "18026157323722276",
+   "obs": "Windsor create_video_post (lembrete 18h) + comentário 18656025214012535 + story 18116304143269616"
   }
  ]
 }
