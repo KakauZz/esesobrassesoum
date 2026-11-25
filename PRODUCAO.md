@@ -228,3 +228,10 @@ Meça todo dia: se a média assistida no TikTok não subir dos 11 s do EP. 4, de
 - **Capa:** use como capa o quadro mais intrigante do episódio (`thumb_offset` no Instagram, `videoCoverMilliseconds` no TikTok pelo Metricool).
 - **Votação equilibrada:** as duas opções A/B precisam ser tentadoras. Quanto mais dividido o voto, mais comentários.
 - **Medir e ajustar:** todo dia, compare a retenção (`video_average_time_watched`, `video_full_watched_rate` no tiktok_organic) e as views por episódio. Se a retenção cair no começo, deixe o gancho mais forte; se cair no meio, deixe o ritmo mais apertado. Anote em "Aprendizados".
+
+
+## YouTube direto pela API oficial (desde 24/11) — GRÁTIS e sem limite do Metricool
+- Workflow do GitHub **postar-youtube** (.github/workflows/youtube.yml + scripts/youtube_upload.py). Credenciais no secret **YOUTUBE_IDS** (projeto Google Cloud "youtube-mathues", app em produção).
+- Disparo: `gh api -X POST repos/KakauZz/esesobrassesoum/actions/workflows/youtube.yml/dispatches -f ref=main -f 'inputs[video]=videos/ARQ.mp4' -f 'inputs[title]=TÍTULO #shorts' -f 'inputs[description]=DESCRIÇÃO' -f 'inputs[publish_at]=AAAA-MM-DDT21:00:00Z'` (publish_at = 18h de Brasília em UTC; o próprio YouTube publica na hora certa). O log do run traz o id do vídeo.
+- Vídeo até 2:59 vira Short sozinho (vertical). Acima disso, corte em Parte 1/Parte 2.
+- O Metricool fica SÓ para o TikTok.

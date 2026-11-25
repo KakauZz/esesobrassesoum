@@ -238,6 +238,20 @@
    "horario": "2026-11-24T18:00:50-03:00",
    "id": "18026157323722276",
    "obs": "Windsor create_video_post (lembrete 18h) + comentário 18656025214012535 + story 18116304143269616"
+  },
+  {
+   "episodio": "s2ep08",
+   "rede": "youtube",
+   "horario": "2026-11-24T23:25:00-03:00",
+   "id": "xUn8m2UKJhk",
+   "obs": "API oficial do YouTube (workflow postar-youtube), sem Metricool"
+  },
+  {
+   "episodio": "s2ep09",
+   "rede": "youtube",
+   "horario": "2026-11-24T23:25:00-03:00",
+   "id": "rgZ8KNbXvaU",
+   "obs": "API oficial do YouTube (workflow postar-youtube), sem Metricool"
   }
  ]
 }
