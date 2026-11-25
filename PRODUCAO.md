@@ -241,3 +241,12 @@ Meça todo dia: se a média assistida no TikTok não subir dos 11 s do EP. 4, de
 - Plano grátis: até 10 posts NA FILA ao mesmo tempo por canal (não é limite por mês). Como postamos 1 por dia, nunca acaba.
 - Agendar: create_post(channelId, schedulingType "automatic", mode "customScheduled", dueAt "AAAA-MM-DDT18:00:00-03:00", text = legenda, assets [{video:{url: raw do GitHub, metadata:{thumbnailOffset:1500}}}], metadata {tiktok:{title, isAiGenerated:false}}). Depois confira com get_post (status "sent"/"error").
 - O Metricool fica só de reserva (se o Buffer falhar).
+
+## TEMPORADA 3 — "E se o seu celular recebesse mensagens do futuro?" (aprovada pelo usuário em 25/11)
+- **Premissa:** toda noite, às 23:59, o celular do Matheus recebe UMA mensagem do número "Você (do futuro)" (ele mesmo, 10 anos depois). Cada episódio termina com **A = OBEDECER** a mensagem e **B = DESAFIAR**.
+- **Toda fala 1 começa com "Imagine..."** (regra do usuário).
+- **Modelo novo do Matheus (obrigatório na T3):** `s3ep01/animado/m5.js` → `matheus5(x,chao,escala,{expr,t,blink,talk,look,head,armL,armR,legL,legR})`, poses em `M5POSES`. Sem emendas aparentes nos braços/pernas. Expressões: feliz, rindo, surpreso, bravo, triste, assustado, desconfiado, pensativo, apaixonado, envergonhado.
+- **Pipeline da T3:** `s3ep01/animado/` (`teaser.js` helpers `tz*`, `ep1.js` cenas, `frames.py` render, `audio1.py` trilha+SFX+mix). Voz: direção no padrão da T2 (VOZ FIRME, ALTA E PRESENTE...), nunca "tom de trailer" (muda a voz).
+- **Gato mascote:** é o gato do Matheus (laranja e branco, coleira azul), `e1Cat`.
+- **S3 EP1 JÁ ESTÁ PRONTO:** `videos/s3ep01_final.mp4` (100 s). No dia do S3 EP1 só postar (não refazer). Título: "E se o seu celular recebesse mensagens do futuro? EP. 1 — Não abre a porta".
+- **Pistas em aberto (T3):** a mensagem das 19:04 chegou FORA do horário (só devia chegar às 23:59) — quem mandou?; o entregador de boné com a caixa (rosto escondido pelo boné); o que tem na caixa; por que o eu do futuro proibiu abrir a porta.
