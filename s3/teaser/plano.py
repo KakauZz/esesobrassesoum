@@ -1,0 +1,1 @@
+FALAS=['Esse é você. O Matheus.', 'Mas a temporada três... pede um Matheus novo.', 'Agora sim!', 'Toda noite, às onze e cinquenta e nove...', 'seu celular recebe uma mensagem.', 'De você mesmo. Do futuro.', 'Não abre a porta amanhã.', 'Você obedece... ou desafia?', 'Temporada três. Em breve!']
