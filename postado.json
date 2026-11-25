@@ -259,6 +259,13 @@
    "horario": "2026-11-24T23:32:00-03:00",
    "id": "buffer 6b0648a7c4ff71faa82aa793",
    "obs": "Buffer (grátis), shareNow — primeiro post pelo Buffer"
+  },
+  {
+   "episodio": "s2ep10",
+   "rede": "tiktok",
+   "horario": "2026-11-25T18:00:00-03:00",
+   "id": "buffer 6b06e0b177264060a201faa2",
+   "obs": "Buffer customScheduled 18h (agendado às 10h20)"
   }
  ]
 }
