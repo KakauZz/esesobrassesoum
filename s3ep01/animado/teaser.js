@@ -82,7 +82,7 @@ function TZ(t){const L=window.LINES;const st=i=>i===0?(window.TZ_T0||0):L[i].a-.
     ctx.fillStyle=lg(0,H,['#ffb36b','#ff7a33','#e0541c']);ctx.fillRect(0,0,W,H);tzRays(540,980,t,'rgba(255,255,255,1)',.12);glow(540,1000,600,'rgba(255,240,200,A)',.35);
     ctx.fillStyle='rgba(0,0,0,.12)';ctx.fillRect(0,1390,W,H-1390);
     const jump=Math.abs(Math.sin(Math.min(u,1.2)*Math.PI/1.2))*-50*(u<1.2?1:0);
-    matheus5(540,1390,1.62,Object.assign({},M5POSES.comemorando,{t,lift:jump,blink:tzBlink(t,1)}));
+    matheus5(540,1390,1.3,Object.assign({},M5POSES.comemorando,{t,lift:jump,blink:tzBlink(t,1)}));
     tzConfetti(u,5,90);
     tzKicker('TEMPORADA 3',330,seg(u,.1,.4),'#2b1b12');tzTitle('NOVO MATHEUS',450,seg(u,0,.3),124);
   }
