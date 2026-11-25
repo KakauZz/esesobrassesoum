@@ -235,3 +235,9 @@ Meça todo dia: se a média assistida no TikTok não subir dos 11 s do EP. 4, de
 - Disparo: `gh api -X POST repos/KakauZz/esesobrassesoum/actions/workflows/youtube.yml/dispatches -f ref=main -f 'inputs[video]=videos/ARQ.mp4' -f 'inputs[title]=TÍTULO #shorts' -f 'inputs[description]=DESCRIÇÃO' -f 'inputs[publish_at]=AAAA-MM-DDT21:00:00Z'` (publish_at = 18h de Brasília em UTC; o próprio YouTube publica na hora certa). O log do run traz o id do vídeo.
 - Vídeo até 2:59 vira Short sozinho (vertical). Acima disso, corte em Parte 1/Parte 2.
 - O Metricool fica SÓ para o TikTok.
+
+## TikTok pelo BUFFER (desde 24/11) — GRÁTIS e sem limite mensal
+- Conector Buffer: organização "My organization" (6b064835780ff5ae4d537e91), canal TikTok matheusvoce.decide = **6b0648718541f09ecb95a1dd**.
+- Plano grátis: até 10 posts NA FILA ao mesmo tempo por canal (não é limite por mês). Como postamos 1 por dia, nunca acaba.
+- Agendar: create_post(channelId, schedulingType "automatic", mode "customScheduled", dueAt "AAAA-MM-DDT18:00:00-03:00", text = legenda, assets [{video:{url: raw do GitHub, metadata:{thumbnailOffset:1500}}}], metadata {tiktok:{title, isAiGenerated:false}}). Depois confira com get_post (status "sent"/"error").
+- O Metricool fica só de reserva (se o Buffer falhar).
