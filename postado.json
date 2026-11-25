@@ -265,7 +265,7 @@
    "rede": "tiktok",
    "horario": "2026-11-25T18:00:00-03:00",
    "id": "buffer 6b06e0b177264060a201faa2",
-   "obs": "Buffer customScheduled 18h (agendado às 10h20)"
+   "obs": "Buffer customScheduled 18h (agendado às 10h20) · sent 21:02Z, tiktok 7712217130808200466"
   },
   {
    "episodio": "s2ep10",
@@ -273,6 +273,13 @@
    "horario": "2026-11-25T18:00:00-03:00",
    "id": "U9sCOpCyOCI",
    "obs": "API oficial (workflow postar-youtube), publish_at 21:00Z"
+  },
+  {
+   "episodio": "s2ep10",
+   "rede": "instagram",
+   "horario": "2026-11-25T18:01:00-03:00",
+   "id": "18111123593246391",
+   "obs": "Windsor create_video_post (lembrete 18h) + comentário 17907127656606257 + story 18122289602053695"
   }
  ]
 }
