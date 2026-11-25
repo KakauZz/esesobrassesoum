@@ -50,7 +50,7 @@ function tzCaption(t){const L=window.LINES;if(!L)return;for(const l of L){if(t<l
   const lines=[];let cur='';for(const w of words){const tt=cur?cur+' '+w:w;if(ctx.measureText(tt).width>880&&cur){lines.push(cur);cur=w}else cur=tt}lines.push(cur);
   lines.forEach((ln,i)=>{const y=1610+i*80-(lines.length-1)*40+(1-easeOut(k))*20;txtC(ln,W/2,y,'700 66px Oswald','#ffffff',14)});ctx.restore()}}
 
-function TZ(t){const L=window.LINES;const st=i=>i===0?0:L[i].a-.12;const en=i=>i<L.length-1?L[i+1].a-.12:99;
+function TZ(t){const L=window.LINES;const st=i=>i===0?(window.TZ_T0||0):L[i].a-.12;const en=i=>i<L.length-1?L[i+1].a-.12:99;
   let i=0;for(let k=0;k<L.length;k++)if(t>=st(k))i=k;const a=st(i),b=Math.min(en(i),a+30),u=t-a,D=b-a,p=clamp(u/D);
   ctx.save();
   if(i===0){ // Matheus antigo
@@ -58,7 +58,7 @@ function TZ(t){const L=window.LINES;const st=i=>i===0?0:L[i].a-.12;const en=i=>i
     const z=1+.04*p;ctx.translate(540,1000);ctx.scale(z,z);ctx.translate(-540,-1000);
     personFront(540,1240,2.6,{smile:24,look:Math.sin(t*1.3)*.15,eye:tzBlink(t,.4)?0.02:1,up:0});
     ctx.restore();ctx.save();
-    tzKicker('MODELO ANTIGO',330,seg(u,.15,.5),'#5a6491');tzTitle('ESSE É VOCÊ',450,seg(u,.05,.4),120);
+    tzKicker(window.TZ_KICK0||'MODELO ANTIGO',330,seg(u,.15,.5),'#5a6491');tzTitle('ESSE É VOCÊ',450,seg(u,.05,.4),120);
   }
   else if(i===1){ // transformação
     tzStudio('#1a2140','#0c1026');const flash=.66;

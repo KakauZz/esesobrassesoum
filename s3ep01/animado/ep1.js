@@ -113,14 +113,21 @@ function e1Choice(k,letter,txt,col,y){if(k<=0)return;ctx.save();ctx.translate(W/
 const HUD1=['','','','NOITE 1 · 23:40','NOITE 1 · 23:41','NOITE 1 · 23:59','NOITE 1 · 23:59','NOITE 1 · 23:59','NOITE 1 · 23:59','NOITE 1 · 23:59','NOITE 1 · 23:59','NOITE 1 · 23:59','NOITE 1 · 23:59','NOITE 1 · 23:59','NOITE 1 · 23:59','NOITE 1 · 23:59','NOITE 1 · 00:00','NOITE 1 · 03:12','DIA 2 · 14:00','DIA 2 · 14:20','DIA 2 · 19:00','DIA 2 · 19:00','DIA 2 · 19:01','DIA 2 · 19:02','DIA 2 · 19:02','DIA 2 · 19:03','DIA 2 · 19:04','DIA 2 · 19:04','DIA 2 · 19:04','DIA 2 · 19:04','DIA 2 · 19:05','DIA 2 · 19:05','','',''];
 function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a-.12;const en=i=>i<L.length-1?L[i+1].a-.12:99;
   let i=0;for(let k=0;k<L.length;k++)if(t>=st(k))i=k;
-  if(i<=2){TZ(t);e1Hud('');return}
-  const a=st(i),b=Math.min(en(i),a+30),u=t-a,D=b-a,p=clamp(u/D);
+  if(i===0){const u=t;ctx.save();tzStudio('#1a2140','#0c1026');tzSpot(540,1390,1);dust(t,3,40,'rgba(255,230,190,A)');
+    const z=1+.03*clamp(u/3);ctx.translate(540,1000);ctx.scale(z,z);ctx.translate(-540,-1000);
+    personFront(430,1240,2.4,{smile:16,look:.4,eye:tzBlink(t,.4)?0.02:1,up:0});
+    const pk=seg(u,.2,.7);if(pk>0){ctx.save();ctx.translate(830,780+Math.sin(t*2)*14);ctx.rotate(.12);ctx.scale(pk,pk);glow(0,0,260,'rgba(120,170,255,A)',.5);
+      tzPhone(0,0,.42,0,()=>{tzLock(t,'23:59');tzNotif(-30,seg(u,.8,1.1),'Você (do futuro)','1 mensagem')});ctx.restore()}
+    ctx.restore();ctx.save();tzKicker('E SE O SEU CELULAR',300,seg(u,.1,.4),'#4f5bd5');tzTitle('AVISASSE O FUTURO?',420,seg(u,.25,.6),96,'#7fd3ff');ctx.restore();
+    vignette(.45);tzCaption(t);return}
+  if(i<=3){window.TZ_T0=L[1].a-.12;window.TZ_KICK0='MATHEUS • 24 ANOS';const LL=L;window.LINES=L.slice(1);try{TZ(t)}finally{window.LINES=LL}return}
+  i=i-1;const a=st(i+1),b=Math.min(en(i+1),a+30),u=t-a,D=b-a,p=clamp(u/D);
   ctx.save();
   const bl=(sd)=>tzBlink(t,sd);
   switch(i){
   case 3:{const z=1+.03*p;ctx.translate(540,1100);ctx.scale(z,z);ctx.translate(-540,-1100);e1Apto(t,{tvOn:1});
     matheus5(360,1500,1.35,Object.assign({},M5POSES.acenando,{t,armR:[150+Math.sin(t*7)*16,30,'open'],blink:bl(1)}));
-    ctx.restore();ctx.save();tzKicker('MATHEUS • 24 ANOS',330,seg(u,.2,.5),'#ff7a33');break}
+    ctx.restore();ctx.save();tzKicker('SÃO PAULO',330,seg(u,.2,.5),'#ff7a33');break}
   case 4:{e1Apto(t,{tvOn:1});e1Table(700,1360,1,{bowl:1,phone:1,u:t});
     matheus5(330,1500,1.3,{expr:'feliz',t,head:-6,look:1,armL:[14,-30,'rest'],armR:[40,-40,'rest'],blink:bl(2)});
     tzKicker('UMA NOITE NORMAL',330,seg(u,.1,.4),'#4f5bd5');break}
