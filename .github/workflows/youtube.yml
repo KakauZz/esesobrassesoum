@@ -20,6 +20,7 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YOUTUBE_IDS: ${{ secrets.YOUTUBE_IDS }}
         run: |
           python scripts/youtube_upload.py --video "${{ inputs.video }}" --title "${{ inputs.title }}" \
             --description "${{ inputs.description }}" --publish_at "${{ inputs.publish_at }}" | tee saida_youtube.txt

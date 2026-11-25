@@ -13,6 +13,18 @@ ap.add_argument("--tags", default="animação,história,série,você decide")
 ap.add_argument("--publish_at", default="", help="ISO UTC, ex. 2026-11-17T21:00:00Z (agenda no próprio YouTube)")
 a = ap.parse_args()
 
+# aceita os 3 secrets separados OU um secret único YOUTUBE_IDS com "NOME\nvalor" em sequência
+blob = os.environ.get("YOUTUBE_IDS", "")
+if blob:
+    linhas = [l.strip() for l in blob.splitlines() if l.strip()]
+    for nome in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN"):
+        if nome in linhas and not os.environ.get(nome):
+            i = linhas.index(nome); val = []
+            for l in linhas[i + 1:]:
+                if l.startswith("YT_"): break
+                val.append(l)
+            os.environ[nome] = "".join(val)
+
 creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"],
                     token_uri="https://oauth2.googleapis.com/token",
                     client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"],
