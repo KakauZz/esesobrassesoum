@@ -28,7 +28,7 @@ if blob:
 creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"],
                     token_uri="https://oauth2.googleapis.com/token",
                     client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"],
-                    scopes=["https://www.googleapis.com/auth/youtube.upload","https://www.googleapis.com/auth/youtube.force-ssl"])
+                    scopes=None)
 yt = build("youtube", "v3", credentials=creds)
 if a.publish_at.startswith("apagar:"):
     for vid in a.publish_at[7:].split(","):
