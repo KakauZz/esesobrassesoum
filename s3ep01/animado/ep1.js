@@ -165,7 +165,7 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
     ctx.fillStyle='#2a2e3a';ctx.beginPath();ctx.moveTo(660,1150);ctx.lineTo(880,1150);ctx.lineTo(860,960);ctx.lineTo(680,960);ctx.closePath();ctx.fill();ctx.fillStyle='#9fc4ff';ctx.beginPath();ctx.moveTo(672,1140);ctx.lineTo(868,1140);ctx.lineTo(850,972);ctx.lineTo(690,972);ctx.closePath();ctx.fill();
     if(i===19){ctx.fillStyle='#fff';for(let k=0;k<5;k++)ctx.fillRect(700,990+k*28,(60+((t*80+k*40)%100)),8)}
     e1Cup(950,1150,.7,0,1);
-    if(i===18){matheusView(lerp(-150,420,clamp(p*1.2)),1520,1.3,'side',{t,walk:p<.83?t*8:null,expr:'pensativo'})}
+    if(i===18){matheusView(lerp(-150,420,clamp(p*1.2)),1520,1.3,'side',{t,walk:p<.83?t*6.5:null,expr:'pensativo'})}
     else{fRect(300,1190,40,300,'#3a3f52',10);fRect(300,1330,250,30,'#4a5066',10);fRect(410,1360,20,140,'#3a3f52');matheusView(420,1500,1.3,'side',{t,sit:1,hold:'type',expr:'feliz',blink:bl(5)})}
     tzKicker(i===18?'NO DIA SEGUINTE':'HOME OFFICE',330,seg(u,.1,.4),'#ff7a33');break}
   case 20:{const ks=[MK.toc1,MK.toc2,MK.toc3].map(x=>x!=null?x-a:null);let kn=0;ks.forEach((k,j)=>{const kk=k??(D*.4+j*.4);if(u>=kk)kn=Math.max(kn,1-seg(u,kk,kk+.22))});

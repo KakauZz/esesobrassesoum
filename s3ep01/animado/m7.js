@@ -258,6 +258,32 @@ function matheusView(gx,gy,s,view,o){o=o||{};const C=Object.assign({},M7,o.pal||
         ctx.save();m6path(P,true);ctx.clip();ctx.globalAlpha=.45;m7blob([[60+dx,SY-40],[78+dx,SY-14],[66+dx,SY+20],[72+dx,SY-12]],C.jeanD);m7blob([[60+dx,-70],[90+dx,-80],[118+dx,-64],[90+dx,-72]],C.jeanD);ctx.globalAlpha=1;ctx.restore()}
       m7blob([[10,SY-40,'s'],[56,SY-40,'s'],[56,SY-4,'s'],[10,SY-4,'s']],C.jeanD);m5ell(33,SY-30,3.5,3.5,'#c9b37a');
       ctx.translate(0,215+SY);
+    }else if(wk!=null){
+      const L1=98,L2=94,FT=30;
+      const legPose=(ph)=>{const th=25*Math.sin(ph)*D2R;const kn=(5+55*Math.pow(Math.max(0,Math.cos(ph)),1.4))*D2R;
+        const kx=Math.sin(th)*L1,ky=Math.cos(th)*L1,a2=th-kn,ax=kx+Math.sin(a2)*L2,ay=ky+Math.cos(a2)*L2;
+        const fa=.45*Math.max(0,Math.cos(ph))*(.5-.5*Math.sin(ph))-.14*Math.max(0,Math.sin(ph))*Math.max(0,-Math.cos(ph)+.3);return {kx,ky,ax,ay,fa}};
+      const A=legPose(wk),B=legPose(wk+Math.PI);const hipY=-FT-Math.max(A.ay,B.ay);
+      const drawLeg=(P,x0,col,sc,sd,front)=>{
+        ctx.save();ctx.translate(x0+P.ax,hipY+P.ay+FT);ctx.rotate(P.fa);shoe(-10,sc,sd);ctx.restore();
+        const H=[x0,hipY-10],K=[x0+P.kx,hipY+P.ky],A2=[x0+P.ax,hipY+P.ay];
+        ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle=col;ctx.lineWidth=80;ctx.beginPath();ctx.moveTo(H[0],H[1]);ctx.lineTo(K[0],K[1]);ctx.stroke();
+        ctx.lineWidth=76;ctx.beginPath();ctx.moveTo(K[0],K[1]);ctx.lineTo(A2[0],A2[1]-4);ctx.stroke();
+        // barra amontoada no tênis
+        const sa=Math.atan2(A2[0]-K[0],A2[1]-K[1]);ctx.save();ctx.translate(A2[0],A2[1]);ctx.rotate(-sa);m7blob([[-40,-34],[40,-34],[44,-4],[28,2,'s'],[-34,2,'s'],[-42,-4]],col);ctx.globalAlpha=.45;m7blob([[-38,-20],[-6,-30],[38,-18],[-4,-24]],C.jeanD);ctx.globalAlpha=1;ctx.restore();ctx.globalAlpha=1;
+        // dobra do joelho
+        ctx.save();ctx.globalAlpha=.4;ctx.translate(K[0],K[1]);m7blob([[-30,-6],[4,-16],[34,-4],[4,-10]],C.jeanD);ctx.restore();ctx.globalAlpha=1;
+        if(front){const ta=Math.atan2(K[0]-H[0],K[1]-H[1]);ctx.save();ctx.translate((H[0]+K[0])/2,(H[1]+K[1])/2);ctx.rotate(-ta);
+          m7blob([[-22,-30,'s'],[24,-30,'s'],[26,30],[20,36,'s'],[-18,36,'s'],[-24,30]],C.jeanD);m7blob([[-20,-28,'s'],[22,-28,'s'],[24,28],[18,32,'s'],[-16,32,'s'],[-22,28]],col);m7blob([[-26,-34,'s'],[26,-34,'s'],[26,-12,'s'],[-26,-12,'s']],C.jeanS);m5ell(0,-24,3.5,3.5,'#c9b37a');ctx.restore()}};
+      drawLeg(B,-8,C.jeanS,C.shoeS,C.shoeD,false);
+      // braço de trás (balança ao contrário)
+      o._walkArm=(near)=>{const dir=near?-1:1;const ph=Math.sin(wk)*dir;const a1=26*ph*D2R,bend=(22+18*Math.max(0,ph))*D2R;const sx=-6,sy=-372;
+        const ex=sx+Math.sin(a1)*74,ey=sy+Math.cos(a1)*74,hx=ex+Math.sin(a1+bend)*60,hy=ey+Math.cos(a1+bend)*60;const col=near?C.hoodS:C.hoodD;
+        m7tubeF([[sx,sy],[(sx+ex)/2,(sy+ey)/2],[ex,ey]],36,col);m7tubeF([[ex,ey],[(ex+hx)/2,(ey+hy)/2],[hx,hy]],34,col);
+        const cx=ex+(hx-ex)*.8,cy=ey+(hy-ey)*.8;m7tubeF([[cx,cy],[(cx+hx)/2,(cy+hy)/2],[hx,hy]],34,near?C.hoodD:'#b8440a','butt');m5ell(hx+Math.sin(a1+bend)*10,hy+Math.cos(a1+bend)*10,14,15,near?C.skin:C.skinS)};
+      ctx.save();ctx.translate(0,hipY-HIP);ctx.translate(0,HIP);ctx.rotate(.05);ctx.translate(0,-HIP);o._walkArm(false);ctx.restore();
+      drawLeg(A,10,C.jean,C.shoe,C.shoeS,true);
+      ctx.translate(0,hipY-HIP);ctx.translate(0,HIP);ctx.rotate(.05);ctx.translate(0,-HIP);
     }else{
     const lift=(ph)=>wk==null?0:Math.max(0,Math.sin(ph))*14;
     const legS=(dir,x,col,sc,sd,ph)=>{const ang=dir*sw*.3;ctx.save();ctx.translate(0,HIP);ctx.rotate(-ang);ctx.translate(0,-HIP);ctx.save();ctx.translate(0,-lift(ph));ctx.translate(x+20,0);ctx.rotate(ang);ctx.translate(-x-20,0);shoe(x,sc,sd);ctx.restore();pant(x,col);ctx.restore()};
@@ -276,6 +302,7 @@ function matheusView(gx,gy,s,view,o){o=o||{};const C=Object.assign({},M7,o.pal||
       m7tubeF([[-8,-374],[-2,-332],[6,-300]],36,C.hoodS);m7tubeF([[6,-300],[40,-296],[74,-310]],34,C.hoodS);m7tubeF([[60,-306],[68,-308],[76,-311]],34,C.hoodD,'butt');m5ell(88,-314,15,14,C.skin);m5ell(92,-310,8,6,C.skinS);
       if(o.hold==='phone'){ctx.save();ctx.translate(96,-340);ctx.rotate(-.3);fRect(-14,-34,28,56,'#14161f',6);fRect(-11,-30,22,46,o.lit?'#8fb0ff':'#2a2e44',3);ctx.restore();if(o.lit){ctx.save();ctx.globalAlpha=.18;fPoly([[100,-360],[60,-520],[-10,-470]],'#9fc0ff');ctx.restore()}}
       if(o.hold==='bowl'){ctx.save();ctx.translate(104,-318);fPoly([[-40,-14],[40,-14],[26,20],[-26,20]],'#e8e2d6');m5ell(0,-14,40,9,'#f2c14e');ctx.globalAlpha=.6;for(let k=0;k<2;k++){const q=((o.t||0)*.6+k/2)%1;m5ell(k*14-6+Math.sin(q*6)*6,-30-q*60,7+q*5,7+q*5,'#fff')}ctx.globalAlpha=1;ctx.restore()}}
+    else if(o._walkArm){m7blob([[22,-300,'s'],[54,-306],[62,-262],[60,-232,'s'],[24,-232,'s'],[32,-262]],C.hood);o._walkArm(true)}
     else{m7tubeF([[-8,-374],[-4,-330],[2,-298]],36,C.hoodS);m7tubeF([[2,-298],[18,-284],[36,-264]],34,C.hoodS);
     m7blob([[22,-300,'s'],[54,-306],[62,-262],[60,-232,'s'],[24,-232,'s'],[32,-262]],C.hood);m7blob([[22,-300],[32,-262],[24,-232],[29,-232],[37,-262],[27,-300]],C.hoodD)}
     // pescoço, gola e cordão
@@ -283,7 +310,7 @@ function matheusView(gx,gy,s,view,o){o=o||{};const C=Object.assign({},M7,o.pal||
     m7blob([[-36,-402],[-18,-414],[28,-412],[40,-400],[22,-388],[-18,-390]],C.hoodL);
     ctx.strokeStyle='#fff';ctx.lineWidth=6;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(30,-398);ctx.quadraticCurveTo(36,-372,33,-348);ctx.stroke();m5ell(33,-344,5,6,'#e9e5df');
     // cabeça de perfil
-    ctx.save();ctx.translate(2,-482);
+    ctx.save();ctx.translate(2,-482);if(wk!=null){ctx.rotate(Math.sin(wk*2-.9)*.025);ctx.translate(0,Math.sin(wk*2-.6)*2)}
     m7blob([[-60,40],[-86,-10],[-90,-60],[-70,-104],[-20,-130],[30,-128],[62,-100],[60,-40],[0,-30],[-30,20]],C.hairD);
     const F=[[-56,-30],[-62,20],[-44,58],[-6,78],[30,82],[52,70],[62,54],[66,46],[64,40],[70,32],[74,24],[86,14],[80,4],[72,0],[70,-24],[64,-56],[30,-80],[-30,-76]];
     m7blob(F,C.skin);ctx.save();m6path(F,true);ctx.clip();m5ell(0,96,70,24,C.skinS);ctx.restore();
