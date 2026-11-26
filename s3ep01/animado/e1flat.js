@@ -25,7 +25,7 @@ function e1Apto(u,o){o=o||{};const N=!o.day;
   // quadro
   fRect(560,420,190,140,N?'#4a5294':'#ffffff',10);fRect(572,432,166,116,N?'#5d69b8':'#ffd9a8',6);fPoly([[580,540],[640,470],[690,520],[730,486],[730,540]],N?'#7d88d6':'#ff9a5e');fCirc(708,462,12,N?'#f5f0d6':'#fff3c4');
   // TV + rack (com o sofá de lado: TV baixa na frente dele, à direita)
-  if(o.noSofa){const TX=880;fRect(TX-10,1180,210,120,N?'#4a3550':'#9a6a46',10);fRect(TX+5,1200,80,10,N?'#5a4262':'#b07e57',5);fRect(TX+105,1200,80,10,N?'#5a4262':'#b07e57',5);
+  if(o.noTV){}else if(o.noSofa){const TX=880;fRect(TX-10,1180,210,120,N?'#4a3550':'#9a6a46',10);fRect(TX+5,1200,80,10,N?'#5a4262':'#b07e57',5);fRect(TX+105,1200,80,10,N?'#5a4262':'#b07e57',5);
     fRect(TX+80,1150,30,30,'#1a1d2e');fRect(TX,1010,190,140,'#1a1d2e',10);fRect(TX+10,1020,170,120,o.tvOn?(Math.floor(u*2)%2?'#5b74e0':'#6a62d9'):'#262a3e',6);
     if(o.tvOn){ctx.save();ctx.globalAlpha=.10;fPoly([[TX,1030],[TX,1140],[300,1500],[300,900]],'#8fa0ff');ctx.restore()}}
   else{  fRect(800,640,250,160,'#1a1d2e',12);fRect(814,654,222,132,o.tvOn?(Math.floor(u*2)%2?'#5b74e0':'#6a62d9'):'#262a3e',6);
