@@ -304,4 +304,4 @@ Todo vídeo, antes de ser postado, TEM que passar por isto — se achar erro, co
 - V4 (s3ep01/animado/audio4.py): tema em Ré menor (Dm–Bb–Gm–A), cordas "orquestrais" (senoides com vibrato), piano com reverb, celo + sub suave, tambores graves; estéreo com reverb. Equilíbrio alvo da trilha: ~50% grave / ~40% médio. Suspense: menos e melhor (stingers de cordas, hits só nos momentos fortes, whoosh só em troca de cena). Música BAIXA (mus*.32, sfx*.34, ducking .6): o usuário achou a V4 alta demais. Voz sempre bem acima da trilha.
 - Usar audio4.py como base dos próximos episódios.
 - Música acompanha o clima da cena: na remodelagem/apresentação do Matheus a trilha é ALEGRE (Ré maior, piano saltitante, palmas — função feliz() no audio4.py); suspense só nas partes de mistério.
-- Na remodelagem: som de torcida "AEEEE" (igual final de campeonato) — função torcida() no audio4.py. SÓ o som, sem desenhar pessoas na tela (pedido do usuário).
+- Na remodelagem: criancinhas gritando "YAAAY" (tipo passar de fase no FNAF) — função torcida() no audio4.py. SÓ o som, sem desenhar pessoas na tela (pedido do usuário).
