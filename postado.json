@@ -292,15 +292,15 @@
    "episodio": "s3ep01",
    "rede": "youtube",
    "horario": "2026-11-26T18:00:00-03:00",
-   "id": "Ras9llGtsPY",
-   "obs": "API oficial (workflow postar-youtube), publish_at 21:00Z"
+   "id": "fIl7KKNP9l8",
+   "obs": "Versão final com trilha nova (enviada 26/11 15h26, publica 18h). O antigo Ras9llGtsPY (música velha) deve ser apagado pelo usuário no YouTube Studio."
   },
   {
    "episodio": "s3ep01",
    "rede": "instagram",
    "horario": "2026-11-26T18:00:00-03:00",
    "id": "RESERVADO",
-   "obs": "Reservado: quem publica é a tarefa "Agenda do Matheus" (agenda.json) com a versão final (commit 6bd49a6). Outras tarefas: NÃO publicar."
+   "obs": "Reservado: quem publica é a tarefa Agenda do Matheus (agenda.json) com a versão final (commit 6bd49a6). Outras tarefas: NÃO publicar."
   }
  ]
 }
