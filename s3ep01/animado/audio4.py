@@ -215,13 +215,13 @@ for at in [FLASH,st(7)+.1,MK['cai']+.05,st(16)+.1,MK['toc1'],MK['naoabre'],MK['f
 def reverb(x,dur=2.2,wet=.22):
     ir=rng.standard_normal(int(dur*SR))*np.exp(-t_(dur)*3.0);ir=lpf(ir,6000);ir/=np.sqrt((ir**2).sum())
     n=len(x)+len(ir);F=np.fft.rfft(x,n)*np.fft.rfft(ir,n);return x+np.fft.irfft(F,n)[:len(x)]*wet
-venv=np.convolve(np.abs(voice),np.ones(int(.08*SR))/int(.08*SR),'same');duck=1-.5*np.clip(venv/(venv.max()*.25),0,1)
+venv=np.convolve(np.abs(voice),np.ones(int(.08*SR))/int(.08*SR),'same');duck=1-.6*np.clip(venv/(venv.max()*.25),0,1)
 ig=np.ones(N);ig[:int(st(1)*SR)]=1.5;ig[int(st(1)*SR):int((st(1)+.6)*SR)]=np.linspace(1.5,1,int(.6*SR))
 duck=np.maximum(duck,.5*hitwin);G=duck*ig*mg
 mL=reverb(musL*G,2.6,.30);mR=reverb(musR*G,2.6,.30)
 sx=reverb(sfx,1.4,.18)
 vo=reverb(voice,.6,.06)
-Lc=vo+mL*1.05+sx*.55;Rc=vo+mR*1.05+sx*.55
+Lc=vo+mL*.6+sx*.45;Rc=vo+mR*.6+sx*.45
 for c in (Lc,Rc):c[-int(.8*SR):]*=np.linspace(1,0,int(.8*SR))
 m=max(np.abs(Lc).max(),np.abs(Rc).max())*1.05
 st2=np.stack([Lc/m,Rc/m],1)
