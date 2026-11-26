@@ -31,7 +31,9 @@ creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"],
                     scopes=["https://www.googleapis.com/auth/youtube.upload"])
 yt = build("youtube", "v3", credentials=creds)
 status = {"privacyStatus": "public", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": False}
-if a.publish_at:
+if a.publish_at == "teste":
+    status.update(privacyStatus="private")
+elif a.publish_at:
     status.update(privacyStatus="private", publishAt=a.publish_at)
 body = {"snippet": {"title": a.title[:100], "description": a.description,
                     "tags": [t.strip() for t in a.tags.split(",") if t.strip()], "categoryId": "1",
@@ -43,5 +45,11 @@ resp = None
 while resp is None:
     st, resp = req.next_chunk()
     if st: print(f"enviando {int(st.progress()*100)}%")
+if a.publish_at == "teste":
+    try:
+        yt.videos().delete(id=resp["id"]).execute()
+        print("TESTE: enviado e APAGADO com sucesso (escopo youtube.force-ssl OK)")
+    except Exception as e:
+        print("TESTE: enviado (privado), mas não consegui apagar:", str(e)[:200])
 print(json.dumps({"id": resp["id"], "url": f"https://youtube.com/shorts/{resp['id']}",
                   "status": resp.get("status", {})}, ensure_ascii=False))
