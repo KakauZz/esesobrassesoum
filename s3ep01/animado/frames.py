@@ -24,7 +24,7 @@ with sync_playwright() as p:
         for t in sys.argv[3:]:
             d=pg.evaluate(f"(()=>{{ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;{FN}({float(t)});return cv.toDataURL('image/jpeg',.85)}})()")
             ims.append(Image.open(io.BytesIO(base64.b64decode(d.split(',')[1]))).convert('RGB'))
-        w,h=360,640;cols=min(len(ims),5);rows=(len(ims)+cols-1)//cols
+        w,h=int(os.environ.get("TW",360)),int(os.environ.get("TW",360))*16//9;cols=min(len(ims),5);rows=(len(ims)+cols-1)//cols
         sh=Image.new('RGB',(w*cols,h*rows))
         for i,im in enumerate(ims): sh.paste(im.resize((w,h)),((i%cols)*w,(i//cols)*h))
         sh.save(sys.argv[2],quality=85)

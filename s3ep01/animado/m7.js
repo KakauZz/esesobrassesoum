@@ -73,12 +73,19 @@ function matheus5(gx,gy,s,o){
     ctx.restore()};
   if(o.sit){// sentado de frente: joelhos vindo pra câmera, canelas descendo, moletom caindo no colo
     const SY=-150;
+    // quadril/bumbum apoiado no assento + colo unindo as coxas ao tronco
+    ctx.save();ctx.globalAlpha=.28;m5ell(0,SY+34,128,22,'#000');ctx.restore();
+    const Lap=[[-84,SY-40,'s'],[84,SY-40,'s'],[96,SY-10],[98,SY+22,'s'],[60,SY+46],[0,SY+30],[-60,SY+46],[-98,SY+22,'s'],[-96,SY-10]];
+    m7blob(Lap,C.jean);
+    ctx.save();m6path(Lap,true);ctx.clip();m7blob([[0,SY-40],[100,SY-40],[100,SY+50],[0,SY+50]],C.jeanS);
+    ctx.globalAlpha=.35;m7blob([[-100,SY-40],[100,SY-40],[100,SY-24],[-100,SY-24]],C.jeanD);ctx.restore();
     for(const side of[-1,1]){const col=side<0?C.jean:C.jeanS,kx=side*50;
       ctx.save();ctx.translate(kx+side*4,30);m7blob([[-34,-2,'s'],[-36,-22],[-24,-40],[0,-44],[24,-40],[36,-22],[34,-2,'s']],C.shoe);m7blob([[-36,-6,'s'],[36,-6,'s'],[35,4],[28,10,'s'],[-28,10,'s'],[-35,4]],C.shoeD);m7blob([[-22,-30],[0,-38],[22,-30],[14,-20],[0,-16],[-14,-20]],C.shoeS);ctx.restore();
       const Sh=[[kx-38,SY+30,'s'],[kx+38,SY+30,'s'],[kx+42,-30],[kx+46,2,'s'],[kx-46,2,'s'],[kx-42,-30]];m7blob(Sh,col);
       ctx.save();m6path(Sh,true);ctx.clip();ctx.globalAlpha=.5;m7blob([[kx-42,-28],[kx-8,-40],[kx+42,-26],[kx-6,-32]],C.jeanD);m7blob([[kx+44,-4],[kx+8,-14],[kx-42,-2],[kx+6,-8]],C.jeanD);ctx.globalAlpha=1;ctx.restore();
       // joelho/coxa vindo pra frente (maior por estar mais perto)
       m5ell(kx,SY+20,48,42,col);ctx.globalAlpha=.4;m5ell(kx+side*8,SY+44,36,12,C.jeanD);m5ell(kx-side*14,SY+4,16,10,'#ffffff');ctx.globalAlpha=1}
+    ctx.save();ctx.globalAlpha=.55;ctx.strokeStyle=C.jeanD;ctx.lineWidth=4;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(0,SY-34);ctx.quadraticCurveTo(2,SY-6,0,SY+20);ctx.stroke();ctx.restore();
     ctx.translate(0,215+SY-40)}
   else{
   leg(-1,o.legL);leg(1,o.legR);

@@ -272,3 +272,8 @@ Objetivo: o viewer não pode enjoar e tem que sair querendo o próximo EP. Antes
 11. **Corte de gordura**: 75–110 s; frase que não avança a história ou não cria tensão sai.
 12. **Teste do enjoo**: assistir a contato a cada 1,5 s e perguntar "eu pararia aqui?" — se sim, refazer aquele trecho.
 13. **CTA final**: "Comenta A ou B" + "segue pra ver o EP. X amanhã às 18h".
+
+### Regras novas (26/11)
+- MÚSICA ACOMPANHA O IMPACTO: em todo momento forte (revelação, mensagem, susto, batida, virada) a trilha "puxa o ar" ~0,45s antes e entra um HIT musical (braam + taiko + kick + cordas) com a trilha voltando mais alta por ~2,5s. Usar `impacto(at,g)` do audio3.py (FORTES g=1, MÉDIOS g=.6).
+- DATA NA TELA = DATA DA POSTAGEM: a tela de bloqueio do celular mostra o dia em que o episódio vai ao ar (ex.: "quinta-feira, 26 de novembro").
+- SENTADO DE FRENTE: sempre com quadril/bumbum apoiado no assento (bloco do colo ligando coxas ao tronco + sombra no estofado). Perna nunca "solta" do corpo.

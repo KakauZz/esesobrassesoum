@@ -212,9 +212,25 @@ stinger(MK['cai']+.05,.6);stinger(MK['naoabre'],.6);stinger(MK['futuro2'],.7)
 stinger(st(28)+.15,.6)   # fora do horário
 creak(st(22)+.4,.35);creak(st(24)+.6,.3);creak(st(26)+.3,.35)   # rangidos no corredor/porta
 reverse_swell(st(32)+.05,1.2,.3)
+# ===== MÚSICA ACOMPANHA O IMPACTO =====
+# antes do impacto a trilha "puxa o ar" (some), no impacto entra um hit musical forte e a trilha volta crescendo
+mg=np.ones(N);hitwin=np.zeros(N)
+def impacto(at,g,notes=(26,33,38),hi=(62,63,69)):
+    a=int(at*SR);pre=int(.45*SR);post=int(2.6*SR)
+    if a-pre>0:mg[a-pre:a]=np.minimum(mg[a-pre:a],np.linspace(1,.2,pre))
+    e=min(N,a+post);mg[a:e]=np.maximum(mg[a:e]*0+1,1+(.7*g)*np.exp(-np.arange(e-a)/SR*1.4))
+    hitwin[a:min(N,a+int(1.4*SR))]=1
+    braam(at,2.4,.95*g,notes);taiko(at,.9*g);kick(at,.8*g);strings(at,1.6,.35*g,hi)
+    add(sfx,reverse_swell_x(.5),at-.5,.3*g)
+def reverse_swell_x(d):
+    tt=t_(d);return lpf(hpf(rng.standard_normal(len(tt)),300)*(tt/d)**3,5000)
+FORTES=[FLASH,st(7)+.1,MK['cai']+.05,st(16)+.1,MK['toc1'],MK['naoabre'],MK['futuro2'],st(28)+.15,st(32),MK['fim']]
+MEDIOS=[st(1),st(9)+.1,st(12)+.1,st(13)+.1,st(17)+.1,st(29)+.1]
+for at in FORTES:impacto(at,1.0,(21,28,33,40))
+for at in MEDIOS:impacto(at,.6)
 venv=np.convolve(np.abs(voice),np.ones(int(.08*SR))/int(.08*SR),'same');duck=1-.55*np.clip(venv/(venv.max()*.25),0,1)
 ig=np.ones(N);ig[:int(st(1)*SR)]=1.7;ig[int(st(1)*SR):int((st(1)+.6)*SR)]=np.linspace(1.7,1,int(.6*SR))
-mix=voice*1.0+mus*.5*duck*ig+sfx*.6
+duck=np.maximum(duck,.8*hitwin);mix=voice*1.0+mus*.5*duck*ig*mg+sfx*.6
 mix[-int(.8*SR):]*=np.linspace(1,0,int(.8*SR))
 mix/=np.abs(mix).max()*1.05
 w=wave.open('/tmp/s3/mix3_raw.wav','wb');w.setnchannels(1);w.setsampwidth(2);w.setframerate(SR);w.writeframes((mix*32767).astype(np.int16).tobytes());w.close()
