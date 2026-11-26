@@ -120,9 +120,7 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
   ctx.save();
   const bl=(sd)=>tzBlink(t,sd);
   switch(i){
-  case 3:{const z=1+.03*p;ctx.translate(540,1100);ctx.scale(z,z);ctx.translate(-540,-1100);e1Apto(t,{tvOn:1});
-    {const wx=lerp(-160,560,clamp(p*1.25));if(p<.8)matheusView(wx,1520,1.3,'side',{t,walk:t*8,expr:'sorriso'});else matheus5(560,1520,1.3,Object.assign({},M5POSES.acenando,{t,armR:[128+Math.sin(t*7)*16,42,'open'],blink:bl(1)}))}
-    ctx.restore();ctx.save();tzKicker('SÃO PAULO',330,seg(u,.2,.5),'#ff7a33');break}
+  case 3:{e1Predio(t,u,D);ctx.restore();ctx.save();break}
   case 4:{e1Apto(t,{tvOn:1});fRect(230,1290,300,190,'#ff7a33',40);fRect(250,1300,260,40,'#ff9a5c',20);
     matheusView(360,1490,1.3,'side',{t,sit:1,hold:'bowl',expr:'feliz',blink:bl(2)});
     tzKicker('UMA NOITE NORMAL',330,seg(u,.1,.4),'#4f5bd5');break}
@@ -269,3 +267,54 @@ function e1Transform(t,A,B){const D=B-A,u=t-A,q=clamp(u/D);
   const fl=Math.max(0,1-Math.abs(q-SC)/.035);if(fl>0){ctx.fillStyle=`rgba(255,250,240,${fl.toFixed(2)})`;ctx.fillRect(0,0,W,H)}
   if(q>CH-.03&&q<CH+.04)e1Glitch(5,Math.floor(t*30))}
 function eIO(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2}
+
+// ===== prédio 3D em São Paulo com zoom na janela do Matheus =====
+function e1Predio(t,u,D){
+  const WIN={x:520,y:842,w:40,h:50};                 // janela do Matheus (mundo)
+  const k=eIO(seg(u,.35,Math.min(D-.5,2.1)));         // progresso do zoom
+  const Z=Math.exp(lerp(Math.log(1),Math.log(26.5),k)); // zoom exponencial
+  const tx=lerp(560,WIN.x+WIN.w/2,Math.min(1,k*1.15)),ty=lerp(900,WIN.y+WIN.h/2,Math.min(1,k*1.15));
+  ctx.save();ctx.translate(540,900);ctx.scale(Z,Z);ctx.translate(-tx,-ty);
+  // céu noturno em faixas
+  for(const [y,c] of [[-3000,'#0c1236'],[300,'#141c4a'],[700,'#1d2660'],[1100,'#2a2f6e']])fRect(-2000,y,5200,4000,c);
+  fCirc(880,240,46,'#f5f0d6');fCirc(862,228,42,'#141c4a');
+  {const r=rng(3);for(let i=0;i<40;i++){fCirc(-400+r()*1900,-200+r()*700,1.5+r()*2,'rgba(255,255,255,.7)')}}
+  // prédios de fundo
+  const r=rng(77);
+  for(let i=0;i<14;i++){const bx=-500+i*150+r()*40,bw=110+r()*60,bh=500+r()*600,by=1700-bh;fRect(bx,by,bw,bh,'#1a2152');fRect(bx+bw,by+20,26,bh-20,'#141a44');
+    for(let yy=by+30;yy<1680;yy+=46)for(let xx=bx+14;xx<bx+bw-18;xx+=30)if(r()<.35)fRect(xx,yy,14,20,r()<.8?'#ffd27a':'#9fc0ff');
+    if(r()<.5){fRect(bx+bw/2-2,by-60,4,60,'#2a3168');if(Math.sin(t*3+i)>0)fCirc(bx+bw/2,by-62,6,'#ff4d4d')}}
+  // PRÉDIO DO MATHEUS (frente + lateral + teto = 3D)
+  const X0=360,X1=700,Y0=360,Y1=1700,DX=150,DY=-70;
+  fPoly([[X1,Y0],[X1+DX,Y0+DY],[X1+DX,Y1+DY],[X1,Y1]],'#3a4385');                 // lateral
+  fPoly([[X0,Y0],[X1,Y0],[X1+DX,Y0+DY],[X0+DX,Y0+DY]],'#5a64b0');                   // teto
+  fRect(X0,Y0,X1-X0,Y1-Y0,'#4b56a3');                                               // frente
+  fRect(X0,Y0-14,X1-X0,14,'#626dbd');fPoly([[X1,Y0-14],[X1+DX,Y0+DY-14],[X1+DX,Y0+DY],[X1,Y0]],'#4a5398');
+  // caixa d'água e antena
+  fPoly([[430,Y0-10],[540,Y0-10],[560,Y0-30],[450,Y0-30]],'#6a74c4');fRect(460,Y0-120,90,90,'#7d87d6',8);fPoly([[550,Y0-120],[590,Y0-140],[590,Y0-50],[550,Y0-30]],'#5d67b5');
+  fRect(640,Y0-220,6,200,'#7d87d6');if(Math.sin(t*4)>0)fCirc(643,Y0-224,8,'#ff4d4d');
+  // janelas da frente
+  const rw=rng(5);
+  for(let row=0;row<22;row++)for(let col=0;col<5;col++){const x=380+col*64,y=Y0+40+row*58;if(y>Y1-80)continue;
+    const me=(Math.abs(x-WIN.x)<2&&Math.abs(y-WIN.y)<2);const lit=me||rw()<.38;
+    fRect(x-4,y-4,WIN.w+8,WIN.h+8,'#3d478f',4);fRect(x,y,WIN.w,WIN.h,me?'#ffe7a3':(lit?'#ffd27a':'#232a5e'),2);
+    if(!me&&lit)fRect(x,y,WIN.w,8,'rgba(255,255,255,.25)');}
+  // janelas da lateral (inclinadas)
+  for(let row=0;row<22;row++)for(let c=0;c<2;c++){const y=Y0+40+row*58;if(y>Y1-80)continue;const x=X1+20+c*62;const sk=DY*(20+c*62)/DX;
+    fPoly([[x,y+sk],[x+38,y+sk+DY*38/DX],[x+38,y+46+sk+DY*38/DX],[x,y+46+sk]],rw()<.3?'#e0b860':'#1c2250')}
+  // portaria + rua
+  fRect(X0+120,Y1-110,100,110,'#ffd27a',6);fRect(X0+110,Y1-124,120,14,'#2a3168');
+  fRect(-2000,Y1,5200,400,'#141832');for(let i=0;i<8;i++){const lx=-300+i*240;fRect(lx,Y1-160,8,160,'#2a3168');fCirc(lx+4,Y1-164,12,'#ffe7a3')}
+  {const q=(t*.8)%1;for(let i=0;i<6;i++){fRect(-600+((q+i/6)%1)*2200,Y1+70,70,10,'#ff5a5a');fRect(1600-((q+i/6+.3)%1)*2200,Y1+110,70,10,'#fff2c4')}}
+  // ---- dentro da janela do Matheus ----
+  ctx.save();ctx.beginPath();ctx.rect(WIN.x,WIN.y,WIN.w,WIN.h);ctx.clip();ctx.translate(WIN.x,WIN.y);const sc=WIN.w/1080;ctx.scale(sc,sc);
+  fRect(0,0,1080,1350,'#ffcf8a');fRect(0,1000,1080,350,'#e9a964');fRect(0,990,1080,14,'#c98a4e');
+  fRect(700,240,220,280,'#ff7a33',12);fCirc(810,350,60,'#ffd23f');                        // pôster
+  fPoly([[120,320],[220,320],[205,250],[135,250]],'#fff3c4');fRect(166,320,8,560,'#7a4a2c');     // abajur
+  matheus5(540,1320,1.15,Object.assign({},M5POSES.acenando,{t,armR:[128+Math.sin(t*8)*18,42,'open'],expr:'feliz'}));
+  fPoly([[0,0],[150,0],[110,1350],[0,1350]],'#ff8a3d');fPoly([[1080,0],[930,0],[970,1350],[1080,1350]],'#ff8a3d'); // cortinas
+  ctx.restore();
+  ctx.restore();
+  // balão "OI!"
+  const ob=seg(u,Math.min(D-.5,2.1),Math.min(D-.5,2.1)+.25);if(ob>0){ctx.save();ctx.translate(820,430);const s=easeBack(Math.min(1,ob));ctx.scale(s,s);fRect(-110,-70,220,140,'#fff',60);fPoly([[-50,50],[-90,110],[-10,60]],'#fff');txtC('OI!',0,4,'700 90px Oswald','#ff7a33');ctx.restore()}
+  if(k<.6)tzKicker('SÃO PAULO',300,seg(u,.05,.35)*(1-seg(k,.4,.6)),'#ff7a33')}

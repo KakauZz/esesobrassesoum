@@ -55,7 +55,23 @@ SCAN0=st(2)+(L[3]['a']-L[2]['a'])*.42
 P1,P2,P3,P4,P5=st(4),st(19),st(21),st(33),T
 # parte 1 (intro brilhante)
 chords1=[[48,55,64,67],[45,52,60,64],[41,48,57,65],[43,50,59,67]]
-t=0.;k=0
+# ===== GANCHO DOS 5 PRIMEIROS SEGUNDOS: trilha de trailer =====
+I0=st(1);FUT=MK['fut0']
+def braam(at,d,g,notes=(26,33,38)):
+    tt=t_(d);x=sum(saw(mtof(n),d) for n in notes)/len(notes);x=np.tanh(2.2*x);x=lpf(x,900)*np.minimum(1,tt/.04)*np.exp(-tt*1.1);add(mus,x,at,g)
+def taiko(at,g):
+    tt=t_(.7);f=60+90*np.exp(-tt*18);x=np.sin(2*np.pi*np.cumsum(f)/SR)*np.exp(-tt*5)+lpf(rng.standard_normal(len(tt)),700)*np.exp(-tt*18)*.6;add(mus,x,at,g)
+def strings(at,d,g,notes):
+    tt=t_(d);x=sum(saw(mtof(n),d) for n in notes)/len(notes);trem=.6+.4*np.sign(np.sin(2*np.pi*12*tt));x=lpf(x,2600)*trem*np.linspace(.15,1,len(tt))**1.5;add(mus,x,at,g)
+braam(.30,2.2,.9)                                   # impacto do celular caindo
+strings(.6,FUT-.6,.35,(57,60,64,69))                # cordas tremendo subindo até "do futuro"
+for k_,tk in enumerate([1.1,1.8,2.4,2.9,3.3,3.6,3.8]):taiko(tk,.55+k_*.05)  # tambores acelerando
+for k_ in range(int((FUT-.5)/.25)):tt=t_(.03);add(mus,hpf(rng.standard_normal(len(tt)),5000)*np.exp(-tt*250),.5+k_*.25,.18)  # tique-taque 23:59
+braam(FUT,2.6,1.0,(21,28,33,40));taiko(FUT,1.0);kick(FUT,1.0)  # DROP em "do futuro"
+# batida pesada até "esse é você"
+tq=FUT+beat
+while tq<I0:kick(tq,.7);hat(tq+beat/2,.2);tq+=beat
+t=I0;k=0
 while t<P1:
     ch=chords1[(k//4)%4]
     if k%4==0:pad(ch,t,beat*4+.3,.22)
@@ -166,7 +182,8 @@ add(sfx,pop(1100,500),st(33)+.1,.45);add(sfx,pop(1100,500),st(34)+.1,.45)
 add(sfx,riser(1.0),MK.get('fim',97.7)-1.0,.25);add(sfx,boom(1.4),MK.get('fim',97.7),.8);add(sfx,shimmer(1.4),MK.get('fim',97.7),.3)
 # ---------- mix ----------
 venv=np.convolve(np.abs(voice),np.ones(int(.08*SR))/int(.08*SR),'same');duck=1-.55*np.clip(venv/(venv.max()*.25),0,1)
-mix=voice*1.0+mus*.5*duck+sfx*.6
+ig=np.ones(N);ig[:int(st(1)*SR)]=1.7;ig[int(st(1)*SR):int((st(1)+.6)*SR)]=np.linspace(1.7,1,int(.6*SR))
+mix=voice*1.0+mus*.5*duck*ig+sfx*.6
 mix[-int(.8*SR):]*=np.linspace(1,0,int(.8*SR))
 mix/=np.abs(mix).max()*1.05
 w=wave.open('/tmp/s3/mix3_raw.wav','wb');w.setnchannels(1);w.setsampwidth(2);w.setframerate(SR);w.writeframes((mix*32767).astype(np.int16).tobytes());w.close()
