@@ -285,3 +285,9 @@ Todo vídeo, antes de ser postado, TEM que passar por isto — se achar erro, co
 3. Checar áudio: voz clara, música bem presente e batendo nos impactos, sem estouro, sem silêncio estranho.
 4. Só posta depois de tudo OK. Se não der pra corrigir a tempo, avisar o Kakau em vez de postar com erro.
 - Música: trilha BEM aparente (mus*.85, ducking leve .38), não só fundo.
+
+### Aprendizados 26/11 (S3 EP1 aprovado pelo usuário)
+- TODA cena tem que usar o cenário atualizado (flat) do lugar certo. Nada de cena "esquecida" com cenário antigo nem Matheus inclinado/diagonal. Em pé na sala: na FRENTE da mesinha (maior, mais perto da câmera), com sombra no chão.
+- Efeitos sonoros em TODO momento com ação: usar o pacote s3ep02/sfx (função SF() no audio3.py): passos, porta, olho mágico, caixa, celular vibrando, mensagem do futuro, glitch, coração, relógio, ambiente tenso.
+- Músicas do EP2 prontas em s3ep02/musicas (faixa1 abertura, faixa2 suspense, faixa3 revelação). Misturar pelos momentos e manter os HITs de impacto.
+- Foto de perfil oficial: perfil/foto_perfil_matheus.png (gerada por perfil/pfp.js).
