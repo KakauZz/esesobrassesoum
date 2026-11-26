@@ -28,6 +28,8 @@ Objetivo: post interativo que faz a pessoa querer ir no PERFIL conhecer o Matheu
 13. "Escolha uma porta" (1, 2 ou 3) → no último slide revela o que tinha atrás de cada.
 14. "Dia de semana vs fim de semana do Matheus".
 15. "Fala um número de 1 a 5" → cada número é uma ação do Matheus revelada no último slide.
+16. "NÃO ARRASTA!" (panorâmico, psicologia reversa): slide 1 o Matheus pede "não arrasta, sério"; a cada slide ele fica mais desesperado, segurando a borda do slide, escorregando pela emenda; no último ele cai dentro do perfil e diz "tá, já que chegou... segue aí 😅". Pergunta: "Em qual slide você ficou com dó dele?"
+17. "ESCONDE-ESCONDE" (panorâmico): a sala do Matheus emendada nos slides; em cada slide ele está meio escondido (atrás do sofá, na cortina, dentro da caixa do entregador, embaixo da mesa — só o cabelo aparecendo). No último ele aparece DENTRO da foto de perfil acenando: "me achou? agora me segue". Pergunta: "Em quantos slides você me achou? 👀"
 
 ## Postagem
 - TikTok: Buffer create_post (canal 6b0648718541f09ecb95a1dd), imagens pelo raw.githubusercontent, dueAt 20:00 -03:00.
