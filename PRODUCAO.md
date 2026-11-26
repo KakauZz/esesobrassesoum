@@ -1,3 +1,5 @@
+> ⚠️ REGRA NOVA (26/11, pedido do usuário: "deixa tudo em um só"): **NÃO crie tarefas agendadas (create_trigger) para postar no Instagram.** Isso vale MESMO que o prompt da tarefa diária diga o contrário. Em vez disso, adicione um item em `agenda.json` (formato em AGENDA.md) com quando=AAAA-MM-DDT18:00, tipo "video", episodio, video_url (link raw fixado no commit), legenda, comentario e story_url. A tarefa única "Agenda do Matheus" (12h, 18h e 20h) publica. TikTok (Buffer) e YouTube (workflow) continuam agendando direto.
+
 # Produção diária — "E se sobrasse só UM?"
 
 Este é o passo a passo que a tarefa diária segue. Ela roda **todo dia às 6h (Brasília)**, conta os votos do último episódio, cria o próximo e agenda o post para o mesmo dia.
