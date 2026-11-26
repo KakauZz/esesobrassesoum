@@ -141,7 +141,9 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
   case 11:{e1Apto(t,{tvOn:1});const z=1.25;ctx.translate(540,1300);ctx.scale(z,z);ctx.translate(-540,-1300);
     const J=MK.cai!=null?MK.cai-a:D*.55;
     fRect(180,1220,40,280,'#6b4630',10);fRect(180,1330,260,30,'#8a5a3a',10);fRect(200,1360,18,140,'#6b4630');fRect(400,1360,18,140,'#6b4630');
-    if(u<J)matheusView(300,1500,1.3,'side',{t,sit:1,expr:'desconfiado',lookS:3,blink:0});else matheus5(300,1500-Math.max(0,Math.sin(seg(u,J,J+.5)*Math.PI))*60,1.3,{expr:'assustado',t,armL:[38,-150,'open'],armR:[38,-150,'open'],blink:0});
+    {const kT=seg(u,J-.08,J+.22);const dSide=()=>matheusView(300,1500,1.3,'side',{t,sit:1,expr:kT>0?'assustado':'desconfiado',lookS:3,blink:0});
+     const jy=Math.max(0,Math.sin(seg(u,J+.1,J+.6)*Math.PI))*60;const dFront=()=>matheus5(300,1500-jy,1.3,{expr:'assustado',t,armL:[38,-150,'open'],armR:[38,-150,'open'],blink:0,lift:0});
+     if(kT<=0)dSide();else if(kT<1)e1Turn(kT,dSide,dFront,300,1500);else dFront()}
     e1Table(700,1360,1,{bowl:1,phone:1,u:t});
     // copo cai
     const cf=seg(u,J-.1,J+.45);const cx=820+cf*70,cy=1336+(cf<.3?0:Math.pow((cf-.3)/.7,2)*160),rot=Math.min(1.57,cf*3);e1Cup(cx,cy,1,rot,cf<.25);
@@ -163,7 +165,7 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
     ctx.fillStyle='#2a2e3a';ctx.beginPath();ctx.moveTo(660,1150);ctx.lineTo(880,1150);ctx.lineTo(860,960);ctx.lineTo(680,960);ctx.closePath();ctx.fill();ctx.fillStyle='#9fc4ff';ctx.beginPath();ctx.moveTo(672,1140);ctx.lineTo(868,1140);ctx.lineTo(850,972);ctx.lineTo(690,972);ctx.closePath();ctx.fill();
     if(i===19){ctx.fillStyle='#fff';for(let k=0;k<5;k++)ctx.fillRect(700,990+k*28,(60+((t*80+k*40)%100)),8)}
     e1Cup(950,1150,.7,0,1);
-    if(i===18){matheusView(lerp(-150,420,clamp(p*1.2)),1520,1.3,'side',{t,walk:p<.83?t*6.5:null,expr:'pensativo'})}
+    if(i===18){const q=clamp(p/.85);const xw=lerp(-150,420,1-Math.pow(1-q,1.7));const sd=Math.pow(clamp((.85-p)/.25),.8);matheusView(xw,1520,1.3,'side',{t,walk:t*6.5,stride:sd,expr:'pensativo'})}
     else{fRect(300,1190,40,300,'#3a3f52',10);fRect(300,1330,250,30,'#4a5066',10);fRect(410,1360,20,140,'#3a3f52');matheusView(420,1500,1.3,'side',{t,sit:1,hold:'type',expr:'feliz',blink:bl(5)})}
     tzKicker(i===18?'NO DIA SEGUINTE':'HOME OFFICE',330,seg(u,.1,.4),'#ff7a33');break}
   case 20:{const ks=[MK.toc1,MK.toc2,MK.toc3].map(x=>x!=null?x-a:null);let kn=0;ks.forEach((k,j)=>{const kk=k??(D*.4+j*.4);if(u>=kk)kn=Math.max(kn,1-seg(u,kk,kk+.22))});
@@ -174,7 +176,10 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
     ctx.fillStyle='#3a2418';rr(740,400,330,900,8);ctx.fill();ctx.fillStyle='#6b4026';rr(756,416,298,884,6);ctx.fill();ctx.fillStyle='rgba(0,0,0,.16)';rr(790,450,230,330,6);ctx.fill();rr(790,820,230,440,6);ctx.fill();ctx.fillStyle='#d8b35a';ctx.beginPath();ctx.arc(784,880,15,0,7);ctx.fill();ctx.fillStyle='rgba(255,220,150,.6)';ctx.fillRect(756,1296,298,6);
     const kn=Math.max(0,Math.sin(u*14))*(u<1.2?1:0);ctx.save();ctx.translate(kn*4,0);ctx.restore();
     fRect(200,1290,280,190,'#ff7a33',40);fRect(220,1300,240,40,'#ff9a5c',20);
-    if(u<.35)matheus5(340,1500,1.3,{sit:1,expr:'feliz',t,look:1,blink:bl(3)});else matheus5(340,1500-Math.max(0,Math.sin(clamp((u-.35)/.6)*Math.PI))*90,1.35,{expr:'surpreso',t,head:6,look:1,armL:[60,-20,'open'],armR:[60,-20,'open'],blink:0});break}
+    {const k=seg(u,.28,.52);const sq=(sy,f)=>{ctx.save();ctx.translate(340,1500);ctx.scale(1/Math.sqrt(sy),sy);ctx.translate(-340,-1500);f();ctx.restore()};
+     if(k<.5)sq(1-.12*eIO(k*2),()=>matheus5(340,1500,1.3,{sit:1,expr:k>0?'surpreso':'feliz',t,look:1,blink:k>0?0:bl(3)}));
+     else{const up=seg(u,.52,1.1);const jy=Math.max(0,Math.sin(up*Math.PI))*90;const sy=k<1?lerp(1.12,1,eIO((k-.5)*2)):1+.03*Math.sin(up*Math.PI);
+       sq(sy,()=>matheus5(340,1500-jy,1.3,{expr:'surpreso',t,head:6,look:1,armL:[lerp(14,60,eIO(clamp((k-.5)*2))),-20,'open'],armR:[lerp(14,60,eIO(clamp((k-.5)*2))),-20,'open'],blink:0}))}}break}
   case 22:{ctx.fillStyle=lg(0,H,['#1b1f45','#2a2f5e']);ctx.fillRect(0,0,W,H);matheus5(540,2150,2.6,{expr:'assustado',t,blink:0});
     e1Bubble(540,330,1.25,['NÃO ABRE A PORTA'],1,seg(u,MK.naoabre!=null?MK.naoabre-a-.1:D*.45,(MK.naoabre!=null?MK.naoabre-a-.1:D*.45)+.3),'MENSAGEM DE ONTEM');break}
   case 23: case 24:{e1Peep(t,i===24);if(i===23)tzKicker('OLHO MÁGICO',140,seg(u,.1,.4),'#5a6178');else tzKicker('“ENTREGA PRO MATHEUS!”',140,seg(u,.05,.3),'#c33');break}
@@ -324,3 +329,6 @@ function e1SofaF(x0,x1,fy,s){const hip=fy-150*s;
   fRect(x0+50*s,fy-24*s,26*s,24*s,'#3a2f63');fRect(x1-76*s,fy-24*s,26*s,24*s,'#3a2f63');
   fRect(x0-50*s,hip-110*s,100*s,fy-hip+80*s,'#5d4f9a',36*s);fRect(x1-50*s,hip-110*s,100*s,fy-hip+80*s,'#5d4f9a',36*s);
   fRect(x0+60*s,hip-250*s,170*s,120*s,'#7a6bc0',30*s)}
+
+function e1Turn(k,drawA,drawB,x,y){const sx=k<.5?lerp(1,.45,eIO(k*2)):lerp(.45,1,eIO((k-.5)*2));const sy=1+.05*Math.sin(Math.PI*k);
+  ctx.save();ctx.translate(x,y);ctx.scale(sx,sy);ctx.translate(-x,-y);if(k<.5)drawA();else drawB();ctx.restore()}

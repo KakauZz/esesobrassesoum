@@ -260,9 +260,9 @@ function matheusView(gx,gy,s,view,o){o=o||{};const C=Object.assign({},M7,o.pal||
       ctx.translate(0,215+SY);
     }else if(wk!=null){
       const L1=98,L2=94,FT=30;
-      const legPose=(ph)=>{const th=25*Math.sin(ph)*D2R;const kn=(5+55*Math.pow(Math.max(0,Math.cos(ph)),1.4))*D2R;
+      const SD=o.stride==null?1:o.stride;const legPose=(ph)=>{const th=25*SD*Math.sin(ph)*D2R;const kn=(5*SD+55*SD*Math.pow(Math.max(0,Math.cos(ph)),1.4))*D2R;
         const kx=Math.sin(th)*L1,ky=Math.cos(th)*L1,a2=th-kn,ax=kx+Math.sin(a2)*L2,ay=ky+Math.cos(a2)*L2;
-        const fa=.45*Math.max(0,Math.cos(ph))*(.5-.5*Math.sin(ph))-.14*Math.max(0,Math.sin(ph))*Math.max(0,-Math.cos(ph)+.3);return {kx,ky,ax,ay,fa}};
+        const fa=SD*(.45*Math.max(0,Math.cos(ph))*(.5-.5*Math.sin(ph))-.14*Math.max(0,Math.sin(ph))*Math.max(0,-Math.cos(ph)+.3));return {kx,ky,ax,ay,fa}};
       const A=legPose(wk),B=legPose(wk+Math.PI);const hipY=-FT-Math.max(A.ay,B.ay);
       const drawLeg=(P,x0,col,sc,sd,front)=>{
         ctx.save();ctx.translate(x0+P.ax,hipY+P.ay+FT);ctx.rotate(P.fa);shoe(-10,sc,sd);ctx.restore();
@@ -277,13 +277,13 @@ function matheusView(gx,gy,s,view,o){o=o||{};const C=Object.assign({},M7,o.pal||
           m7blob([[-22,-30,'s'],[24,-30,'s'],[26,30],[20,36,'s'],[-18,36,'s'],[-24,30]],C.jeanD);m7blob([[-20,-28,'s'],[22,-28,'s'],[24,28],[18,32,'s'],[-16,32,'s'],[-22,28]],col);m7blob([[-26,-34,'s'],[26,-34,'s'],[26,-12,'s'],[-26,-12,'s']],C.jeanS);m5ell(0,-24,3.5,3.5,'#c9b37a');ctx.restore()}};
       drawLeg(B,-8,C.jeanS,C.shoeS,C.shoeD,false);
       // braço de trás (balança ao contrário)
-      o._walkArm=(near)=>{const dir=near?-1:1;const ph=Math.sin(wk)*dir;const a1=26*ph*D2R,bend=(22+18*Math.max(0,ph))*D2R;const sx=-6,sy=-372;
+      o._walkArm=(near)=>{const dir=near?-1:1;const ph=Math.sin(wk)*dir*SD;const a1=26*ph*D2R,bend=(22+18*Math.max(0,ph))*D2R;const sx=-6,sy=-372;
         const ex=sx+Math.sin(a1)*74,ey=sy+Math.cos(a1)*74,hx=ex+Math.sin(a1+bend)*60,hy=ey+Math.cos(a1+bend)*60;const col=near?C.hoodS:C.hoodD;
         m7tubeF([[sx,sy],[(sx+ex)/2,(sy+ey)/2],[ex,ey]],36,col);m7tubeF([[ex,ey],[(ex+hx)/2,(ey+hy)/2],[hx,hy]],34,col);
         const cx=ex+(hx-ex)*.8,cy=ey+(hy-ey)*.8;m7tubeF([[cx,cy],[(cx+hx)/2,(cy+hy)/2],[hx,hy]],34,near?C.hoodD:'#b8440a','butt');m5ell(hx+Math.sin(a1+bend)*10,hy+Math.cos(a1+bend)*10,14,15,near?C.skin:C.skinS)};
-      ctx.save();ctx.translate(0,hipY-HIP);ctx.translate(0,HIP);ctx.rotate(.05);ctx.translate(0,-HIP);o._walkArm(false);ctx.restore();
+      ctx.save();ctx.translate(0,hipY-HIP);ctx.translate(0,HIP);ctx.rotate(.05*SD);ctx.translate(0,-HIP);o._walkArm(false);ctx.restore();
       drawLeg(A,10,C.jean,C.shoe,C.shoeS,true);
-      ctx.translate(0,hipY-HIP);ctx.translate(0,HIP);ctx.rotate(.05);ctx.translate(0,-HIP);
+      ctx.translate(0,hipY-HIP);ctx.translate(0,HIP);ctx.rotate(.05*SD);ctx.translate(0,-HIP);
     }else{
     const lift=(ph)=>wk==null?0:Math.max(0,Math.sin(ph))*14;
     const legS=(dir,x,col,sc,sd,ph)=>{const ang=dir*sw*.3;ctx.save();ctx.translate(0,HIP);ctx.rotate(-ang);ctx.translate(0,-HIP);ctx.save();ctx.translate(0,-lift(ph));ctx.translate(x+20,0);ctx.rotate(ang);ctx.translate(-x-20,0);shoe(x,sc,sd);ctx.restore();pant(x,col);ctx.restore()};
@@ -310,7 +310,7 @@ function matheusView(gx,gy,s,view,o){o=o||{};const C=Object.assign({},M7,o.pal||
     m7blob([[-36,-402],[-18,-414],[28,-412],[40,-400],[22,-388],[-18,-390]],C.hoodL);
     ctx.strokeStyle='#fff';ctx.lineWidth=6;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(30,-398);ctx.quadraticCurveTo(36,-372,33,-348);ctx.stroke();m5ell(33,-344,5,6,'#e9e5df');
     // cabeça de perfil
-    ctx.save();ctx.translate(2,-482);if(wk!=null){ctx.rotate(Math.sin(wk*2-.9)*.025);ctx.translate(0,Math.sin(wk*2-.6)*2)}
+    ctx.save();ctx.translate(2,-482);if(wk==null&&!o.still){ctx.rotate(Math.sin(t*1.35)*.018);ctx.translate(0,Math.sin(t*2.4)*1.5)}if(wk!=null){ctx.rotate(Math.sin(wk*2-.9)*.025);ctx.translate(0,Math.sin(wk*2-.6)*2)}
     m7blob([[-60,40],[-86,-10],[-90,-60],[-70,-104],[-20,-130],[30,-128],[62,-100],[60,-40],[0,-30],[-30,20]],C.hairD);
     const F=[[-56,-30],[-62,20],[-44,58],[-6,78],[30,82],[52,70],[62,54],[66,46],[64,40],[70,32],[74,24],[86,14],[80,4],[72,0],[70,-24],[64,-56],[30,-80],[-30,-76]];
     m7blob(F,C.skin);ctx.save();m6path(F,true);ctx.clip();m5ell(0,96,70,24,C.skinS);ctx.restore();
