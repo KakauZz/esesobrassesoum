@@ -228,9 +228,9 @@ FORTES=[FLASH,st(7)+.1,MK['cai']+.05,st(16)+.1,MK['toc1'],MK['naoabre'],MK['futu
 MEDIOS=[st(1),st(9)+.1,st(12)+.1,st(13)+.1,st(17)+.1,st(29)+.1]
 for at in FORTES:impacto(at,1.0,(21,28,33,40))
 for at in MEDIOS:impacto(at,.6)
-venv=np.convolve(np.abs(voice),np.ones(int(.08*SR))/int(.08*SR),'same');duck=1-.55*np.clip(venv/(venv.max()*.25),0,1)
+venv=np.convolve(np.abs(voice),np.ones(int(.08*SR))/int(.08*SR),'same');duck=1-.38*np.clip(venv/(venv.max()*.25),0,1)
 ig=np.ones(N);ig[:int(st(1)*SR)]=1.7;ig[int(st(1)*SR):int((st(1)+.6)*SR)]=np.linspace(1.7,1,int(.6*SR))
-duck=np.maximum(duck,.8*hitwin);mix=voice*1.0+mus*.5*duck*ig*mg+sfx*.6
+duck=np.maximum(duck,.8*hitwin);mix=voice*1.0+mus*.85*duck*ig*mg+sfx*.6
 mix[-int(.8*SR):]*=np.linspace(1,0,int(.8*SR))
 mix/=np.abs(mix).max()*1.05
 w=wave.open('/tmp/s3/mix3_raw.wav','wb');w.setnchannels(1);w.setsampwidth(2);w.setframerate(SR);w.writeframes((mix*32767).astype(np.int16).tobytes());w.close()

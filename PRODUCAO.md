@@ -277,3 +277,11 @@ Objetivo: o viewer não pode enjoar e tem que sair querendo o próximo EP. Antes
 - MÚSICA ACOMPANHA O IMPACTO: em todo momento forte (revelação, mensagem, susto, batida, virada) a trilha "puxa o ar" ~0,45s antes e entra um HIT musical (braam + taiko + kick + cordas) com a trilha voltando mais alta por ~2,5s. Usar `impacto(at,g)` do audio3.py (FORTES g=1, MÉDIOS g=.6).
 - DATA NA TELA = DATA DA POSTAGEM: a tela de bloqueio do celular mostra o dia em que o episódio vai ao ar (ex.: "quinta-feira, 26 de novembro").
 - SENTADO DE FRENTE: sempre com quadril/bumbum apoiado no assento (bloco do colo ligando coxas ao tronco + sombra no estofado). Perna nunca "solta" do corpo.
+
+### ⛔ REVISÃO OBRIGATÓRIA ANTES DE POSTAR (nunca postar vídeo com erro)
+Todo vídeo, antes de ser postado, TEM que passar por isto — se achar erro, corrige, renderiza de novo e revisa de novo:
+1. Gerar folha de contato do MP4 final (`ffmpeg -i final.mp4 -vf "fps=1/2.5,scale=216:384,tile=8x6" -frames:v 1 qa.jpg`) e OLHAR quadro a quadro + frames inteiros nos momentos-chave.
+2. Checar: corpo (pernas ligadas ao tronco, quadril sentado, nada flutuando/atravessando), profundidade (encosto atrás, mesa na frente), continuidade de cenário, datas/horas na tela batendo com a história (dia 1 = data da postagem, dia 2 = dia seguinte), texto da legenda igual à fala, nada cortado na tela, teaser do próximo EP no fim.
+3. Checar áudio: voz clara, música bem presente e batendo nos impactos, sem estouro, sem silêncio estranho.
+4. Só posta depois de tudo OK. Se não der pra corrigir a tempo, avisar o Kakau em vez de postar com erro.
+- Música: trilha BEM aparente (mus*.85, ducking leve .38), não só fundo.
