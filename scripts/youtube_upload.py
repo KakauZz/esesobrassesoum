@@ -28,8 +28,12 @@ if blob:
 creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"],
                     token_uri="https://oauth2.googleapis.com/token",
                     client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"],
-                    scopes=["https://www.googleapis.com/auth/youtube.upload"])
+                    scopes=["https://www.googleapis.com/auth/youtube.upload","https://www.googleapis.com/auth/youtube.force-ssl"])
 yt = build("youtube", "v3", credentials=creds)
+if a.publish_at.startswith("apagar:"):
+    for vid in a.publish_at[7:].split(","):
+        yt.videos().delete(id=vid.strip()).execute(); print("APAGADO", vid.strip())
+    sys.exit(0)
 status = {"privacyStatus": "public", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": False}
 if a.publish_at == "teste":
     status.update(privacyStatus="private")
