@@ -21,8 +21,13 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YOUTUBE_IDS: ${{ secrets.YOUTUBE_IDS }}
+          IN_VIDEO: ${{ inputs.video }}
+          IN_TITLE: ${{ inputs.title }}
+          IN_DESC: ${{ inputs.description }}
+          IN_PUB: ${{ inputs.publish_at }}
         run: |
-          python scripts/youtube_upload.py --video "${{ inputs.video }}" --title "${{ inputs.title }}" \
-            --description "${{ inputs.description }}" --publish_at "${{ inputs.publish_at }}" | tee saida_youtube.txt
+          set -o pipefail
+          python scripts/youtube_upload.py --video "$IN_VIDEO" --title "$IN_TITLE" \
+            --description "$IN_DESC" --publish_at "$IN_PUB" | tee saida_youtube.txt
       - uses: actions/upload-artifact@v4
         with: {name: resultado, path: saida_youtube.txt}
