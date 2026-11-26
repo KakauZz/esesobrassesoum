@@ -256,3 +256,19 @@ Meça todo dia: se a média assistida no TikTok não subir dos 11 s do EP. 4, de
 - **Som da T3:** trilha e efeitos de SUSPENSE o episódio todo (drone grave, piano esparso, relógio, coração nos momentos tensos, stingers nas viradas) + gancho de trailer forte nos 5 primeiros segundos (BRAAAM, tambores acelerando, drop na palavra-chave). Ver `s3ep01/animado/audio3.py`.
 - **Continuidade e profundidade (T3):** a sala do Matheus é SEMPRE a mesma: sofá de FRENTE no centro (`e1SofaF`, encosto aparecendo atrás dele por causa da profundidade), mesa de centro NA FRENTE do sofá, mais perto da câmera (`e1TableFront`), e a TV na parede oposta (aparece só no plano de costas, por cima do encosto). Tudo com profundidade na ordem certa (o que está atrás desenha antes; nada 'dentro' do personagem). Não inventar cadeira/mesa/puff novos entre cenas do mesmo lugar.
 - **Ângulos:** preferir cenas DE FRENTE (a favorita do usuário) e DE COSTAS; lado só quando precisar (andando).
+
+## FÓRMULA DE RETENÇÃO (obrigatória em TODO episódio — pedido do usuário 26/11)
+Objetivo: o viewer não pode enjoar e tem que sair querendo o próximo EP. Antes de renderizar, conferir cada item:
+1. **0–3 s = gancho**: "Imagine..." + imagem forte + som forte (BRAAAM/drop). Nunca abrir com contexto morno.
+2. **Recap relâmpago (≤5 s)** do episódio anterior: comentários subindo até +9999 e "VENCEU X" (sem números reais).
+3. **Mistério central do EP** plantado nos primeiros 10 s (uma pergunta que o viewer quer ver respondida).
+4. **Virada a cada 8–10 s**: troca de cena, revelação, susto, piada ou personagem novo. Nenhum plano parado mais de ~4 s; nenhuma ideia repetida mais de 10 s.
+5. **Recompensas parciais**: responder pequenas coisas no meio, mas nunca a pergunta principal.
+6. **Mini-cliffhanger nos últimos 15 s**: uma revelação NOVA que muda tudo, logo antes da votação.
+7. **Votação com peso**: duas opções tentadoras e arriscadas, com consequência clara no próximo EP (nunca uma opção óbvia).
+8. **Teaser do próximo EP** no cartão final: uma imagem/silhueta misteriosa + frase "AMANHÃ 18H: ..." (nunca só "em breve").
+9. **Variedade de temporada**: alternar lugares, horários (noite/dia), personagens extras (mãe, Lucas, vó, entregador, Matheus do futuro…), alívio cômico curto entre tensões, ângulos (frente/costas). Não repetir a estrutura de cenas do EP anterior.
+10. **Pistas/easter eggs** (relógio, números, objetos, mensagens) pra fã comentar e reassistir.
+11. **Corte de gordura**: 75–110 s; frase que não avança a história ou não cria tensão sai.
+12. **Teste do enjoo**: assistir a contato a cada 1,5 s e perguntar "eu pararia aqui?" — se sim, refazer aquele trecho.
+13. **CTA final**: "Comenta A ou B" + "segue pra ver o EP. X amanhã às 18h".
