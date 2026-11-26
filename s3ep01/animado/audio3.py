@@ -71,48 +71,62 @@ braam(FUT,2.6,1.0,(21,28,33,40));taiko(FUT,1.0);kick(FUT,1.0)  # DROP em "do fut
 # batida pesada até "esse é você"
 tq=FUT+beat
 while tq<I0:kick(tq,.7);hat(tq+beat/2,.2);tq+=beat
-t=I0;k=0
-while t<P1:
-    ch=chords1[(k//4)%4]
-    if k%4==0:pad(ch,t,beat*4+.3,.22)
-    for s in range(4):pluck(ch[(s+k)%4]+12,t+s*beat/2,.10)
-    if t>=L[2]['a']:
-        if t<FLASH-.05 or t>FLASH+beat*2:kick(t,.55)
-        hat(t+beat/2)
-        if k%2==1:snare(t,.25)
-    t+=beat;k+=1
-# parte 2 (noite, mistério leve, tique-taque)
-chords2=[[45,52,57,60],[41,48,53,57],[43,50,55,59],[40,47,52,56]];t=P1;k=0
-while t<P2:
-    ch=chords2[(k//4)%4]
-    if k%4==0:pad(ch,t,beat*4+.3,.18,1400)
-    tic(t)
-    if k%2==0:pluck(ch[3]+24,t+beat*.5,.05,.6)
-    if st(13)<=t<st(14):heart(t,.35)
-    t+=beat;k+=1
-# parte 3 (dia, leve)
-chords3=[[48,52,55,60],[53,57,60,65]];t=P2;k=0
-while t<P3:
-    ch=chords3[(k//4)%2]
-    if k%4==0:pad(ch,t,beat*4+.3,.16,2200)
-    pluck(ch[k%4]+12,t,.08);pluck(ch[(k+2)%4]+12,t+beat/2,.06)
-    t+=beat;k+=1
-# parte 4 (tensão na porta): drone grave + batimento
-t=P3;k=0
-dr=saw(mtof(33),P4-P3)*.6+saw(mtof(40),P4-P3)*.4;dr=lpf(dr,300)*env(len(dr),1.5,1.0);add(mus,dr,P3,.35)
-while t<P4:
-    if k%2==0:heart(t,.45)
-    if k%4==0:pad([45,48,52],t,beat*4+.3,.12,900)
-    tic(t,.1);t+=beat;k+=1
-# parte 5 (escolha, pegada)
-chords5=[[45,52,57,64],[41,48,57,65],[48,55,64,67],[43,50,59,67]];t=P4;k=0
-while t<P5-.8:
-    ch=chords5[(k//4)%4]
-    if k%4==0:pad(ch,t,beat*4+.3,.24)
-    kick(t,.6);hat(t+beat/2,.18)
-    if k%2==1:snare(t,.3)
-    for s in range(2):pluck(ch[(s+k)%4]+12,t+s*beat/2,.09)
-    t+=beat;k+=1
+# ===== TRILHA DE SUSPENSE (depois do gancho) =====
+def drone(at,d,g,notes,fc=500):
+    if d<=0:return
+    tt=t_(d);x=sum(saw(mtof(n),d) for n in notes)/len(notes);x=lpf(x,fc)*(0.75+0.25*np.sin(2*np.pi*.15*tt));e=np.minimum(1,tt/1.2)*np.minimum(1,(d-tt)/1.0);add(mus,x*e,at,g)
+def piano(m,at,g,d=2.2):
+    tt=t_(d);f=mtof(m);x=(np.sin(2*np.pi*f*tt)+.35*np.sin(4*np.pi*f*tt)+.12*np.sin(6*np.pi*f*tt))*np.exp(-tt*2.2);
+    y=x.copy();
+    for dl,gg in [(.23,.35),(.47,.2),(.71,.1)]:i=int(dl*SR);y[i:]+=x[:len(x)-i]*gg
+    add(mus,y,at,g)
+def pulse(at,d,g,m):  # baixo pulsando em colcheias
+    tq=at
+    while tq<at+d:tt=t_(.22);x=lpf(saw(mtof(m),.22),300)*np.exp(-tt*9);add(mus,x,tq,g);tq+=beat/2
+def tick(at,g=.14):tt=t_(.025);add(mus,hpf(rng.standard_normal(len(tt)),4000)*np.exp(-tt*260),at,g)
+def heart2(at,g):
+    for o_,gg in ((0,1),(.2,.7)):tt=t_(.22);add(mus,np.sin(2*np.pi*48*tt)*np.exp(-tt*20),at+o_,g*gg)
+# 1) "esse é você" + remodelagem: cinematográfico em menor (Lá menor), sem alegria
+drone(I0,P1-I0,.28,(33,40,45),700)
+tq=I0;k=0
+for m in [57,60,64,62,60,59,57,64]:pass
+while tq<P1:
+    if tq<FLASH-.1 or tq>FLASH+.4:pulse(tq,beat,.35,33 if (k//8)%2==0 else 29)
+    if k%4==0:piano([69,72,76,71][(k//4)%4],tq,.12)
+    if tq>=L[2]['a'] and (tq<FLASH-.05 or tq>FLASH+beat*2) and k%2==0:kick(tq,.45)
+    tq+=beat;k+=1
+# 2) noite: drone grave, piano esparso, relógio, coração nos momentos tensos
+drone(P1,P2-P1,.32,(33,40,44),420)   # Lá menor com 6ª menor (inquietante)
+tq=P1;k=0;notes=[69,68,64,65,69,72,71,68]
+while tq<P2:
+    tick(tq,.12)
+    if k%6==0:piano(notes[(k//6)%len(notes)],tq+.1,.10)
+    hot=any(st(i)<=tq<st(i+1) for i in (7,8,13,15,16))
+    if hot and k%2==0:heart2(tq,.45)
+    tq+=beat;k+=1
+# 3) dia seguinte: calmo mas desconfortável
+drone(P2,P3-P2,.2,(40,47,52),900)
+tq=P2;k=0
+while tq<P3:
+    tick(tq,.08)
+    if k%4==0:piano([76,75,71,72][(k//4)%4],tq,.08)
+    tq+=beat;k+=1
+# 4) porta: drone pesado, batida de coração acelerando, cordas tensas
+drone(P3,P4-P3,.4,(28,35,36),360)
+tq=P3;k=0
+while tq<P4:
+    rate=1-.35*min(1,max(0,(tq-P3)/(P4-P3)))
+    heart2(tq,.5);tick(tq+.05,.08)
+    if k%8==0:drone(tq,beat*8,.08,(64,65,71),2400)
+    tq+=beat*rate*1.0;k+=1
+# 5) escolha: ostinato tenso e tambores
+drone(P4,P5-P4,.3,(33,40,45),600)
+tq=P4;k=0
+while tq<P5-.8:
+    pulse(tq,beat,.4,33 if (k//4)%2==0 else 34)
+    if k%2==0:kick(tq,.5)
+    if k%4==3:taiko(tq,.45)
+    tick(tq+beat/2,.1);tq+=beat;k+=1
 # ---------- SFX ----------
 sfx=np.zeros(N)
 def whoosh(d=.5):
@@ -181,6 +195,23 @@ add(sfx,pop(),st(31)+.1,.35);add(sfx,pop(1000,500),st(31)+.7,.35)
 add(sfx,pop(1100,500),st(33)+.1,.45);add(sfx,pop(1100,500),st(34)+.1,.45)
 add(sfx,riser(1.0),MK.get('fim',97.7)-1.0,.25);add(sfx,boom(1.4),MK.get('fim',97.7),.8);add(sfx,shimmer(1.4),MK.get('fim',97.7),.3)
 # ---------- mix ----------
+# ===== barulhos de suspense =====
+def stinger(at,g):  # cordas dissonantes agudas + sub
+    tt=t_(1.6);x=sum(saw(mtof(n),1.6) for n in (84,85,90))/3;x=hpf(x,1500)*np.exp(-tt*2.2)*np.minimum(1,tt/.02);add(sfx,x,at,g*.5);add(sfx,boom(1.4),at,g*.8)
+def creak(at,g):
+    tt=t_(.9);f=180+60*np.sin(2*np.pi*1.3*tt)+30*rng.standard_normal(len(tt)).cumsum()/SR*40;x=np.sign(np.sin(2*np.pi*np.cumsum(f)/SR))*.4*np.exp(-((tt-.45)/.3)**2);add(sfx,lpf(x,1800),at,g)
+def rumble(at,d,g):
+    x=lpf(rng.standard_normal(int(d*SR)),90);x/=np.abs(x).max()+1e-9;e=np.minimum(1,t_(d)/1.5)*np.minimum(1,(d-t_(d))/1.5);add(sfx,x*e,at,g)
+def reverse_swell(at,d,g):
+    tt=t_(d);x=hpf(rng.standard_normal(len(tt)),300)*(tt/d)**3;add(sfx,lpf(x,5000),at-d,g)
+# ambiente: ronco grave da cidade/quarto durante a noite e na porta
+rumble(st(4),st(19)-st(4),.25);rumble(st(21),st(33)-st(21),.3)
+# stingers nos momentos de virada
+for i_ in (7,9,12,13,16,17,29):reverse_swell(st(i_)+.1,.9,.25);stinger(st(i_)+.1,.55)
+stinger(MK['cai']+.05,.6);stinger(MK['naoabre'],.6);stinger(MK['futuro2'],.7)
+stinger(st(28)+.15,.6)   # fora do horário
+creak(st(22)+.4,.35);creak(st(24)+.6,.3);creak(st(26)+.3,.35)   # rangidos no corredor/porta
+reverse_swell(st(32)+.05,1.2,.3)
 venv=np.convolve(np.abs(voice),np.ones(int(.08*SR))/int(.08*SR),'same');duck=1-.55*np.clip(venv/(venv.max()*.25),0,1)
 ig=np.ones(N);ig[:int(st(1)*SR)]=1.7;ig[int(st(1)*SR):int((st(1)+.6)*SR)]=np.linspace(1.7,1,int(.6*SR))
 mix=voice*1.0+mus*.5*duck*ig+sfx*.6

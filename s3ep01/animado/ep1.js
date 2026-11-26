@@ -130,7 +130,7 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
     const f=seg(u,D*.5,D*.5+.25);if(f>0&&f<1){ctx.fillStyle=`rgba(255,80,80,${((1-f)*.35).toFixed(2)})`;ctx.fillRect(0,0,W,H)}break}
   case 6:{e1PhoneScene(u,()=>{tzLock(u,'23:59');tzNotif(-30,seg(u,.25,.6),'+55 11 9????-????','Número desconhecido')},{buzz:u<1.2,s:1.25});break}
   case 7:{e1PhoneScene(u,()=>e1Chat(u,[mm(M1,seg(u,.5,.8))],{typing:u<.5}));break}
-  case 8:{ctx.save();ctx.translate(540,960);ctx.scale(1.55,1.55);ctx.translate(-735,-1080);e1Apto(t,{tvOn:1});matheus5(800,1330,1.15,{sit:1,expr:'rindo',t,head:Math.sin(t*10)*3,lift:Math.abs(Math.sin(t*9))*6});ctx.restore();
+  case 8:{ctx.save();ctx.translate(540,960);ctx.scale(1.55,1.55);ctx.translate(-735,-1080);e1Apto(t,{tvOn:1});e1SofaF(560,1060,1330,1.15);matheus5(800,1330,1.15,{sit:1,expr:'rindo',t,head:Math.sin(t*10)*3,lift:Math.abs(Math.sin(t*9))*6});ctx.restore();
     tzKicker('TROTE?',330,seg(u,.2,.5),'#5a6178');break}
   case 9:{e1PhoneScene(u,()=>e1Chat(u,[mm(M1,1),mm(M2,seg(u,.35,.65))],{typing:u<.35}),{buzz:u<.4});break}
   case 10:{e1Apto(t,{tvOn:1});const z=1.25;ctx.translate(540,1300);ctx.scale(z,z);ctx.translate(-540,-1300);
@@ -318,3 +318,9 @@ function e1Predio(t,u,D){
   // balão "OI!"
   const ob=seg(u,Math.min(D-.5,2.1),Math.min(D-.5,2.1)+.25);if(ob>0){ctx.save();ctx.translate(820,430);const s=easeBack(Math.min(1,ob));ctx.scale(s,s);fRect(-110,-70,220,140,'#fff',60);fPoly([[-50,50],[-90,110],[-10,60]],'#fff');txtC('OI!',0,4,'700 90px Oswald','#ff7a33');ctx.restore()}
   if(k<.6)tzKicker('SÃO PAULO',300,seg(u,.05,.35)*(1-seg(k,.4,.6)),'#ff7a33')}
+
+function e1SofaF(x0,x1,fy,s){const hip=fy-150*s;
+  fRect(x0,hip-300*s,x1-x0,330*s,'#4e4184',46*s);fRect(x0+30*s,hip-20*s,x1-x0-60*s,70*s,'#6b5cab',30*s);fRect(x0+30*s,hip+30*s,x1-x0-60*s,fy-hip-50*s,'#5d4f9a',20*s);
+  fRect(x0+50*s,fy-24*s,26*s,24*s,'#3a2f63');fRect(x1-76*s,fy-24*s,26*s,24*s,'#3a2f63');
+  fRect(x0-50*s,hip-110*s,100*s,fy-hip+80*s,'#5d4f9a',36*s);fRect(x1-50*s,hip-110*s,100*s,fy-hip+80*s,'#5d4f9a',36*s);
+  fRect(x0+60*s,hip-250*s,170*s,120*s,'#7a6bc0',30*s)}
