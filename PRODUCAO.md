@@ -298,3 +298,8 @@ Todo vídeo, antes de ser postado, TEM que passar por isto — se achar erro, co
 - Horário 12h (não colide com o EP das 18h). TikTok pelo Buffer (foto/carrossel); Instagram pelo Windsor create_carousel_post via tarefa agendada única.
 - Música: as APIs NÃO deixam escolher música em carrossel (nem TikTok nem Instagram). Música só no app.
 - Agendados: c1 (teaser T3) 26/11 12h; c2 (mensagens do futuro) 27/11 12h.
+
+### Trilha V4 (26/11 — usuário achou a música e o suspense ruins)
+- Problema da V3: quase tudo grave (95% da energia abaixo de 250 Hz = embolado), saw cru, whoosh em TODA troca de fala, tique e coração o tempo todo = poluído.
+- V4 (s3ep01/animado/audio4.py): tema em Ré menor (Dm–Bb–Gm–A), cordas "orquestrais" (senoides com vibrato), piano com reverb, celo + sub suave, tambores graves; estéreo com reverb. Equilíbrio alvo da trilha: ~50% grave / ~40% médio. Suspense: menos e melhor (stingers de cordas, hits só nos momentos fortes, whoosh só em troca de cena). Ducking mais forte embaixo da voz (.5), música sobe entre as falas.
+- Usar audio4.py como base dos próximos episódios.
