@@ -291,3 +291,9 @@ Todo vídeo, antes de ser postado, TEM que passar por isto — se achar erro, co
 - Efeitos sonoros em TODO momento com ação: usar o pacote s3ep02/sfx (função SF() no audio3.py): passos, porta, olho mágico, caixa, celular vibrando, mensagem do futuro, glitch, coração, relógio, ambiente tenso.
 - Músicas do EP2 prontas em s3ep02/musicas (faixa1 abertura, faixa2 suspense, faixa3 revelação). Misturar pelos momentos e manter os HITs de impacto.
 - Foto de perfil oficial: perfil/foto_perfil_matheus.png (gerada por perfil/pfp.js).
+
+### Carrosséis (alavancar engajamento) — 26/11
+- Formato 1080×1350 (4:5), 5–7 slides, gerados por carrosseis/car.js + car_render.py (sempre revisar folha antes).
+- Horário 12h (não colide com o EP das 18h). TikTok pelo Buffer (foto/carrossel); Instagram pelo Windsor create_carousel_post via tarefa agendada única.
+- Música: as APIs NÃO deixam escolher música em carrossel (nem TikTok nem Instagram). Música só no app.
+- Agendados: c1 (teaser T3) 26/11 12h; c2 (mensagens do futuro) 27/11 12h.
