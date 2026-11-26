@@ -6,7 +6,7 @@ with sync_playwright() as p:
     b=p.chromium.launch();pg=b.new_page(viewport={"width":1080,"height":1920})
     pg.add_init_script("window.__RENDER__=true;window.NO_TITLES=true");pg.goto("file:///home/claude/esesobrassesoum/ep10/animado/animacao.html")
     pg.evaluate("Promise.all([document.fonts.load('700 100px Oswald'),document.fonts.load('900 40px Inter'),document.fonts.load('600 20px Inter'),document.fonts.load('800 20px Inter')])");pg.wait_for_timeout(600)
-    for x in ['/tmp/m5.js','/tmp/s3/teaser.js','/tmp/m6.js','/tmp/m7.js','/tmp/s3/e1flat.js','/tmp/s3/ep1.js','/tmp/s3/car.js','/tmp/s3/pano.js']:pg.add_script_tag(content=open(x).read())
+    for x in ['/tmp/m5.js','/tmp/s3/teaser.js','/tmp/m6.js','/tmp/m7.js','/tmp/s3/e1flat.js','/tmp/s3/ep1.js','/tmp/s3/car.js','/tmp/s3/pano.js','/tmp/s3/pano2.js']:pg.add_script_tag(content=open(x).read())
     pg.evaluate('window.MK={};window.LINES=[]')
     pg.wait_for_timeout(800)
     for i in range(n):
