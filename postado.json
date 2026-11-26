@@ -280,6 +280,20 @@
    "horario": "2026-11-25T18:01:00-03:00",
    "id": "18111123593246391",
    "obs": "Windsor create_video_post (lembrete 18h) + comentário 17907127656606257 + story 18122289602053695"
+  },
+  {
+   "episodio": "s3ep01",
+   "rede": "tiktok",
+   "horario": "2026-11-26T18:00:00-03:00",
+   "id": "buffer 6b082aef3f1ee1009d901b2d",
+   "obs": "Buffer customScheduled 18h (agendado às 09h50)"
+  },
+  {
+   "episodio": "s3ep01",
+   "rede": "youtube",
+   "horario": "2026-11-26T18:00:00-03:00",
+   "id": "Ras9llGtsPY",
+   "obs": "API oficial (workflow postar-youtube), publish_at 21:00Z"
   }
  ]
 }
