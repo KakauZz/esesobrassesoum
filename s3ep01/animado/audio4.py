@@ -98,17 +98,20 @@ secao(I0,st(2),1.0,drums=1)            # esse é você
 
 # ===== PARTE ALEGRE: remodelagem ("nova remodelagem" + "bem-vindo à temporada 3") =====
 def feliz(a,b):
-    bt=60/120;PROGF=[(38,(62,66,69)),(33,(57,61,64)),(35,(59,62,66)),(31,(55,59,62))]  # D A Bm G (maior)
+    bt=60/128;PROGF=[(38,(62,66,69)),(33,(57,61,64)),(35,(59,62,66)),(31,(55,59,62))]  # D A Bm G (maior, festa)
+    MEL=[74,76,78,81,78,76,74,73, 76,78,81,83,81,78,76,74]
     tq=a;k=0
     while tq<b-.05:
         root,ch=PROGF[(k//8)%4]
         if k%8==0:
-            d=min(bt*8,b-tq);strings2(tq,d+.3,.20,ch,att=.15,rel=.3,pan=.4);sub(tq,bt,.18,root)
-        piano2([ch[0]+12,ch[1]+12,ch[2]+12,ch[1]+12,ch[2]+12,ch[0]+24,ch[2]+12,ch[1]+12][k%8],tq,.18,1.0,pan=(-.3 if k%2 else .3))
-        if k%2==0:tom(tq,.16,90)
-        if k%4==2:  # palma
-            tt=t_(.15);x=hpf(rng.standard_normal(len(tt)),1200)*np.exp(-tt*30);addS(x,tq,.22)
-        tt=t_(.05);addS(hpf(rng.standard_normal(len(tt)),8000)*np.exp(-tt*90),tq+bt/2,.08,.5)  # chimbal
+            d=min(bt*8,b-tq);strings2(tq,d+.3,.16,ch,att=.1,rel=.3,pan=.4)
+        if k%2==1:sub(tq,bt*.6,.20,root+12)              # baixo saltitante no contratempo
+        piano2(ch[[0,1,2,1][k%4]]+12,tq,.15,.6,pan=-.3)     # acordes picados
+        if k%2==0:   # glockenspiel na melodia
+            m=MEL[(k//2)%16];tt=t_(.9);x=(np.sin(2*np.pi*mtof(m+12)*tt)+.3*np.sin(2*np.pi*mtof(m+12)*2.76*tt))*np.exp(-tt*5);addS(x,tq,.12,.35)
+        tom(tq,.14,95) if k%4==0 else None
+        if k%4==2:tt=t_(.15);addS(hpf(rng.standard_normal(len(tt)),1200)*np.exp(-tt*30),tq,.24)   # palma
+        tt=t_(.05);addS(hpf(rng.standard_normal(len(tt)),8000)*np.exp(-tt*90),tq+bt/2,.08,.5)
         tq+=bt;k+=1
     glass(a,1.2,.10,(86,90,93))
 feliz(st(2),P1)                       # remodelagem: ALEGRE
@@ -217,6 +220,36 @@ add(sfx,SF('16_reverse_puxada'),st(30)-1.2,.35)
 add(sfx,SF('04_porta_rangendo'),MK.get('fim',117.85)+.2,.5)      # teaser: porta entreabrindo
 add(sfx,SF('20_ambiente_tenso'),MK.get('fim',117.85)-.5,.35)
 
+
+# ===== TORCIDA "AEEEE" (igual final de campeonato) na remodelagem =====
+def torcida(at,d=3.6,nv=70):
+    n=int(d*SR);tt=np.arange(n)/SR;src=np.zeros(n)
+    for j in range(nv):
+        f0=rng.uniform(110,300);st0=rng.uniform(0,.35);vib=rng.uniform(4,7)
+        f=f0*(1+.18*np.minimum(1,np.maximum(0,tt-st0)/.5))*(1+.02*np.sin(2*np.pi*vib*tt))
+        ph=np.cumsum(f)/SR;x=(2*(ph%1)-1)
+        e=np.clip((tt-st0)/.25,0,1)*np.clip((d-tt)/1.2,0,1)*rng.uniform(.5,1)
+        src+=x*e
+    src/=nv**.5
+    X=np.fft.rfft(src);fr=np.fft.rfftfreq(n,1/SR)
+    def form(F):
+        H=np.zeros_like(fr)
+        for fc,bw,g in F:H+=g/(1+((fr-fc)/bw)**2)
+        return np.fft.irfft(X*H,n)
+    A=form([(800,120,1),(1200,140,.7),(2600,250,.3)]);E=form([(450,90,1),(1900,180,.8),(2700,250,.4)])
+    mixAE=np.clip((tt-.9)/1.2,0,1)        # "aaa" vira "eee"
+    voz=A*(1-mixAE)+E*mixAE
+    # palmas
+    pal=np.zeros(n)
+    for c in range(int(d*45)):
+        i=int(rng.uniform(.15,d-.3)*SR);m=int(.03*SR);pal[i:i+m]+=hpf(rng.standard_normal(m),900)*np.exp(-np.arange(m)/SR*120)*rng.uniform(.3,1)
+    # assobios
+    for w_ in range(3):
+        s0=rng.uniform(.3,1.5);m=int(.7*SR);tw=np.arange(m)/SR;fw=2200+600*np.sin(np.pi*tw/.7)
+        wh=np.sin(2*np.pi*np.cumsum(fw)/SR)*np.sin(np.pi*tw/.7)*.25;i=int(s0*SR);pal[i:i+m]+=wh[:max(0,min(m,n-i))]
+    x=voz/np.abs(voz).max()*.9+pal/np.abs(pal).max()*.5
+    add(sfx,x,at,.9)
+torcida(FLASH-.05)
 # ===== HITS NOS IMPACTOS (só os fortes, sem poluir) =====
 mg=np.ones(N);hitwin=np.zeros(N)
 def impacto(at,g):
@@ -238,7 +271,7 @@ duck=np.maximum(duck,.5*hitwin);G=duck*ig*mg
 mL=reverb(musL*G,2.6,.30);mR=reverb(musR*G,2.6,.30)
 sx=reverb(sfx,1.4,.18)
 vo=reverb(voice,.6,.06)
-Lc=vo+mL*.42+sx*.38;Rc=vo+mR*.42+sx*.38
+Lc=vo+mL*.32+sx*.34;Rc=vo+mR*.32+sx*.34
 for c in (Lc,Rc):c[-int(.8*SR):]*=np.linspace(1,0,int(.8*SR))
 m=max(np.abs(Lc).max(),np.abs(Rc).max())*1.05
 st2=np.stack([Lc/m,Rc/m],1)
