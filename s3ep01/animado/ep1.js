@@ -121,8 +121,8 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
   const bl=(sd)=>tzBlink(t,sd);
   switch(i){
   case 3:{e1Predio(t,u,D);ctx.restore();ctx.save();break}
-  case 4:{e1Apto(t,{tvOn:1});fRect(230,1290,300,190,'#ff7a33',40);fRect(250,1300,260,40,'#ff9a5c',20);
-    matheusView(360,1490,1.3,'side',{t,sit:1,hold:'bowl',expr:'feliz',blink:bl(2)});
+  case 4:{e1Apto(t,{tvOn:1,noSofa:1});e1SofaSide(130,480,1500,1.3);e1CoffeeTable(t,{phone:1,cup:1});
+    matheusView(330,1500,1.3,'side',{t,sit:1,hold:'bowl',expr:'feliz',blink:bl(2)});
     tzKicker('UMA NOITE NORMAL',330,seg(u,.1,.4),'#4f5bd5');break}
   case 5:{ctx.fillStyle='#07080f';ctx.fillRect(0,0,W,H);const fl=u>D*.5;const z=1+.06*p;ctx.translate(540,900);ctx.scale(z,z);ctx.translate(-540,-900);
     ctx.fillStyle='#111320';rr(140,640,800,480,40);ctx.fill();ctx.strokeStyle='#2a2e44';ctx.lineWidth=10;ctx.stroke();
@@ -130,27 +130,22 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
     const f=seg(u,D*.5,D*.5+.25);if(f>0&&f<1){ctx.fillStyle=`rgba(255,80,80,${((1-f)*.35).toFixed(2)})`;ctx.fillRect(0,0,W,H)}break}
   case 6:{e1PhoneScene(u,()=>{tzLock(u,'23:59');tzNotif(-30,seg(u,.25,.6),'+55 11 9????-????','Número desconhecido')},{buzz:u<1.2,s:1.25});break}
   case 7:{e1PhoneScene(u,()=>e1Chat(u,[mm(M1,seg(u,.5,.8))],{typing:u<.5}));break}
-  case 8:{ctx.save();ctx.translate(540,960);ctx.scale(1.55,1.55);ctx.translate(-735,-1080);e1Apto(t,{tvOn:1});e1SofaF(560,1060,1330,1.15);matheus5(800,1330,1.15,{sit:1,expr:'rindo',t,head:Math.sin(t*10)*3,lift:Math.abs(Math.sin(t*9))*6});ctx.restore();
+  case 8:{ctx.save();ctx.translate(540,960);ctx.scale(1.6,1.6);ctx.translate(-420,-1180);e1Apto(t,{tvOn:1,noSofa:1});e1SofaSide(130,480,1500,1.3);e1CoffeeTable(t,{phone:1,cup:1,bowl:1});
+    matheusView(330,1500-Math.abs(Math.sin(t*9))*6,1.3,'side',{t,sit:1,hold:'phone',lit:1,expr:'rindo'});ctx.restore();
     tzKicker('TROTE?',330,seg(u,.2,.5),'#5a6178');break}
   case 9:{e1PhoneScene(u,()=>e1Chat(u,[mm(M1,1),mm(M2,seg(u,.35,.65))],{typing:u<.35}),{buzz:u<.4});break}
-  case 10:{e1Apto(t,{tvOn:1});const z=1.25;ctx.translate(540,1300);ctx.scale(z,z);ctx.translate(-540,-1300);
-    fRect(180,1220,40,280,'#6b4630',10);fRect(180,1330,260,30,'#8a5a3a',10);fRect(200,1360,18,140,'#6b4630');fRect(400,1360,18,140,'#6b4630');
-    matheusView(300,1500,1.3,'side',{t,sit:1,expr:'desconfiado',lookS:3,blink:0});e1Table(700,1360,1,{bowl:1,phone:1,u:t});e1Cup(820,1336,1,Math.sin(t*1.5)*.01,1);
-    // foco no copo
-    ctx.restore();ctx.save();const r=seg(u,.2,.8);ctx.strokeStyle=`rgba(255,210,80,${(.8*r).toFixed(2)})`;ctx.lineWidth=6;ctx.setLineDash([16,12]);ctx.beginPath();ctx.arc(540+(820-540)*1.25,1300+(1290-1300)*1.25,110,0,7);ctx.stroke();ctx.setLineDash([]);break}
-  case 11:{e1Apto(t,{tvOn:1});const z=1.25;ctx.translate(540,1300);ctx.scale(z,z);ctx.translate(-540,-1300);
+  case 10:{e1Apto(t,{tvOn:1,noSofa:1});e1SofaSide(130,480,1500,1.3);e1CoffeeTable(t,{phone:1,cup:1,bowl:1});
+    matheusView(330,1500,1.3,'side',{t,sit:1,expr:'desconfiado',lookS:3,blink:0});
+    {const r=seg(u,.2,.8);ctx.strokeStyle=`rgba(255,210,80,${(.8*r).toFixed(2)})`;ctx.lineWidth=6;ctx.setLineDash([16,12]);ctx.beginPath();ctx.arc(800,1330,80,0,7);ctx.stroke();ctx.setLineDash([])}break}
+  case 11:{e1Apto(t,{tvOn:1,noSofa:1});e1SofaSide(130,480,1500,1.3);
     const J=MK.cai!=null?MK.cai-a:D*.55;
-    fRect(180,1220,40,280,'#6b4630',10);fRect(180,1330,260,30,'#8a5a3a',10);fRect(200,1360,18,140,'#6b4630');fRect(400,1360,18,140,'#6b4630');
-    {const kT=seg(u,J-.08,J+.22);const dSide=()=>matheusView(300,1500,1.3,'side',{t,sit:1,expr:kT>0?'assustado':'desconfiado',lookS:3,blink:0});
-     const jy=Math.max(0,Math.sin(seg(u,J+.1,J+.6)*Math.PI))*60;const dFront=()=>matheus5(300,1500-jy,1.3,{expr:'assustado',t,armL:[38,-150,'open'],armR:[38,-150,'open'],blink:0,lift:0});
-     if(kT<=0)dSide();else if(kT<1)e1Turn(kT,dSide,dFront,300,1500);else dFront()}
-    e1Table(700,1360,1,{bowl:1,phone:1,u:t});
-    // copo cai
-    const cf=seg(u,J-.1,J+.45);const cx=820+cf*70,cy=1336+(cf<.3?0:Math.pow((cf-.3)/.7,2)*160),rot=Math.min(1.57,cf*3);e1Cup(cx,cy,1,rot,cf<.25);
-    if(cf>.25){ctx.fillStyle='rgba(90,170,255,.5)';ctx.beginPath();ctx.ellipse(860+cf*60,1342+(cf>.9?150:0),40+cf*80,8+cf*6,0,0,7);ctx.fill()}
-    // gato pulando da direita
-    const jq=seg(u,J-1.75,J-.5);const cxat=lerp(1250,700,easeOut(jq)),cyat=lerp(1700,1336,easeOut(jq))-Math.sin(jq*Math.PI)*220;if(jq>0)e1Cat(cxat,cyat,1.15,-1,{leap:jq<1?1:0,t});
-    ctx.restore();ctx.save();if(u>J)tzTitle('CAIU!',420,seg(u,J,J+.25),130,'#ffd23f');break}
+    const cf=seg(u,J-.1,J+.45);e1CoffeeTable(t,{phone:1,bowl:1,cup:cf<=0});
+    if(cf>0){const cx=800+cf*70,cy=1372+(cf<.3?0:Math.pow((cf-.3)/.7,2)*120),rot=Math.min(1.57,cf*3);e1Cup(cx,cy,.85,rot,cf<.25);if(cf>.25){ctx.fillStyle='rgba(90,170,255,.5)';ctx.beginPath();ctx.ellipse(840+cf*50,1378+(cf>.9?110:0),36+cf*70,7+cf*5,0,0,7);ctx.fill()}}
+    const jq=seg(u,J-1.75,J-.5);const cxat=lerp(1250,700,easeOut(jq)),cyat=lerp(1700,1372,easeOut(jq))-Math.sin(jq*Math.PI)*220;if(jq>0)e1Cat(cxat,cyat,1.0,-1,{leap:jq<1?1:0,t});
+    {const kT=seg(u,J-.08,J+.22);const dSide=()=>matheusView(330,1500,1.3,'side',{t,sit:1,expr:kT>0?'assustado':'desconfiado',lookS:3,blink:0});
+     const jy=Math.max(0,Math.sin(seg(u,J+.1,J+.6)*Math.PI))*60;const dFront=()=>matheus5(330,1500-jy,1.3,{expr:'assustado',t,armL:[38,-150,'open'],armR:[38,-150,'open'],blink:0});
+     if(kT<=0)dSide();else if(kT<1)e1Turn(kT,dSide,dFront,330,1500);else dFront()}
+    if(u>J)tzTitle('CAIU!',420,seg(u,J,J+.25),130,'#ffd23f');break}
   case 12:{ctx.fillStyle=lg(0,H,['#1b1f45','#2a2f5e']);ctx.fillRect(0,0,W,H);tzRays(540,900,t,'rgba(255,255,255,1)',.05);
     matheus5(540,2150,2.6,{expr:'assustado',t,blink:0});tzTitle('COMO ELE SABIA?',400,seg(u,.3,.6),100,'#7fd3ff');break}
   case 13:{e1PhoneScene(u,()=>e1Chat(u,[mm(M1,1),mm(M2,1)],{typing:1}),{buzz:u<.5});break}
@@ -159,27 +154,19 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
   case 16:{const off=seg(u,.1,.35);e1PhoneScene(u,()=>{e1Chat(u,[mm(M3,1),mm(M4,1)]);ctx.fillStyle=`rgba(0,0,0,${off})`;ctx.fillRect(-210,-440,420,880)});
     if(u>D*.5){tzTitle('00:00',420,seg(u,D*.5,D*.5+.25),130,'#ff3b3b')}break}
   case 17:{tzRoom(t,'03:12');matheusView(790,1460,1.35,'back',{t});tzKicker('QUASE NÃO DORME',330,seg(u,.2,.5),'#4f5bd5');break}
-  case 18: case 19:{e1Apto(t,{day:1});
-    // mesa com notebook
-    ctx.fillStyle=E1.woodD;ctx.fillRect(560,1180,22,200);ctx.fillRect(960,1180,22,200);ctx.fillStyle=E1.wood;rr(530,1150,480,36,10);ctx.fill();
-    ctx.fillStyle='#2a2e3a';ctx.beginPath();ctx.moveTo(660,1150);ctx.lineTo(880,1150);ctx.lineTo(860,960);ctx.lineTo(680,960);ctx.closePath();ctx.fill();ctx.fillStyle='#9fc4ff';ctx.beginPath();ctx.moveTo(672,1140);ctx.lineTo(868,1140);ctx.lineTo(850,972);ctx.lineTo(690,972);ctx.closePath();ctx.fill();
-    if(i===19){ctx.fillStyle='#fff';for(let k=0;k<5;k++)ctx.fillRect(700,990+k*28,(60+((t*80+k*40)%100)),8)}
-    e1Cup(950,1150,.7,0,1);
-    if(i===18){const q=clamp(p/.85);const xw=lerp(-150,420,1-Math.pow(1-q,1.7));const sd=Math.pow(clamp((.85-p)/.25),.8);matheusView(xw,1520,1.3,'side',{t,walk:t*6.5,stride:sd,expr:'pensativo'})}
-    else{fRect(300,1190,40,300,'#3a3f52',10);fRect(300,1330,250,30,'#4a5066',10);fRect(410,1360,20,140,'#3a3f52');matheusView(420,1500,1.3,'side',{t,sit:1,hold:'type',expr:'feliz',blink:bl(5)})}
+  case 18: case 19:{e1Apto(t,{day:1,noSofa:1});e1SofaSide(130,480,1500,1.3,1);e1CoffeeTable(t,{laptop:1,cup:1,typing:i===19});
+    if(i===18){const q=clamp(p/.85);const xw=lerp(-150,330,1-Math.pow(1-q,1.7));const sd=Math.pow(clamp((.85-p)/.25),.8);
+      if(p<.85)matheusView(xw,1500,1.3,'side',{t,walk:t*6.5,stride:sd,expr:'pensativo'});else{const k=seg(p,.85,1);ctx.save();ctx.translate(330,1500);ctx.scale(1/Math.sqrt(1-.08*Math.sin(k*Math.PI)),1-.08*Math.sin(k*Math.PI));ctx.translate(-330,-1500);matheusView(330,1500,1.3,'side',k<.5?{t,expr:'pensativo'}:{t,sit:1,expr:'pensativo'});ctx.restore()}}
+    else matheusView(330,1500,1.3,'side',{t,sit:1,hold:'type',expr:'feliz',blink:bl(5)});
     tzKicker(i===18?'NO DIA SEGUINTE':'HOME OFFICE',330,seg(u,.1,.4),'#ff7a33');break}
   case 20:{const ks=[MK.toc1,MK.toc2,MK.toc3].map(x=>x!=null?x-a:null);let kn=0;ks.forEach((k,j)=>{const kk=k??(D*.4+j*.4);if(u>=kk)kn=Math.max(kn,1-seg(u,kk,kk+.22))});
     e1Door(u,{knock:kn*(u>((ks[0]??D*.4))?1:0),under:1,feet:1});
     ks.forEach((k,j)=>{const kk=k??(D*.4+j*.4);if(u>=kk)tzTitleAt2('TOC',[300,540,780][j],[700,560,720][j],seg(u,kk,kk+.2),[-.15,.05,.18][j])});break}
-  case 21:{e1Apto(t,{});
-    // porta na direita
-    ctx.fillStyle='#3a2418';rr(740,400,330,900,8);ctx.fill();ctx.fillStyle='#6b4026';rr(756,416,298,884,6);ctx.fill();ctx.fillStyle='rgba(0,0,0,.16)';rr(790,450,230,330,6);ctx.fill();rr(790,820,230,440,6);ctx.fill();ctx.fillStyle='#d8b35a';ctx.beginPath();ctx.arc(784,880,15,0,7);ctx.fill();ctx.fillStyle='rgba(255,220,150,.6)';ctx.fillRect(756,1296,298,6);
-    const kn=Math.max(0,Math.sin(u*14))*(u<1.2?1:0);ctx.save();ctx.translate(kn*4,0);ctx.restore();
-    fRect(200,1290,280,190,'#ff7a33',40);fRect(220,1300,240,40,'#ff9a5c',20);
-    {const k=seg(u,.28,.52);const sq=(sy,f)=>{ctx.save();ctx.translate(340,1500);ctx.scale(1/Math.sqrt(sy),sy);ctx.translate(-340,-1500);f();ctx.restore()};
-     if(k<.5)sq(1-.12*eIO(k*2),()=>matheus5(340,1500,1.3,{sit:1,expr:k>0?'surpreso':'feliz',t,look:1,blink:k>0?0:bl(3)}));
-     else{const up=seg(u,.52,1.1);const jy=Math.max(0,Math.sin(up*Math.PI))*90;const sy=k<1?lerp(1.12,1,eIO((k-.5)*2)):1+.03*Math.sin(up*Math.PI);
-       sq(sy,()=>matheus5(340,1500-jy,1.3,{expr:'surpreso',t,head:6,look:1,armL:[lerp(14,60,eIO(clamp((k-.5)*2))),-20,'open'],armR:[lerp(14,60,eIO(clamp((k-.5)*2))),-20,'open'],blink:0}))}}break}
+  case 21:{e1Apto(t,{noSofa:1});e1SofaSide(130,480,1500,1.3);e1CoffeeTable(t,{laptop:1,cup:1});
+    {const kT=seg(u,.3,.6);const dSide=()=>matheusView(330,1500,1.3,'side',{t,sit:1,expr:kT>0?'surpreso':'feliz',lookS:3,blink:kT>0?0:bl(3)});
+     const up=seg(u,.55,1.1);const jy=Math.max(0,Math.sin(up*Math.PI))*70;const dFront=()=>matheus5(330,1500-jy,1.35,{expr:'surpreso',t,head:6,look:1,armL:[lerp(14,60,eIO(up)),-20,'open'],armR:[lerp(14,60,eIO(up)),-20,'open'],blink:0});
+     if(kT<=0)dSide();else if(kT<1)e1Turn(kT,dSide,dFront,330,1500);else dFront()}
+    for(let k=0;k<3;k++){const q=seg(u,.05+k*.15,.25+k*.15);if(q>0)tzTitleAt2('TOC',940,420+k*120,q,.12)}break}
   case 22:{ctx.fillStyle=lg(0,H,['#1b1f45','#2a2f5e']);ctx.fillRect(0,0,W,H);matheus5(540,2150,2.6,{expr:'assustado',t,blink:0});
     e1Bubble(540,330,1.25,['NÃO ABRE A PORTA'],1,seg(u,MK.naoabre!=null?MK.naoabre-a-.1:D*.45,(MK.naoabre!=null?MK.naoabre-a-.1:D*.45)+.3),'MENSAGEM DE ONTEM');break}
   case 23: case 24:{e1Peep(t,i===24);if(i===23)tzKicker('OLHO MÁGICO',140,seg(u,.1,.4),'#5a6178');else tzKicker('“ENTREGA PRO MATHEUS!”',140,seg(u,.05,.3),'#c33');break}
@@ -332,3 +319,14 @@ function e1SofaF(x0,x1,fy,s){const hip=fy-150*s;
 
 function e1Turn(k,drawA,drawB,x,y){const sx=k<.5?lerp(1,.45,eIO(k*2)):lerp(.45,1,eIO((k-.5)*2));const sy=1+.05*Math.sin(Math.PI*k);
   ctx.save();ctx.translate(x,y);ctx.scale(sx,sy);ctx.translate(-x,-y);if(k<.5)drawA();else drawB();ctx.restore()}
+
+function e1SofaSide(x0,x1,fy,s,day){const seat=fy-150*s;const c1=day?'#5b7fd6':'#4e4184',c2=day?'#6f92e6':'#5d4f9a',c3=day?'#86a6f0':'#6b5cab',leg=day?'#4565b8':'#3a2f63';
+  fRect(x0,seat-260*s,70*s,260*s+10,c1,30*s);                         // encosto (atrás dele)
+  fRect(x0,seat-10*s,x1-x0,60*s,c3,24*s);fRect(x0,seat+40*s,x1-x0,fy-seat-60*s,c2,18*s); // assento + base
+  fRect(x0+20*s,fy-24*s,24*s,24*s,leg);fRect(x1-44*s,fy-24*s,24*s,24*s,leg);
+  fRect(x0+50*s,seat-120*s,60*s,110*s,c3,24*s)}                       // almofada
+function e1CoffeeTable(t,o){o=o||{};const top=1384;ctx.save();ctx.translate(-60,0);
+  fRect(560,top,380,26,'#9a6a46',12);fRect(570,top+4,360,6,'#b07e57',3);fRect(590,top+26,22,90,'#6b4630',6);fRect(890,top+26,22,90,'#6b4630',6);fRect(600,top+80,300,12,'#7a5236',6);
+  if(o.bowl)e1Bowl(650,top,.75,t);if(o.phone)e1PhoneSmall(760,top-4,.9,false,false);if(o.cup)e1Cup(860,top,.85,0,1);
+  if(o.laptop){fPoly([[680,top],[840,top],[826,top-120],[694,top-120]],'#2a2e3a');fPoly([[688,top-6],[832,top-6],[820,top-112],[700,top-112]],'#9fc4ff');
+    if(o.typing){ctx.fillStyle='#fff';for(let k=0;k<4;k++)ctx.fillRect(712,top-100+k*22,(40+((t*80+k*40)%60)),6)}}ctx.restore()}

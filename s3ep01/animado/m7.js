@@ -97,8 +97,6 @@ function matheus5(gx,gy,s,o){
   m7blob([[42,-400],[84,-380],[84,-190],[54,-190],[64,-300]],C.hoodS); // sombra lateral
   m7blob([[-120,-238],[120,-238],[120,-190],[-120,-190]],C.hoodS); // barra
   ctx.restore();
-  if(o.sit){m7blob([[-80,-214],[80,-214],[96,-186],[74,-160],[40,-170],[0,-164],[-40,-170],[-74,-160],[-96,-186]],C.hoodS);
-    ctx.globalAlpha=.5;m7blob([[-50,-196],[-20,-178],[-34,-172]],C.hoodD);m7blob([[50,-196],[20,-178],[34,-172]],C.hoodD);ctx.globalAlpha=1}
   // ---- braços ----
   const UA=76,FA=60;
   const arm=(side,p)=>{const sx=side*62,sy=-372;const [ex,ey,hx,hy,a]=m5chain(sx,sy,side*p[0],side*p[1],UA,FA);const kind=p[2];
