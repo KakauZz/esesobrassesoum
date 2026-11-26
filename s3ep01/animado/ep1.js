@@ -1,3 +1,4 @@
+var PHX=600,PHY=1180;
 // ===== S3 EP1 — "Não abre a porta" =====
 // usa teaser.js (tz*) + m5.js. window.LINES=[{a,b,txt}], window.MK={...} marcas de palavras
 const E1={wall:'#2a2f5e',wallD:'#1d2148',floor:'#3a2c3f',wood:'#8a5a3a',woodD:'#5e3b25'};
@@ -185,8 +186,17 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
   case 23: case 24:{e1Peep(t,i===24);if(i===23)tzKicker('OLHO MÁGICO',140,seg(u,.1,.4),'#5a6178');else tzKicker('“ENTREGA PRO MATHEUS!”',140,seg(u,.05,.3),'#c33');break}
   case 25:{const kk=.5;e1Door(u,{knock:(1-seg(u,kk,kk+.4))*(u>kk?1:0),under:1,feet:1});if(u>kk)tzTitleAt2('TOC TOC',540,640,seg(u,kk,kk+.2),0);
     {const kn=(1-seg(u,kk,kk+.4))*(u>kk?1:0);ctx.save();ctx.translate(Math.sin(u*90)*7*kn,0);matheus5(540,1540,1.75,{expr:'assustado',t,armL:[78,30,'open'],armR:[78,30,'open'],blink:0});ctx.restore()}break}
-  case 26:{e1Apto(t,{});fRect(0,0,250,1300,'#262b58');fRect(250,0,14,1300,'#20244a');matheusView(330,1520,1.4,'side',{t,lean:-.12,hold:'phone',lit:1,expr:'surpreso',blink:0});ctx.save();ctx.translate(Math.sin(u*80)*3,0);ctx.restore();
-    if(u>.2){const q=(u*2.2)%1;ctx.strokeStyle=`rgba(180,200,255,${(.5*(1-q)).toFixed(2)})`;ctx.lineWidth=6;for(const sd of[-1,1]){ctx.beginPath();ctx.arc(475+sd*(40+q*50),1040,30+q*30,sd<0?Math.PI*.7:-Math.PI*.3,sd<0?Math.PI*1.3:Math.PI*.3);ctx.stroke()}}break}
+  case 26:{e1Apto(t,{noSofa:1,noTV:1});e1SofaF(250,830,1500,1.3);e1TableFront(t,{cup:1});
+    {const vib=u>.15?Math.sin(u*95)*4*(((u*2.2)%1)<.55?1:0):0;const S=1.5,X=540,Y=1730;
+     // em pé NA FRENTE da mesa (mais perto da câmera = maior), mesma sala; celular na mão
+     ctx.save();ctx.globalAlpha=.3;m5ell(X,Y+6,120*S/1.3,18,'#000');ctx.restore();
+     matheus5(X,Y,S,{expr:'surpreso',t,blink:0,head:-4,armR:[22,-128,'fist'],armL:[10,-60,'pocket']});
+     const px=X+7*S+vib,py=Y-330*S;
+     glow(px,py-190,300,'rgba(150,180,255,A)',.30);
+     ctx.save();ctx.translate(px,py);ctx.rotate(-.1);ctx.fillStyle='#22263a';rr(-34,-62,68,124,14);ctx.fill();ctx.fillStyle='#363b55';rr(-24,-52,22,30,8);ctx.fill();ctx.fillStyle='#0d0f18';ctx.beginPath();ctx.arc(-13,-37,6,0,7);ctx.fill();
+     ctx.strokeStyle='rgba(190,210,255,.8)';ctx.lineWidth=3;rr(-34,-62,68,124,14);ctx.stroke();ctx.restore();
+     if(u>.15){const q=(u*2.2)%1;ctx.strokeStyle=`rgba(190,210,255,${(.6*(1-q)).toFixed(2)})`;ctx.lineWidth=7;for(const sd of[-1,1]){ctx.beginPath();ctx.arc(px+sd*(56+q*50),py,30+q*30,sd<0?Math.PI*.7:-Math.PI*.3,sd<0?Math.PI*1.3:Math.PI*.3);ctx.stroke()}}}
+    break}
   case 27:{e1PhoneScene(u,()=>{tzLock(u,'19:04');tzNotif(-30,seg(u,.1,.4),'Você (do futuro)','1 mensagem')},{buzz:u<.6,s:1.25});tzKicker('FORA DO HORÁRIO!',200,seg(u,D*.35,D*.35+.3),'#e0463d');break}
   case 28:{e1PhoneScene(u,()=>e1Chat(u,[mm(M3,1),mm(M4,1),mm(M5m,seg(u,.3,.6))],{future:1,typing:u<.3}),{glitch:1,red:1});break}
   case 29:{e1PhoneScene(u,()=>e1Chat(u,[mm(M3,1),mm(M4,1),mm(M5m,1)],{future:1}),{s:1.3+.2*easeOut(seg(u,0,1.2))});ctx.save();ctx.restore();

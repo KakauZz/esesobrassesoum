@@ -212,6 +212,26 @@ stinger(MK['cai']+.05,.6);stinger(MK['naoabre'],.6);stinger(MK['futuro2'],.7)
 stinger(st(28)+.15,.6)   # fora do horário
 creak(st(22)+.4,.35);creak(st(24)+.6,.3);creak(st(26)+.3,.35)   # rangidos no corredor/porta
 reverse_swell(st(32)+.05,1.2,.3)
+# ===== PACOTE DE EFEITOS (s3ep02/sfx) =====
+import subprocess as _sp
+def SF(nome):
+    raw=_sp.run(['ffmpeg','-loglevel','error','-i',f'/tmp/s3/sfx2/{nome}.mp3','-ac','1','-ar',str(SR),'-f','s16le','-'],capture_output=True).stdout
+    return np.frombuffer(raw,np.int16).astype(float)/32768
+add(sfx,SF('18_glitch_tela'),FLASH-.4,.35)                       # transformação
+add(sfx,SF('19_relogio_tique_taque')[:int(3.2*SR)],st(6),.35)     # 23:58 -> 23:59
+add(sfx,SF('11_coracao_acelerando'),st(13)-.1,.8)                 # o coração dispara
+add(sfx,SF('10_mensagem_do_futuro'),st(16)+.05,.45)              # mensagem vermelha
+add(sfx,SF('18_glitch_tela'),st(17)+.3,.4)                       # tela apaga
+add(sfx,SF('19_relogio_tique_taque')[:int(2.2*SR)],st(18),.3)     # 03:12 quase não dorme
+_ps=SF('07_passos_corredor');add(sfx,_ps[:int(1.4*SR)],st(19),.45)   # anda na sala
+add(sfx,SF('07_passos_corredor'),st(21)-2.6,.25)                  # passos no corredor antes do toc
+add(sfx,SF('06_olho_magico'),st(23)+.05,.7)                      # tampinha do olho mágico
+add(sfx,SF('17_caixa_no_chao'),st(24)+.9,.45)                    # entregador mexe na caixa
+add(sfx,SF('08_celular_vibrando'),st(27)+.15,.7)                 # celular vibra
+add(sfx,SF('10_mensagem_do_futuro'),MK['futuro2']-.05,.5)        # do mesmo número, do futuro
+add(sfx,SF('16_reverse_puxada'),st(30)-1.2,.35)
+add(sfx,SF('04_porta_rangendo'),MK.get('fim',117.85)+.2,.5)      # teaser: porta entreabrindo
+add(sfx,SF('20_ambiente_tenso'),MK.get('fim',117.85)-.5,.35)
 # ===== MÚSICA ACOMPANHA O IMPACTO =====
 # antes do impacto a trilha "puxa o ar" (some), no impacto entra um hit musical forte e a trilha volta crescendo
 mg=np.ones(N);hitwin=np.zeros(N)
