@@ -94,27 +94,28 @@ glass(1.0,FUT-1.0,.16)
 brass(FUT,3.2,.9,(26,33,38,41));tom(FUT,1.0,50);sub(FUT,1.5,.7,26)
 secao(FUT+.05,I0,1.4,drums=2)
 # HISTÓRIA
-secao(I0,st(2),1.0,drums=1)            # esse é você
+secao(I0,L[1]['b']+.4,1.0,drums=1)    # esse é você (depois: SEM música até o flash)
 
 # ===== PARTE ALEGRE: remodelagem ("nova remodelagem" + "bem-vindo à temporada 3") =====
 def feliz(a,b):
-    bt=60/128;PROGF=[(38,(62,66,69)),(33,(57,61,64)),(35,(59,62,66)),(31,(55,59,62))]  # D A Bm G (maior, festa)
-    MEL=[74,76,78,81,78,76,74,73, 76,78,81,83,81,78,76,74]
+    # música NOVA felizinha: ukulele + assobio, Dó maior, 140 bpm (C Am F G)
+    bt=60/140;PROGF=[(36,(60,64,67)),(33,(57,60,64)),(29,(53,57,60)),(31,(55,59,62))]
+    MEL=[76,79,81,79,76,74,72,74, 76,76,79,84,83,79,81,79]
+    def uke(m,at,g,pan):
+        tt=t_(.5);f=mtof(m);x=sum(np.sin(2*np.pi*f*h*tt)*np.exp(-tt*(6+h*3))/h for h in (1,2,3,4));addS(x*np.minimum(1,tt/.003),at,g,pan)
+    def apito(m,at,d,g):
+        tt=t_(d);f=mtof(m)*(1+.012*np.sin(2*np.pi*6*tt));x=np.sin(2*np.pi*np.cumsum(f)/SR)*np.minimum(1,tt/.03)*np.minimum(1,(d-tt)/.05);addS(x,at,g,.25)
     tq=a;k=0
     while tq<b-.05:
         root,ch=PROGF[(k//8)%4]
-        if k%8==0:
-            d=min(bt*8,b-tq);strings2(tq,d+.3,.16,ch,att=.1,rel=.3,pan=.4)
-        if k%2==1:sub(tq,bt*.6,.20,root+12)              # baixo saltitante no contratempo
-        piano2(ch[[0,1,2,1][k%4]]+12,tq,.15,.6,pan=-.3)     # acordes picados
-        if k%2==0:   # glockenspiel na melodia
-            m=MEL[(k//2)%16];tt=t_(.9);x=(np.sin(2*np.pi*mtof(m+12)*tt)+.3*np.sin(2*np.pi*mtof(m+12)*2.76*tt))*np.exp(-tt*5);addS(x,tq,.12,.35)
-        tom(tq,.14,95) if k%4==0 else None
-        if k%4==2:tt=t_(.15);addS(hpf(rng.standard_normal(len(tt)),1200)*np.exp(-tt*30),tq,.24)   # palma
-        tt=t_(.05);addS(hpf(rng.standard_normal(len(tt)),8000)*np.exp(-tt*90),tq+bt/2,.08,.5)
+        for q,n in enumerate(ch):uke(n+(12 if k%2 else 0),tq+q*.012,.13,-.3)   # batida de ukulele
+        if k%2==0:sub(tq,bt*.8,.22,root+12)
+        if k%2==0:apito(MEL[(k//2)%16],tq,bt*1.8,.10)
+        if k%4==2:tt=t_(.15);addS(hpf(rng.standard_normal(len(tt)),1200)*np.exp(-tt*30),tq,.22)
+        if k%4==0:tom(tq,.12,110)
+        tt=t_(.04);addS(hpf(rng.standard_normal(len(tt)),9000)*np.exp(-tt*100),tq+bt/2,.07,.5)
         tq+=bt;k+=1
-    glass(a,1.2,.10,(86,90,93))
-feliz(st(2),P1)                       # remodelagem: ALEGRE
+feliz(FLASH,P1)                       # remodelagem: ALEGRE
 secao(P1,P2,.8,arp=True,drums=0)      # noite: piano + cordas suaves
 glass(st(13),6,.06);glass(st(16),5,.07,(85,92))
 secao(P2,P3,.6,arp=True,drums=0,low=False)   # dia seguinte: leve
@@ -248,7 +249,19 @@ def torcida(at,d=2.8,nv=22):
         i=int(rng.uniform(.1,d-.4)*SR);m=int(.03*SR);pal[i:i+m]+=hpf(rng.standard_normal(m),1200)*np.exp(-np.arange(m)/SR*120)*rng.uniform(.3,1)
     x=voz/np.abs(voz).max()*.95+pal/np.abs(pal).max()*.25
     add(sfx,x,at,.9)
-torcida(FLASH-.05)
+torcida(FLASH+.1)
+# ===== BARULHO DE CONFETE / FESTA no flash =====
+def confete(at):
+    for k,o in enumerate((0,.12,.3)):   # lança-confete (pop + tubo)
+        tt=t_(.35);x=hpf(rng.standard_normal(len(tt)),700)*np.exp(-tt*25)+np.sin(2*np.pi*np.cumsum(260*np.exp(-tt*8)+90)/SR)*np.exp(-tt*18)*.7
+        add(sfx,x,at+o,.6-.1*k)
+    n=int(3.0*SR);pap=np.zeros(n)   # papelzinho caindo
+    for c in range(260):
+        i=int(rng.uniform(.1,2.8)**1.2/2.8**.2*SR);i=min(i,n-200);m=int(rng.uniform(.004,.012)*SR);pap[i:i+m]+=hpf(rng.standard_normal(m),4500)*rng.uniform(.2,1)
+    pap*=np.exp(-np.arange(n)/SR*.6);add(sfx,pap,at+.05,.35)
+    for f in (1568,2093,2637):tt=t_(1.2);add(sfx,np.sin(2*np.pi*f*tt)*np.exp(-tt*3),at+.02,.06)   # brilho
+confete(FLASH-.02)
+
 # ===== HITS NOS IMPACTOS (só os fortes, sem poluir) =====
 mg=np.ones(N);hitwin=np.zeros(N)
 def impacto(at,g):

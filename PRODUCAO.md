@@ -305,3 +305,4 @@ Todo vídeo, antes de ser postado, TEM que passar por isto — se achar erro, co
 - Usar audio4.py como base dos próximos episódios.
 - Música acompanha o clima da cena: na remodelagem/apresentação do Matheus a trilha é ALEGRE (Ré maior, piano saltitante, palmas — função feliz() no audio4.py); suspense só nas partes de mistério.
 - Na remodelagem: criancinhas gritando "YAAAY" (tipo passar de fase no FNAF) — função torcida() no audio4.py. SÓ o som, sem desenhar pessoas na tela (pedido do usuário).
+- Estrutura sonora da apresentação: música até "esse é você" → SILÊNCIO na transformação (só efeitos) → no flash: lança-confete + papelzinho caindo + criancinhas YAAAY + música felizinha NOVA (ukulele+assobio, Dó maior, função feliz()) → depois volta a trilha de suspense.
