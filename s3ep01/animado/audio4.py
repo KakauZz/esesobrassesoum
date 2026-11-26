@@ -222,13 +222,15 @@ add(sfx,SF('20_ambiente_tenso'),MK.get('fim',117.85)-.5,.35)
 
 
 # ===== TORCIDA "AEEEE" (igual final de campeonato) na remodelagem =====
-def torcida(at,d=3.6,nv=70):
+def torcida(at,d=2.8,nv=22):
+    # criancinhas gritando "YAAAAY!" (tipo quando passa de fase) — vozes agudas
     n=int(d*SR);tt=np.arange(n)/SR;src=np.zeros(n)
     for j in range(nv):
-        f0=rng.uniform(110,300);st0=rng.uniform(0,.35);vib=rng.uniform(4,7)
-        f=f0*(1+.18*np.minimum(1,np.maximum(0,tt-st0)/.5))*(1+.02*np.sin(2*np.pi*vib*tt))
-        ph=np.cumsum(f)/SR;x=(2*(ph%1)-1)
-        e=np.clip((tt-st0)/.25,0,1)*np.clip((d-tt)/1.2,0,1)*rng.uniform(.5,1)
+        f0=rng.uniform(300,480);st0=rng.uniform(0,.18);vib=rng.uniform(5,8)
+        prof=np.interp(tt-st0,[0,.25,1.4,2.4],[1.0,1.22,1.15,.92])   # sobe no "YA", cai no "ay"
+        f=f0*prof*(1+.025*np.sin(2*np.pi*vib*tt+j))
+        ph=np.cumsum(f)/SR;x=(2*(ph%1)-1)*.6+np.sin(2*np.pi*ph)*.4
+        e=np.clip((tt-st0)/.08,0,1)*np.clip((d-.2-tt)/.9,0,1)*rng.uniform(.5,1)
         src+=x*e
     src/=nv**.5
     X=np.fft.rfft(src);fr=np.fft.rfftfreq(n,1/SR)
@@ -236,18 +238,15 @@ def torcida(at,d=3.6,nv=70):
         H=np.zeros_like(fr)
         for fc,bw,g in F:H+=g/(1+((fr-fc)/bw)**2)
         return np.fft.irfft(X*H,n)
-    A=form([(800,120,1),(1200,140,.7),(2600,250,.3)]);E=form([(450,90,1),(1900,180,.8),(2700,250,.4)])
-    mixAE=np.clip((tt-.9)/1.2,0,1)        # "aaa" vira "eee"
-    voz=A*(1-mixAE)+E*mixAE
-    # palmas
+    I=form([(400,90,1),(3000,260,.9),(3800,300,.4)])    # "i" (do Y)
+    A=form([(1050,160,1),(1700,200,.8),(3300,300,.3)])   # "a" de criança
+    E=form([(600,120,1),(2700,260,.9),(3600,300,.35)])   # "ei"
+    wI=np.clip(1-(tt-.02)/.12,0,1);wE=np.clip((tt-1.5)/.6,0,1);wA=np.clip(1-wI-wE,0,1)
+    voz=I*wI+A*wA+E*wE;voz=hpf(voz,250)
     pal=np.zeros(n)
-    for c in range(int(d*45)):
-        i=int(rng.uniform(.15,d-.3)*SR);m=int(.03*SR);pal[i:i+m]+=hpf(rng.standard_normal(m),900)*np.exp(-np.arange(m)/SR*120)*rng.uniform(.3,1)
-    # assobios
-    for w_ in range(3):
-        s0=rng.uniform(.3,1.5);m=int(.7*SR);tw=np.arange(m)/SR;fw=2200+600*np.sin(np.pi*tw/.7)
-        wh=np.sin(2*np.pi*np.cumsum(fw)/SR)*np.sin(np.pi*tw/.7)*.25;i=int(s0*SR);pal[i:i+m]+=wh[:max(0,min(m,n-i))]
-    x=voz/np.abs(voz).max()*.9+pal/np.abs(pal).max()*.5
+    for c in range(int(d*30)):
+        i=int(rng.uniform(.1,d-.4)*SR);m=int(.03*SR);pal[i:i+m]+=hpf(rng.standard_normal(m),1200)*np.exp(-np.arange(m)/SR*120)*rng.uniform(.3,1)
+    x=voz/np.abs(voz).max()*.95+pal/np.abs(pal).max()*.25
     add(sfx,x,at,.9)
 torcida(FLASH-.05)
 # ===== HITS NOS IMPACTOS (só os fortes, sem poluir) =====
