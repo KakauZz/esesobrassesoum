@@ -200,8 +200,7 @@ function EP1(t){const L=window.LINES,MK=window.MK||{};const st=i=>i===0?0:L[i].a
     if(i<34){e1Choice(i===32?seg(u,.05,.35):1,'A',['OBEDECER','e NÃO abrir'],'#2bb673',560);e1Choice(i===33?seg(u,.05,.35):(i>33?1:0),'B',['DESAFIAR','e ABRIR a porta'],'#e0463d',860);
       matheus5(540,1520,.75,{expr:'desconfiado',t,look:i===32?-1:1,armL:[14,-30,'rest'],armR:[14,-30,'rest'],blink:bl(7)});tzKicker('VOCÊ DECIDE',330,seg(i===32?u:9,.05,.35),'#ff7a33')}
     else{const ec=seg(t,(MK.fim||97.7),(MK.fim||97.7)+.4);if(ec<1){ctx.save();ctx.globalAlpha=1-ec;e1Choice(1,'A',['OBEDECER','e NÃO abrir'],'#2bb673',460);e1Choice(1,'B',['DESAFIAR','e ABRIR a porta'],'#e0463d',740);ctx.restore()}ctx.fillStyle=`rgba(8,10,25,${(ec*.92).toFixed(2)})`;ctx.fillRect(0,0,W,H);
-      matheus5(540,1460,1.0,Object.assign({},M5POSES.acenando,{t,armR:[150+Math.sin(t*7)*16,30,'open'],blink:bl(8)}));
-      if(ec>0){tzKicker('E SE O SEU CELULAR RECEBESSE',230,ec,'#4f5bd5');tzKicker('MENSAGENS DO FUTURO?',305,ec,'#4f5bd5');tzTitle('EP. 2 • EM BREVE',460,ec,96,'#ff7a33');tzKicker('SEGUE PRA NÃO PERDER!',580,ec,'#2b1b12')}
+      if(ec>0){e1Teaser(t,ec);ctx.save();ctx.globalAlpha=ec;tzKicker('AMANHÃ • 18H',250,ec,'#e0463d');tzTitle('QUEM ESTÁ',380,ec,110,'#fff');tzTitle('NA PORTA?',500,ec,110,'#ffd23f');tzKicker('SEGUE PRA VER O EP. 2',1720,ec,'#ff7a33');ctx.restore()}
       else tzKicker('COMENTA A OU B',260,seg(u,.05,.35),'#ff7a33')}
     break}
   }
@@ -350,3 +349,14 @@ function e1CoffeeTable(t,o){o=o||{};const top=1384;ctx.save();ctx.translate(-60,
   if(o.bowl)e1Bowl(650,top,.75,t);if(o.phone)e1PhoneSmall(760,top-4,.9,false,false);if(o.cup)e1Cup(860,top,.85,0,1);
   if(o.laptop){fPoly([[680,top],[840,top],[826,top-120],[694,top-120]],'#2a2e3a');fPoly([[688,top-6],[832,top-6],[820,top-112],[700,top-112]],'#9fc4ff');
     if(o.typing){ctx.fillStyle='#fff';for(let k=0;k<4;k++)ctx.fillRect(712,top-100+k*22,(40+((t*80+k*40)%60)),6)}}ctx.restore()}
+
+function e1Teaser(t,k){ctx.save();ctx.globalAlpha=k;fRect(0,0,W,H,'#090b1c');
+  // porta entreaberta com luz do corredor e a silhueta do entregador
+  fRect(250,640,580,980,'#1a1220',10);const op=.42+.04*Math.sin(t*3);
+  ctx.save();ctx.beginPath();ctx.rect(270,660,540,960);ctx.clip();fRect(270,660,540,960,'#ffd98f');
+  ctx.globalAlpha=k*.95;fRect(600,900,220,720,'#120c08',30);fCirc(705,880,80,'#120c08');fPoly([[620,820],[790,820],[800,850],[610,850]],'#120c08');fRect(640,790,130,40,'#120c08',20);   // silhueta de boné
+  fRect(610,1080,190,140,'#3a2a1a',10);ctx.restore();ctx.globalAlpha=k;
+  fPoly([[270,660],[270+540*(1-op),700],[270+540*(1-op),1580],[270,1620]],'#4a3020');                                      // folha da porta
+  ctx.save();ctx.globalAlpha=k*.18;fPoly([[810,1620],[270,1620],[60,1920],[1020,1920]],'#ffd98f');ctx.restore();
+  for(let i=0;i<2;i++)fCirc(685+i*44,890,6,`rgba(255,240,180,${(.6+.4*Math.sin(t*6+i)).toFixed(2)})`);
+  ctx.restore()}
