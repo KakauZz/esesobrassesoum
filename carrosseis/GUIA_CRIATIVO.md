@@ -12,6 +12,15 @@ Objetivo: post interativo que faz a pessoa querer ir no PERFIL conhecer o Matheu
 - NUNCA repetir formato de ideia dos últimos 7 dias (ver log.json).
 - Revisar folha de contato antes de postar: texto nunca embaixo do personagem, nada cortado (exceto o que atravessa a emenda de propósito), texto legível, sem texto cortado na emenda.
 
+## PRIORIDADE (aprovado pelo usuário em 26/11) — formato "QUAL VOCÊ É?"
+O usuário AMOU o "Qual Matheus é você às 7h?" (carrosseis/2026-11-29, script car3.js): entra na mente de quem vê, a pessoa se identifica, comenta um número e vai pro perfil. Seguir NESSA linha na maioria dos dias:
+- Slide 1: "QUAL MATHEUS É VOCÊ ___?" + números 1-4 em círculos + ARRASTA.
+- Slides 2-5: número grande no topo, título curto (2 linhas), Matheus com expressão/pose que combina, frase engraçada embaixo entre aspas.
+- Último: "COMENTA O NÚMERO 👇" + botão SEGUIR + "tem mais do Matheus no perfil".
+- Temas pra girar (situações que todo mundo vive): no domingo à noite, quando a internet cai, na fila do mercado, quando o despertador toca, no grupo da família, quando chega a comida, na prova, quando o crush visualiza e não responde, jogando online, quando a mãe chama, no calor, no frio, na segunda-feira, no dia do pagamento, quando acaba a bateria.
+- Também valem os parentes desse formato: "este ou aquele", "monte o dia do Matheus (ABBA)", "que personagem você é", "fala um número de 1 a 5", "red flag ou green flag" — tudo que se responde com número/letra/emoji e faz a pessoa se ver no Matheus.
+- Pode intercalar com os panorâmicos (2x/semana), mas sem perder o formato de identificação.
+
 ## Banco de ideias (girar, e inventar novas)
 1. "Qual Matheus é você às 7h da manhã?" (1 acordando bem, 2 zumbi, 3 atrasado, 4 nem acordou) → comenta o número.
 2. "Acha o gato escondido no quarto do Matheus" (slide 2..5 vão dando zoom; resposta no último + perfil).
