@@ -94,7 +94,24 @@ glass(1.0,FUT-1.0,.16)
 brass(FUT,3.2,.9,(26,33,38,41));tom(FUT,1.0,50);sub(FUT,1.5,.7,26)
 secao(FUT+.05,I0,1.4,drums=2)
 # HISTÓRIA
-secao(I0,P1,1.0,drums=1)              # esse é você / remodelagem
+secao(I0,st(2),1.0,drums=1)            # esse é você
+
+# ===== PARTE ALEGRE: remodelagem ("nova remodelagem" + "bem-vindo à temporada 3") =====
+def feliz(a,b):
+    bt=60/120;PROGF=[(38,(62,66,69)),(33,(57,61,64)),(35,(59,62,66)),(31,(55,59,62))]  # D A Bm G (maior)
+    tq=a;k=0
+    while tq<b-.05:
+        root,ch=PROGF[(k//8)%4]
+        if k%8==0:
+            d=min(bt*8,b-tq);strings2(tq,d+.3,.20,ch,att=.15,rel=.3,pan=.4);sub(tq,bt,.18,root)
+        piano2([ch[0]+12,ch[1]+12,ch[2]+12,ch[1]+12,ch[2]+12,ch[0]+24,ch[2]+12,ch[1]+12][k%8],tq,.18,1.0,pan=(-.3 if k%2 else .3))
+        if k%2==0:tom(tq,.16,90)
+        if k%4==2:  # palma
+            tt=t_(.15);x=hpf(rng.standard_normal(len(tt)),1200)*np.exp(-tt*30);addS(x,tq,.22)
+        tt=t_(.05);addS(hpf(rng.standard_normal(len(tt)),8000)*np.exp(-tt*90),tq+bt/2,.08,.5)  # chimbal
+        tq+=bt;k+=1
+    glass(a,1.2,.10,(86,90,93))
+feliz(st(2),P1)                       # remodelagem: ALEGRE
 secao(P1,P2,.8,arp=True,drums=0)      # noite: piano + cordas suaves
 glass(st(13),6,.06);glass(st(16),5,.07,(85,92))
 secao(P2,P3,.6,arp=True,drums=0,low=False)   # dia seguinte: leve
@@ -209,7 +226,7 @@ def impacto(at,g):
     hitwin[a:min(N,a+int(1.2*SR))]=1
     brass(at,2.6,.6*g,(38,45,50));tom(at,.7*g,52);sub(at,1.2,.3*g,26);strings2(at,1.8,.35*g,(74,77,81),att=.03,rel=1.2,trem=True);glass(at,1.6,.08*g)
     tt=t_(.5);add(sfx,lpf(hpf(rng.standard_normal(len(tt)),300)*(tt/.5)**3,5000),at-.5,.25*g)
-for at in [FLASH,st(7)+.1,MK['cai']+.05,st(16)+.1,MK['toc1'],MK['naoabre'],MK['futuro2'],st(32),MK['fim']]:impacto(at,1.0)
+for at in [st(7)+.1,MK['cai']+.05,st(16)+.1,MK['toc1'],MK['naoabre'],MK['futuro2'],st(32),MK['fim']]:impacto(at,1.0)
 
 # ===== MIX ESTÉREO com reverb =====
 def reverb(x,dur=2.2,wet=.22):
@@ -221,7 +238,7 @@ duck=np.maximum(duck,.5*hitwin);G=duck*ig*mg
 mL=reverb(musL*G,2.6,.30);mR=reverb(musR*G,2.6,.30)
 sx=reverb(sfx,1.4,.18)
 vo=reverb(voice,.6,.06)
-Lc=vo+mL*.6+sx*.45;Rc=vo+mR*.6+sx*.45
+Lc=vo+mL*.42+sx*.38;Rc=vo+mR*.42+sx*.38
 for c in (Lc,Rc):c[-int(.8*SR):]*=np.linspace(1,0,int(.8*SR))
 m=max(np.abs(Lc).max(),np.abs(Rc).max())*1.05
 st2=np.stack([Lc/m,Rc/m],1)
