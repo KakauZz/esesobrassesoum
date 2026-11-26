@@ -270,7 +270,7 @@ function eIO(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2}
 
 // ===== prédio 3D em São Paulo com zoom na janela do Matheus =====
 function e1Predio(t,u,D){
-  const WIN={x:520,y:842,w:40,h:50};                 // janela do Matheus (mundo)
+  const WIN={x:508,y:864,w:40,h:50};                 // janela do Matheus (mundo)
   const k=eIO(seg(u,.35,Math.min(D-.5,2.1)));         // progresso do zoom
   const Z=Math.exp(lerp(Math.log(1),Math.log(26.5),k)); // zoom exponencial
   const tx=lerp(560,WIN.x+WIN.w/2,Math.min(1,k*1.15)),ty=lerp(900,WIN.y+WIN.h/2,Math.min(1,k*1.15));
