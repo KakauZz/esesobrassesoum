@@ -294,6 +294,13 @@
    "horario": "2026-11-26T18:00:00-03:00",
    "id": "Ras9llGtsPY",
    "obs": "API oficial (workflow postar-youtube), publish_at 21:00Z"
+  },
+  {
+   "episodio": "s3ep01",
+   "rede": "instagram",
+   "horario": "2026-11-26T18:00:00-03:00",
+   "id": "RESERVADO",
+   "obs": "Reservado: quem publica é a tarefa trig_01UZFxG71V4PVkviJb7kc7dF com a versão final (commit 6bd49a6). Outras tarefas: NÃO publicar."
   }
  ]
 }
