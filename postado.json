@@ -308,6 +308,13 @@
    "horario": "2026-11-27T18:00:00-03:00",
    "id": "buffer 6b098199049983dcfbc03018",
    "obs": "Buffer customScheduled 18h (agendado às 10h11)"
+  },
+  {
+   "episodio": "s3ep02",
+   "rede": "youtube",
+   "horario": "2026-11-27T18:00:00-03:00",
+   "id": "Bj7unJr0RAY",
+   "obs": "API oficial (workflow postar-youtube), publish_at 21:00Z"
   }
  ]
 }
