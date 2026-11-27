@@ -1,0 +1,37 @@
+1. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): IMPACTO MÁXIMO desde a primeira palavra, "Imagine" muito forte, peso em "até você"
+2. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e animado, anunciando o resultado, peso em "venceu a A"
+3. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): leve e firme, com energia
+4. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): firme e tenso, peso em "sem nem olhar"
+5. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): suspense firme, crescendo
+6. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): revelação forte, peso em "manga amarela"
+7. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): firme, frases batidas, peso em "de costas"
+8. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): tenso e divertido, ritmado
+9. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): intrigado e forte
+10. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, intrigado, peso em "conhece"
+11. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): firme e seco
+12. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): suspense firme, peso em "pequena"
+13. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): revelação forte, peso em "estrelinha amarela"
+14. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): surpreso e forte
+15. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): divertido e rápido, com energia
+16. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): divertido e leve, com energia
+17. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, tenso, peso em "fora do horário"
+18. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): lendo a mensagem, firme e urgente, peso em "de propósito" [carta]
+19. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): firme, dividido
+20. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): suspense firme, peso em "parede"
+21. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): revelação forte, peso em "mesma melodia"
+22. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): firme, curioso
+23. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): lendo a capa, firme, peso em "catorze anos" [carta]
+24. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): revelação com peso enorme, forte, peso em "ele que compôs"
+25. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): firme e intrigado, peso em "ninguém"
+26. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): falando direto com quem assiste, provocando, energia alta
+27. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, tenso, peso em "vibra"
+28. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): lendo a mensagem, sério e direto, peso em "fora" [carta]
+29. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte e indignado, peso em "minha música"
+30. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): lendo a mensagem, firme e grave, peso em "termina" [carta]
+31. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, susto firme, peso em "outra"
+32. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): lendo a mensagem, firme e marcante, peso em "medo" e "não tenho mais" [carta]
+33. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): provocando quem assiste, forte e intrigante
+34. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): forte, pergunta direta pro público
+35. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): claro e forte, apresentando a opção A
+36. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): claro e forte, apresentando a opção B
+37. VOZ FIRME, ALTA E PRESENTE (nunca sussurrar, nunca baixar o volume): energia máxima, chamando o público, peso em "Comenta"
