@@ -295,7 +295,7 @@ Todo vídeo, antes de ser postado, TEM que passar por isto — se achar erro, co
 2. Checar: corpo (pernas ligadas ao tronco, quadril sentado, nada flutuando/atravessando), profundidade (encosto atrás, mesa na frente), continuidade de cenário, datas/horas na tela batendo com a história (dia 1 = data da postagem, dia 2 = dia seguinte), texto da legenda igual à fala, nada cortado na tela, teaser do próximo EP no fim.
 3. Checar áudio: voz clara, música bem presente e batendo nos impactos, sem estouro, sem silêncio estranho.
 4. Só posta depois de tudo OK. Se não der pra corrigir a tempo, avisar o Kakau em vez de postar com erro.
-- Música: trilha BEM aparente (mus*.85, ducking leve .38), não só fundo.
+- Música: (REGRA ANTIGA, SUBSTITUÍDA — ver 'VOLUME DA MÚSICA' abaixo).
 
 ### Aprendizados 26/11 (S3 EP1 aprovado pelo usuário)
 - TODA cena tem que usar o cenário atualizado (flat) do lugar certo. Nada de cena "esquecida" com cenário antigo nem Matheus inclinado/diagonal. Em pé na sala: na FRENTE da mesinha (maior, mais perto da câmera), com sombra no chão.
@@ -308,6 +308,11 @@ Todo vídeo, antes de ser postado, TEM que passar por isto — se achar erro, co
 - Horário 12h (não colide com o EP das 18h). TikTok pelo Buffer (foto/carrossel); Instagram pelo Windsor create_carousel_post via tarefa agendada única.
 - Música: as APIs NÃO deixam escolher música em carrossel (nem TikTok nem Instagram). Música só no app.
 - Agendados: c1 (teaser T3) 26/11 12h; c2 (mensagens do futuro) 27/11 12h.
+
+### VOLUME DA MÚSICA (27/11 — usuário: "música tá muito alta" no S3 EP2, mesmo com mus*.32)
+- Mix padrão A PARTIR DO EP3: `Lc=vo+mL*.18+sx*.28`, ducking `1-.75*clip(...)` (a música quase some debaixo da voz), SEM o reforço 1.5 no gancho (ig máx 1.15), hitwin no máximo .4.
+- Conferência obrigatória antes de postar: a voz tem que ficar pelo menos 14 dB acima da música nos trechos falados (meça projetando a mistura na voz: voz-resto ≥ 14 dB). Se der menos, abaixe a música até dar.
+- Música alta = erro que impede postar, igual erro de imagem.
 
 ### Trilha V4 (26/11 — usuário achou a música e o suspense ruins)
 - Problema da V3: quase tudo grave (95% da energia abaixo de 250 Hz = embolado), saw cru, whoosh em TODA troca de fala, tique e coração o tempo todo = poluído.

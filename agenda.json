@@ -63,22 +63,6 @@
   "comentario_id": "17938206792146273"
  },
  {
-  "quando": "2026-11-27T20:00",
-  "rede": "instagram",
-  "tipo": "carrossel",
-  "nome": "NÃO ARRASTA",
-  "imagens": [
-   "https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/carrosseis/2026-11-27/1.jpg",
-   "https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/carrosseis/2026-11-27/2.jpg",
-   "https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/carrosseis/2026-11-27/3.jpg",
-   "https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/carrosseis/2026-11-27/4.jpg",
-   "https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/carrosseis/2026-11-27/5.jpg"
-  ],
-  "legenda": "NÃO ARRASTA! 😰\n\n...você arrastou né? Em qual slide você ficou com dó dele? Comenta 👇\n\n#matheusvocedecide #naoarrasta #vocedecide #animacao #humor #viral",
-  "comentario": "Em qual slide você ficou com dó? 1, 2, 3, 4 ou 5? 😅",
-  "feito": false
- },
- {
   "quando": "2026-11-28T20:00",
   "rede": "instagram",
   "tipo": "carrossel",
@@ -109,6 +93,22 @@
   ],
   "legenda": "QUAL MATHEUS É VOCÊ ÀS 7H DA MANHÃ? ☀️😴🏃\n\nComenta o número (1, 2, 3 ou 4) 👇 E vem conhecer o Matheuzinho no perfil 👉\n\n#matheusvocedecide #vocedecide #animacao #humor #qualvoceescolhe #fyp #foryou #viral",
   "comentario": "Qual número é você de manhã? 1, 2, 3 ou 4? 👀👇",
+  "feito": false
+ },
+ {
+  "quando": "2026-11-30T20:00",
+  "rede": "instagram",
+  "tipo": "carrossel",
+  "nome": "NÃO ARRASTA",
+  "imagens": [
+   "https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/carrosseis/2026-11-27/1.jpg",
+   "https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/carrosseis/2026-11-27/2.jpg",
+   "https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/carrosseis/2026-11-27/3.jpg",
+   "https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/carrosseis/2026-11-27/4.jpg",
+   "https://raw.githubusercontent.com/KakauZz/esesobrassesoum/main/carrosseis/2026-11-27/5.jpg"
+  ],
+  "legenda": "NÃO ARRASTA! 😰\n\n...você arrastou né? Em qual slide você ficou com dó dele? Comenta 👇\n\n#matheusvocedecide #naoarrasta #vocedecide #animacao #humor #viral",
+  "comentario": "Em qual slide você ficou com dó? 1, 2, 3, 4 ou 5? 😅",
   "feito": false
  }
 ]

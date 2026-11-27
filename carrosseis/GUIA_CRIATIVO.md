@@ -3,6 +3,7 @@
 Objetivo: post interativo que faz a pessoa querer ir no PERFIL conhecer o Matheuzinho. NÃO precisa ser sobre a série. Sempre leve, divertido, sem terror, sem morte, nada de política/religião.
 
 ## Regras
+- **SÓ 1 CARROSSEL POR DIA (regra do usuário, 27/11), sempre às 20h.** Nada de carrossel às 12h. Se agenda.json já tem carrossel no dia, não crie outro.
 - Se carrosseis/log.json já tem um carrossel das 20h com a data de HOJE, não faça outro: encerre avisando "carrossel de hoje já saiu". (26/11 já tem o "segue a seta".)
 - 1080×1350 (4:5), 5 a 7 slides. Mesmo estilo flat do Matheus (m7.js) e personagens extras (Lucas, mãe, pai, Bia, vó, entregador, Matheus do futuro).
 - Slide 1 = gancho forte em até 6 palavras + "ARRASTA →".
