@@ -301,6 +301,13 @@
    "horario": "2026-11-26T18:00:00-03:00",
    "id": "17912336451596548",
    "obs": "Windsor create_video_post versão final 6bd49a6 (agenda 18h)"
+  },
+  {
+   "episodio": "s3ep02",
+   "rede": "tiktok",
+   "horario": "2026-11-27T18:00:00-03:00",
+   "id": "buffer 6b098199049983dcfbc03018",
+   "obs": "Buffer customScheduled 18h (agendado às 10h11)"
   }
  ]
 }
