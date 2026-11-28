@@ -324,3 +324,8 @@ Todo vídeo, antes de ser postado, TEM que passar por isto — se achar erro, co
 - Música acompanha o clima da cena: na remodelagem/apresentação do Matheus a trilha é ALEGRE (Ré maior, piano saltitante, palmas — função feliz() no audio4.py); suspense só nas partes de mistério.
 - Na remodelagem: criancinhas gritando "YAAAY" (tipo passar de fase no FNAF) — função torcida() no audio4.py. SÓ o som, sem desenhar pessoas na tela (pedido do usuário).
 - Estrutura sonora da apresentação: música até "esse é você" → SILÊNCIO na transformação (só efeitos) → no flash: lança-confete + papelzinho caindo + criancinhas YAAAY + música felizinha NOVA (ukulele+assobio, Dó maior, função feliz()) → depois volta a trilha de suspense.
+
+### Aprendizados 28/11 (execução sem episódio novo — EP3 já estava agendado)
+- Retenção TikTok da T3 está baixa: S3 EP1 9,5 s e S3 EP2 9,6 s de média (T2 fazia 15–21 s). O gancho "Imagine..." + remodelagem não segura como o espelho da troca de corpos. No S3 EP4: primeira imagem já com a mensagem das 23:59 na tela e uma frase de perigo/mistério nos 2 primeiros segundos; recap em no máximo 5 s.
+- Carrosséis no TikTok rendem pouco (78–102 views, 1,5–4,9 s); no Instagram os comentários vêm das mesmas 2–3 pessoas. Manter 1/dia, mas o foco é o episódio.
+- Números 28/11 ~10h: IG 86 seguidores; TikTok S3 EP2 132 views em 13 h; YouTube S2 EP8/EP9 ~950 views cada (YouTube é a rede que mais entrega views).
